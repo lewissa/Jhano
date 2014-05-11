@@ -4,6 +4,54 @@
 
 <xs:element name="actualizaDataBaseClienteResponse" type="tns:actualizaDataBaseClienteResponse"/>
 
+<xs:element name="validaCedula" type="tns:validaCedula"/>
+
+<xs:element name="validaCedulaResponse" type="tns:validaCedulaResponse"/>
+
+<xs:element name="validaEmail" type="tns:validaEmail"/>
+
+<xs:element name="validaEmailResponse" type="tns:validaEmailResponse"/>
+
+<xs:element name="validaRuc" type="tns:validaRuc"/>
+
+<xs:element name="validaRucResponse" type="tns:validaRucResponse"/>
+
+<xs:complexType name="validaCedula">
+<xs:sequence>
+<xs:element name="cedCedula" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validaCedulaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validaEmail">
+<xs:sequence>
+<xs:element name="corEmail" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validaEmailResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validaRuc">
+<xs:sequence>
+<xs:element name="rucRu" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validaRucResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="actualizaDataBaseCliente">
 <xs:sequence>
 <xs:element name="cliCliente" type="tns:cCliente" minOccurs="0"/>
