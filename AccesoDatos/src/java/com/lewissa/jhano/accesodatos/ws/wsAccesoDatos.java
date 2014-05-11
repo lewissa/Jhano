@@ -49,10 +49,11 @@ public class wsAccesoDatos {
 
     /**
      * Web service operation
+     * @return 
      */
     @WebMethod(operationName = "getErrorConexion")
-    public Exception getErrorConexion(@WebParam(name = "excExc") Exception excExc) {
+    public java.lang.Exception getErrorConexion() {
         //TODO write your implementation code here:
-        return excExc;
+        return cAccesoDatos.getInstanciaAccesoDatos().getExcErrorAcessoDatos();
     }
 }

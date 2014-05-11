@@ -88,8 +88,14 @@
                 } catch (Exception e) {
                     request.getSession().setAttribute("telefonoVacio", "err0r");
                 }
-                request.getSession().setAttribute("direccionVacio", strDireccion);
-                response.sendRedirect("../interfacesJhano/interfazIngresoCliente.jsp");
+                if (port.getErrorConexionCliente() != null) {
+                    com.lewissa.jhano.accesodatos.ws.Exception resultError = port.getErrorConexionCliente();
+                    response.sendRedirect("../erroresJhano/errorConexionDataBase.jsp?"+resultError);
+                } else {
+                    request.getSession().setAttribute("direccionVacio", strDireccion);
+
+                    response.sendRedirect("../interfacesJhano/interfazIngresoCliente.jsp");
+                }
 
             } catch (Exception e) {
                 out.print("ERROR: " + e.getMessage());
@@ -99,3 +105,4 @@
 </html>
 
 
+  

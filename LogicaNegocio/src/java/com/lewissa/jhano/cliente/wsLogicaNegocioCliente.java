@@ -9,9 +9,11 @@ package com.lewissa.jhano.cliente;
 import com.lewissa.jhano.utilidades.cCedula;
 import com.lewissa.jhano.utilidades.cCorreo;
 import com.lewissa.jhano.utilidades.cRuc;
+import com.lewissa.jhano.wscAccesoDatos.WsAccesoDatos_Service;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
+import javax.xml.ws.WebServiceRef;
 
 /**
  *
@@ -19,6 +21,8 @@ import javax.jws.WebParam;
  */
 @WebService(serviceName = "wsLogicaNegocioCliente")
 public class wsLogicaNegocioCliente {
+    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/AccesoDatos/wsAccesoDatos.wsdl")
+    private WsAccesoDatos_Service service;
 
    /**
     * 
@@ -60,5 +64,15 @@ public class wsLogicaNegocioCliente {
     public Boolean validaEmail(@WebParam(name = "corEmail") String corEmail) {
         cCorreo  corCorreo=new cCorreo(corEmail);
         return corCorreo.validaEmail();
+    }
+
+    /**
+     * Web service operation
+     * @return 
+     */
+    @WebMethod(operationName = "getErrorConexionCliente")
+    public com.lewissa.jhano.wscAccesoDatos.Exception getErrorConexionCliente() {
+        com.lewissa.jhano.wscAccesoDatos.WsAccesoDatos port = service.getWsAccesoDatosPort();
+        return port.getErrorConexion();
     }
 }

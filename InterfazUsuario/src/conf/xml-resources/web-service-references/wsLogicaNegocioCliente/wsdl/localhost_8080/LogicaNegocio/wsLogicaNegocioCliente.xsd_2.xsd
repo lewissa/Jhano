@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.3 (tags/2.3-7528; 2013-04-29T19:34:10+0000) JAXWS-RI/2.2.8 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://cliente.jhano.lewissa.com/" xmlns:ns1="http://ws.accesodatos.jhano.lewissa.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://cliente.jhano.lewissa.com/">
+
+<xs:import namespace="http://ws.accesodatos.jhano.lewissa.com/" schemaLocation="http://localhost:8080/LogicaNegocio/wsLogicaNegocioCliente?xsd=1"/>
+
+<xs:element name="actualizaDataBaseCliente" type="tns:actualizaDataBaseCliente"/>
+
+<xs:element name="actualizaDataBaseClienteResponse" type="tns:actualizaDataBaseClienteResponse"/>
+
+<xs:element name="getErrorConexionCliente" type="tns:getErrorConexionCliente"/>
+
+<xs:element name="getErrorConexionClienteResponse" type="tns:getErrorConexionClienteResponse"/>
+
+<xs:element name="validaCedula" type="tns:validaCedula"/>
+
+<xs:element name="validaCedulaResponse" type="tns:validaCedulaResponse"/>
+
+<xs:element name="validaEmail" type="tns:validaEmail"/>
+
+<xs:element name="validaEmailResponse" type="tns:validaEmailResponse"/>
+
+<xs:element name="validaRuc" type="tns:validaRuc"/>
+
+<xs:element name="validaRucResponse" type="tns:validaRucResponse"/>
+
+<xs:complexType name="validaCedula">
+<xs:sequence>
+<xs:element name="cedCedula" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validaCedulaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getErrorConexionCliente">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getErrorConexionClienteResponse">
+<xs:sequence>
+<xs:element name="return" type="ns1:exception" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validaEmail">
+<xs:sequence>
+<xs:element name="corEmail" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validaEmailResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validaRuc">
+<xs:sequence>
+<xs:element name="rucRu" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validaRucResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizaDataBaseCliente">
+<xs:sequence>
+<xs:element name="cliCliente" type="tns:cCliente" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cCliente">
+<xs:sequence>
+<xs:element name="strCelular" type="xs:string" minOccurs="0"/>
+<xs:element name="strConvencional" type="xs:string" minOccurs="0"/>
+<xs:element name="strCorreo" type="xs:string" minOccurs="0"/>
+<xs:element name="strDireccion" type="xs:string" minOccurs="0"/>
+<xs:element name="strIdCliente" type="xs:string" minOccurs="0"/>
+<xs:element name="strNombreComercial" type="xs:string" minOccurs="0"/>
+<xs:element name="strNombreFiscal" type="xs:string" minOccurs="0"/>
+<xs:element name="strTipoCliente" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizaDataBaseClienteResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

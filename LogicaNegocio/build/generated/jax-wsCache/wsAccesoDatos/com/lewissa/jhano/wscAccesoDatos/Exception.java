@@ -14,11 +14,10 @@ import javax.xml.bind.annotation.XmlType;
  * <pre>
  * &lt;complexType name="exception">
  *   &lt;complexContent>
- *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
+ *     &lt;extension base="{http://ws.accesodatos.jhano.lewissa.com/}throwable">
  *       &lt;sequence>
- *         &lt;element name="className" type="{http://ws.accesodatos.jhano.lewissa.com/}customName" minOccurs="0"/>
  *       &lt;/sequence>
- *     &lt;/restriction>
+ *     &lt;/extension>
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
@@ -26,35 +25,10 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "exception", propOrder = {
-    "className"
-})
-public class Exception {
+@XmlType(name = "exception")
+public class Exception
+    extends Throwable
+{
 
-    protected CustomName className;
-
-    /**
-     * Obtiene el valor de la propiedad className.
-     * 
-     * @return
-     *     possible object is
-     *     {@link CustomName }
-     *     
-     */
-    public CustomName getClassName() {
-        return className;
-    }
-
-    /**
-     * Define el valor de la propiedad className.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link CustomName }
-     *     
-     */
-    public void setClassName(CustomName value) {
-        this.className = value;
-    }
 
 }

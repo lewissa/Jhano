@@ -26,7 +26,7 @@ import javax.jws.WebService;
  * @author Fredy Janeta
  * @version 1.1 02-05-2014
  */
-public class cAccesoDatos implements Serializable{
+public class cAccesoDatos implements Serializable {
 
     private Connection conConexion = null;
     private Exception excErrorAcessoDatos = null;
@@ -41,6 +41,7 @@ public class cAccesoDatos implements Serializable{
     public Boolean conectarDataBase() {
         Boolean booResultado = false;
         try {
+            excErrorAcessoDatos = null;
             Class.forName(cConstantes.DRIVER);
             Properties proCredenciales = new Properties();
             proCredenciales.setProperty("user", cConstantes.USER);
@@ -90,6 +91,7 @@ public class cAccesoDatos implements Serializable{
         Statement stmCreaQuery = null;
         try {
             if (this.conConexion != null) {
+                excErrorAcessoDatos = null;
                 stmCreaQuery = this.conConexion.createStatement();
                 resResultadoConsulta = stmCreaQuery.executeQuery(strParametroQuery);
                 WebRowSetImpl wrs = new WebRowSetImpl();
@@ -132,13 +134,15 @@ public class cAccesoDatos implements Serializable{
             return booResultado;
         }
     }
-    
-    private cAccesoDatos(){}
-    
-    public static cAccesoDatos getInstanciaAccesoDatos(){
-    if(accesoDatosInstancia==null)
-        accesoDatosInstancia=new cAccesoDatos();
-    return accesoDatosInstancia;
+
+    private cAccesoDatos() {
+    }
+
+    public static cAccesoDatos getInstanciaAccesoDatos() {
+        if (accesoDatosInstancia == null) {
+            accesoDatosInstancia = new cAccesoDatos();
+        }
+        return accesoDatosInstancia;
     }
 
     /**

@@ -16,7 +16,6 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="excExc" type="{http://ws.accesodatos.jhano.lewissa.com/}exception" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -26,35 +25,8 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "getErrorConexion", propOrder = {
-    "excExc"
-})
+@XmlType(name = "getErrorConexion")
 public class GetErrorConexion {
 
-    protected Exception excExc;
-
-    /**
-     * Obtiene el valor de la propiedad excExc.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Exception }
-     *     
-     */
-    public Exception getExcExc() {
-        return excExc;
-    }
-
-    /**
-     * Define el valor de la propiedad excExc.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Exception }
-     *     
-     */
-    public void setExcExc(Exception value) {
-        this.excExc = value;
-    }
 
 }

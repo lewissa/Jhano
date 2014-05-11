@@ -9,28 +9,31 @@
 <xs:element name="getErrorConexionResponse" type="tns:getErrorConexionResponse"/>
 
 <xs:complexType name="getErrorConexion">
-<xs:sequence>
-<xs:element name="excExc" type="tns:exception" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="exception">
-<xs:sequence>
-<xs:element name="className" type="tns:customName" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="customName">
-<xs:sequence>
-<xs:element name="javaDoc" type="xs:string" minOccurs="0"/>
-<xs:element name="name" type="xs:string" minOccurs="0"/>
-</xs:sequence>
+<xs:sequence/>
 </xs:complexType>
 
 <xs:complexType name="getErrorConexionResponse">
 <xs:sequence>
 <xs:element name="return" type="tns:exception" minOccurs="0"/>
 </xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="exception">
+<xs:complexContent>
+<xs:extension base="tns:throwable">
+<xs:sequence/>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="throwable">
+<xs:sequence>
+<xs:element name="stackTrace" type="tns:stackTraceElement" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="stackTraceElement" final="extension restriction">
+<xs:sequence/>
 </xs:complexType>
 
 <xs:complexType name="actualizarDataBase">

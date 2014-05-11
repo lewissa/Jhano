@@ -174,7 +174,7 @@
                                     strTelefonoVacio = null;
                                 }
 
-                                if (((booCedula != null) && (booRuc != null)) && (booCorreo != null)) {
+                                if (((booCedula != null) && (booRuc != null)) && (booCorreo != null)&&(booResult!=null)) {
                                     if (((booCedula == true) || (booRuc == true)) && (booCorreo == true) && (booResult == true)) {
                             %>
                             <script type="text/javascript">alert("Se ha ingresado correctamente un nuevo cliente");</script>
@@ -184,6 +184,7 @@
                                         booCedula = null;
                                         booCorreo = null;
                                         strNombreComercialVacio = null;
+                                        booResult=null;
                                     }
                                 }
                                 out.print("<table border=\"0\" align=\"center\">");
