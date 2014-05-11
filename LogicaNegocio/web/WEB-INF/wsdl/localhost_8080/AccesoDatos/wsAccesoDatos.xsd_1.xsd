@@ -4,6 +4,35 @@
 
 <xs:element name="actualizarDataBaseResponse" type="tns:actualizarDataBaseResponse"/>
 
+<xs:element name="getErrorConexion" type="tns:getErrorConexion"/>
+
+<xs:element name="getErrorConexionResponse" type="tns:getErrorConexionResponse"/>
+
+<xs:complexType name="getErrorConexion">
+<xs:sequence>
+<xs:element name="excExc" type="tns:exception" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="exception">
+<xs:sequence>
+<xs:element name="className" type="tns:customName" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="customName">
+<xs:sequence>
+<xs:element name="javaDoc" type="xs:string" minOccurs="0"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getErrorConexionResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:exception" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="actualizarDataBase">
 <xs:sequence>
 <xs:element name="strSql" type="xs:string" minOccurs="0"/>

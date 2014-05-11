@@ -9,13 +9,8 @@ package com.lewissa.jhano.accesodatos.tdd;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 import junit.framework.Test;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import static org.junit.Assert.*;
 import com.lewissa.jhano.accesodatos.cAccesoDatos;
-import java.sql.SQLException;
 
 /**
  * Verificacion de los metodos del la cAccesoDatos
@@ -23,23 +18,20 @@ import java.sql.SQLException;
  * @version 1.0 05-05-2014
  */
 public class cTestAccesoDatos extends TestCase{
-    private cAccesoDatos oAccesoDatos;
     /**
      * Este metodo permite verificar si el metodo conectarDataBase() permite conectar la DB
      */
     public void testConectarDataBase()
     {
-       oAccesoDatos  = new cAccesoDatos();
        
-       assertTrue(oAccesoDatos.conectarDataBase());
+       assertTrue(cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase());
     }
    /**
     * Este metodo me permite verificar si el metodo desconectarDataBase() permite desconectar la DB
     */
     public void testDesconectarDataBase()
     {
-        oAccesoDatos =  new cAccesoDatos();
-        assertTrue(oAccesoDatos.desconectarDataBase());
+        assertTrue(cAccesoDatos.getInstanciaAccesoDatos().desconectarDataBase());
     }
     /**
      * Este metodo me permite virificar que el resultado de la consulta no sea NULL
@@ -47,10 +39,9 @@ public class cTestAccesoDatos extends TestCase{
      */
     public void testConsultarDataBase()
     {
-        oAccesoDatos = new cAccesoDatos();
         String strQuery = "SELECT * FROM cliente";
         String strResultado = null;
-        strResultado = oAccesoDatos.consultarDataBase(strQuery);
+        strResultado = cAccesoDatos.getInstanciaAccesoDatos().consultarDataBase(strQuery);
         assertNotNull(strResultado);
         
     }
@@ -60,10 +51,9 @@ public class cTestAccesoDatos extends TestCase{
      */
     public void testActualizarDataBase()
     {
-        oAccesoDatos = new cAccesoDatos();
         String strQuery = "INSERT INTO familia VALUES('LAPTOP')";
         Boolean booResultado = false;
-        booResultado = oAccesoDatos.actualizarDataBase(strQuery);
+        booResultado = cAccesoDatos.getInstanciaAccesoDatos().actualizarDataBase(strQuery);
         assertTrue(booResultado);
     }
     

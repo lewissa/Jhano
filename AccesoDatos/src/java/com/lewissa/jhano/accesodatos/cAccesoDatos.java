@@ -13,6 +13,7 @@ import java.sql.Statement;
 import java.util.Properties;
 import com.lewissa.jhano.utilidades.cConstantes;
 import com.sun.rowset.WebRowSetImpl;
+import java.io.Serializable;
 import java.io.StringWriter;
 import javax.jws.WebService;
 
@@ -25,9 +26,11 @@ import javax.jws.WebService;
  * @author Fredy Janeta
  * @version 1.1 02-05-2014
  */
-public class cAccesoDatos {
+public class cAccesoDatos implements Serializable{
 
     private Connection conConexion = null;
+    private Exception excErrorAcessoDatos = null;
+    static cAccesoDatos accesoDatosInstancia;
 
     /**
      * Metodo que permite realizar la conexion a la DB y me retorna confirmacion
@@ -45,6 +48,8 @@ public class cAccesoDatos {
             conConexion = DriverManager.getConnection(cConstantes.URL, proCredenciales);
             conConexion.setAutoCommit(true);
             booResultado = true;
+        } catch (Exception exeE) {
+            excErrorAcessoDatos = exeE;
         } finally {
             return booResultado;
         }
@@ -79,7 +84,7 @@ public class cAccesoDatos {
      * @return strResultadoConsulta, String que contiene el resultado de la
      * consulta en formato XML
      */
-    public String consultarDataBase(String strParametroQuery){
+    public String consultarDataBase(String strParametroQuery) {
         String strResultadoConsulta = null;
         ResultSet resResultadoConsulta = null;
         Statement stmCreaQuery = null;
@@ -126,6 +131,21 @@ public class cAccesoDatos {
         } finally {
             return booResultado;
         }
+    }
+    
+    private cAccesoDatos(){}
+    
+    public static cAccesoDatos getInstanciaAccesoDatos(){
+    if(accesoDatosInstancia==null)
+        accesoDatosInstancia=new cAccesoDatos();
+    return accesoDatosInstancia;
+    }
+
+    /**
+     * @return the excErrorAcessoDatos
+     */
+    public Exception getExcErrorAcessoDatos() {
+        return excErrorAcessoDatos;
     }
 
 }

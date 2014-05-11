@@ -6,6 +6,7 @@
 package com.lewissa.jhano.accesodatos.ws;
 
 import com.lewissa.jhano.accesodatos.cAccesoDatos;
+import com.sun.tools.ws.wsdl.document.jaxws.Exception;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -33,17 +34,25 @@ public class wsAccesoDatos {
     public Boolean actualizarDataBase(@WebParam(name = "strSql") String strSql) {
         Boolean booflag1 = false; // revisa la respuesta de la base
         Boolean booflag2 = false; // revisa la conexion
-        cAccesoDatos accConexion = new cAccesoDatos();
-        if (!accConexion.conectarDataBase()) {
+        if (!cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()) {
             booflag2 = false; //error en la conexion
         } else {
             booflag2 = true; // conexion correcta
-            booflag1 = accConexion.actualizarDataBase(strSql);
+            booflag1 = cAccesoDatos.getInstanciaAccesoDatos().actualizarDataBase(strSql);
             if (booflag1 == null) {
                 booflag1 = false;
             }
         }
         booflag1 = (booflag1.equals(true)) && (booflag2.equals(true));
         return booflag1;
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "getErrorConexion")
+    public Exception getErrorConexion(@WebParam(name = "excExc") Exception excExc) {
+        //TODO write your implementation code here:
+        return excExc;
     }
 }

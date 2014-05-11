@@ -24,7 +24,9 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _GetErrorConexion_QNAME = new QName("http://ws.accesodatos.jhano.lewissa.com/", "getErrorConexion");
     private final static QName _ActualizarDataBase_QNAME = new QName("http://ws.accesodatos.jhano.lewissa.com/", "actualizarDataBase");
+    private final static QName _GetErrorConexionResponse_QNAME = new QName("http://ws.accesodatos.jhano.lewissa.com/", "getErrorConexionResponse");
     private final static QName _ActualizarDataBaseResponse_QNAME = new QName("http://ws.accesodatos.jhano.lewissa.com/", "actualizarDataBaseResponse");
 
     /**
@@ -51,12 +53,62 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link GetErrorConexionResponse }
+     * 
+     */
+    public GetErrorConexionResponse createGetErrorConexionResponse() {
+        return new GetErrorConexionResponse();
+    }
+
+    /**
+     * Create an instance of {@link GetErrorConexion }
+     * 
+     */
+    public GetErrorConexion createGetErrorConexion() {
+        return new GetErrorConexion();
+    }
+
+    /**
+     * Create an instance of {@link Exception }
+     * 
+     */
+    public Exception createException() {
+        return new Exception();
+    }
+
+    /**
+     * Create an instance of {@link CustomName }
+     * 
+     */
+    public CustomName createCustomName() {
+        return new CustomName();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetErrorConexion }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.accesodatos.jhano.lewissa.com/", name = "getErrorConexion")
+    public JAXBElement<GetErrorConexion> createGetErrorConexion(GetErrorConexion value) {
+        return new JAXBElement<GetErrorConexion>(_GetErrorConexion_QNAME, GetErrorConexion.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link ActualizarDataBase }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://ws.accesodatos.jhano.lewissa.com/", name = "actualizarDataBase")
     public JAXBElement<ActualizarDataBase> createActualizarDataBase(ActualizarDataBase value) {
         return new JAXBElement<ActualizarDataBase>(_ActualizarDataBase_QNAME, ActualizarDataBase.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetErrorConexionResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ws.accesodatos.jhano.lewissa.com/", name = "getErrorConexionResponse")
+    public JAXBElement<GetErrorConexionResponse> createGetErrorConexionResponse(GetErrorConexionResponse value) {
+        return new JAXBElement<GetErrorConexionResponse>(_GetErrorConexionResponse_QNAME, GetErrorConexionResponse.class, null, value);
     }
 
     /**

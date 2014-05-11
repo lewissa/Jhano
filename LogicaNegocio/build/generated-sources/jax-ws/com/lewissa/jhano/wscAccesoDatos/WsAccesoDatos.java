@@ -26,6 +26,21 @@ public interface WsAccesoDatos {
 
     /**
      * 
+     * @param excExc
+     * @return
+     *     returns com.lewissa.jhano.wscAccesoDatos.Exception
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "getErrorConexion", targetNamespace = "http://ws.accesodatos.jhano.lewissa.com/", className = "com.lewissa.jhano.wscAccesoDatos.GetErrorConexion")
+    @ResponseWrapper(localName = "getErrorConexionResponse", targetNamespace = "http://ws.accesodatos.jhano.lewissa.com/", className = "com.lewissa.jhano.wscAccesoDatos.GetErrorConexionResponse")
+    @Action(input = "http://ws.accesodatos.jhano.lewissa.com/wsAccesoDatos/getErrorConexionRequest", output = "http://ws.accesodatos.jhano.lewissa.com/wsAccesoDatos/getErrorConexionResponse")
+    public Exception getErrorConexion(
+        @WebParam(name = "excExc", targetNamespace = "")
+        Exception excExc);
+
+    /**
+     * 
      * @param strSql
      * @return
      *     returns java.lang.Boolean
