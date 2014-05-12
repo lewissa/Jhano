@@ -5,6 +5,7 @@
         <title>Jhano | Ingresar Familia de Productos </title>
         <script src="SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
         <link href="SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="../javascript/validacionFrmIngresarFamiliaProducto.js"></script>
     </head>
     <body>
         <table bgcolor="#192B75" width="100%" height="50%" border="1">
@@ -133,20 +134,20 @@
                 <td width="88%">
                     <font face="Arial">
                         <h3><center>Ingreso de Familia de Productos</center></h3>
-                        <form id="form1" name="form1" method="post" action="">
+                        <form id="frmIngresoFamiliaProducto" name="form1" method="post" action="../controladoresJhano/controladorInterfazIngresoFamiliaProducto.jsp" onsubmit="return validar_datos(this)">
                             <table border="0" align="center">
                                 <tr>
                                     <td><label>Código:</label></td>
-                                    <td><input name="codigo" type="text" size="10" maxlength="5" /></td>
+                                    <td><input name="codigo" type="text" size="10" maxlength="5" required/></td>
                                 </tr>
                                 <tr>
                                     <td><label>Descripción:</label></td>
-                                    <td><input name="descripcion" type="text" size="25" /></td>
+                                    <td><input name="descripcion" type="text" size="25" required/></td>
                                 </tr>
                                 <tr>
                                     <td colspan="2" align="right">
-                                        <input name="guardar" type="button" value="Guardar" />
-                                        <input name="cancelar" type="button" value="Cancelar" />
+                                        <input name="guardar" type="submit" value="Guardar" />
+                                        <input name="cancelar" type="submit" value="Cancelar" />
                                     </td>
                                 </tr>
                         </form>

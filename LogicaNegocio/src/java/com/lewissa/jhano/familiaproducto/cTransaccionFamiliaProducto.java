@@ -8,15 +8,16 @@ import com.lewissa.jhano.wscAccesoDatos.WsAccesoDatos_Service;
 
 /**
  *
- * @author Usuario
+ * @author Fredy Janeta
+ * @version 2.0 09-05-2014
  */
 public class cTransaccionFamiliaProducto {
     
     /**
      * Este metodo que permite Insertar un Objeto Familia de Producto
      * @param familiaProducto, Objeto que represnta a la tabla Familia Producto
-     * @return booResultado, Boolean que retorna la confimacion de la realizacion del metodocls
-     * 
+     * @return booResultado, Boolean que retorna la confimacion de la 
+     * realizacion del metodos
      */
     
     public Boolean insertarFamiliaProducto(cFamiliaProducto familiaProducto){
@@ -24,7 +25,7 @@ public class cTransaccionFamiliaProducto {
         String strQuery;
         com.lewissa.jhano.wscAccesoDatos.WsAccesoDatos_Service serviceAD = new WsAccesoDatos_Service();
         com.lewissa.jhano.wscAccesoDatos.WsAccesoDatos  serviceADPort = serviceAD.getWsAccesoDatosPort();
-        strQuery = "INSERT INTO familiaproducto VALUES ('" + familiaProducto.getIntId()+ "', '" + familiaProducto.getStrDescripcion()+ "')";
+        strQuery = "INSERT INTO familia VALUES ('" + familiaProducto.getStrId()+ "', '" + familiaProducto.getStrDescripcion()+ "')";
         booResultado= serviceADPort.actualizarDataBase(strQuery);
         return booResultado;
     

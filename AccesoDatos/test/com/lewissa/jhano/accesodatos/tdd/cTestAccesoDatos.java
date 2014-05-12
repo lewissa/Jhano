@@ -51,7 +51,7 @@ public class cTestAccesoDatos extends TestCase{
      */
     public void testActualizarDataBase()
     {
-        String strQuery = "INSERT INTO familia VALUES('LAPTOP')";
+        String strQuery = "INSERT INTO familia VALUES('fm583','LAPTOP')";
         Boolean booResultado = false;
         booResultado = cAccesoDatos.getInstanciaAccesoDatos().actualizarDataBase(strQuery);
         assertTrue(booResultado);
