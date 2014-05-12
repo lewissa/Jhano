@@ -17,9 +17,10 @@
     <body>
         <%
             //String strId, strNombFisc, strNombComer, strDireccion, strConvencional, strCeular, strCorreo;
+            try
+            {
             com.lewissa.jhano.proveedor.ws.CProveedor provProve=new com.lewissa.jhano.proveedor.ws.CProveedor();
             if (request.getParameter("submit")!= null) {
-                //out.print("he llegado");}
                 provProve.setId(request.getParameter("ciruc"));
                 provProve.setNombreFiscal(request.getParameter("nombrefiscal"));
                 provProve.setNombreComercial(request.getParameter("nombrecomer"));
@@ -27,31 +28,77 @@
                 provProve.setConvencional(request.getParameter("convencional"));
                 provProve.setCelular(request.getParameter("celular"));
                 provProve.setCorreo(request.getParameter("correo"));
-                //out.print(provProve.getId());
                 cCedula cedVal = new cCedula(provProve.getId());
                 cRuc rucVal = new cRuc(provProve.getId());
                 cCorreo corVal = new cCorreo(provProve.getCorreo());
                 if ((cedVal.validaCedula()) || (rucVal.validaRuc())) {
                     if (corVal.validaEmail()) {
+                        if(!provProve.getNombreFiscal().equals("")){
+                        request.getSession().setAttribute("sesprov", null);
                         com.lewissa.jhano.proveedor.ws.WsProveedor_Service service = new com.lewissa.jhano.proveedor.ws.WsProveedor_Service();
                         com.lewissa.jhano.proveedor.ws.WsProveedor port = service.getWsProveedorPort();
-                        port.insertaProveedor(provProve);
-                        request.getSession().setAttribute("sesprov", null);
-                        //response.sendRedirect("interfazIngresoProveedor.jsp");
+                        if(port.insertaProveedor(provProve))
+                        {
+                            %>
+                            <script language="javascript"> 
+                                allert("Proveedor Ingresado Correctamente");
+                                location.href ="../interfacesJhano/interfazIngresoProveedor.jsp";
+                            </script>
+                            <%
+                        }
+                        else
+                        {
+                             %>
+                            <script language="javascript"> 
+                                allert("ERROR desconocido ggg");
+                                location.href ="../interfacesJhano/interfazIngresoProveedor.jsp";
+                            </script>
+                            <%
+                        }
+                        }
+                        else
+                        {
+                            request.getSession().setAttribute("sesprov", provProve);
+                            //response.sendRedirect("../interfacesJhano/interfazIngresoProveedor.jsp");
+                            %>
+                            <script languaje="javascript">
+                                alert("Nombre Fiscal Obligatorio");
+                                location.href ="../interfacesJhano/interfazIngresoProveedor.jsp";
+                            </script>
+                            <%
+                            //out.println("Nombre Fiscal Obligatorio");
+                            
+                        }
                     } else {
-                        out.println("Correo Incorrecto");
                         request.getSession().setAttribute("sesprov", provProve);
-                        //response.sendRedirect("interfazIngresoProveedor.jsp");
+                            //response.sendRedirect("../interfacesJhano/interfazIngresoProveedor.jsp");
+                            %>
+                            <script languaje="javascript">
+                                alert("Correo Incorrecto");
+                                location.href ="../interfacesJhano/interfazIngresoProveedor.jsp";
+                            </script>
+                            <%
+                            //out.println("Correo Incorrecto");
+                            
                     }
                 } else {
-                    out.println("Cédula o RUC Incorrectos");
                     request.getSession().setAttribute("sesprov", provProve);
-                    //response.sendRedirect("interfazIngresoProveedor.jsp");
+                            //response.sendRedirect("../interfacesJhano/interfazIngresoProveedor.jsp");
+                            %>
+                            <script languaje="javascript">
+                                alert("Cedula o RUC incorrecto");
+                                location.href ="../interfacesJhano/interfazIngresoProveedor.jsp";
+                            </script>
+                            <%
+                            //out.println("Cedula o RUC incorrecto");
                 }
             }
             else
             {
                 out.print("no he llegado");
+            }
+            }catch (Exception e) {
+                out.print("ERROR: " + e.getMessage());
             }
         %>
     </body>

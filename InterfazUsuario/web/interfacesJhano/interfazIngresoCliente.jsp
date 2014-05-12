@@ -1,3 +1,5 @@
+<%@page import="com.google.common.util.concurrent.ExecutionError"%>
+<%@page import="javax.swing.JOptionPane"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -134,52 +136,179 @@
                 <td width="88%">
                     <font face="Arial">
                         <h3><center>Ingreso de Cliente</center></h3>
-                        <form id="form1" name="form1" method="post" action="">
-                            <table border="0" align="center">
-                                <tr>
-                                    <td><label>CI / RUC:</label></td>
-                                    <td><input name="ciruc" type="text" size="13" maxlength="13" /></td>
-                                </tr>
-                                <tr>
-                                    <td><label>Nombre Fiscal:</label></td>
-                                    <td><input name="nombrefiscal" type="text" size="25" /></td>
-                                </tr>
-                                <tr>
-                                    <td><label>Nombre Comercial:</label></td>
-                                    <td><input name="nombrecomer" type="text" size="25" /></td>
-                                </tr>
-                                <tr>
-                                    <td><label>Dirección:</label></td>
-                                    <td><input name="direccion" type="text" size="50" /></td>
-                                </tr>
-                                <tr>
-                                    <td><label>Teléfono Convencional:</label></td>
-                                    <td><input name="convencional" type="text" size="7" /></td>
-                                </tr>
-                                <tr>
-                                    <td><label>Celular:</label></td>
-                                    <td><input name="celular" type="text" size="10" /></td>
-                                </tr>
-                                <tr>
-                                    <td><label>Correo Electrónico:</label></td>
-                                    <td><input name="correo" type="text" size="50" /></td>
-                                </tr>
-                                <tr>
-                                    <td><label>Tipo de Cliente:</label></td>
-                                    <td>
-                                        <select name="tipocliente" size="1">
-                                            <option value="1">1</option>
-                                            <option value="2">2</option>
-                                            <option value="3">3</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2" align="right">
-                                        <input name="guardar" type="button" value="Guardar" />
-                                        <input name="cancelar" type="button" value="Cancelar" />
-                                    </td>
-                                </tr>
+                        <form id="formCli" name="formCliente" method="post" action="../controladoresJhano/controladorInterfazIngresoCliente.jsp">
+                            <%
+                                Boolean booResult = (Boolean) request.getSession().getAttribute("cliente");
+                                Boolean booCedula = (Boolean) request.getSession().getAttribute("cedula");
+                                Boolean booRuc = (Boolean) request.getSession().getAttribute("ruc");
+                                Boolean booCorreo = (Boolean) request.getSession().getAttribute("correo");
+                                String strNombreFiscalVacio = null;
+                                String strDireccionVacio = null;
+                                String strNombreComercialVacio = null;
+                                String strTelefonoVacio = null;
+                                String strCelularVacio = null;
+
+                                try {
+                                    strNombreFiscalVacio = (String) request.getSession().getAttribute("nombreFiscalVacio");
+                                } catch (Exception e) {
+                                    strNombreFiscalVacio = null;
+                                }
+                                try {
+                                    strDireccionVacio = (String) request.getSession().getAttribute("direccionVacio");
+                                } catch (Exception e) {
+                                    strDireccionVacio = null;
+                                }
+                                try {
+                                    strNombreComercialVacio = (String) request.getSession().getAttribute("nombreComercialVacio");
+                                } catch (Exception e) {
+                                    strNombreComercialVacio = null;
+                                }
+                                try {
+                                    strCelularVacio = (String) request.getSession().getAttribute("celularVacio");
+                                } catch (Exception e) {
+                                    strCelularVacio = null;
+                                }
+                                try {
+                                    strTelefonoVacio = (String) request.getSession().getAttribute("telefonoVacio");
+                                } catch (Exception e) {
+                                    strTelefonoVacio = null;
+                                }
+
+                                if (((booCedula != null) && (booRuc != null)) && (booCorreo != null)&&(booResult!=null)) {
+                                    if (((booCedula == true) || (booRuc == true)) && (booCorreo == true) && (booResult == true)) {
+                            %>
+                            <script type="text/javascript">alert("Se ha ingresado correctamente un nuevo cliente");</script>
+                            <%
+                                        strDireccionVacio = null;
+                                        strNombreFiscalVacio = null;
+                                        booCedula = null;
+                                        booCorreo = null;
+                                        strNombreComercialVacio = null;
+                                        booResult=null;
+                                    }
+                                }
+                                out.print("<table border=\"0\" align=\"center\">");
+                                out.print("<tr>");
+                                out.print("<td><label>CI / RUC:</label></td>");
+                                if ((booCedula != null) && (booRuc != null)) {
+                                    if ((booCedula == false) && (booRuc == false)) {
+                                        if (request.getSession().getAttribute("cedulaVacio").equals("0")) {
+                                            out.print("<td><input name=\"ciruc\" type=\"text\" size=\"13\" maxlength=\"13\"  /><label ><font color=\"red\">* Error--- Se requiere que el campo este lleno </font></label> </td>");
+                                        } else {
+                                            out.print("<td><input name=\"ciruc\" type=\"text\" size=\"13\" maxlength=\"13\" value=\"" + request.getSession().getAttribute("cedulaVacio") + "\" /><label ><font color=\"red\">* Error--- Dato mal ingresado</font></label> </td>");
+                                        }
+                                    } else {
+                                        if (((booCedula != null) && (booRuc != null)) && (booCorreo != null)) {
+                                            if (((booCedula == true) || (booRuc == true)) && (booCorreo == true) && (booResult == false)) {
+                                                out.print("<td><input name=\"ciruc\" type=\"text\" size=\"13\" maxlength=\"13\" value=\"" + request.getSession().getAttribute("cedulaVacio") + "\"/><font color=\"red\">* Error--- La cedula esta repetida</font></td>");
+                                            } else {
+                                                out.print("<td><input name=\"ciruc\" type=\"text\" size=\"13\" maxlength=\"13\" value=\"" + request.getSession().getAttribute("cedulaVacio") + "\"/></td>");
+                                            }
+                                        } else {
+                                            out.print("<td><input name=\"ciruc\" type=\"text\" size=\"13\" maxlength=\"13\" value=\"" + request.getSession().getAttribute("cedulaVacio") + "\"/></td>");
+                                        }
+                                    }
+                                } else {
+                                    out.print("<td><input name=\"ciruc\" type=\"text\" size=\"13\" maxlength=\"13\"/></td>");
+                                }
+                                out.print("</tr>");
+                                out.print("<tr>");
+                                out.print("<td><label>Nombre Fiscal:</label></td>");
+                                if (strNombreFiscalVacio != null) {
+                                    if (strNombreFiscalVacio.equals("0")) {
+                                        out.print("<td><input name=\"nombrefiscal\" type=\"text\" size=\"50\" maxlength=\"50\"  /><label ><font color=\"red\">* Error--- Se requiere que el campo este lleno </font></label> </td>");
+                                    } else {
+                                        out.print("<td><input name=\"nombrefiscal\" type=\"text\" size=\"50\" maxlength=\"50\" value=\"" + request.getSession().getAttribute("nombreFiscalVacio") + "\" /></td>");
+
+                                    }
+                                } else {
+                                    out.print("<td><input name=\"nombrefiscal\" type=\"text\" size=\"50\" maxlength=\"50\"  /></td>");
+                                }
+                                out.print("</tr>");
+                                out.print("<tr>");
+                                out.print("<td><label>Nombre Comercial:</label></td>");
+                                if (strNombreComercialVacio != null) {
+                                    if (request.getSession().getAttribute("nombreComercialVacio").equals("0")) {
+                                        out.print("<td><input name=\"nombrecomer\" type=\"text\" size=\"50\" maxlength=\"50\" /></td>");
+                                    } else {
+                                        out.print("<td><input name=\"nombrecomer\" type=\"text\" size=\"50\" maxlength=\"50\" value=\"" + request.getSession().getAttribute("nombreComercialVacio") + "\"/></td>");
+                                    }
+                                } else {
+                                    out.print("<td><input name=\"nombrecomer\" type=\"text\" size=\"50\" maxlength=\"50\" /></td>");
+                                }
+
+                                out.print("</tr>");
+                                out.print("<tr>");
+                                out.print("<td><label>Dirección:</label></td>");
+                                if (strDireccionVacio != null) {
+                                    if (strDireccionVacio.equals("0")) {
+                                        out.print("<td><input name=\"direccion\" type=\"text\" size=\"50\" maxlength=\"50\"/><label ><font color=\"red\">* Error--- Se requiere que el campo este lleno </font></label> </td>");
+                                    } else {
+                                        out.print("<td><input name=\"direccion\" type=\"text\" size=\"50\" maxlength=\"50\" value=\"" + request.getSession().getAttribute("direccionVacio") + "\" /></td>");
+                                    }
+                                } else {
+                                    out.print("<td><input name=\"direccion\" type=\"text\" size=\"50\" maxlength=\"50\"/></td>");
+                                }
+                                out.print("</tr>");
+                                out.print("<tr>");
+                                out.print("<td><label>Teléfono Convencional:</label></td>");
+                                if (strTelefonoVacio != null) {
+                                    if (request.getSession().getAttribute("telefonoVacio").equals("err0r")) {
+                                        out.print("<td><input name=\"convencional\" type=\"text\" size=\"7\" maxlength=\"7\" /><label ><font color=\"red\">* Error--- Dato mal ingresado</font></label></td>");
+                                    } else {
+                                        out.print("<td><input name=\"convencional\" type=\"text\" size=\"10\" maxlength=\"10\" /></td>");
+                                    }
+                                } else {
+                                    out.print("<td><input name=\"convencional\" type=\"text\" size=\"7\" maxlength=\"7\"/></td>");
+                                }
+                                out.print("</tr>");
+                                out.print("<tr>");
+                                out.print("<td><label>Celular:</label></td>");
+                                if (strCelularVacio != null) {
+                                    if (request.getSession().getAttribute("celularVacio").equals("err0r")) {
+                                        out.print("<td><input name=\"celular\" type=\"text\" size=\"10\" maxlength=\"10\" /><label ><font color=\"red\">* Error--- Dato mal ingresado</font></label></td>");
+                                    } else {
+                                        out.print("<td><input name=\"celular\" type=\"text\" size=\"10\" maxlength=\"10\" /></td>");
+                                    }
+                                } else {
+                                    out.print("<td><input name=\"celular\" type=\"text\" size=\"10\" maxlength=\"10\"/></td>");
+                                }
+                                out.print("</tr>");
+                                out.print("<tr>");
+                                out.print("<td><label>Correo Electrónico:</label></td>");
+                                if (booCorreo != null) {
+                                    if (booCorreo == false) {
+                                        if (request.getSession().getAttribute("correoVacio").equals("0")) {
+                                            out.print("<td><input name=\"correo\" type=\"text\" size=\"50\" maxlength=\"50\"  /><label ><font color=\"red\">* Error--- Se requiere que el campo este lleno </font></label> </td>");
+                                        } else {
+                                            out.print("<td><input name=\"correo\" type=\"text\" size=\"50\" maxlength=\"50\" value=\"" + request.getSession().getAttribute("correoVacio") + "\" /><label ><font color=\"red\">* Error--- Dato mal ingresado</font></label> </td>");
+                                        }
+                                    } else {
+                                        out.print("<td><input name=\"correo\" type=\"text\" size=\"50\" maxlength=\"50\" value=\"" + request.getSession().getAttribute("correoVacio") + "\"/> </td>");
+                                    }
+                                } else {
+                                    out.print("<td><input name=\"correo\" type=\"text\" size=\"50\" maxlength=\"50\" /> </td>");
+                                }
+
+                                out.print("</tr>");
+                                out.print("<tr>");
+                                out.print("<td><label>Tipo de Cliente:</label></td>");
+                                out.print("<td>");
+                                out.print("<select name=\"tipocliente\" size=\"1\">");
+                                out.print("<option value=\"1\">1</option>");
+                                out.print("<option value=\"2\">2</option>");
+                                out.print("<option value=\"3\">3</option>");
+                                out.print("</select>");
+                                out.print("</td>");
+                                out.print("</tr>");
+                                out.print("<tr>");
+                                out.print("<td colspan=\"2\" align=\"right\">");
+                                out.print("<input name=\"guardar\" type=\"submit\" value=\"Guardar\" />");
+                                out.print("<input name=\"cancelar\" type=\"button\" value=\"Cancelar\" />");
+                                out.print("</td>");
+                                out.print("</tr>");
+                            %>
+
                         </form>
                     </font>
                 </td>
