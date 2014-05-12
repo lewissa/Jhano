@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="2"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/home/eborja/NetBeansProjects/Jhano/InterfazUsuario/web/controladoresJhano/controladorInterfazIngresoCliente.jsp</file>
-            <file>file:/home/eborja/NetBeansProjects/Jhano/InterfazUsuario/web/interfacesJhano/interfazIngresoCliente.jsp</file>
-            <file>file:/home/eborja/NetBeansProjects/Jhano/InterfazUsuario/web/erroresJhano/errorConexionDataBase.jsp</file>
-            <file>file:/home/eborja/NetBeansProjects/Jhano/InterfazUsuario/src/java/control.jsp</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

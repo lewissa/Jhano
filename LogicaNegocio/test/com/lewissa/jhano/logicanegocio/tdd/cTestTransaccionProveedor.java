@@ -37,12 +37,13 @@ public class cTestTransaccionProveedor extends TestCase{
         datDatos.setCorreo("asdfg@kk.com");
         //flag = proProveedor.ingresarProveedor(datDatosProveedor);
         String strSqlIngreso;
-//        strSqlIngreso = "INSERT INTO proveedor VALUES ('"+datDatos.getId()+"', '"+datDatos.getNombreFiscal()+"'"
-//                + ", '"+datDatos.getNombreComercial()+"', '"+datDatos.getDireccion()+"', '"+datDatos.getConvencional()+"'"
-//                + ", '"+datDatos.getCelular()+"', '"+datDatos.getCorreo()+"')";
-//        //System.out.println(strSqlIngreso);
-//        String resA = "INSERT INTO proveedor VALUES ('pv020', 'Prueba', 'Comercial', 'Direccion', '2968473', '0987777283', 'asdfg@kk.com')";
-//        assertTrue(strSqlIngreso.equals(resA));//strSqlIngreso,         
+        
+        strSqlIngreso = "INSERT INTO proveedor VALUES ('"+datDatos.getId()+"', '"+datDatos.getNombreFiscal()+"'"
+                + ", '"+datDatos.getNombreComercial()+"', '"+datDatos.getDireccion()+"', '"+datDatos.getConvencional()+"'"
+                + ", '"+datDatos.getCelular()+"', '"+datDatos.getCorreo()+"')";
+        //System.out.println(strSqlIngreso);
+        String resA = "INSERT INTO proveedor VALUES ('pv020', 'Prueba', 'Comercial', 'Direccion', '2968473', '0987777283', 'asdfg@kk.com')";
+        assertTrue(strSqlIngreso.equals(resA));//strSqlIngreso,         
     }
     
     
