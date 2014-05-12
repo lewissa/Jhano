@@ -1,6 +1,6 @@
 <%-- 
-    Document   : errorConexionDataBase
-    Created on : 11/05/2014, 11:22:50 AM
+    Document   : control
+    Created on : 12/05/2014, 09:20:22 AM
     Author     : eborja
 --%>
 
@@ -9,9 +9,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Error</title>
+        <title>JSP Page</title>
     </head>
     <body>
-        <h1>Algo falló :(</h1>
+        <h1>Hello World!</h1>
     </body>
 </html>
