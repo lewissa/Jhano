@@ -24,32 +24,16 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _ActualizarDataBaseCliente_QNAME = new QName("http://ws.accesodatos.jhano.lewissa.com/", "actualizarDataBaseCliente");
     private final static QName _GetErrorConexion_QNAME = new QName("http://ws.accesodatos.jhano.lewissa.com/", "getErrorConexion");
-    private final static QName _ActualizarDataBase_QNAME = new QName("http://ws.accesodatos.jhano.lewissa.com/", "actualizarDataBase");
+    private final static QName _ActualizarDataBaseClienteResponse_QNAME = new QName("http://ws.accesodatos.jhano.lewissa.com/", "actualizarDataBaseClienteResponse");
     private final static QName _GetErrorConexionResponse_QNAME = new QName("http://ws.accesodatos.jhano.lewissa.com/", "getErrorConexionResponse");
-    private final static QName _ActualizarDataBaseResponse_QNAME = new QName("http://ws.accesodatos.jhano.lewissa.com/", "actualizarDataBaseResponse");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.lewissa.jhano.wscAccesoDatos
      * 
      */
     public ObjectFactory() {
-    }
-
-    /**
-     * Create an instance of {@link ActualizarDataBaseResponse }
-     * 
-     */
-    public ActualizarDataBaseResponse createActualizarDataBaseResponse() {
-        return new ActualizarDataBaseResponse();
-    }
-
-    /**
-     * Create an instance of {@link ActualizarDataBase }
-     * 
-     */
-    public ActualizarDataBase createActualizarDataBase() {
-        return new ActualizarDataBase();
     }
 
     /**
@@ -61,6 +45,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link ActualizarDataBaseClienteResponse }
+     * 
+     */
+    public ActualizarDataBaseClienteResponse createActualizarDataBaseClienteResponse() {
+        return new ActualizarDataBaseClienteResponse();
+    }
+
+    /**
      * Create an instance of {@link GetErrorConexion }
      * 
      */
@@ -69,27 +61,20 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link StackTraceElement }
+     * Create an instance of {@link ActualizarDataBaseCliente }
      * 
      */
-    public StackTraceElement createStackTraceElement() {
-        return new StackTraceElement();
+    public ActualizarDataBaseCliente createActualizarDataBaseCliente() {
+        return new ActualizarDataBaseCliente();
     }
 
     /**
-     * Create an instance of {@link Throwable }
+     * Create an instance of {@link JAXBElement }{@code <}{@link ActualizarDataBaseCliente }{@code >}}
      * 
      */
-    public Throwable createThrowable() {
-        return new Throwable();
-    }
-
-    /**
-     * Create an instance of {@link Exception }
-     * 
-     */
-    public Exception createException() {
-        return new Exception();
+    @XmlElementDecl(namespace = "http://ws.accesodatos.jhano.lewissa.com/", name = "actualizarDataBaseCliente")
+    public JAXBElement<ActualizarDataBaseCliente> createActualizarDataBaseCliente(ActualizarDataBaseCliente value) {
+        return new JAXBElement<ActualizarDataBaseCliente>(_ActualizarDataBaseCliente_QNAME, ActualizarDataBaseCliente.class, null, value);
     }
 
     /**
@@ -102,12 +87,12 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ActualizarDataBase }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ActualizarDataBaseClienteResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ws.accesodatos.jhano.lewissa.com/", name = "actualizarDataBase")
-    public JAXBElement<ActualizarDataBase> createActualizarDataBase(ActualizarDataBase value) {
-        return new JAXBElement<ActualizarDataBase>(_ActualizarDataBase_QNAME, ActualizarDataBase.class, null, value);
+    @XmlElementDecl(namespace = "http://ws.accesodatos.jhano.lewissa.com/", name = "actualizarDataBaseClienteResponse")
+    public JAXBElement<ActualizarDataBaseClienteResponse> createActualizarDataBaseClienteResponse(ActualizarDataBaseClienteResponse value) {
+        return new JAXBElement<ActualizarDataBaseClienteResponse>(_ActualizarDataBaseClienteResponse_QNAME, ActualizarDataBaseClienteResponse.class, null, value);
     }
 
     /**
@@ -117,15 +102,6 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://ws.accesodatos.jhano.lewissa.com/", name = "getErrorConexionResponse")
     public JAXBElement<GetErrorConexionResponse> createGetErrorConexionResponse(GetErrorConexionResponse value) {
         return new JAXBElement<GetErrorConexionResponse>(_GetErrorConexionResponse_QNAME, GetErrorConexionResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link ActualizarDataBaseResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://ws.accesodatos.jhano.lewissa.com/", name = "actualizarDataBaseResponse")
-    public JAXBElement<ActualizarDataBaseResponse> createActualizarDataBaseResponse(ActualizarDataBaseResponse value) {
-        return new JAXBElement<ActualizarDataBaseResponse>(_ActualizarDataBaseResponse_QNAME, ActualizarDataBaseResponse.class, null, value);
     }
 
 }

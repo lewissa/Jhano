@@ -1,6 +1,7 @@
 
 package com.lewissa.jhano.wscAccesoDatos;
 
+import java.util.List;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebResult;
@@ -27,28 +28,28 @@ public interface WsAccesoDatos {
     /**
      * 
      * @return
-     *     returns com.lewissa.jhano.wscAccesoDatos.Exception
+     *     returns java.lang.String
      */
     @WebMethod
     @WebResult(targetNamespace = "")
     @RequestWrapper(localName = "getErrorConexion", targetNamespace = "http://ws.accesodatos.jhano.lewissa.com/", className = "com.lewissa.jhano.wscAccesoDatos.GetErrorConexion")
     @ResponseWrapper(localName = "getErrorConexionResponse", targetNamespace = "http://ws.accesodatos.jhano.lewissa.com/", className = "com.lewissa.jhano.wscAccesoDatos.GetErrorConexionResponse")
     @Action(input = "http://ws.accesodatos.jhano.lewissa.com/wsAccesoDatos/getErrorConexionRequest", output = "http://ws.accesodatos.jhano.lewissa.com/wsAccesoDatos/getErrorConexionResponse")
-    public Exception getErrorConexion();
+    public String getErrorConexion();
 
     /**
      * 
-     * @param strSql
+     * @param strCli
      * @return
      *     returns java.lang.Boolean
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "actualizarDataBase", targetNamespace = "http://ws.accesodatos.jhano.lewissa.com/", className = "com.lewissa.jhano.wscAccesoDatos.ActualizarDataBase")
-    @ResponseWrapper(localName = "actualizarDataBaseResponse", targetNamespace = "http://ws.accesodatos.jhano.lewissa.com/", className = "com.lewissa.jhano.wscAccesoDatos.ActualizarDataBaseResponse")
-    @Action(input = "http://ws.accesodatos.jhano.lewissa.com/wsAccesoDatos/actualizarDataBaseRequest", output = "http://ws.accesodatos.jhano.lewissa.com/wsAccesoDatos/actualizarDataBaseResponse")
-    public Boolean actualizarDataBase(
-        @WebParam(name = "strSql", targetNamespace = "")
-        String strSql);
+    @RequestWrapper(localName = "actualizarDataBaseCliente", targetNamespace = "http://ws.accesodatos.jhano.lewissa.com/", className = "com.lewissa.jhano.wscAccesoDatos.ActualizarDataBaseCliente")
+    @ResponseWrapper(localName = "actualizarDataBaseClienteResponse", targetNamespace = "http://ws.accesodatos.jhano.lewissa.com/", className = "com.lewissa.jhano.wscAccesoDatos.ActualizarDataBaseClienteResponse")
+    @Action(input = "http://ws.accesodatos.jhano.lewissa.com/wsAccesoDatos/actualizarDataBaseClienteRequest", output = "http://ws.accesodatos.jhano.lewissa.com/wsAccesoDatos/actualizarDataBaseClienteResponse")
+    public Boolean actualizarDataBaseCliente(
+        @WebParam(name = "strCli", targetNamespace = "")
+        List<String> strCli);
 
 }

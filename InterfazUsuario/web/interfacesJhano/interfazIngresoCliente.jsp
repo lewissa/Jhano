@@ -295,9 +295,9 @@
                                 out.print("<td><label>Tipo de Cliente:</label></td>");
                                 out.print("<td>");
                                 out.print("<select name=\"tipocliente\" size=\"1\">");
-                                out.print("<option value=\"1\">1</option>");
-                                out.print("<option value=\"2\">2</option>");
-                                out.print("<option value=\"3\">3</option>");
+                                out.print("<option value=\"1\">Frecuente</option>");
+                                out.print("<option value=\"2\">Ocacional</option>");
+                                out.print("<option value=\"3\">Institución</option>");
                                 out.print("</select>");
                                 out.print("</td>");
                                 out.print("</tr>");

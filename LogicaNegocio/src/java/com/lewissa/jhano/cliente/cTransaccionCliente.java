@@ -4,6 +4,8 @@ import com.lewissa.jhano.utilidades.cCedula;
 import com.lewissa.jhano.utilidades.cCorreo;
 import com.lewissa.jhano.utilidades.cRuc;
 import com.lewissa.jhano.wscAccesoDatos.WsAccesoDatos_Service;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Clase Transacción de Clientes
@@ -30,14 +32,21 @@ public class cTransaccionCliente {
         cCedula cedCedula = new cCedula(datDatos.getStrIdCliente());
         cRuc rucRuc = new cRuc(datDatos.getStrIdCliente());
         cCorreo corCorreo = new cCorreo(datDatos.getStrCorreo());
+        List<String> strCliente = new ArrayList<String>();
         if ((cedCedula.validaCedula() || rucRuc.validaRuc()) && corCorreo.validaEmail()) {
-            strSqlIngreso = "INSERT INTO cliente VALUES ('" + datDatos.getStrIdCliente() + "', '" + datDatos.getStrNombreFiscal() + "'"
-                    + ", '" + datDatos.getStrNombreComercial() + "', '" + datDatos.getStrDireccion() + "', '" + datDatos.getStrConvencional() + "'"
-                    + ", '" + datDatos.getStrCelular() + "', '" + datDatos.getStrCorreo() + "', '" + datDatos.getStrTipoCliente() + "')";
-            booFlag = flag.actualizarDataBase(strSqlIngreso);
+            strCliente.add(0, datDatos.getStrIdCliente());
+            strCliente.add(1, datDatos.getStrNombreFiscal());
+            strCliente.add(2, datDatos.getStrNombreComercial());
+            strCliente.add(3, datDatos.getStrDireccion());
+            strCliente.add(4, datDatos.getStrConvencional());
+            strCliente.add(5, datDatos.getStrCelular());
+            strCliente.add(6, datDatos.getStrCorreo());
+            strCliente.add(7, datDatos.getStrTipoCliente());
+            booFlag = flag.actualizarDataBaseCliente(strCliente);
         }
-        if(booFlag==null)
-            booFlag=false;
+        if (booFlag == null) {
+            booFlag = false;
+        }
         return booFlag;
     }
 

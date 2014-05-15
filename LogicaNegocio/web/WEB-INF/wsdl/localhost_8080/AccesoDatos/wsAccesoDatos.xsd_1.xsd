@@ -1,12 +1,24 @@
 <?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.3 (tags/2.3-7528; 2013-04-29T19:34:10+0000) JAXWS-RI/2.2.8 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://ws.accesodatos.jhano.lewissa.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://ws.accesodatos.jhano.lewissa.com/">
 
-<xs:element name="actualizarDataBase" type="tns:actualizarDataBase"/>
+<xs:element name="actualizarDataBaseCliente" type="tns:actualizarDataBaseCliente"/>
 
-<xs:element name="actualizarDataBaseResponse" type="tns:actualizarDataBaseResponse"/>
+<xs:element name="actualizarDataBaseClienteResponse" type="tns:actualizarDataBaseClienteResponse"/>
 
 <xs:element name="getErrorConexion" type="tns:getErrorConexion"/>
 
 <xs:element name="getErrorConexionResponse" type="tns:getErrorConexionResponse"/>
+
+<xs:complexType name="actualizarDataBaseCliente">
+<xs:sequence>
+<xs:element name="strCli" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizarDataBaseClienteResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
 
 <xs:complexType name="getErrorConexion">
 <xs:sequence/>
@@ -14,37 +26,7 @@
 
 <xs:complexType name="getErrorConexionResponse">
 <xs:sequence>
-<xs:element name="return" type="tns:exception" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="exception">
-<xs:complexContent>
-<xs:extension base="tns:throwable">
-<xs:sequence/>
-</xs:extension>
-</xs:complexContent>
-</xs:complexType>
-
-<xs:complexType name="throwable">
-<xs:sequence>
-<xs:element name="stackTrace" type="tns:stackTraceElement" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="stackTraceElement" final="extension restriction">
-<xs:sequence/>
-</xs:complexType>
-
-<xs:complexType name="actualizarDataBase">
-<xs:sequence>
-<xs:element name="strSql" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="actualizarDataBaseResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 </xs:schema>

@@ -148,8 +148,12 @@ public class cAccesoDatos implements Serializable {
     /**
      * @return the excErrorAcessoDatos
      */
-    public Exception getExcErrorAcessoDatos() {
-        return excErrorAcessoDatos;
+    public String getExcErrorAcessoDatos() {
+        String strError = null;
+        if (excErrorAcessoDatos != null) {
+            strError = excErrorAcessoDatos.toString();
+        }
+        return strError;
     }
 
 }

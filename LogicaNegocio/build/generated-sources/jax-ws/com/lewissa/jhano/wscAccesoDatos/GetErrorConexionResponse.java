@@ -17,7 +17,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="return" type="{http://ws.accesodatos.jhano.lewissa.com/}exception" minOccurs="0"/>
+ *         &lt;element name="return" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -33,17 +33,17 @@ import javax.xml.bind.annotation.XmlType;
 public class GetErrorConexionResponse {
 
     @XmlElement(name = "return")
-    protected Exception _return;
+    protected String _return;
 
     /**
      * Obtiene el valor de la propiedad return.
      * 
      * @return
      *     possible object is
-     *     {@link Exception }
+     *     {@link String }
      *     
      */
-    public Exception getReturn() {
+    public String getReturn() {
         return _return;
     }
 
@@ -52,10 +52,10 @@ public class GetErrorConexionResponse {
      * 
      * @param value
      *     allowed object is
-     *     {@link Exception }
+     *     {@link String }
      *     
      */
-    public void setReturn(Exception value) {
+    public void setReturn(String value) {
         this._return = value;
     }
 
