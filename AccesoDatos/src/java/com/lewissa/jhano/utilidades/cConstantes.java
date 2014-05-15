@@ -14,7 +14,11 @@ public class cConstantes {
     public static final String URL="jdbc:postgresql://10.0.1.1:5432/bd_Jhano";
     public static final String DRIVER="org.postgresql.Driver";
 <<<<<<< HEAD
+<<<<<<< HEAD
     public static final String USER="dba_Jhano";
+=======
+    public static final String USER="dba_Computech";
+>>>>>>> bde519250b0953b8b285c6f9ba8890a65f00e461
 =======
     public static final String USER="dba_Computech";
 >>>>>>> bde519250b0953b8b285c6f9ba8890a65f00e461

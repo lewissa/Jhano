@@ -10,6 +10,7 @@
                 JAX-WS WSGEN SECTION
                 ===================
 <<<<<<< HEAD
+<<<<<<< HEAD
             -->
     <target name="wsgen-init" depends="init, -do-compile">
         <mkdir dir="${build.generated.sources.dir}/jax-ws/resources/"/>
@@ -45,6 +46,8 @@
         </wsgen>
     </target>
 =======
+=======
+>>>>>>> bde519250b0953b8b285c6f9ba8890a65f00e461
             -->
     <target name="wsgen-init" depends="init, -do-compile">
         <mkdir dir="${build.generated.sources.dir}/jax-ws/resources/"/>
@@ -79,6 +82,9 @@
             <classpath path="${java.home}/../lib/tools.jar:${build.classes.dir}:${j2ee.platform.wsgen.classpath}:${javac.classpath}"/>
         </wsgen>
     </target>
+<<<<<<< HEAD
+>>>>>>> bde519250b0953b8b285c6f9ba8890a65f00e461
+=======
 >>>>>>> bde519250b0953b8b285c6f9ba8890a65f00e461
     <!--
                 ===================

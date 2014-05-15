@@ -2,12 +2,15 @@
 <jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
   <services>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <service name="wsProveedor">
       <implementation-class>com.lewissa.jhano.proveedor.ws.wsProveedor</implementation-class>
     </service>
     <service name="wsLogicaNegocioCliente">
       <implementation-class>com.lewissa.jhano.cliente.wsLogicaNegocioCliente</implementation-class>
     </service>
+=======
+>>>>>>> bde519250b0953b8b285c6f9ba8890a65f00e461
     <service name="wsLogicaNegocioFamiliaProdcuto">
       <implementation-class>com.lewissa.jhano.familiaproducto.wsLogicaNegocioFamiliaProdcuto</implementation-class>
     </service>
@@ -21,6 +24,9 @@
     <service name="wsLogicaNegocioCliente">
       <implementation-class>com.lewissa.jhano.cliente.wsLogicaNegocioCliente</implementation-class>
     </service>
+<<<<<<< HEAD
+>>>>>>> bde519250b0953b8b285c6f9ba8890a65f00e461
+=======
 >>>>>>> bde519250b0953b8b285c6f9ba8890a65f00e461
   </services>
   <clients>
