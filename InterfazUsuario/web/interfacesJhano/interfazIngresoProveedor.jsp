@@ -1,12 +1,30 @@
+<%@page import="javax.swing.JOptionPane"%>
+<%@page import="com.lewissa.jhano.utilidades.cCorreo"%>
+<%@page import="com.lewissa.jhano.utilidades.cRuc"%>
+<%@page import="com.lewissa.jhano.utilidades.cCedula"%>
 <%@page import="com.sun.xml.rpc.processor.modeler.j2ee.xml.string"%>
 <%
-    /*string strCorreo =null;
-    com.lewissa.jhano.proveedor.cProveedor oPro =new com.lewissa.jhano.proveedor.cProveedor();
-    if(request.getParameter("submit")!=null)
-    {
-        strCorreo=request.getParameter("correo");
-    }*/
-    %>
+    String strId, strNombFisc, strNombComer, strDireccion, strConvencional, strCeular, strCorreo;
+    com.lewissa.jhano.proveedor.ws.CProveedor provProve
+            = (com.lewissa.jhano.proveedor.ws.CProveedor) request.getSession().getAttribute("sesprov");
+    if (request.getSession().getAttribute("sesprov") != null) {
+        strId = provProve.getId();
+        strNombFisc = provProve.getNombreFiscal();
+        strNombComer = provProve.getNombreComercial();
+        strDireccion = provProve.getDireccion();
+        strConvencional = provProve.getConvencional();
+        strCeular = provProve.getCelular();
+        strCorreo = provProve.getCorreo();
+    } else {
+        strId = "";
+        strNombFisc = "";
+        strNombComer = "";
+        strDireccion = "";
+        strConvencional = "";
+        strCeular = "";
+        strCorreo = "";
+    }
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -18,7 +36,7 @@
     </head>
 
     <body>
-        <table bgcolor="#192B75" width="100%" height="50%" border="1">
+        <table bgcolor='#192B75' width="100%" height="50%" border="1">
             <tr>
                 <td>
                     <img src="Image/computech.jpg" alt="espoch" />
@@ -35,7 +53,7 @@
                         </h3>
                     </center></td>
                 <td align="center" rowspan="2">
-                    <table border="1" width="90%" height="90%">
+                    <table border='1' width="90%" height="90%">
                         <tr>
                             <td width="50%" height="10%">
                                 <center>
@@ -113,7 +131,6 @@
                             </li>
                         </ul>
                     </div>
-                </td>
             </tr>
         </table>
 
@@ -142,53 +159,58 @@
                     </table>
                 </td>
                 <td width="88%">
-                    <font face="Arial">
+                    <font face='Arial'>
                         <h3><center>Ingreso de Proveedor</center></h3>
-                        <form id="form1" name="form1" method="POST" action="ingresarproveedor.jsp">
+                        <form name="form1" action="../controladoresJhano/controladorIngresoProveedor.jsp" method="POST">
                             <table border="0" align="center">
                                 <tr>
                                     <td><label>CI / RUC:</label></td>
-                                    <td><input name="ciruc" type="text" size="13" maxlength="13" /></td>
+                                    <td><input name="ciruc" type="text" size="13" maxlength="13" value="<%out.print(strId);%>"/></td>
                                 </tr>
                                 <tr>
                                     <td><label>Nombre Fiscal:</label></td>
-                                    <td><input name="nombrefiscal" type="text" size="25" /></td>
+                                    <td><input name="nombrefiscal" type="text" size="25" value="<%
+                                        out.print(strNombFisc);
+                                               %>"/></td>
                                 </tr>
                                 <tr>
                                     <td><label>Nombre Comercial:</label></td>
-                                    <td><input name="nombrecomer" type="text" size="25" /></td>
+                                    <td><input name="nombrecomer" type="text" size="25" value="<%
+                                        out.print(strNombComer);
+                                               %>"/></td>
                                 </tr>
                                 <tr>
                                     <td><label>Dirección:</label></td>
-                                    <td><input name="direccion" type="text" size="50" /></td>
+                                    <td><input name="direccion" type="text" size="50" value="<%
+                                        out.print(strDireccion);
+                                               %>"/></td>
                                 </tr>
                                 <tr>
                                     <td><label>Teléfono Convencional:</label></td>
-                                    <td><input name="convencional" type="text" size="7" maxlength="7"/></td>
+                                    <td><input name="convencional" type="text" size="7" maxlength="7" value="<%
+                                        out.print(strConvencional);
+                                               %>"/></td>
                                 </tr>
                                 <tr>
                                     <td><label>Celular:</label></td>
-                                    <td><input name="celular" type="text" size="10" maxlength="10"/></td>
+                                    <td><input name="celular" type="text" size="10" maxlength="10" value="<%
+                                        out.print(strCeular);
+                                               %>"/></td>
                                 </tr>
                                 <tr>
                                     <td><label>Correo Electrónico:</label></td>
-                                    <td><input name="correo" type="text" size="50" /></td>
+                                    <td><input name="correo" type="text" size="50" value="<%
+                                        out.print(strCorreo);
+                                               %>"/></td>
                                 </tr>
                                 <tr>
                                     <td colspan="2" align="right">
-                                        <input name="guardar" type="submit" value="Guardar"  />
+                                        <input name="submit" type="submit" value="Guardar"  />
                                         <input name="cancelar" type="button" value="Cancelar" />
                                     </td>
                                 </tr>
-                        </form>
-                        <%
-                            if(request.getParameter("submit")!=null) //enves de submit , nombre del boton guardar
-                            {
                                 
-                            }
-                            
-                            
-                        %>
+                        </form>
                     </font>
                 </td>
             </tr>

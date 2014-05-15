@@ -6,9 +6,8 @@ package com.lewissa.jhano.proveedor;
 /**
  *
  * Clase cProveedor
- *
  * @author Miguel Mejía, Juan Moyano
- * @version 1.0 06/05/2014
+ * @version 1.0 06/05/2014 
  */
 public class cProveedor {
 

@@ -11,6 +11,7 @@ import junit.framework.TestCase;
 import junit.framework.TestSuite;
 import com.lewissa.jhano.familiaproducto.cTransaccionFamiliaProducto;
 import com.lewissa.jhano.familiaproducto.cFamiliaProducto;
+import com.lewissa.jhano.logicanegocio.tdd.cTestTransaccionCliente;
 
 /**
  *
@@ -20,9 +21,8 @@ public class cTestTransaccionFamiliaProducto extends TestCase {
 
     public void testInsertarFmiliaProducto() {
         cTransaccionFamiliaProducto oTFC = new cTransaccionFamiliaProducto();
-        Boolean booResultado=false;
         cFamiliaProducto oFamiliaProducto = new cFamiliaProducto();
-        oFamiliaProducto.setIntId(5187);
+        oFamiliaProducto.setStrId("fm333");
         oFamiliaProducto.setStrDescripcion("LAPTOP");
         assertTrue(oTFC.insertarFamiliaProducto(oFamiliaProducto));
         
