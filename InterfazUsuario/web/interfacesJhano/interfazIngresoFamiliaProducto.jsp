@@ -111,18 +111,9 @@
             <tr>
                 <td width="12%">
                     <table border="1" align="left">
-                        <tr>
+                         <tr>
                             <td>
-                                <a href="">
-                                    <font face="Arial">
-                                        Ingreso
-                                    </font>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a href="">
+                                <a href="../interfacesJhano/interfazConsultaFamiliaProducto.jsp">
                                     <font face="Arial">
                                         Consulta
                                     </font>
@@ -135,21 +126,78 @@
                     <font face="Arial">
                         <h3><center>Ingreso de Familia de Productos</center></h3>
                         <form id="frmIngresoFamiliaProducto" name="form1" method="post" action="../controladoresJhano/controladorInterfazIngresoFamiliaProducto.jsp" onsubmit="return validar_datos(this)">
-                            <table border="0" align="center">
-                                <tr>
-                                    <td><label>Código:</label></td>
-                                    <td><input name="codigo" type="text" size="10" maxlength="5" required/></td>
-                                </tr>
-                                <tr>
-                                    <td><label>Descripción:</label></td>
-                                    <td><input name="descripcion" type="text" size="25" required/></td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2" align="right">
-                                        <input name="guardar" type="submit" value="Guardar" />
-                                        <input name="cancelar" type="submit" value="Cancelar" />
-                                    </td>
-                                </tr>
+                            <%
+                                Boolean booResul = (Boolean) request.getSession().getAttribute("familia");
+                                Boolean booCodigo = (Boolean) request.getSession().getAttribute("codigo");
+                                Boolean booDescripcion = (Boolean) request.getSession().getAttribute("descripcion");
+                                String strDescripcionVacio = null;
+                                String strCodigoVacio = null;
+                                try {
+                                    strDescripcionVacio = (String) request.getSession().getAttribute("descripcionVacio");
+                                } catch (Exception e) {
+                                    strDescripcionVacio = null;
+                                }
+                                try {
+                                    strCodigoVacio = (String) request.getSession().getAttribute("codigoVacio");
+                                } catch (Exception e) {
+                                    strCodigoVacio = null;
+                                }
+                                
+                                if ((booCodigo != null) && (booResul != null)) {
+                                    if ((booCodigo == true) && (booResul == true)) {
+                                        
+                                        String strConfirmacion = "Guardado Exitoso";
+                                        response.sendRedirect("../interfacesJhano/interfazConsultaFamiliaProducto.jsp");
+                                        strDescripcionVacio = null;
+                                        strCodigoVacio = null;
+                                        booCodigo = null;
+                                        booResul = null;
+                                    }
+                                }
+                                
+                                out.print("<table border=\"0\"  align=\"center\">");
+                                out.print("<tr>");
+                                out.print("<td><label> Codigo: </label></td>");
+                                if (booCodigo != null) {
+                                    if (booCodigo == false) {
+                                        if (strCodigoVacio.equals("0")) {
+                                            out.print("<td><input name=\"codigo\" type=\"text\" size=\"5\" maxlength=\"5\" placeholder=\"fm###\" /><label><font color=\"red\">Se requiere que el campo este lleno </font></label> </td>");
+                                        } else {
+                                            out.print("<td><input name=\"codigo\" type=\"text\" size=\"5\" maxlength=\"5\" value=\"" + request.getSession().getAttribute("codigoVacio") + "\" /><label ><font color=\"red\">Dato mal ingresado</font></label> </td>");
+                                        }
+                                    } else {
+                                        out.print("<td><input name=\"codigo\" type=\"text\" size=\"5\" maxlength=\"5\" value=\"" + request.getSession().getAttribute("codigoVacio") + "\"/> </td>");
+                                    }
+                                } else {
+                                    out.print("<td><input name=\"codigo\" type=\"text\" size=\"5\" maxlength=\"5\" placeholder=\"fm###\"/></td>");
+                                }
+                                
+                                out.print("</tr>");
+                                out.print("<tr>");
+                                out.print("<td><label>Descripcion:</label></td>");
+                                if (strDescripcionVacio != null) {
+                                    if (strDescripcionVacio.equals("0")) {
+                                        out.print("<td><input name=\"descripcion\" type=\"text\" size=\"50\" maxlength=\"50\" /><label ><font color=\"red\">Se requiere que el campo este lleno </font></label> </td>");
+                                    } else {
+                                        out.print("<td><input name=\"descripcion\" type=\"text\" size=\"50\" maxlength=\"50\" value=\"" + request.getSession().getAttribute("descripcionVacio") + "\" /></td>");
+                                        
+                                    }
+                                } else {
+                                    out.print("<td><input name=\"descripcion\" type=\"text\" size=\"50\" maxlength=\"50\"  /></td>");
+                                }
+                                out.print("</td>");
+                                out.print("</tr>");
+                                out.print("<tr>");
+                                out.print("<td colspan=\"2\" align=\"center\">");
+                                out.print("<input name=\"guardar\" type=\"submit\" value=\"Guardar\" />");
+                                out.print("<input name=\"cancelar\" type=\"button\" value=\"Cancelar\" />");
+                                out.print("</td>");
+                                out.print("<td>");
+                                out.print("</td>");
+                                out.print("</tr>");
+                                out.print("</table>");
+
+                            %>
                         </form>
                     </font>
                 </td>

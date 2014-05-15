@@ -1,6 +1,6 @@
 <%-- 
-    Document   : index
-    Created on : 07/05/2014, 11:49:48 AM
+    Document   : interfazConsultaFamiliaProducto
+    Created on : 15-may-2014, 9:56:30
     Author     : Usuario
 --%>
 
@@ -9,7 +9,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>Jhano | Plantilla </title>
+        <title>Jhano | Consulta de Familia de Proveedores </title>
         <script src="SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
         <link href="SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
     </head>
@@ -120,27 +120,18 @@
                         <table border="1" align="left">
                             <tr>
                                 <td>
-                                    <a href="">
-                                        <font face="Arial">
-                                            Ingreso
-                                        </font>
+                                    <font face="Arial">
+                                    <a href="../interfacesJhano/interfazIngresoFamiliaProducto.jsp">
+                                       Ingreso
                                     </a>
+                                        </font>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>
-                                    <a href="">
-                                        <font face="Arial">
-                                            Consulta
-                                        </font>
-                                    </a>
-                                </td>
-                            </tr>
-                        </table>
+                         </table>
                     </td>
                     <td width="88%">
                         <font face="Arial">
-                        <h3><center>AREA DE TRABAJO</center></h3>
+                        <h3><center>Familia de Productos</center></h3>
                         <form id="form1" name="form1" method="post" action="">
 
                         </form>

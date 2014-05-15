@@ -5,11 +5,10 @@
 --%>
 
 
+<%@page import="com.lewissa.jhano.familiaproducto.CCodigoFamiliaProducto"%>
+<%@page import="com.lewissa.jhano.familiaproducto.CFamiliaProducto"%>
+<%@page import="com.lewissa.jhano.familiaproducto.GetErrorConexionFamiliaProducto" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="com.lewissa.jhano.familiaproducto.CFamiliaProducto" %>
-<%@page import="com.lewissa.jhano.familiaproducto.WsLogicaNegocioFamiliaProdcuto_Service" %>
-<%@page import="com.lewissa.jhano.familiaproducto.WsLogicaNegocioFamiliaProdcuto" %>
-<%@page import="com.lewissa.jhano.familiaproducto.InsertarFamiliaProducto" %>
 
 <!DOCTYPE html>
 <html>
@@ -17,28 +16,38 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body>
-              <%-- start web service invocation --%><hr/>
-    <%
-    try {
-	com.lewissa.jhano.familiaproducto.WsLogicaNegocioFamiliaProdcuto_Service service = new com.lewissa.jhano.familiaproducto.WsLogicaNegocioFamiliaProdcuto_Service();
-	com.lewissa.jhano.familiaproducto.WsLogicaNegocioFamiliaProdcuto port = service.getWsLogicaNegocioFamiliaProdcutoPort();
-	 // TODO initialize WS operation arguments here
-	com.lewissa.jhano.familiaproducto.CFamiliaProducto oFamiliaProducto = new CFamiliaProducto();
-	// TODO process result here
-        String strId=request.getParameter("codigo");
-        String strDes=request.getParameter("descripcion");
-        oFamiliaProducto.setStrId(strId);
-        oFamiliaProducto.setStrDescripcion(strDes);
-	java.lang.Boolean result = port.insertarFamiliaProducto(oFamiliaProducto);
-        if(result)
-            response.sendRedirect("../controladoresJhano/controladorInterfazIngresoFamiliaProducto.jsp");
-	
-    } catch (Exception ex) {
-	
-    }
-    %>
-    <%-- end web service invocation --%><hr/>
+        <%
+            try {
+                String strCodigo = (request.getParameter("codigo").equals("")) ? "0" : request.getParameter("codigo");
+                String strDescripcion = (request.getParameter("descripcion").equals("")) ? "0" : request.getParameter("descripcion");
+                com.lewissa.jhano.familiaproducto.WsLogicaNegocioFamiliaProdcuto_Service service = new com.lewissa.jhano.familiaproducto.WsLogicaNegocioFamiliaProdcuto_Service();
+                com.lewissa.jhano.familiaproducto.WsLogicaNegocioFamiliaProdcuto port = service.getWsLogicaNegocioFamiliaProdcutoPort();
+                CFamiliaProducto oFamiliaProdcuto = new CFamiliaProducto();
+                CCodigoFamiliaProducto oCodigoFamilia = new CCodigoFamiliaProducto();
+                oCodigoFamilia.setStrCodigo(strCodigo);
+                java.lang.Boolean booCodigo = port.validarCodigo(oCodigoFamilia);
+                oFamiliaProdcuto.setStrId(strCodigo);
+                oFamiliaProdcuto.setStrDescripcion(strDescripcion);
+                java.lang.Boolean booresult = port.insertarFamiliaProducto(oFamiliaProdcuto);
+                
+                request.getSession().setAttribute("familia", booresult);
+                request.getSession().setAttribute("codigo", booCodigo);
+                request.getSession().setAttribute("codigoVacio", strCodigo);
+                request.getSession().setAttribute("descripcionVacio", strDescripcion);
+                
+                
+                    response.sendRedirect("../interfacesJhano/interfazIngresoFamiliaProducto.jsp");
+                
+            if (port.getErrorConexionFamiliaProducto() != null) {
+                    com.lewissa.jhano.accesodatos.ws.Exception resultError = port.getErrorConexionFamiliaProducto();
+                    response.sendRedirect("../erroresJhano/errorConexionDataBase.jsp?"+resultError);
+                } else {
+                    response.sendRedirect("../interfacesJhano/interfazIngresoCliente.jsp");
+                }
 
-
+            } catch (Exception e) {
+                out.print("ERROR: " + e.getMessage());
+            }
+        %>
     </body>
 </html>

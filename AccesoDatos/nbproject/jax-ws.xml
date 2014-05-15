@@ -5,5 +5,6 @@
       <implementation-class>com.lewissa.jhano.accesodatos.ws.wsAccesoDatos</implementation-class>
     </service>
   </services>
-  <clients/>
+  <clients>
+  </clients>
 </jax-ws>
