@@ -93,7 +93,6 @@
                     response.sendRedirect("../erroresJhano/errorConexionDataBase.jsp?"+resultError);
                 } else {
                     request.getSession().setAttribute("direccionVacio", strDireccion);
-
                     response.sendRedirect("../interfacesJhano/interfazIngresoCliente.jsp");
                 }
 
