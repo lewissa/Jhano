@@ -22,7 +22,7 @@ public class cTestTransaccionFamiliaProducto extends TestCase {
     public void testInsertarFmiliaProducto() {
         cTransaccionFamiliaProducto oTFC = new cTransaccionFamiliaProducto();
         cFamiliaProducto oFamiliaProducto = new cFamiliaProducto();
-        oFamiliaProducto.setStrId("fm333");
+//        oFamiliaProducto.setStrId("fm333");
         oFamiliaProducto.setStrDescripcion("LAPTOP");
         assertTrue(oTFC.insertarFamiliaProducto(oFamiliaProducto));
         

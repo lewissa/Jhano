@@ -71,7 +71,7 @@ public class wsLogicaNegocioCliente {
      * @return 
      */
     @WebMethod(operationName = "getErrorConexionCliente")
-    public com.lewissa.jhano.wscAccesoDatos.Exception getErrorConexionCliente() {
+    public String getErrorConexionCliente() {
         com.lewissa.jhano.wscAccesoDatos.WsAccesoDatos port = service.getWsAccesoDatosPort();
         return port.getErrorConexion();
     }

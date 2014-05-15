@@ -43,7 +43,7 @@
                 CCliente cliCliente = new CCliente();
                 cliCliente.setStrIdCliente(strCiruc);
                 if (strCelular.equals("0")) {
-                    cliCliente.setStrCelular("");
+                   cliCliente.setStrCelular("");
                 } else {
                     cliCliente.setStrCelular(strCelular);
                 }
@@ -89,7 +89,7 @@
                     request.getSession().setAttribute("telefonoVacio", "err0r");
                 }
                 if (port.getErrorConexionCliente() != null) {
-                    com.lewissa.jhano.accesodatos.ws.Exception resultError = port.getErrorConexionCliente();
+                    String resultError = port.getErrorConexionCliente();
                     response.sendRedirect("../erroresJhano/errorConexionDataBase.jsp?"+resultError);
                 } else {
                     request.getSession().setAttribute("direccionVacio", strDireccion);

@@ -8,16 +8,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Clase Java para getErrorConexionResponse complex type.
+ * <p>Clase Java para actualizarDataBaseClienteResponse complex type.
  * 
  * <p>El siguiente fragmento de esquema especifica el contenido que se espera que haya en esta clase.
  * 
  * <pre>
- * &lt;complexType name="getErrorConexionResponse">
+ * &lt;complexType name="actualizarDataBaseClienteResponse">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="return" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="return" type="{http://www.w3.org/2001/XMLSchema}boolean" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -27,23 +27,23 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "getErrorConexionResponse", propOrder = {
+@XmlType(name = "actualizarDataBaseClienteResponse", propOrder = {
     "_return"
 })
-public class GetErrorConexionResponse {
+public class ActualizarDataBaseClienteResponse {
 
     @XmlElement(name = "return")
-    protected String _return;
+    protected Boolean _return;
 
     /**
      * Obtiene el valor de la propiedad return.
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link Boolean }
      *     
      */
-    public String getReturn() {
+    public Boolean isReturn() {
         return _return;
     }
 
@@ -52,10 +52,10 @@ public class GetErrorConexionResponse {
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link Boolean }
      *     
      */
-    public void setReturn(String value) {
+    public void setReturn(Boolean value) {
         this._return = value;
     }
 

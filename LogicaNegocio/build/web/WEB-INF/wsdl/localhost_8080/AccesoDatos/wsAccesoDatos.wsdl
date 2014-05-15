@@ -10,20 +10,20 @@
 <message name="getErrorConexionResponse">
 <part name="parameters" element="tns:getErrorConexionResponse"/>
 </message>
-<message name="actualizarDataBase">
-<part name="parameters" element="tns:actualizarDataBase"/>
+<message name="actualizarDataBaseCliente">
+<part name="parameters" element="tns:actualizarDataBaseCliente"/>
 </message>
-<message name="actualizarDataBaseResponse">
-<part name="parameters" element="tns:actualizarDataBaseResponse"/>
+<message name="actualizarDataBaseClienteResponse">
+<part name="parameters" element="tns:actualizarDataBaseClienteResponse"/>
 </message>
 <portType name="wsAccesoDatos">
 <operation name="getErrorConexion">
 <input wsam:Action="http://ws.accesodatos.jhano.lewissa.com/wsAccesoDatos/getErrorConexionRequest" message="tns:getErrorConexion"/>
 <output wsam:Action="http://ws.accesodatos.jhano.lewissa.com/wsAccesoDatos/getErrorConexionResponse" message="tns:getErrorConexionResponse"/>
 </operation>
-<operation name="actualizarDataBase">
-<input wsam:Action="http://ws.accesodatos.jhano.lewissa.com/wsAccesoDatos/actualizarDataBaseRequest" message="tns:actualizarDataBase"/>
-<output wsam:Action="http://ws.accesodatos.jhano.lewissa.com/wsAccesoDatos/actualizarDataBaseResponse" message="tns:actualizarDataBaseResponse"/>
+<operation name="actualizarDataBaseCliente">
+<input wsam:Action="http://ws.accesodatos.jhano.lewissa.com/wsAccesoDatos/actualizarDataBaseClienteRequest" message="tns:actualizarDataBaseCliente"/>
+<output wsam:Action="http://ws.accesodatos.jhano.lewissa.com/wsAccesoDatos/actualizarDataBaseClienteResponse" message="tns:actualizarDataBaseClienteResponse"/>
 </operation>
 </portType>
 <binding name="wsAccesoDatosPortBinding" type="tns:wsAccesoDatos">
@@ -37,7 +37,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="actualizarDataBase">
+<operation name="actualizarDataBaseCliente">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

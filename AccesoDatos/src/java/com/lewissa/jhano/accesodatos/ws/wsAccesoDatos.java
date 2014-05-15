@@ -6,6 +6,7 @@
 package com.lewissa.jhano.accesodatos.ws;
 
 import com.lewissa.jhano.accesodatos.cAccesoDatos;
+import com.lewissa.jhano.accesodatos.cliente.cTransaccionCliente;
 import com.sun.tools.ws.wsdl.document.jaxws.Exception;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
@@ -30,15 +31,16 @@ public class wsAccesoDatos {
      * @param strSql, String que contiene la sentencia SQL a ejecutar.
      * @return flag1, Booleano que retorna confirmacion de ingreso de los datos.
      */
-    @WebMethod(operationName = "actualizarDataBase")
-    public Boolean actualizarDataBase(@WebParam(name = "strSql") String strSql) {
+    @WebMethod(operationName = "actualizarDataBaseCliente")
+    public Boolean actualizarDataBaseCliente(@WebParam(name = "strCli") String strCli[]) {
         Boolean booflag1 = false; // revisa la respuesta de la base
         Boolean booflag2 = false; // revisa la conexion
-        if (!cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()) {
+        cTransaccionCliente traCliente=new cTransaccionCliente();
+       if (!cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()) {
             booflag2 = false; //error en la conexion
         } else {
             booflag2 = true; // conexion correcta
-            booflag1 = cAccesoDatos.getInstanciaAccesoDatos().actualizarDataBase(strSql);
+            booflag1 = traCliente.ingresarCliente(strCli);
             if (booflag1 == null) {
                 booflag1 = false;
             }
@@ -52,7 +54,7 @@ public class wsAccesoDatos {
      * @return 
      */
     @WebMethod(operationName = "getErrorConexion")
-    public java.lang.Exception getErrorConexion() {
+    public String getErrorConexion() {
         //TODO write your implementation code here:
         return cAccesoDatos.getInstanciaAccesoDatos().getExcErrorAcessoDatos();
     }
