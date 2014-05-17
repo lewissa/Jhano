@@ -6,4 +6,7 @@
     <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioFamiliaProdcuto?xsd=1" uri="wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioFamiliaProdcuto.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/LogicaNegocio/wsProveedor?wsdl" uri="wsdl/localhost_8080/LogicaNegocio/wsProveedor.wsdl"/>
     <system systemId="http://localhost:8080/LogicaNegocio/wsProveedor?xsd=1" uri="wsdl/localhost_8080/LogicaNegocio/wsProveedor.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioCliente?WSDL" uri="wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioCliente.wsdl"/>
+    <system systemId="http://localhost:8080/LogicaNegocio/wsProveedor?WSDL" uri="wsdl/localhost_8080/LogicaNegocio/wsProveedor.wsdl"/>
+    <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioFamiliaProdcuto?WSDL" uri="wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioFamiliaProdcuto.wsdl"/>
 </catalog>

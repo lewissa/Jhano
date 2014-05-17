@@ -35,14 +35,12 @@
                 request.getSession().setAttribute("codigoVacio", strCodigo);
                 request.getSession().setAttribute("descripcionVacio", strDescripcion);
                 
-                
-                    response.sendRedirect("../interfacesJhano/interfazIngresoFamiliaProducto.jsp");
-                
             if (port.getErrorConexionFamiliaProducto() != null) {
-                    com.lewissa.jhano.accesodatos.ws.Exception resultError = port.getErrorConexionFamiliaProducto();
-                    response.sendRedirect("../erroresJhano/errorConexionDataBase.jsp?"+resultError);
+                    String strError = port.getErrorConexionFamiliaProducto();
+                    request.getSession().setAttribute("errorFamiliaProducto", strError);
+                    response.sendRedirect("../interfacesJhano/interfazConsultaFamiliaProducto.jsp");
                 } else {
-                    response.sendRedirect("../interfacesJhano/interfazIngresoCliente.jsp");
+                    response.sendRedirect("../interfacesJhano/interfazIngresoFamiliaProducto.jsp");
                 }
 
             } catch (Exception e) {

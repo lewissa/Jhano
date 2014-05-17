@@ -33,10 +33,6 @@ public class cTransaccionFamiliaProducto {
     public Boolean insertarFamiliaProducto(cFamiliaProducto oFamiliaProducto){
         Boolean booResultado=false;
         String strQuery;
-        
-        
-        
-                
         com.lewissa.jhano.accesodatos.familiaproducto.WsAccesoDatosFamiliaProducto_Service serviceAD = new WsAccesoDatosFamiliaProducto_Service();
         com.lewissa.jhano.accesodatos.familiaproducto.WsAccesoDatosFamiliaProducto  serviceADPort = serviceAD.getWsAccesoDatosFamiliaProductoPort();
         

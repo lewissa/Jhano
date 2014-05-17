@@ -17,6 +17,7 @@ import javax.xml.ws.WebServiceRef;
  */
 @WebService(serviceName = "wsLogicaNegocioFamiliaProdcuto")
 public class wsLogicaNegocioFamiliaProdcuto {
+
     @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/AccesoDatos/wsAccesoDatosFamiliaProducto.wsdl")
     private com.lewissa.jhano.accesodatos.familiaproducto.WsAccesoDatosFamiliaProducto_Service service_1;
 
@@ -50,12 +51,12 @@ public class wsLogicaNegocioFamiliaProdcuto {
         return booResultado;
     }
 
-    private String getErrorConexionFamiliaProducto() {
+    @WebMethod(operationName = "getErrorConexionFamiliaProducto")
+    public String getErrorConexionFamiliaProducto() {
         // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
         // If the calling of port operations may lead to race condition some synchronization is required.
         com.lewissa.jhano.accesodatos.familiaproducto.WsAccesoDatosFamiliaProducto port = service_1.getWsAccesoDatosFamiliaProductoPort();
         return port.getErrorConexionFamiliaProducto();
     }
 
-  
 }

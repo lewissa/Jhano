@@ -3,6 +3,7 @@
     Created on : 09/04/2014, 04:47:58 AM
     Author     : ECORAE
 --%>
+
 <%@page import="com.lewissa.jhano.cliente.CCliente"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
@@ -41,7 +42,6 @@
                 com.lewissa.jhano.cliente.WsLogicaNegocioCliente_Service service = new com.lewissa.jhano.cliente.WsLogicaNegocioCliente_Service();
                 com.lewissa.jhano.cliente.WsLogicaNegocioCliente port = service.getWsLogicaNegocioClientePort();// TODO initialize WS operation arguments here
                 CCliente cliCliente = new CCliente();
-                cliCliente.setStrIdCliente(strCiruc);
                 if (strCelular.equals("0")) {
                    cliCliente.setStrCelular("");
                 } else {
@@ -61,6 +61,7 @@
                 }
                 cliCliente.setStrNombreFiscal(strNombrefiscal);
                 cliCliente.setStrTipoCliente(strTipocliente);
+                cliCliente.setStrIdCliente(strCiruc);
                 // TODO process result here
                 java.lang.Boolean booresult = port.actualizaDataBaseCliente(cliCliente);
                 java.lang.Boolean booCorreo = port.validaEmail(request.getParameter("correo"));
@@ -89,8 +90,9 @@
                     request.getSession().setAttribute("telefonoVacio", "err0r");
                 }
                 if (port.getErrorConexionCliente() != null) {
-                    String resultError = port.getErrorConexionCliente();
-                    response.sendRedirect("../erroresJhano/errorConexionDataBase.jsp?"+resultError);
+                    String strError = port.getErrorConexionCliente();  
+                    request.getSession().setAttribute("errorCliente", strError);
+                    response.sendRedirect("../interfacesJhano/interfazCargaCliente.jsp");
                 } else {
                     request.getSession().setAttribute("direccionVacio", strDireccion);
                     response.sendRedirect("../interfacesJhano/interfazIngresoCliente.jsp");

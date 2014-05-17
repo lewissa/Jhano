@@ -112,7 +112,7 @@
         <table bgcolor="#C0C0C0" width="100%" height="100%" border="1">
             <tr>
                 <td width="12%">
-                    <table border="1" align="left">
+                    <table border="0.1" align="center">
                         <tr>
                             <td>
                                 <a href="">
@@ -174,17 +174,27 @@
                                     strTelefonoVacio = null;
                                 }
 
-                                if (((booCedula != null) && (booRuc != null)) && (booCorreo != null)&&(booResult!=null)) {
+                                if (((booCedula != null) && (booRuc != null)) && (booCorreo != null) && (booResult != null)) {
                                     if (((booCedula == true) || (booRuc == true)) && (booCorreo == true) && (booResult == true)) {
-                            %>
-                            <script type="text/javascript">alert("Se ha ingresado correctamente un nuevo cliente");</script>
-                            <%
                                         strDireccionVacio = null;
                                         strNombreFiscalVacio = null;
                                         booCedula = null;
                                         booCorreo = null;
                                         strNombreComercialVacio = null;
-                                        booResult=null;
+                                        booResult = null;
+                                        session.setAttribute("cliente", false);
+                                        request.getSession().setAttribute("correo", null);
+                                        request.getSession().setAttribute("cedula", null);
+                                        request.getSession().setAttribute("ruc", null);
+                                        request.getSession().setAttribute("correoVacio", 0);
+                                        request.getSession().setAttribute("cedulaVacio", 0);
+                                        request.getSession().setAttribute("rucVacio",0);
+                                        request.getSession().setAttribute("nombreComercialVacio", 0);
+                                        request.getSession().setAttribute("nombreFiscalVacio", 0);
+                                        request.getSession().setAttribute("celularVacio", 0);
+                                        request.getSession().setAttribute("telefonoVacio", 0);
+                                        request.getSession().setAttribute("direccionVacio", 0);
+                                        response.sendRedirect("../interfacesJhano/interfazCargaCliente.jsp");
                                     }
                                 }
                                 out.print("<table border=\"0\" align=\"center\">");
