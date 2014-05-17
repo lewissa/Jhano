@@ -3,9 +3,10 @@ package com.lewissa.jhano.cliente;
 import com.lewissa.jhano.utilidades.cCedula;
 import com.lewissa.jhano.utilidades.cCorreo;
 import com.lewissa.jhano.utilidades.cRuc;
-import com.lewissa.jhano.wscAccesoDatos.WsAccesoDatos_Service;
+import com.lewissa.jhano.accesodatos.cliente.WsAccesoDatosCliente_Service;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.ws.WebServiceRef;
 
 /**
  * Clase Transacción de Clientes
@@ -25,9 +26,9 @@ public class cTransaccionCliente {
      * cleinte.
      */
     public Boolean ingresarCliente(cCliente datDatos) {
-        com.lewissa.jhano.wscAccesoDatos.WsAccesoDatos_Service service = new WsAccesoDatos_Service();
-        com.lewissa.jhano.wscAccesoDatos.WsAccesoDatos flag = service.getWsAccesoDatosPort();
-        String strSqlIngreso;
+        com.lewissa.jhano.accesodatos.cliente.WsAccesoDatosCliente_Service service= new WsAccesoDatosCliente_Service();
+        com.lewissa.jhano.accesodatos.cliente.WsAccesoDatosCliente port = service.getWsAccesoDatosClientePort();
+
         Boolean booFlag = false;
         cCedula cedCedula = new cCedula(datDatos.getStrIdCliente());
         cRuc rucRuc = new cRuc(datDatos.getStrIdCliente());
@@ -42,12 +43,18 @@ public class cTransaccionCliente {
             strCliente.add(5, datDatos.getStrCelular());
             strCliente.add(6, datDatos.getStrCorreo());
             strCliente.add(7, datDatos.getStrTipoCliente());
-            booFlag = flag.actualizarDataBaseCliente(strCliente);
+            booFlag = port.actualizarDataBaseCliente(strCliente);
         }
         if (booFlag == null) {
             booFlag = false;
         }
         return booFlag;
+    }
+
+    private static Boolean actualizarDataBaseCliente(java.util.List<java.lang.String> strCli) {
+        com.lewissa.jhano.accesodatos.cliente.WsAccesoDatosCliente_Service service = new com.lewissa.jhano.accesodatos.cliente.WsAccesoDatosCliente_Service();
+        com.lewissa.jhano.accesodatos.cliente.WsAccesoDatosCliente port = service.getWsAccesoDatosClientePort();
+        return port.actualizarDataBaseCliente(strCli);
     }
 
 }

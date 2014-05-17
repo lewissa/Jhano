@@ -6,10 +6,11 @@
 
 package com.lewissa.jhano.cliente;
 
+import com.lewissa.jhano.accesodatos.cliente.WsAccesoDatosCliente;
+import com.lewissa.jhano.accesodatos.cliente.WsAccesoDatosCliente_Service;
 import com.lewissa.jhano.utilidades.cCedula;
 import com.lewissa.jhano.utilidades.cCorreo;
 import com.lewissa.jhano.utilidades.cRuc;
-import com.lewissa.jhano.wscAccesoDatos.WsAccesoDatos_Service;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -22,8 +23,6 @@ import javax.xml.ws.WebServiceRef;
 @WebService(serviceName = "wsLogicaNegocioCliente")
 public class wsLogicaNegocioCliente {
     @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/AccesoDatos/wsAccesoDatos.wsdl")
-    private WsAccesoDatos_Service service;
-
    /**
     * 
     * @param cliCliente
@@ -72,7 +71,11 @@ public class wsLogicaNegocioCliente {
      */
     @WebMethod(operationName = "getErrorConexionCliente")
     public String getErrorConexionCliente() {
-        com.lewissa.jhano.wscAccesoDatos.WsAccesoDatos port = service.getWsAccesoDatosPort();
-        return port.getErrorConexion();
+        String strResultado;
+        com.lewissa.jhano.accesodatos.cliente.WsAccesoDatosCliente_Service service = new WsAccesoDatosCliente_Service();
+        com.lewissa.jhano.accesodatos.cliente.WsAccesoDatosCliente port = service.getWsAccesoDatosClientePort();
+        strResultado=port.getErrorConexion();
+        return strResultado;
+        
     }
 }

@@ -4,56 +4,6 @@
 <xsd:import namespace="http://cliente.jhano.lewissa.com/" schemaLocation="http://localhost:8080/LogicaNegocio/wsLogicaNegocioCliente?xsd=1"/>
 </xsd:schema>
 </types>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<message name="getErrorConexionCliente">
-<part name="parameters" element="tns:getErrorConexionCliente"/>
-</message>
-<message name="getErrorConexionClienteResponse">
-<part name="parameters" element="tns:getErrorConexionClienteResponse"/>
-</message>
-=======
->>>>>>> bde519250b0953b8b285c6f9ba8890a65f00e461
-<message name="actualizaDataBaseCliente">
-<part name="parameters" element="tns:actualizaDataBaseCliente"/>
-</message>
-<message name="actualizaDataBaseClienteResponse">
-<part name="parameters" element="tns:actualizaDataBaseClienteResponse"/>
-</message>
-<message name="validaCedula">
-<part name="parameters" element="tns:validaCedula"/>
-</message>
-<message name="validaCedulaResponse">
-<part name="parameters" element="tns:validaCedulaResponse"/>
-</message>
-<message name="getErrorConexionCliente">
-<part name="parameters" element="tns:getErrorConexionCliente"/>
-=======
-<message name="actualizaDataBaseCliente">
-<part name="parameters" element="tns:actualizaDataBaseCliente"/>
->>>>>>> bde519250b0953b8b285c6f9ba8890a65f00e461
-</message>
-<message name="getErrorConexionClienteResponse">
-<part name="parameters" element="tns:getErrorConexionClienteResponse"/>
-</message>
-<message name="validaCedula">
-<part name="parameters" element="tns:validaCedula"/>
-</message>
-<message name="validaCedulaResponse">
-<part name="parameters" element="tns:validaCedulaResponse"/>
-</message>
-<message name="getErrorConexionCliente">
-<part name="parameters" element="tns:getErrorConexionCliente"/>
-</message>
-<message name="getErrorConexionClienteResponse">
-<part name="parameters" element="tns:getErrorConexionClienteResponse"/>
-</message>
-<message name="validaCedula">
-<part name="parameters" element="tns:validaCedula"/>
-</message>
-<message name="validaCedulaResponse">
-<part name="parameters" element="tns:validaCedulaResponse"/>
-</message>
 <message name="validaRuc">
 <part name="parameters" element="tns:validaRuc"/>
 </message>
@@ -66,44 +16,25 @@
 <message name="validaEmailResponse">
 <part name="parameters" element="tns:validaEmailResponse"/>
 </message>
+<message name="validaCedula">
+<part name="parameters" element="tns:validaCedula"/>
+</message>
+<message name="validaCedulaResponse">
+<part name="parameters" element="tns:validaCedulaResponse"/>
+</message>
+<message name="actualizaDataBaseCliente">
+<part name="parameters" element="tns:actualizaDataBaseCliente"/>
+</message>
+<message name="actualizaDataBaseClienteResponse">
+<part name="parameters" element="tns:actualizaDataBaseClienteResponse"/>
+</message>
+<message name="getErrorConexionCliente">
+<part name="parameters" element="tns:getErrorConexionCliente"/>
+</message>
+<message name="getErrorConexionClienteResponse">
+<part name="parameters" element="tns:getErrorConexionClienteResponse"/>
+</message>
 <portType name="wsLogicaNegocioCliente">
-<<<<<<< HEAD
-<<<<<<< HEAD
-<operation name="getErrorConexionCliente">
-<input wsam:Action="http://cliente.jhano.lewissa.com/wsLogicaNegocioCliente/getErrorConexionClienteRequest" message="tns:getErrorConexionCliente"/>
-<output wsam:Action="http://cliente.jhano.lewissa.com/wsLogicaNegocioCliente/getErrorConexionClienteResponse" message="tns:getErrorConexionClienteResponse"/>
-</operation>
-=======
->>>>>>> bde519250b0953b8b285c6f9ba8890a65f00e461
-<operation name="actualizaDataBaseCliente">
-<input wsam:Action="http://cliente.jhano.lewissa.com/wsLogicaNegocioCliente/actualizaDataBaseClienteRequest" message="tns:actualizaDataBaseCliente"/>
-<output wsam:Action="http://cliente.jhano.lewissa.com/wsLogicaNegocioCliente/actualizaDataBaseClienteResponse" message="tns:actualizaDataBaseClienteResponse"/>
-</operation>
-<operation name="validaCedula">
-<input wsam:Action="http://cliente.jhano.lewissa.com/wsLogicaNegocioCliente/validaCedulaRequest" message="tns:validaCedula"/>
-<output wsam:Action="http://cliente.jhano.lewissa.com/wsLogicaNegocioCliente/validaCedulaResponse" message="tns:validaCedulaResponse"/>
-</operation>
-<operation name="getErrorConexionCliente">
-<input wsam:Action="http://cliente.jhano.lewissa.com/wsLogicaNegocioCliente/getErrorConexionClienteRequest" message="tns:getErrorConexionCliente"/>
-<output wsam:Action="http://cliente.jhano.lewissa.com/wsLogicaNegocioCliente/getErrorConexionClienteResponse" message="tns:getErrorConexionClienteResponse"/>
-=======
-<operation name="actualizaDataBaseCliente">
-<input wsam:Action="http://cliente.jhano.lewissa.com/wsLogicaNegocioCliente/actualizaDataBaseClienteRequest" message="tns:actualizaDataBaseCliente"/>
-<output wsam:Action="http://cliente.jhano.lewissa.com/wsLogicaNegocioCliente/actualizaDataBaseClienteResponse" message="tns:actualizaDataBaseClienteResponse"/>
->>>>>>> bde519250b0953b8b285c6f9ba8890a65f00e461
-</operation>
-<operation name="validaCedula">
-<input wsam:Action="http://cliente.jhano.lewissa.com/wsLogicaNegocioCliente/validaCedulaRequest" message="tns:validaCedula"/>
-<output wsam:Action="http://cliente.jhano.lewissa.com/wsLogicaNegocioCliente/validaCedulaResponse" message="tns:validaCedulaResponse"/>
-</operation>
-<operation name="getErrorConexionCliente">
-<input wsam:Action="http://cliente.jhano.lewissa.com/wsLogicaNegocioCliente/getErrorConexionClienteRequest" message="tns:getErrorConexionCliente"/>
-<output wsam:Action="http://cliente.jhano.lewissa.com/wsLogicaNegocioCliente/getErrorConexionClienteResponse" message="tns:getErrorConexionClienteResponse"/>
-</operation>
-<operation name="validaCedula">
-<input wsam:Action="http://cliente.jhano.lewissa.com/wsLogicaNegocioCliente/validaCedulaRequest" message="tns:validaCedula"/>
-<output wsam:Action="http://cliente.jhano.lewissa.com/wsLogicaNegocioCliente/validaCedulaResponse" message="tns:validaCedulaResponse"/>
-</operation>
 <operation name="validaRuc">
 <input wsam:Action="http://cliente.jhano.lewissa.com/wsLogicaNegocioCliente/validaRucRequest" message="tns:validaRuc"/>
 <output wsam:Action="http://cliente.jhano.lewissa.com/wsLogicaNegocioCliente/validaRucResponse" message="tns:validaRucResponse"/>
@@ -112,61 +43,22 @@
 <input wsam:Action="http://cliente.jhano.lewissa.com/wsLogicaNegocioCliente/validaEmailRequest" message="tns:validaEmail"/>
 <output wsam:Action="http://cliente.jhano.lewissa.com/wsLogicaNegocioCliente/validaEmailResponse" message="tns:validaEmailResponse"/>
 </operation>
+<operation name="validaCedula">
+<input wsam:Action="http://cliente.jhano.lewissa.com/wsLogicaNegocioCliente/validaCedulaRequest" message="tns:validaCedula"/>
+<output wsam:Action="http://cliente.jhano.lewissa.com/wsLogicaNegocioCliente/validaCedulaResponse" message="tns:validaCedulaResponse"/>
+</operation>
+<operation name="actualizaDataBaseCliente">
+<input wsam:Action="http://cliente.jhano.lewissa.com/wsLogicaNegocioCliente/actualizaDataBaseClienteRequest" message="tns:actualizaDataBaseCliente"/>
+<output wsam:Action="http://cliente.jhano.lewissa.com/wsLogicaNegocioCliente/actualizaDataBaseClienteResponse" message="tns:actualizaDataBaseClienteResponse"/>
+</operation>
+<operation name="getErrorConexionCliente">
+<input wsam:Action="http://cliente.jhano.lewissa.com/wsLogicaNegocioCliente/getErrorConexionClienteRequest" message="tns:getErrorConexionCliente"/>
+<output wsam:Action="http://cliente.jhano.lewissa.com/wsLogicaNegocioCliente/getErrorConexionClienteResponse" message="tns:getErrorConexionClienteResponse"/>
+</operation>
 </portType>
 <binding name="wsLogicaNegocioClientePortBinding" type="tns:wsLogicaNegocioCliente">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="actualizaDataBaseCliente">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<operation name="actualizaDataBaseCliente">
-=======
-<operation name="validaEmail">
->>>>>>> bde519250b0953b8b285c6f9ba8890a65f00e461
-=======
-<operation name="validaEmail">
->>>>>>> bde519250b0953b8b285c6f9ba8890a65f00e461
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<operation name="validaCedula">
-=======
-<operation name="getErrorConexionCliente">
->>>>>>> bde519250b0953b8b285c6f9ba8890a65f00e461
-=======
-<operation name="getErrorConexionCliente">
->>>>>>> bde519250b0953b8b285c6f9ba8890a65f00e461
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<<<<<<< HEAD
-<<<<<<< HEAD
 <operation name="validaRuc">
-=======
-<operation name="validaCedula">
->>>>>>> bde519250b0953b8b285c6f9ba8890a65f00e461
-=======
-<operation name="validaCedula">
->>>>>>> bde519250b0953b8b285c6f9ba8890a65f00e461
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -176,6 +68,33 @@
 </output>
 </operation>
 <operation name="validaEmail">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="validaCedula">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="actualizaDataBaseCliente">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getErrorConexionCliente">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

@@ -23,12 +23,7 @@ public class cTransaccionProveedor {
      */
     public Boolean ingresarProveedor(cProveedor datDatos) {
         //cAccesoDatos accEjecutaQry=new cAccesoDatos();
-        com.lewissa.jhano.wscAccesoDatos.WsAccesoDatos_Service service = new com.lewissa.jhano.wscAccesoDatos.WsAccesoDatos_Service();
-        com.lewissa.jhano.wscAccesoDatos.WsAccesoDatos flag = service.getWsAccesoDatosPort();
-        String strSqlIngreso;
-        strSqlIngreso = "INSERT INTO proveedor VALUES ('"+datDatos.getId()+"', '"+datDatos.getNombreFiscal()+"'"
-                + ", '"+datDatos.getNombreComercial()+"', '"+datDatos.getDireccion()+"', '"+datDatos.getConvencional()+"'"
-                + ", '"+datDatos.getCelular()+"', '"+datDatos.getCorreo()+"')";
-        return flag.actualizarDataBase(strSqlIngreso);
+        Boolean booResultado=false;
+        return booResultado;
     }  
 }

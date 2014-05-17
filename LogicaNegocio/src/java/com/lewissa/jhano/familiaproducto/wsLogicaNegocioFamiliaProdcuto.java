@@ -3,10 +3,8 @@
  */
 package com.lewissa.jhano.familiaproducto;
 
-import com.lewissa.jhano.familiaproducto.cFamiliaProducto;
-import com.lewissa.jhano.familiaproducto.cTransaccionFamiliaProducto;
 import com.lewissa.jhano.utilidades.cCodigoFamiliaProducto;
-import com.lewissa.jhano.wscAccesoDatos.WsAccesoDatos_Service;
+import com.lewissa.jhano.accesodatos.familiaproducto.WsAccesoDatosFamiliaProducto_Service;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -19,8 +17,10 @@ import javax.xml.ws.WebServiceRef;
  */
 @WebService(serviceName = "wsLogicaNegocioFamiliaProdcuto")
 public class wsLogicaNegocioFamiliaProdcuto {
+    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/AccesoDatos/wsAccesoDatosFamiliaProducto.wsdl")
+    private com.lewissa.jhano.accesodatos.familiaproducto.WsAccesoDatosFamiliaProducto_Service service_1;
 
-    private WsAccesoDatos_Service service;
+    private WsAccesoDatosFamiliaProducto_Service service;
 
     /**
      * Este metodo permite invocar la metodo de insercion del objeto
@@ -50,9 +50,12 @@ public class wsLogicaNegocioFamiliaProdcuto {
         return booResultado;
     }
 
-    @WebMethod(operationName = "getErrorConexionFamiliaProducto")
-    public com.lewissa.jhano.wscAccesoDatos.Exception getErrorConexionFamiliaProducto() {
-        com.lewissa.jhano.wscAccesoDatos.WsAccesoDatos port = service.getWsAccesoDatosPort();
-        return port.getErrorConexion();
+    private String getErrorConexionFamiliaProducto() {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        com.lewissa.jhano.accesodatos.familiaproducto.WsAccesoDatosFamiliaProducto port = service_1.getWsAccesoDatosFamiliaProductoPort();
+        return port.getErrorConexionFamiliaProducto();
     }
+
+  
 }

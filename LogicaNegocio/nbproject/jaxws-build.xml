@@ -9,8 +9,6 @@
                 ===================
                 JAX-WS WSGEN SECTION
                 ===================
-<<<<<<< HEAD
-<<<<<<< HEAD
             -->
     <target name="wsgen-init" depends="init, -do-compile">
         <mkdir dir="${build.generated.sources.dir}/jax-ws/resources/"/>
@@ -20,14 +18,6 @@
         <taskdef name="wsgen" classname="com.sun.tools.ws.ant.WsGen">
             <classpath path="${java.home}/../lib/tools.jar:${build.classes.dir}:${j2ee.platform.wsgen.classpath}:${javac.classpath}"/>
         </taskdef>
-    </target>
-    <target name="wsgen-wsProveedor" depends="wsgen-init">
-        <copy todir="${build.classes.dir}/META-INF">
-            <fileset dir="${webinf.dir}" includes="wsit-com.lewissa.jhano.proveedor.ws.wsProveedor.xml"/>
-        </copy>
-        <wsgen sourcedestdir="${build.generated.sources.dir}/jax-ws" resourcedestdir="${build.generated.sources.dir}/jax-ws/resources/" destdir="${build.generated.sources.dir}/jax-ws" verbose="true" keep="true" genwsdl="true" sei="com.lewissa.jhano.proveedor.ws.wsProveedor" xendorsed="true">
-            <classpath path="${java.home}/../lib/tools.jar:${build.classes.dir}:${j2ee.platform.wsgen.classpath}:${javac.classpath}"/>
-        </wsgen>
     </target>
     <target name="wsgen-wsLogicaNegocioCliente" depends="wsgen-init">
         <copy todir="${build.classes.dir}/META-INF">
@@ -45,47 +35,14 @@
             <classpath path="${java.home}/../lib/tools.jar:${build.classes.dir}:${j2ee.platform.wsgen.classpath}:${javac.classpath}"/>
         </wsgen>
     </target>
-=======
-=======
->>>>>>> bde519250b0953b8b285c6f9ba8890a65f00e461
-            -->
-    <target name="wsgen-init" depends="init, -do-compile">
-        <mkdir dir="${build.generated.sources.dir}/jax-ws/resources/"/>
-        <mkdir dir="${build.classes.dir}"/>
-        <mkdir dir="${build.classes.dir}/META-INF"/>
-        <property name="j2ee.platform.wsgen.classpath" value="${libs.jaxws21.classpath}"/>
-        <taskdef name="wsgen" classname="com.sun.tools.ws.ant.WsGen">
-            <classpath path="${java.home}/../lib/tools.jar:${build.classes.dir}:${j2ee.platform.wsgen.classpath}:${javac.classpath}"/>
-        </taskdef>
-    </target>
-    <target name="wsgen-wsLogicaNegocioFamiliaProdcuto" depends="wsgen-init">
-        <copy todir="${build.classes.dir}/META-INF">
-            <fileset dir="${webinf.dir}" includes="wsit-com.lewissa.jhano.familiaproducto.wsLogicaNegocioFamiliaProdcuto.xml"/>
-        </copy>
-        <wsgen sourcedestdir="${build.generated.sources.dir}/jax-ws" resourcedestdir="${build.generated.sources.dir}/jax-ws/resources/" destdir="${build.generated.sources.dir}/jax-ws" verbose="true" keep="true" genwsdl="true" sei="com.lewissa.jhano.familiaproducto.wsLogicaNegocioFamiliaProdcuto" xendorsed="true">
-            <classpath path="${java.home}/../lib/tools.jar:${build.classes.dir}:${j2ee.platform.wsgen.classpath}:${javac.classpath}"/>
-        </wsgen>
-    </target>
     <target name="wsgen-wsProveedor" depends="wsgen-init">
         <copy todir="${build.classes.dir}/META-INF">
-            <fileset dir="${webinf.dir}" includes="wsit-com.lewissa.jhano.proveedor.ws.wsProveedor.xml"/>
+            <fileset dir="${webinf.dir}" includes="wsit-com.lewissa.jhano.proveedor.wsProveedor.xml"/>
         </copy>
-        <wsgen sourcedestdir="${build.generated.sources.dir}/jax-ws" resourcedestdir="${build.generated.sources.dir}/jax-ws/resources/" destdir="${build.generated.sources.dir}/jax-ws" verbose="true" keep="true" genwsdl="true" sei="com.lewissa.jhano.proveedor.ws.wsProveedor" xendorsed="true">
+        <wsgen sourcedestdir="${build.generated.sources.dir}/jax-ws" resourcedestdir="${build.generated.sources.dir}/jax-ws/resources/" destdir="${build.generated.sources.dir}/jax-ws" verbose="true" keep="true" genwsdl="true" sei="com.lewissa.jhano.proveedor.wsProveedor" xendorsed="true">
             <classpath path="${java.home}/../lib/tools.jar:${build.classes.dir}:${j2ee.platform.wsgen.classpath}:${javac.classpath}"/>
         </wsgen>
     </target>
-    <target name="wsgen-wsLogicaNegocioCliente" depends="wsgen-init">
-        <copy todir="${build.classes.dir}/META-INF">
-            <fileset dir="${webinf.dir}" includes="wsit-com.lewissa.jhano.cliente.wsLogicaNegocioCliente.xml"/>
-        </copy>
-        <wsgen sourcedestdir="${build.generated.sources.dir}/jax-ws" resourcedestdir="${build.generated.sources.dir}/jax-ws/resources/" destdir="${build.generated.sources.dir}/jax-ws" verbose="true" keep="true" genwsdl="true" sei="com.lewissa.jhano.cliente.wsLogicaNegocioCliente" xendorsed="true">
-            <classpath path="${java.home}/../lib/tools.jar:${build.classes.dir}:${j2ee.platform.wsgen.classpath}:${javac.classpath}"/>
-        </wsgen>
-    </target>
-<<<<<<< HEAD
->>>>>>> bde519250b0953b8b285c6f9ba8890a65f00e461
-=======
->>>>>>> bde519250b0953b8b285c6f9ba8890a65f00e461
     <!--
                 ===================
                 JAX-WS WSIMPORT SECTION
@@ -102,21 +59,53 @@
             <isset property="conf.dir"/>
         </condition>
     </target>
-    <target name="wsimport-client-wsAccesoDatos" depends="wsimport-init">
-        <mkdir dir="${build.generated.dir}/jax-wsCache/wsAccesoDatos"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/wsAccesoDatos" destdir="${build.generated.dir}/jax-wsCache/wsAccesoDatos" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/wsAccesoDatos/wsdl/localhost_8080/AccesoDatos/wsAccesoDatos.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/AccesoDatos/wsAccesoDatos?WSDL" xnocompile="true" xendorsed="true" package="com.lewissa.jhano.wscAccesoDatos">
-            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/wsAccesoDatos/wsdl/localhost_8080/AccesoDatos/wsAccesoDatos.wsdl"/>
-            <produces dir="${build.generated.dir}/jax-wsCache/wsAccesoDatos"/>
+    <target name="wsimport-client-wsAccesoDatosFamiliaProducto" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/wsAccesoDatosFamiliaProducto"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/wsAccesoDatosFamiliaProducto" destdir="${build.generated.dir}/jax-wsCache/wsAccesoDatosFamiliaProducto" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/wsAccesoDatosFamiliaProducto/wsdl/localhost_8080/AccesoDatos/wsAccesoDatosFamiliaProducto.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/AccesoDatos/wsAccesoDatosFamiliaProducto?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/wsAccesoDatosFamiliaProducto/wsdl/localhost_8080/AccesoDatos/wsAccesoDatosFamiliaProducto.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/wsAccesoDatosFamiliaProducto"/>
         </wsimport>
         <copy todir="${build.generated.sources.dir}/jax-ws">
-            <fileset dir="${build.generated.dir}/jax-wsCache/wsAccesoDatos">
+            <fileset dir="${build.generated.dir}/jax-wsCache/wsAccesoDatosFamiliaProducto">
                 <include name="**/*.java"/>
             </fileset>
         </copy>
     </target>
-    <target name="wsimport-client-clean-wsAccesoDatos" depends="-init-project">
-        <delete dir="${build.generated.sources.dir}/jax-ws/com/lewissa/jhano/wscAccesoDatos"/>
-        <delete dir="${build.generated.dir}/jax-wsCache/wsAccesoDatos"/>
+    <target name="wsimport-client-clean-wsAccesoDatosFamiliaProducto" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/lewissa/jhano/accesodatos/familiaproducto"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/wsAccesoDatosFamiliaProducto"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-wsAccesoDatos"/>
+    <target name="wsimport-client-wsAccesoDatosCliente" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/wsAccesoDatosCliente"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/wsAccesoDatosCliente" destdir="${build.generated.dir}/jax-wsCache/wsAccesoDatosCliente" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/wsAccesoDatosCliente/wsdl/localhost_8080/AccesoDatos/wsAccesoDatosCliente.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/AccesoDatos/wsAccesoDatosCliente?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/wsAccesoDatosCliente/wsdl/localhost_8080/AccesoDatos/wsAccesoDatosCliente.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/wsAccesoDatosCliente"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/wsAccesoDatosCliente">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-wsAccesoDatosCliente" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/lewissa/jhano/accesodatos/cliente"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/wsAccesoDatosCliente"/>
+    </target>
+    <target name="wsimport-client-wsAccesoDatosProveedor" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/wsAccesoDatosProveedor"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/wsAccesoDatosProveedor" destdir="${build.generated.dir}/jax-wsCache/wsAccesoDatosProveedor" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/wsAccesoDatosProveedor/wsdl/localhost_8080/AccesoDatos/wsAccesoDatosProveedor.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/AccesoDatos/wsAccesoDatosProveedor?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/wsAccesoDatosProveedor/wsdl/localhost_8080/AccesoDatos/wsAccesoDatosProveedor.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/wsAccesoDatosProveedor"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/wsAccesoDatosProveedor">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-wsAccesoDatosProveedor" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/lewissa/jhano/accesodatos/proveedor"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/wsAccesoDatosProveedor"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-wsAccesoDatosFamiliaProducto, wsimport-client-wsAccesoDatosCliente, wsimport-client-wsAccesoDatosProveedor"/>
 </project>

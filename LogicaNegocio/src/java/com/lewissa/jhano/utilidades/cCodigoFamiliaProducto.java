@@ -17,6 +17,15 @@ public class cCodigoFamiliaProducto {
 
     private String strCodigo;
 
+    public cCodigoFamiliaProducto(String strId) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public cCodigoFamiliaProducto() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+
     public String getStrCodigo() {
         return strCodigo;
     }
