@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <endpoints version="2.0" xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime">
   <endpoint implementation="com.lewissa.jhano.proveedor.wsLogicaNegocioProveedor" name="wsLogicaNegocioProveedor" url-pattern="/wsLogicaNegocioProveedor"/>
+<<<<<<< HEAD
   <endpoint implementation="com.lewissa.jhano.proveedor.wsLogicaNegocioProveedor" name="wsLogicaNegocioProveedor" url-pattern="/wsLogicaNegocioProveedor"/>
+=======
+>>>>>>> 81ff181463078c828566f54ef741e3463d38ab8c
 </endpoints>
