@@ -5,8 +5,8 @@
 <%@page import="com.sun.xml.rpc.processor.modeler.j2ee.xml.string"%>
 <%
     String strId, strNombFisc, strNombComer, strDireccion, strConvencional, strCeular, strCorreo;
-    com.lewissa.jhano.proveedor.ws.CProveedor provProve
-            = (com.lewissa.jhano.proveedor.ws.CProveedor) request.getSession().getAttribute("sesprov");
+    com.lewissa.jhano.proveedor.CProveedor provProve
+            = (com.lewissa.jhano.proveedor.CProveedor) request.getSession().getAttribute("sesprov");
     if (request.getSession().getAttribute("sesprov") != null) {
         strId = provProve.getId();
         strNombFisc = provProve.getNombreFiscal();

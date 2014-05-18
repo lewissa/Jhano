@@ -27,7 +27,7 @@ public class wsAccesoDatosFamiliaProducto {
         cTransaccionFamiliaProducto oTransaccionF = new cTransaccionFamiliaProducto();
         Boolean booflag1 = false; // revisa la respuesta de la base
         Boolean booflag2 = false; // revisa la conexion
-       if (!cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()) {
+        if (!cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()) {
             booflag2 = false; //error en la conexion
         } else {
             booflag2 = true; // conexion correcta

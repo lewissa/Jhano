@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
-  <services>
-    <service name="wsAccesoDatosFamiliaProducto">
-      <implementation-class>com.lewissa.jhano.accesodatos.familiaproducto.wsAccesoDatosFamiliaProducto</implementation-class>
-    </service>
-    <service name="wsAccesoDatosCliente">
-      <implementation-class>com.lewissa.jhano.accesodatos.cliente.wsAccesoDatosCliente</implementation-class>
-    </service>
-    <service name="wsAccesoDatosProveedor">
-      <implementation-class>com.lewissa.jhano.accesodatos.proveedor.wsAccesoDatosProveedor</implementation-class>
-    </service>
-  </services>
-  <clients>
-  </clients>
+    <services>
+        <service name="wsAccesoDatosFamiliaProducto">
+            <implementation-class>com.lewissa.jhano.accesodatos.familiaproducto.wsAccesoDatosFamiliaProducto</implementation-class>
+        </service>
+        <service name="wsAccesoDatosCliente">
+            <implementation-class>com.lewissa.jhano.accesodatos.cliente.wsAccesoDatosCliente</implementation-class>
+        </service>
+        <service name="wsAccesoDatosProveedor">
+            <implementation-class>com.lewissa.jhano.accesodatos.proveedor.wsAccesoDatosProveedor</implementation-class>
+        </service>
+    </services>
+    <clients>
+    </clients>
 </jax-ws>
