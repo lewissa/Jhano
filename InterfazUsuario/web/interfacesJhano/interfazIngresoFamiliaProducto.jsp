@@ -111,7 +111,7 @@
             <tr>
                 <td width="12%">
                     <table border="1" align="left">
-                         <tr>
+                        <tr>
                             <td>
                                 <a href="../interfacesJhano/interfazConsultaFamiliaProducto.jsp">
                                     <font face="Arial">
@@ -142,18 +142,28 @@
                                 } catch (Exception e) {
                                     strCodigoVacio = null;
                                 }
-                                
+
                                 if ((booCodigo != null) && (booResul != null)) {
                                     if ((booCodigo == true) && (booResul == true)) {
+<<<<<<< HEAD
                                         
                                         response.sendRedirect("../interfacesJhano/interfazConsultaFamiliaProducto.jsp");
+=======
+
+                                        String strConfirmacion = "Guardado Exitoso";
+>>>>>>> b5682558c950c63b701cd56b02842853774b9d85
                                         strDescripcionVacio = null;
                                         strCodigoVacio = null;
                                         booCodigo = null;
                                         booResul = null;
+                                        request.getSession().setAttribute("familia", null);
+                                        request.getSession().setAttribute("codigo", null);
+                                        request.getSession().setAttribute("codigoVacio", 0);
+                                        request.getSession().setAttribute("descripcionVacio", 0);
+                                        response.sendRedirect("../interfacesJhano/interfazConsultaFamiliaProducto.jsp");
                                     }
                                 }
-                                
+
                                 out.print("<table border=\"0\"  align=\"center\">");
                                 out.print("<tr>");
                                 out.print("<td><label> Codigo: </label></td>");
@@ -170,7 +180,7 @@
                                 } else {
                                     out.print("<td><input name=\"codigo\" type=\"text\" size=\"5\" maxlength=\"5\" placeholder=\"fm###\"/></td>");
                                 }
-                                
+
                                 out.print("</tr>");
                                 out.print("<tr>");
                                 out.print("<td><label>Descripcion:</label></td>");
@@ -179,7 +189,7 @@
                                         out.print("<td><input name=\"descripcion\" type=\"text\" size=\"50\" maxlength=\"50\" /><label ><font color=\"red\">Se requiere que el campo este lleno </font></label> </td>");
                                     } else {
                                         out.print("<td><input name=\"descripcion\" type=\"text\" size=\"50\" maxlength=\"50\" value=\"" + request.getSession().getAttribute("descripcionVacio") + "\" /></td>");
-                                        
+
                                     }
                                 } else {
                                     out.print("<td><input name=\"descripcion\" type=\"text\" size=\"50\" maxlength=\"50\"  /></td>");

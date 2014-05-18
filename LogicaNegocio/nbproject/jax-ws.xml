@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
   <services>
+    <service name="wsProveedor">
+      <implementation-class>com.lewissa.jhano.proveedor.wsProveedor</implementation-class>
+    </service>
     <service name="wsLogicaNegocioCliente">
       <implementation-class>com.lewissa.jhano.cliente.wsLogicaNegocioCliente</implementation-class>
     </service>
     <service name="wsLogicaNegocioFamiliaProdcuto">
       <implementation-class>com.lewissa.jhano.familiaproducto.wsLogicaNegocioFamiliaProdcuto</implementation-class>
     </service>
-    <service name="wsProveedor">
-      <implementation-class>com.lewissa.jhano.proveedor.wsProveedor</implementation-class>
-    </service>
   </services>
   <clients>
-    <client name="wsAccesoDatosFamiliaProducto">
-      <wsdl-url>http://localhost:8080/AccesoDatos/wsAccesoDatosFamiliaProducto?wsdl</wsdl-url>
-      <local-wsdl-file>localhost_8080/AccesoDatos/wsAccesoDatosFamiliaProducto.wsdl</local-wsdl-file>
-      <package-name>com.lewissa.jhano.accesodatos.familiaproducto</package-name>
+    <client name="wsAccesoDatosCliente">
+      <wsdl-url>http://localhost:8080/AccesoDatos/wsAccesoDatosCliente?WSDL</wsdl-url>
+      <local-wsdl-file>localhost_8080/AccesoDatos/wsAccesoDatosCliente.wsdl</local-wsdl-file>
+      <package-name forceReplace="true">com.lewissa.jhano.accesodatos.cliente</package-name>
       <catalog-file>catalog.xml</catalog-file>
       <wsimport-options>
         <wsimport-option>
@@ -32,7 +32,7 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:8080/AccesoDatos/wsAccesoDatosFamiliaProducto?wsdl</wsimport-option-value>
+          <wsimport-option-value>http://localhost:8080/AccesoDatos/wsAccesoDatosCliente?WSDL</wsimport-option-value>
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>
@@ -41,13 +41,17 @@
         <wsimport-option>
           <wsimport-option-name>xendorsed</wsimport-option-name>
           <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>package</wsimport-option-name>
+          <wsimport-option-value>com.lewissa.jhano.accesodatos.cliente</wsimport-option-value>
         </wsimport-option>
       </wsimport-options>
     </client>
-    <client name="wsAccesoDatosCliente">
-      <wsdl-url>http://localhost:8080/AccesoDatos/wsAccesoDatosCliente?wsdl</wsdl-url>
-      <local-wsdl-file>localhost_8080/AccesoDatos/wsAccesoDatosCliente.wsdl</local-wsdl-file>
-      <package-name>com.lewissa.jhano.accesodatos.cliente</package-name>
+    <client name="wsAccesoDatosFamiliaProducto">
+      <wsdl-url>http://localhost:8080/AccesoDatos/wsAccesoDatosFamiliaProducto?WSDL</wsdl-url>
+      <local-wsdl-file>localhost_8080/AccesoDatos/wsAccesoDatosFamiliaProducto.wsdl</local-wsdl-file>
+      <package-name forceReplace="true">com.lewissa.jhano.accesodatos.familiaproducto</package-name>
       <catalog-file>catalog.xml</catalog-file>
       <wsimport-options>
         <wsimport-option>
@@ -64,7 +68,7 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:8080/AccesoDatos/wsAccesoDatosCliente?wsdl</wsimport-option-value>
+          <wsimport-option-value>http://localhost:8080/AccesoDatos/wsAccesoDatosFamiliaProducto?WSDL</wsimport-option-value>
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>
@@ -73,13 +77,17 @@
         <wsimport-option>
           <wsimport-option-name>xendorsed</wsimport-option-name>
           <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>package</wsimport-option-name>
+          <wsimport-option-value>com.lewissa.jhano.accesodatos.familiaproducto</wsimport-option-value>
         </wsimport-option>
       </wsimport-options>
     </client>
     <client name="wsAccesoDatosProveedor">
-      <wsdl-url>http://localhost:8080/AccesoDatos/wsAccesoDatosProveedor?wsdl</wsdl-url>
+      <wsdl-url>http://localhost:8080/AccesoDatos/wsAccesoDatosProveedor?WSDL</wsdl-url>
       <local-wsdl-file>localhost_8080/AccesoDatos/wsAccesoDatosProveedor.wsdl</local-wsdl-file>
-      <package-name>com.lewissa.jhano.accesodatos.proveedor</package-name>
+      <package-name forceReplace="true">com.lewissa.jhano.accesodatos.proveedor</package-name>
       <catalog-file>catalog.xml</catalog-file>
       <wsimport-options>
         <wsimport-option>
@@ -96,7 +104,7 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:8080/AccesoDatos/wsAccesoDatosProveedor?wsdl</wsimport-option-value>
+          <wsimport-option-value>http://localhost:8080/AccesoDatos/wsAccesoDatosProveedor?WSDL</wsimport-option-value>
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>
@@ -106,7 +114,12 @@
           <wsimport-option-name>xendorsed</wsimport-option-name>
           <wsimport-option-value>true</wsimport-option-value>
         </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>package</wsimport-option-name>
+          <wsimport-option-value>com.lewissa.jhano.accesodatos.proveedor</wsimport-option-value>
+        </wsimport-option>
       </wsimport-options>
     </client>
   </clients>
+  <jsr109>false</jsr109>
 </jax-ws>

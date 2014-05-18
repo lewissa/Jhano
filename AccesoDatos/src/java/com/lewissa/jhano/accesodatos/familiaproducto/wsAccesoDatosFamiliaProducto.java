@@ -6,6 +6,7 @@
 package com.lewissa.jhano.accesodatos.familiaproducto;
 
 import com.lewissa.jhano.accesodatos.cAccesoDatos;
+import com.lewissa.jhano.accesodatos.cliente.cTransaccionCliente;
 import com.lewissa.jhano.accesodatos.familiaproducto.cTransaccionFamiliaProducto;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
@@ -23,10 +24,20 @@ public class wsAccesoDatosFamiliaProducto {
      */
     @WebMethod(operationName = "ingresarFamiliaProducto")
     public Boolean ingresarFamiliaProducto(@WebParam(name = "srtFamiliaProducto") String srtFamiliaProducto[]) {
-        Boolean booResultado = false;
         cTransaccionFamiliaProducto oTransaccionF = new cTransaccionFamiliaProducto();
-        booResultado = oTransaccionF.ingresarFamiliaProducto(srtFamiliaProducto);
-        return booResultado;
+        Boolean booflag1 = false; // revisa la respuesta de la base
+        Boolean booflag2 = false; // revisa la conexion
+       if (!cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()) {
+            booflag2 = false; //error en la conexion
+        } else {
+            booflag2 = true; // conexion correcta
+            booflag1 = oTransaccionF.ingresarFamiliaProducto(srtFamiliaProducto);
+            if (booflag1 == null) {
+                booflag1 = false;
+            }
+        }
+        booflag1 = (booflag1.equals(true)) && (booflag2.equals(true));
+        return booflag1;
     }
 
     /**

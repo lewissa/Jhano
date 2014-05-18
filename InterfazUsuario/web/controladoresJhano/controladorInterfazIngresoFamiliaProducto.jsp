@@ -40,14 +40,22 @@
                // request.getSession().setAttribute("codigo", booCodigo);
                 request.getSession().setAttribute("codigoVacio", strCodigo);
                 request.getSession().setAttribute("descripcionVacio", strDescripcion);
+<<<<<<< HEAD
 
                 response.sendRedirect("../interfacesJhano/interfazIngresoFamiliaProducto.jsp");
 
                 if (port.getErrorConexionFamiliaProducto() != null) {
                     String resultError = port.getErrorConexionFamiliaProducto();
                     response.sendRedirect("../erroresJhano/errorConexionDataBase.jsp?" + resultError);
+=======
+                
+            if (port.getErrorConexionFamiliaProducto() != null) {
+                    String strError = port.getErrorConexionFamiliaProducto();
+                    request.getSession().setAttribute("errorFamiliaProducto", strError);
+                    response.sendRedirect("../interfacesJhano/interfazConsultaFamiliaProducto.jsp");
+>>>>>>> b5682558c950c63b701cd56b02842853774b9d85
                 } else {
-                    response.sendRedirect("../interfacesJhano/interfazIngresoCliente.jsp");
+                    response.sendRedirect("../interfacesJhano/interfazIngresoFamiliaProducto.jsp");
                 }
 
             } catch (Exception e) {

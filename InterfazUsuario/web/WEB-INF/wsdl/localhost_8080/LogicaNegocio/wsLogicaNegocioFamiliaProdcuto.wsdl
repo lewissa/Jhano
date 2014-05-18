@@ -10,31 +10,53 @@
 <message name="getErrorConexionFamiliaProductoResponse">
 <part name="parameters" element="tns:getErrorConexionFamiliaProductoResponse"/>
 </message>
+<<<<<<< HEAD
 <message name="insertarFamiliaProducto">
 <part name="parameters" element="tns:insertarFamiliaProducto"/>
 </message>
 <message name="insertarFamiliaProductoResponse">
 <part name="parameters" element="tns:insertarFamiliaProductoResponse"/>
 </message>
+=======
+>>>>>>> b5682558c950c63b701cd56b02842853774b9d85
 <message name="validarCodigo">
 <part name="parameters" element="tns:validarCodigo"/>
 </message>
 <message name="validarCodigoResponse">
 <part name="parameters" element="tns:validarCodigoResponse"/>
 </message>
+<<<<<<< HEAD
+=======
+<message name="insertarFamiliaProducto">
+<part name="parameters" element="tns:insertarFamiliaProducto"/>
+</message>
+<message name="insertarFamiliaProductoResponse">
+<part name="parameters" element="tns:insertarFamiliaProductoResponse"/>
+</message>
+>>>>>>> b5682558c950c63b701cd56b02842853774b9d85
 <portType name="wsLogicaNegocioFamiliaProdcuto">
 <operation name="getErrorConexionFamiliaProducto">
 <input wsam:Action="http://familiaproducto.jhano.lewissa.com/wsLogicaNegocioFamiliaProdcuto/getErrorConexionFamiliaProductoRequest" message="tns:getErrorConexionFamiliaProducto"/>
 <output wsam:Action="http://familiaproducto.jhano.lewissa.com/wsLogicaNegocioFamiliaProdcuto/getErrorConexionFamiliaProductoResponse" message="tns:getErrorConexionFamiliaProductoResponse"/>
 </operation>
+<<<<<<< HEAD
 <operation name="insertarFamiliaProducto">
 <input wsam:Action="http://familiaproducto.jhano.lewissa.com/wsLogicaNegocioFamiliaProdcuto/insertarFamiliaProductoRequest" message="tns:insertarFamiliaProducto"/>
 <output wsam:Action="http://familiaproducto.jhano.lewissa.com/wsLogicaNegocioFamiliaProdcuto/insertarFamiliaProductoResponse" message="tns:insertarFamiliaProductoResponse"/>
 </operation>
+=======
+>>>>>>> b5682558c950c63b701cd56b02842853774b9d85
 <operation name="validarCodigo">
 <input wsam:Action="http://familiaproducto.jhano.lewissa.com/wsLogicaNegocioFamiliaProdcuto/validarCodigoRequest" message="tns:validarCodigo"/>
 <output wsam:Action="http://familiaproducto.jhano.lewissa.com/wsLogicaNegocioFamiliaProdcuto/validarCodigoResponse" message="tns:validarCodigoResponse"/>
 </operation>
+<<<<<<< HEAD
+=======
+<operation name="insertarFamiliaProducto">
+<input wsam:Action="http://familiaproducto.jhano.lewissa.com/wsLogicaNegocioFamiliaProdcuto/insertarFamiliaProductoRequest" message="tns:insertarFamiliaProducto"/>
+<output wsam:Action="http://familiaproducto.jhano.lewissa.com/wsLogicaNegocioFamiliaProdcuto/insertarFamiliaProductoResponse" message="tns:insertarFamiliaProductoResponse"/>
+</operation>
+>>>>>>> b5682558c950c63b701cd56b02842853774b9d85
 </portType>
 <binding name="wsLogicaNegocioFamiliaProdcutoPortBinding" type="tns:wsLogicaNegocioFamiliaProdcuto">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
@@ -47,7 +69,11 @@
 <soap:body use="literal"/>
 </output>
 </operation>
+<<<<<<< HEAD
 <operation name="insertarFamiliaProducto">
+=======
+<operation name="validarCodigo">
+>>>>>>> b5682558c950c63b701cd56b02842853774b9d85
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -56,7 +82,11 @@
 <soap:body use="literal"/>
 </output>
 </operation>
+<<<<<<< HEAD
 <operation name="validarCodigo">
+=======
+<operation name="insertarFamiliaProducto">
+>>>>>>> b5682558c950c63b701cd56b02842853774b9d85
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

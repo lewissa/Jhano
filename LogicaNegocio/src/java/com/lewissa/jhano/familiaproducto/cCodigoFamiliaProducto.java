@@ -18,13 +18,10 @@ public class cCodigoFamiliaProducto {
     private String strCodigo;
 
     public cCodigoFamiliaProducto(String strId) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        strCodigo = strId;
     }
-
     public cCodigoFamiliaProducto() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
 
     public String getStrCodigo() {
         return strCodigo;
@@ -36,14 +33,13 @@ public class cCodigoFamiliaProducto {
 
     public Boolean validarCodigo() {
         Boolean resultado = false;
-        String strPatronCodigo="^fm[0-9]{3}";
+        String strPatronCodigo = "^fm[0-9]{3}";
         Pattern patronCodigo = Pattern.compile(strPatronCodigo);
         Matcher matcherCodigo = patronCodigo.matcher(strCodigo);
-        if(matcherCodigo.matches())
-        {
-            resultado=true;
+        if (matcherCodigo.matches()) {
+            resultado = true;
         }
-        
+
         return resultado;
     }
 
