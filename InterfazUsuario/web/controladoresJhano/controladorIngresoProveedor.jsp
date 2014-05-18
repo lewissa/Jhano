@@ -19,7 +19,7 @@
             //String strId, strNombFisc, strNombComer, strDireccion, strConvencional, strCeular, strCorreo;
             try
             {
-            com.lewissa.jhano.proveedor.ws.CProveedor provProve=new com.lewissa.jhano.proveedor.ws.CProveedor();
+            com.lewissa.jhano.proveedor.CProveedor provProve=new com.lewissa.jhano.proveedor.CProveedor();
             if (request.getParameter("submit")!= null) {
                 provProve.setId(request.getParameter("ciruc"));
                 provProve.setNombreFiscal(request.getParameter("nombrefiscal"));
@@ -35,8 +35,8 @@
                     if (corVal.validaEmail()) {
                         if(!provProve.getNombreFiscal().equals("")){
                         request.getSession().setAttribute("sesprov", null);
-                        com.lewissa.jhano.proveedor.ws.WsProveedor_Service service = new com.lewissa.jhano.proveedor.ws.WsProveedor_Service();
-                        com.lewissa.jhano.proveedor.ws.WsProveedor port = service.getWsProveedorPort();
+                        com.lewissa.jhano.proveedor.WsProveedor_Service service = new com.lewissa.jhano.proveedor.WsProveedor_Service();
+                        com.lewissa.jhano.proveedor.WsProveedor port = service.getWsProveedorPort();
                         if(port.insertaProveedor(provProve))
                         {
                             %>

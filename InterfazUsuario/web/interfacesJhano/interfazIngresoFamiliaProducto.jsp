@@ -146,7 +146,6 @@
                                 if ((booCodigo != null) && (booResul != null)) {
                                     if ((booCodigo == true) && (booResul == true)) {
                                         
-                                        String strConfirmacion = "Guardado Exitoso";
                                         response.sendRedirect("../interfacesJhano/interfazConsultaFamiliaProducto.jsp");
                                         strDescripcionVacio = null;
                                         strCodigoVacio = null;

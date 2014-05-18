@@ -1,7 +1,7 @@
 <%-- 
     Document   : index
     Created on : 07/05/2014, 11:49:48 AM
-    Author     : Usuario
+    Author     : Fredy Janeta
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -94,7 +94,7 @@
                                 </font>
                                 <ul>
                                     <font face="Arial">
-                                        <a href="interfacesJhano/interfazFamiliaProducto.jsp"><center>Familias</center></a>
+                                        <a href="#"><center>Familias</center></a>
                                 </font>
                                 </ul>
                             </li>
@@ -125,7 +125,7 @@
                         <table border="1" align="left">
                             <tr>
                                 <td>
-                                    <a href="">
+                                    <a href="interfazIngresoFamiliaProducto.jsp">
                                         <font face="Arial">
                                             Ingreso
                                         </font>
@@ -145,7 +145,7 @@
                     </td>
                     <td width="88%">
                         <font face="Arial">
-                        <h3><center>AREA DE TRABAJO</center></h3>
+                        <h3><center>Familia de Productos</center></h3>
                         <form id="form1" name="form1" method="post" action="">
 
                         </form>

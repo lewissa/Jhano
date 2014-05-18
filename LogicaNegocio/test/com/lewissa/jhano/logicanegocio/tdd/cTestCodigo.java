@@ -9,7 +9,7 @@ package com.lewissa.jhano.logicanegocio.tdd;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
-import com.lewissa.jhano.utilidades.cCodigoFamiliaProducto;
+import com.lewissa.jhano.familiaproducto.cCodigoFamiliaProducto;
 
 /**
  *

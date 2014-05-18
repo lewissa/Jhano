@@ -8,7 +8,6 @@ import javax.xml.ws.WebServiceRef;
 import java.util.List;
 import com.lewissa.jhano.accesodatos.familiaproducto.WsAccesoDatosFamiliaProducto_Service;
 import com.lewissa.jhano.familiaproducto.cFamiliaProducto;
-import com.lewissa.jhano.utilidades.cCodigoFamiliaProducto;
 import java.util.ArrayList;
 
 
