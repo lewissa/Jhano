@@ -3,7 +3,6 @@
  * Esta clase me permite verificar el comportamiento de los metodos de la clase cAccesoDatos
  * 
  */
-
 package com.lewissa.jhano.accesodatos.tdd;
 
 import junit.framework.TestCase;
@@ -14,21 +13,25 @@ import com.lewissa.jhano.accesodatos.cAccesoDatos;
 
 /**
  * Verificacion de los metodos del la cAccesoDatos
+ *
  * @author Fredy Janeta
  * @version 1.0 05-05-2014
  */
-public class cTestAccesoDatos extends TestCase{
+public class cTestAccesoDatos extends TestCase {
+
     /**
-     * Este metodo permite verificar si el metodo conectarDataBase() permite conectar la DB
+     * Este metodo permite verificar si el metodo conectarDataBase() permite
+     * conectar la DB
      */
-    public void testConectarDataBase()
-    {
-       
-       assertTrue(cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase());
+    public void testConectarDataBase() {
+
+        assertTrue(cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase());
     }
-   /**
-    * Este metodo me permite verificar si el metodo desconectarDataBase() permite desconectar la DB
-    */
+
+    /**
+     * Este metodo me permite verificar si el metodo desconectarDataBase()
+     * permite desconectar la DB
+     */
 //    public void testDesconectarDataBase()
 //    {
 //        assertTrue(cAccesoDatos.getInstanciaAccesoDatos().desconectarDataBase());
@@ -57,14 +60,12 @@ public class cTestAccesoDatos extends TestCase{
 //        assertTrue(booResultado);
 //    }
 //    
- public static Test suite()
- {
-     return new TestSuite(cTestAccesoDatos.class);
- }
- 
- public static void main(String [] args)
- {
-     junit.textui.TestRunner.run(suite());
- }
-    
+    public static Test suite() {
+        return new TestSuite(cTestAccesoDatos.class);
+    }
+
+    public static void main(String[] args) {
+        junit.textui.TestRunner.run(suite());
+    }
+
 }

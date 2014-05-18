@@ -51,17 +51,14 @@ public class wsLogicaNegocioFamiliaProdcuto {
 
     @WebMethod(operationName = "getErrorConexionFamiliaProducto")
     public String getErrorConexionFamiliaProducto() {
-<<<<<<< HEAD
         String strError;
         com.lewissa.jhano.accesodatos.familiaproducto.WsAccesoDatosFamiliaProducto port = service.getWsAccesoDatosFamiliaProductoPort();
         strError=port.getErrorConexionFamiliaProducto();
         return strError;
-=======
         // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
         // If the calling of port operations may lead to race condition some synchronization is required.
-        com.lewissa.jhano.accesodatos.familiaproducto.WsAccesoDatosFamiliaProducto port = service_1.getWsAccesoDatosFamiliaProductoPort();
-        return port.getErrorConexionFamiliaProducto();
->>>>>>> b5682558c950c63b701cd56b02842853774b9d85
+        //com.lewissa.jhano.accesodatos.familiaproducto.WsAccesoDatosFamiliaProducto port = service_1.getWsAccesoDatosFamiliaProductoPort();
+        //return port.getErrorConexionFamiliaProducto();
     }
 
 }

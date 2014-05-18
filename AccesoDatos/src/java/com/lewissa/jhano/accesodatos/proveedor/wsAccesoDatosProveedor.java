@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.lewissa.jhano.accesodatos.proveedor;
 
 import com.lewissa.jhano.accesodatos.cAccesoDatos;
@@ -19,18 +18,16 @@ import javax.jws.WebParam;
 @WebService(serviceName = "wsAccesoDatosProveedor")
 public class wsAccesoDatosProveedor {
 
-     /**
+    /**
      * Web service operation
-     * @return 
+     *
+     * @return
      */
-    
-    
-    
     @WebMethod(operationName = "getErrorConexion")
     public String getErrorConexion() {
         //TODO write your implementation code here:
         return cAccesoDatos.getInstanciaAccesoDatos().getExcErrorAcessoDatos();
-    } 
+    }
 
     /**
      * Web service operation
@@ -40,7 +37,7 @@ public class wsAccesoDatosProveedor {
         cTransaccionProveedor oTransaccion = new cTransaccionProveedor();
         Boolean booflag1 = false; // revisa la respuesta de la base
         Boolean booflag2 = false; // revisa la conexion
-       if (!cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()) {
+        if (!cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()) {
             booflag2 = false; //error en la conexion
         } else {
             booflag2 = true; // conexion correcta

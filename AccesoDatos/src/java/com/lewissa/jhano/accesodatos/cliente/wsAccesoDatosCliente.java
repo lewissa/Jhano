@@ -34,8 +34,8 @@ public class wsAccesoDatosCliente {
     public Boolean actualizarDataBaseCliente(@WebParam(name = "strCli") String[] strCli) {
         Boolean booflag1 = false; // revisa la respuesta de la base
         Boolean booflag2 = false; // revisa la conexion
-        cTransaccionCliente traCliente=new cTransaccionCliente();
-       if (!cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()) {
+        cTransaccionCliente traCliente = new cTransaccionCliente();
+        if (!cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()) {
             booflag2 = false; //error en la conexion
         } else {
             booflag2 = true; // conexion correcta
@@ -50,7 +50,8 @@ public class wsAccesoDatosCliente {
 
     /**
      * Web service operation
-     * @return 
+     *
+     * @return
      */
     @WebMethod(operationName = "getErrorConexion")
     public String getErrorConexion() {
