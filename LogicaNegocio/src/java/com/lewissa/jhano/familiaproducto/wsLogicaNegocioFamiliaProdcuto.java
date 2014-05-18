@@ -7,8 +7,7 @@ import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.xml.ws.WebServiceRef;
-import com.lewissa.jhano.accesodatos.familiaproducto.WsAccesoDatosFamiliaProducto_Service;
-import com.lewissa.jhano.familiaproducto.cCodigoFamiliaProducto;
+import com.lewissa.jhano.utilidades.cCodigoFamiliaProducto;
 
 /**
  *
@@ -19,9 +18,7 @@ import com.lewissa.jhano.familiaproducto.cCodigoFamiliaProducto;
 public class wsLogicaNegocioFamiliaProdcuto {
 
     @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/AccesoDatos/wsAccesoDatosFamiliaProducto.wsdl")
-    private WsAccesoDatosFamiliaProducto_Service service;
-
-    /**
+     /**
      * Este metodo permite invocar la metodo de insercion del objeto
      * oFamiliaPrdocuto
      *
@@ -51,31 +48,11 @@ public class wsLogicaNegocioFamiliaProdcuto {
 
     @WebMethod(operationName = "getErrorConexionFamiliaProducto")
     public String getErrorConexionFamiliaProducto() {
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
->>>>>>> 81ff181463078c828566f54ef741e3463d38ab8c
-=======
->>>>>>> 81ff181463078c828566f54ef741e3463d38ab8c
         String strError;
-        com.lewissa.jhano.accesodatos.familiaproducto.WsAccesoDatosFamiliaProducto port = service.getWsAccesoDatosFamiliaProductoPort();
-        strError=port.getErrorConexionFamiliaProducto();
+        cTransaccionFamiliaProducto oTransaccionesFamiliaPrducto = new cTransaccionFamiliaProducto();
+        strError = oTransaccionesFamiliaPrducto.getErrorConexionFamiliaProducto();
         return strError;
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
-=======
->>>>>>> 81ff181463078c828566f54ef741e3463d38ab8c
-        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
-        // If the calling of port operations may lead to race condition some synchronization is required.
-        //com.lewissa.jhano.accesodatos.familiaproducto.WsAccesoDatosFamiliaProducto port = service_1.getWsAccesoDatosFamiliaProductoPort();
-        //return port.getErrorConexionFamiliaProducto();
-<<<<<<< HEAD
->>>>>>> 81ff181463078c828566f54ef741e3463d38ab8c
-=======
->>>>>>> 81ff181463078c828566f54ef741e3463d38ab8c
     }
 
 }

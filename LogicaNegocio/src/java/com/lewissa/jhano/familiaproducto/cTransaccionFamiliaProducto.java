@@ -4,10 +4,9 @@
  */
 
 package com.lewissa.jhano.familiaproducto;
+import com.lewissa.jhano.utilidades.cCodigoFamiliaProducto;
 import javax.xml.ws.WebServiceRef;
 import java.util.List;
-import com.lewissa.jhano.accesodatos.familiaproducto.WsAccesoDatosFamiliaProducto_Service;
-import com.lewissa.jhano.familiaproducto.cFamiliaProducto;
 import java.util.ArrayList;
 
 
@@ -21,6 +20,7 @@ import java.util.ArrayList;
 public class cTransaccionFamiliaProducto {
     @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/AccesoDatos/wsAccesoDatosFamiliaProducto.wsdl")
     private com.lewissa.jhano.accesodatos.familiaproducto.WsAccesoDatosFamiliaProducto_Service service;
+    private com.lewissa.jhano.accesodatos.familiaproducto.WsAccesoDatosFamiliaProducto port = service.getWsAccesoDatosFamiliaProductoPort();
     
     /**
      * Este metodo que permite Insertar un Objeto Familia de Producto
@@ -31,25 +31,23 @@ public class cTransaccionFamiliaProducto {
     
     public Boolean insertarFamiliaProducto(cFamiliaProducto oFamiliaProducto){
         Boolean booResultado=false;
-        String strQuery;
-        com.lewissa.jhano.accesodatos.familiaproducto.WsAccesoDatosFamiliaProducto_Service serviceAD = new WsAccesoDatosFamiliaProducto_Service();
-        com.lewissa.jhano.accesodatos.familiaproducto.WsAccesoDatosFamiliaProducto  serviceADPort = serviceAD.getWsAccesoDatosFamiliaProductoPort();
-        
         cCodigoFamiliaProducto oCodigo = new cCodigoFamiliaProducto(oFamiliaProducto.getStrId());
         List<String> strFamiliaProducto = new ArrayList<String>();
         if(oCodigo.validarCodigo())
         {
             strFamiliaProducto.add(0, oFamiliaProducto.getStrId());
             strFamiliaProducto.add(1, oFamiliaProducto.getStrDescripcion());
-            booResultado = serviceADPort.ingresarFamiliaProducto(strFamiliaProducto);
+            booResultado = port.ingresarFamiliaProducto(strFamiliaProducto);
         }
-        
-        
-        
-        //strQuery = "INSERT INTO familia VALUES ('" + familiaProducto.getStrId()+ "', '" + familiaProducto.getStrDescripcion()+ "')";
-       
         return booResultado;
         
+    }
+    
+    public String getErrorConexionFamiliaProducto()
+    {
+        String strResultado;
+        strResultado = port.getErrorConexionFamiliaProducto();
+        return strResultado;
     }
 
    
