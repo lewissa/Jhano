@@ -4,31 +4,31 @@
 <xsd:import namespace="http://proveedor.accesodatos.jhano.lewissa.com/" schemaLocation="http://localhost:8080/AccesoDatos/wsAccesoDatosProveedor?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="insertarProveedor">
-<part name="parameters" element="tns:insertarProveedor"/>
-</message>
-<message name="insertarProveedorResponse">
-<part name="parameters" element="tns:insertarProveedorResponse"/>
-</message>
 <message name="getErrorConexion">
 <part name="parameters" element="tns:getErrorConexion"/>
 </message>
 <message name="getErrorConexionResponse">
 <part name="parameters" element="tns:getErrorConexionResponse"/>
 </message>
+<message name="insertarProveedor">
+<part name="parameters" element="tns:insertarProveedor"/>
+</message>
+<message name="insertarProveedorResponse">
+<part name="parameters" element="tns:insertarProveedorResponse"/>
+</message>
 <portType name="wsAccesoDatosProveedor">
-<operation name="insertarProveedor">
-<input wsam:Action="http://proveedor.accesodatos.jhano.lewissa.com/wsAccesoDatosProveedor/insertarProveedorRequest" message="tns:insertarProveedor"/>
-<output wsam:Action="http://proveedor.accesodatos.jhano.lewissa.com/wsAccesoDatosProveedor/insertarProveedorResponse" message="tns:insertarProveedorResponse"/>
-</operation>
 <operation name="getErrorConexion">
 <input wsam:Action="http://proveedor.accesodatos.jhano.lewissa.com/wsAccesoDatosProveedor/getErrorConexionRequest" message="tns:getErrorConexion"/>
 <output wsam:Action="http://proveedor.accesodatos.jhano.lewissa.com/wsAccesoDatosProveedor/getErrorConexionResponse" message="tns:getErrorConexionResponse"/>
 </operation>
+<operation name="insertarProveedor">
+<input wsam:Action="http://proveedor.accesodatos.jhano.lewissa.com/wsAccesoDatosProveedor/insertarProveedorRequest" message="tns:insertarProveedor"/>
+<output wsam:Action="http://proveedor.accesodatos.jhano.lewissa.com/wsAccesoDatosProveedor/insertarProveedorResponse" message="tns:insertarProveedorResponse"/>
+</operation>
 </portType>
 <binding name="wsAccesoDatosProveedorPortBinding" type="tns:wsAccesoDatosProveedor">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="insertarProveedor">
+<operation name="getErrorConexion">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -37,7 +37,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="getErrorConexion">
+<operation name="insertarProveedor">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

@@ -1,10 +1,10 @@
 <%@page import="com.google.common.util.concurrent.ExecutionError"%>
 <%@page import="javax.swing.JOptionPane"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>Jhano | Ingresar Cliente </title>
+        <title>Jhano | Menú Producto </title>
         <script src="SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
         <link href="SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
     </head>
@@ -111,59 +111,47 @@
 
         <table bgcolor="#C0C0C0" width="100%" height="100%" border="1">
             <tr>
-                <td width="12%">
-                    <table border="0,1" align="left">
+                <td border="0.1"width="12%">
+                    <table align="center">
+                        <tr> 
+                            <td>
+                                <a href="http://localhost:8080/InterfazUsuario_1/interfacesJhano/interfazIngreseProducto.jsp">
+                                    <label>
+                                        <font face="Arial">
+                                            Ingreso
+                                        </font>
+                                    </label>
+                                </a> 
+                            </td>
+                        </tr>
                         <tr>
                             <td>
-                                <a href="../interfacesJhano/interfazIngresoCliente.jsp">
-                                    <font face="Arial">
-                                        Ingreso
-                                    </font>
+                                <a href="">
+                                    <label>
+                                        <font face="Arial">
+                                            Consulta
+                                        </font>
+                                    </label>
                                 </a>
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 <a href="">
-                                    <font face="Arial">
-                                        Consulta
-                                    </font>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a href="">
-                                    <font face="Arial">
-                                        Regresar
-                                    </font>
+                                    <label>
+                                        <font face="Arial">
+                                            Inicio
+                                        </font>
+                                    </label>
                                 </a>
                             </td>
                         </tr>
                     </table>
-                    <%
-                        String strErrorConexionCliente;
-                        try {
-                            strErrorConexionCliente = (String) request.getSession().getAttribute("errorCliente");
-                        } catch (Exception excE) {
-                            strErrorConexionCliente = null;
-                        }
-                        if (strErrorConexionCliente != null) {
-                            out.print("<td >");
-                            out.print("<h3><center> <font size=\"5\" face=\"Arial, Helvetica, sans-serif\">MATRIZ CLIENTE</font></center></h3>");
-                            out.print("</td>");
-                            out.print("<h3><center> <font size=\"3\" face=\"Arial, Helvetica, sans-serif\">" + request.getSession().getAttribute("errorCliente") + "</font><a href=\"../interfacesJhano/interfazCargaCliente.jsp\"><input name=\"cancelar\" type=\"button\" value=\"Ocultar\" /></a></center></h3>");
-                            request.getSession().setAttribute("errorCliente", null);
-                               
-                        } else {
-                    %>
-                    <td width="88%">
-                        <h3><center> <font size="5" face="Arial, Helvetica, sans-serif">Matriz Cliente</font></center></h3>
-                    </td>
-                    <%
-                        }
-                    %>
-
+                </td>
+                <td>
+                    <font face="Arial">
+                        <h3><center>Producto</center></h3>
+                    </font>
                 </td>
             </tr>
         </table>

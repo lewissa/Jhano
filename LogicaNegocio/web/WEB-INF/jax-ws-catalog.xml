@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
-    <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosFamiliaProducto?wsdl" uri="wsdl/localhost_8080/AccesoDatos/wsAccesoDatosFamiliaProducto.wsdl"/>
-    <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosFamiliaProducto?xsd=1" uri="wsdl/localhost_8080/AccesoDatos/wsAccesoDatosFamiliaProducto.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosCliente?wsdl" uri="wsdl/localhost_8080/AccesoDatos/wsAccesoDatosCliente.wsdl"/>
     <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosCliente?xsd=1" uri="wsdl/localhost_8080/AccesoDatos/wsAccesoDatosCliente.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosFamiliaProducto?wsdl" uri="wsdl/localhost_8080/AccesoDatos/wsAccesoDatosFamiliaProducto.wsdl"/>
+    <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosFamiliaProducto?xsd=1" uri="wsdl/localhost_8080/AccesoDatos/wsAccesoDatosFamiliaProducto.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosProveedor?wsdl" uri="wsdl/localhost_8080/AccesoDatos/wsAccesoDatosProveedor.wsdl"/>
     <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosProveedor?xsd=1" uri="wsdl/localhost_8080/AccesoDatos/wsAccesoDatosProveedor.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosProducto?wsdl" uri="wsdl/localhost_8080/AccesoDatos/wsAccesoDatosProducto.wsdl"/>
+    <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosProducto?xsd=1" uri="wsdl/localhost_8080/AccesoDatos/wsAccesoDatosProducto.xsd_1.xsd"/>
 </catalog>

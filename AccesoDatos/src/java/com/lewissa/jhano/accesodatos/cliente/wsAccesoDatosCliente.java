@@ -32,20 +32,20 @@ public class wsAccesoDatosCliente {
      */
     @WebMethod(operationName = "actualizarDataBaseCliente")
     public Boolean actualizarDataBaseCliente(@WebParam(name = "strCli") String[] strCli) {
-        Boolean booflag1 = false; // revisa la respuesta de la base
-        Boolean booflag2 = false; // revisa la conexion
+        Boolean booFlag1 = false; // revisa la respuesta de la base
+        Boolean booFlag2 = false; // revisa la conexion
         cTransaccionCliente traCliente = new cTransaccionCliente();
         if (!cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()) {
-            booflag2 = false; //error en la conexion
+            booFlag2 = false; //error en la conexion
         } else {
-            booflag2 = true; // conexion correcta
-            booflag1 = traCliente.ingresarCliente(strCli);
-            if (booflag1 == null) {
-                booflag1 = false;
+            booFlag2 = true; // conexion correcta
+            booFlag1 = traCliente.ingresarCliente(strCli);
+            if (booFlag1 == null) {
+                booFlag1 = false;
             }
         }
-        booflag1 = (booflag1.equals(true)) && (booflag2.equals(true));
-        return booflag1;
+        booFlag1 = (booFlag1.equals(true)) && (booFlag2.equals(true));
+        return booFlag1;
     }
 
     /**

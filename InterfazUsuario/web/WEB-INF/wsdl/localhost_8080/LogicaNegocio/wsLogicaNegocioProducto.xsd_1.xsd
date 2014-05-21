@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.3 (tags/2.3-7528; 2013-04-29T19:34:10+0000) JAXWS-RI/2.2.8 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://producto.jhano.lewissa.com/" xmlns:ns1="http://producto.accesodatos.jhano.lewissa.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://producto.jhano.lewissa.com/">
+
+<xs:import namespace="http://producto.accesodatos.jhano.lewissa.com/" schemaLocation="http://localhost:8080/LogicaNegocio/wsLogicaNegocioProducto?xsd=2"/>
+
+<xs:element name="actualizaDataBaseProducto" type="tns:actualizaDataBaseProducto"/>
+
+<xs:element name="actualizaDataBaseProductoResponse" type="tns:actualizaDataBaseProductoResponse"/>
+
+<xs:element name="getErrorConexionProducto" type="tns:getErrorConexionProducto"/>
+
+<xs:element name="getErrorConexionProductoResponse" type="tns:getErrorConexionProductoResponse"/>
+
+<xs:element name="validaRuc" type="tns:validaRuc"/>
+
+<xs:element name="validaRucResponse" type="tns:validaRucResponse"/>
+
+<xs:complexType name="actualizaDataBaseProducto">
+<xs:sequence>
+<xs:element name="proProducto" type="ns1:cProducto" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizaDataBaseProductoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getErrorConexionProducto">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getErrorConexionProductoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validaRuc">
+<xs:sequence>
+<xs:element name="rucRu" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validaRucResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

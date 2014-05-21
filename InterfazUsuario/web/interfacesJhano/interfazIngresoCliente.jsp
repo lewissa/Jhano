@@ -208,8 +208,8 @@
                                             out.print("<td><input name=\"ciruc\" type=\"text\" size=\"13\" maxlength=\"13\" value=\"" + request.getSession().getAttribute("cedulaVacio") + "\" /><label ><font color=\"red\">* Error--- Dato mal ingresado</font></label> </td>");
                                         }
                                     } else {
-                                        if (((booCedula != null) && (booRuc != null)) && (booCorreo != null)) {
-                                            if (((booCedula == true) || (booRuc == true)) && (booCorreo == true) && (booResult == false)) {
+                                        if (booResult!=null) {
+                                            if ((booCorreo == true) && (booResult == false)) {
                                                 out.print("<td><input name=\"ciruc\" type=\"text\" size=\"13\" maxlength=\"13\" value=\"" + request.getSession().getAttribute("cedulaVacio") + "\"/><font color=\"red\">* Error--- La cedula esta repetida</font></td>");
                                             } else {
                                                 out.print("<td><input name=\"ciruc\" type=\"text\" size=\"13\" maxlength=\"13\" value=\"" + request.getSession().getAttribute("cedulaVacio") + "\"/></td>");
@@ -314,7 +314,7 @@
                                 out.print("<tr>");
                                 out.print("<td colspan=\"2\" align=\"right\">");
                                 out.print("<input name=\"guardar\" type=\"submit\" value=\"Guardar\" />");
-                                out.print("<input name=\"cancelar\" type=\"button\" value=\"Cancelar\" />");
+                                out.print("<a href=\"../interfacesJhano/interfazCargaCliente.jsp?cancelar=cancelar\"><input name=\"cancelar\" type=\"button\" value=\"Cancelar\" /></a>");
                                 out.print("</td>");
                                 out.print("</tr>");
                             %>

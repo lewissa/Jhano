@@ -142,16 +142,10 @@
                                 } catch (Exception e) {
                                     strCodigoVacio = null;
                                 }
-
                                 if ((booCodigo != null) && (booResul != null)) {
                                     if ((booCodigo == true) && (booResul == true)) {
-<<<<<<< HEAD
-                                        
                                         response.sendRedirect("../interfacesJhano/interfazConsultaFamiliaProducto.jsp");
-=======
-
                                         String strConfirmacion = "Guardado Exitoso";
->>>>>>> b5682558c950c63b701cd56b02842853774b9d85
                                         strDescripcionVacio = null;
                                         strCodigoVacio = null;
                                         booCodigo = null;
@@ -163,7 +157,6 @@
                                         response.sendRedirect("../interfacesJhano/interfazConsultaFamiliaProducto.jsp");
                                     }
                                 }
-
                                 out.print("<table border=\"0\"  align=\"center\">");
                                 out.print("<tr>");
                                 out.print("<td><label> Codigo: </label></td>");
@@ -205,7 +198,6 @@
                                 out.print("</td>");
                                 out.print("</tr>");
                                 out.print("</table>");
-
                             %>
                         </form>
                     </font>

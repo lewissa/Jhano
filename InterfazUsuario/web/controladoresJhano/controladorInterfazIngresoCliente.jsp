@@ -43,7 +43,7 @@
                 com.lewissa.jhano.cliente.WsLogicaNegocioCliente port = service.getWsLogicaNegocioClientePort();// TODO initialize WS operation arguments here
                 CCliente cliCliente = new CCliente();
                 if (strCelular.equals("0")) {
-                   cliCliente.setStrCelular("");
+                    cliCliente.setStrCelular("");
                 } else {
                     cliCliente.setStrCelular(strCelular);
                 }
@@ -63,12 +63,15 @@
                 cliCliente.setStrTipoCliente(strTipocliente);
                 cliCliente.setStrIdCliente(strCiruc);
                 // TODO process result here
-                java.lang.Boolean booresult = port.actualizaDataBaseCliente(cliCliente);
+                Boolean booResult=null;
+                if(!(strNombrefiscal.equals("0")||strDireccion.equals("0"))){
+                 booResult = port.actualizaDataBaseCliente(cliCliente);
+                }
                 java.lang.Boolean booCorreo = port.validaEmail(request.getParameter("correo"));
                 java.lang.Boolean booCedula = port.validaCedula(request.getParameter("ciruc"));
                 java.lang.Boolean booRuc = port.validaRuc(request.getParameter("ciruc"));
 
-                request.getSession().setAttribute("cliente", booresult);
+                request.getSession().setAttribute("cliente", booResult);
                 request.getSession().setAttribute("correo", booCorreo);
                 request.getSession().setAttribute("cedula", booCedula);
                 request.getSession().setAttribute("ruc", booRuc);
@@ -77,6 +80,7 @@
                 request.getSession().setAttribute("rucVacio", strCiruc);
                 request.getSession().setAttribute("nombreComercialVacio", strNombrecomer);
                 request.getSession().setAttribute("nombreFiscalVacio", strNombrefiscal);
+                request.getSession().setAttribute("direccionVacio", strDireccion);
                 try {
                     Integer intControl = Integer.parseInt(strCelular);
                     request.getSession().setAttribute("celularVacio", strCelular);
@@ -90,7 +94,7 @@
                     request.getSession().setAttribute("telefonoVacio", "err0r");
                 }
                 if (port.getErrorConexionCliente() != null) {
-                    String strError = port.getErrorConexionCliente();  
+                    String strError = port.getErrorConexionCliente();
                     request.getSession().setAttribute("errorCliente", strError);
                     response.sendRedirect("../interfacesJhano/interfazCargaCliente.jsp");
                 } else {
@@ -106,4 +110,4 @@
 </html>
 
 
-  
+
