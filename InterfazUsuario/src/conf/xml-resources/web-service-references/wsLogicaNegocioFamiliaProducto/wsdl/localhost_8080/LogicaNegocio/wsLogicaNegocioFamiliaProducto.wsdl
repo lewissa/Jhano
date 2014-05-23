@@ -4,19 +4,18 @@
 <xsd:import namespace="http://familiaproducto.logicanegocio.jhano.lewissa.com/" schemaLocation="http://localhost:8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="insertarFamiliaProducto">
-<part name="parameters" element="tns:insertarFamiliaProducto"/>
-</message>
-<message name="insertarFamiliaProductoResponse">
-<part name="parameters" element="tns:insertarFamiliaProductoResponse"/>
-</message>
 <message name="validarCodigo">
 <part name="parameters" element="tns:validarCodigo"/>
 </message>
 <message name="validarCodigoResponse">
 <part name="parameters" element="tns:validarCodigoResponse"/>
 </message>
-<<<<<<< HEAD:InterfazUsuario/src/conf/xml-resources/web-service-references/wsLogicaNegocioFamiliaProducto/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto.wsdl
+<message name="insertarFamiliaProducto">
+<part name="parameters" element="tns:insertarFamiliaProducto"/>
+</message>
+<message name="insertarFamiliaProductoResponse">
+<part name="parameters" element="tns:insertarFamiliaProductoResponse"/>
+</message>
 <message name="getErrorConexionFamiliaProducto">
 <part name="parameters" element="tns:getErrorConexionFamiliaProducto"/>
 </message>
@@ -24,32 +23,22 @@
 <part name="parameters" element="tns:getErrorConexionFamiliaProductoResponse"/>
 </message>
 <portType name="wsLogicaNegocioFamiliaProducto">
-=======
-<portType name="wsLogicaNegocioFamiliaProducto">
-<operation name="getErrorConexionFamiliaProducto">
-<input wsam:Action="http://familiaproducto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioFamiliaProducto/getErrorConexionFamiliaProductoRequest" message="tns:getErrorConexionFamiliaProducto"/>
-<output wsam:Action="http://familiaproducto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioFamiliaProducto/getErrorConexionFamiliaProductoResponse" message="tns:getErrorConexionFamiliaProductoResponse"/>
+<operation name="validarCodigo">
+<input wsam:Action="http://familiaproducto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioFamiliaProducto/validarCodigoRequest" message="tns:validarCodigo"/>
+<output wsam:Action="http://familiaproducto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioFamiliaProducto/validarCodigoResponse" message="tns:validarCodigoResponse"/>
 </operation>
->>>>>>> 0603c79e9ac0eb544a069588d3157d129ddce80b:InterfazUsuario/src/conf/xml-resources/web-service-references/wsLogicaNegocioFamiliaProducto/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto.wsdl
 <operation name="insertarFamiliaProducto">
 <input wsam:Action="http://familiaproducto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioFamiliaProducto/insertarFamiliaProductoRequest" message="tns:insertarFamiliaProducto"/>
 <output wsam:Action="http://familiaproducto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioFamiliaProducto/insertarFamiliaProductoResponse" message="tns:insertarFamiliaProductoResponse"/>
 </operation>
-<operation name="validarCodigo">
-<input wsam:Action="http://familiaproducto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioFamiliaProducto/validarCodigoRequest" message="tns:validarCodigo"/>
-<output wsam:Action="http://familiaproducto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioFamiliaProducto/validarCodigoResponse" message="tns:validarCodigoResponse"/>
-<<<<<<< HEAD:InterfazUsuario/src/conf/xml-resources/web-service-references/wsLogicaNegocioFamiliaProducto/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto.wsdl
-</operation>
 <operation name="getErrorConexionFamiliaProducto">
 <input wsam:Action="http://familiaproducto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioFamiliaProducto/getErrorConexionFamiliaProductoRequest" message="tns:getErrorConexionFamiliaProducto"/>
 <output wsam:Action="http://familiaproducto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioFamiliaProducto/getErrorConexionFamiliaProductoResponse" message="tns:getErrorConexionFamiliaProductoResponse"/>
-=======
->>>>>>> 0603c79e9ac0eb544a069588d3157d129ddce80b:InterfazUsuario/src/conf/xml-resources/web-service-references/wsLogicaNegocioFamiliaProducto/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto.wsdl
 </operation>
 </portType>
 <binding name="wsLogicaNegocioFamiliaProductoPortBinding" type="tns:wsLogicaNegocioFamiliaProducto">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="insertarFamiliaProducto">
+<operation name="validarCodigo">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -58,7 +47,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="validarCodigo">
+<operation name="insertarFamiliaProducto">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

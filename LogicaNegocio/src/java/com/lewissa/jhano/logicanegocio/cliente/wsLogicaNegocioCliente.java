@@ -25,10 +25,8 @@ import javax.xml.ws.WebServiceRef;
 @WebService(serviceName = "wsLogicaNegocioCliente")
 public class wsLogicaNegocioCliente {
 
-
     @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/AccesoDatos/wsAccesoDatosCliente.wsdl")
     private WsAccesoDatosCliente_Service service;
-
 
     /**
      *
@@ -101,8 +99,6 @@ public class wsLogicaNegocioCliente {
         List<com.lewissa.jhano.logicanegocio.cliente.cCliente> clientes = new ArrayList<com.lewissa.jhano.logicanegocio.cliente.cCliente>();
 
         try {
-
-
             StringReader sr = new StringReader(obtenerCliente());
             WebRowSetImpl wrs = new WebRowSetImpl();
             wrs.readXml(sr);
@@ -119,12 +115,9 @@ public class wsLogicaNegocioCliente {
     }
 
     private String obtenerCliente() {
-<<<<<<< HEAD
-=======
-        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
-        // If the calling of port operations may lead to race condition some synchronization is required.
->>>>>>> 0603c79e9ac0eb544a069588d3157d129ddce80b
         com.lewissa.jhano.accesodatos.cliente.WsAccesoDatosCliente port = service.getWsAccesoDatosClientePort();
         return port.obtenerCliente();
-     }
+    }
+
+    
 }

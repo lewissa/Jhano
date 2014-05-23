@@ -12,19 +12,6 @@
 
 <xs:element name="obtenerClienteResponse" type="tns:obtenerClienteResponse"/>
 
-<<<<<<< HEAD
-<xs:complexType name="getErrorConexion">
-<xs:sequence/>
-</xs:complexType>
-
-<xs:complexType name="getErrorConexionResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-=======
->>>>>>> 0603c79e9ac0eb544a069588d3157d129ddce80b
 <xs:complexType name="actualizarDataBaseCliente">
 <xs:sequence>
 <xs:element name="strCli" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
@@ -37,11 +24,11 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="obtenerCliente">
+<xs:complexType name="getErrorConexion">
 <xs:sequence/>
 </xs:complexType>
 
-<xs:complexType name="obtenerClienteResponse">
+<xs:complexType name="getErrorConexionResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>

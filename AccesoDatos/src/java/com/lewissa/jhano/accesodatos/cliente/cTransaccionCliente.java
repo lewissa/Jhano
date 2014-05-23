@@ -88,14 +88,10 @@ public class cTransaccionCliente {
 
     public String cargarCliente() {
         String strSqlConsulta, strCliente;
-<<<<<<< HEAD
         strSqlConsulta = "SELECT \"Id_cliente\", \"Nombre_fiscal\" FROM cliente";
         strCliente = cAccesoDatos.getInstanciaAccesoDatos().consultarDataBase(strSqlConsulta);
-=======
         strSqlConsulta = "SELECT Id_cliente, Nombre_fiscal FROM cliente";
         strCliente = cAccesoDatos.getInstanciaAccesoDatos().consultarDataBase(strSqlConsulta);
-        
->>>>>>> 0603c79e9ac0eb544a069588d3157d129ddce80b
         return strCliente;
     }
 

@@ -6,7 +6,6 @@
 package com.lewissa.jhano.accesodatos.cliente;
 
 import com.lewissa.jhano.accesodatos.cAccesoDatos;
-import com.lewissa.jhano.accesodatos.cliente.cTransaccionCliente;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -67,11 +66,7 @@ public class wsAccesoDatosCliente {
         //TODO write your implementation code here:
         String cli = null;
         cTransaccionCliente traCliente = new cTransaccionCliente();
-<<<<<<< HEAD
         if (cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()){
-=======
-        if (!cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()){
->>>>>>> 0603c79e9ac0eb544a069588d3157d129ddce80b
             cli = traCliente.cargarCliente();
         }
         return cli;

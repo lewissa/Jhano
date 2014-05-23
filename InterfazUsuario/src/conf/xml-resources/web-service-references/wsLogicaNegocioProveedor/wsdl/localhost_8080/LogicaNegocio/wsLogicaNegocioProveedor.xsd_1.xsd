@@ -4,7 +4,6 @@
 
 <xs:element name="actualizaDataBaseProveedorResponse" type="tns:actualizaDataBaseProveedorResponse"/>
 
-<<<<<<< HEAD
 <xs:element name="cargaProveedor" type="tns:cargaProveedor"/>
 
 <xs:element name="cargaProveedorResponse" type="tns:cargaProveedorResponse"/>
@@ -13,8 +12,6 @@
 
 <xs:element name="eliminarProveedorResponse" type="tns:eliminarProveedorResponse"/>
 
-=======
->>>>>>> 0603c79e9ac0eb544a069588d3157d129ddce80b
 <xs:element name="getErrorConexionProveedor" type="tns:getErrorConexionProveedor"/>
 
 <xs:element name="getErrorConexionProveedorResponse" type="tns:getErrorConexionProveedorResponse"/>
@@ -43,7 +40,6 @@
 </xs:sequence>
 </xs:complexType>
 
-<<<<<<< HEAD
 <xs:complexType name="eliminarProveedor">
 <xs:sequence>
 <xs:element name="oProveedor" type="tns:cProveedor" minOccurs="0"/>
@@ -68,8 +64,6 @@
 </xs:sequence>
 </xs:complexType>
 
-=======
->>>>>>> 0603c79e9ac0eb544a069588d3157d129ddce80b
 <xs:complexType name="getErrorConexionProveedor">
 <xs:sequence/>
 </xs:complexType>
@@ -80,7 +74,6 @@
 </xs:sequence>
 </xs:complexType>
 
-<<<<<<< HEAD
 <xs:complexType name="cargaProveedor">
 <xs:sequence/>
 </xs:complexType>
@@ -91,8 +84,6 @@
 </xs:sequence>
 </xs:complexType>
 
-=======
->>>>>>> 0603c79e9ac0eb544a069588d3157d129ddce80b
 <xs:complexType name="validaCorreo">
 <xs:sequence>
 <xs:element name="corCorreo" type="xs:string" minOccurs="0"/>
@@ -123,21 +114,6 @@
 </xs:sequence>
 </xs:complexType>
 
-<<<<<<< HEAD
-=======
-<xs:complexType name="cProveedor">
-<xs:sequence>
-<xs:element name="celular" type="xs:string" minOccurs="0"/>
-<xs:element name="convencional" type="xs:string" minOccurs="0"/>
-<xs:element name="correo" type="xs:string" minOccurs="0"/>
-<xs:element name="direccion" type="xs:string" minOccurs="0"/>
-<xs:element name="id" type="xs:string" minOccurs="0"/>
-<xs:element name="nombreComercial" type="xs:string" minOccurs="0"/>
-<xs:element name="nombreFiscal" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
->>>>>>> 0603c79e9ac0eb544a069588d3157d129ddce80b
 <xs:complexType name="actualizaDataBaseProveedorResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean" minOccurs="0"/>
