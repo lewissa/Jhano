@@ -90,8 +90,6 @@ public class cTransaccionCliente {
         String strSqlConsulta, strCliente;
         strSqlConsulta = "SELECT \"Id_cliente\", \"Nombre_fiscal\" FROM cliente";
         strCliente = cAccesoDatos.getInstanciaAccesoDatos().consultarDataBase(strSqlConsulta);
-        strSqlConsulta = "SELECT Id_cliente, Nombre_fiscal FROM cliente";
-        strCliente = cAccesoDatos.getInstanciaAccesoDatos().consultarDataBase(strSqlConsulta);
         return strCliente;
     }
 

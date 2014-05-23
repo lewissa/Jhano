@@ -71,12 +71,7 @@
                 java.lang.Boolean booCorreo = port.validaEmail(request.getParameter("correo"));
                 java.lang.Boolean booCedula = port.validaCedula(request.getParameter("ciruc"));
                 java.lang.Boolean booRuc = port.validaRuc(request.getParameter("ciruc"));
-<<<<<<< HEAD
                 request.getSession().setAttribute("cliente", booResult);
-                request.getSession().setAttribute("cliente", booResult);
-=======
-                request.getSession().setAttribute("cliente", booresult);
->>>>>>> 0603c79e9ac0eb544a069588d3157d129ddce80b
                 request.getSession().setAttribute("correo", booCorreo);
                 request.getSession().setAttribute("cedula", booCedula);
                 request.getSession().setAttribute("ruc", booRuc);

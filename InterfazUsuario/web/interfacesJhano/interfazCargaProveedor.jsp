@@ -87,15 +87,12 @@
                                     <a href="#"><center>Productos</center></a>
                                 </font>
                                 <ul>
-<<<<<<< HEAD
                                     <font face="Arial">
                                         <a href="../interfacesJhano/interfazCargaFamiliaProducto.jsp"><center>Familias</center></a>
                                     </font>
-=======
-                                <font face="Arial">
+                                    <font face="Arial">
                                         <a href="../interfacesJhano/interfazCargaFamiliaProducto.jsp"><center>Familias</center></a>
-                                </font>
->>>>>>> 0603c79e9ac0eb544a069588d3157d129ddce80b
+                                    </font>
                                 </ul>
                             </li>
                             <li>
@@ -147,15 +144,12 @@
                         </tr>
                         <tr>
                             <td>
-<<<<<<< HEAD
                                 <a href="../index.jsp">
-=======
-                                <a href="../interfacesJhano/interfazInicio.jsp">
->>>>>>> 0603c79e9ac0eb544a069588d3157d129ddce80b
-                                    <font face="Arial">
-                                        Regresar
-                                    </font>
-                                </a>
+                                    <a href="../index.jsp">
+                                        <font face="Arial">
+                                            Regresar
+                                        </font>
+                                    </a>
                             </td>
                         </tr>
                     </table>
@@ -169,22 +163,13 @@
                         }
                         if (strErrorConexionProveedor != null) {
                             out.print("<td >");
-<<<<<<< HEAD
                             out.print("</td>");
                             out.print("<h3><center> <font size=\"3\" face=\"Arial, Helvetica, sans-serif\">" + request.getSession().getAttribute("errorProveedor") + "</font><a href=\"../interfacesJhano/interfazCargaProveedor.jsp\"><input name=\"cancelar\" type=\"button\" value=\"Ocultar\" /></a></center></h3>");
                             request.getSession().setAttribute("errorProveedor", null);
 
                     %>
-=======
-                            out.print("<h3><center> <font size=\"5\" face=\"Arial, Helvetica, sans-serif\">Matriz Proveedor</font></center></h3>");
-                            out.print("</td>");
-                            request.getSession().setAttribute("errorProveedor", null);
-
+                    <% } else {
                     %>
-                    <h3><center> <font size="5" face="Arial, Helvetica, sans-serif">Matriz Proveedor</font></center></h3>
->>>>>>> 0603c79e9ac0eb544a069588d3157d129ddce80b
-                                <% } else {
-                                %>
                     <td width="88%">
                         <h3><center> <font size="5" face="Arial, Helvetica, sans-serif">Matriz Proveedor</font></center></h3>
                     </td>
