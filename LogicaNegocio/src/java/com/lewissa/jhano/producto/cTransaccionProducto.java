@@ -6,7 +6,7 @@
 
 package com.lewissa.jhano.producto;
 
-import com.lewissa.jhano.utilidades.cRuc;
+import com.lewissa.jhano.logicanegocio.utilidades.cRuc;
 import java.util.ArrayList;
 import java.util.List;
 

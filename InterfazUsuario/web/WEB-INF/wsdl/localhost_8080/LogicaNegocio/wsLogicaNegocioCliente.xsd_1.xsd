@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.3 (tags/2.3-7528; 2013-04-29T19:34:10+0000) JAXWS-RI/2.2.8 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://cliente.jhano.lewissa.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://cliente.jhano.lewissa.com/">
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.3 (tags/2.3-7528; 2013-04-29T19:34:10+0000) JAXWS-RI/2.2.8 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://cliente.logicanegocio.jhano.lewissa.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://cliente.logicanegocio.jhano.lewissa.com/">
 
 <xs:element name="actualizaDataBaseCliente" type="tns:actualizaDataBaseCliente"/>
 
@@ -7,6 +7,10 @@
 <xs:element name="getErrorConexionCliente" type="tns:getErrorConexionCliente"/>
 
 <xs:element name="getErrorConexionClienteResponse" type="tns:getErrorConexionClienteResponse"/>
+
+<xs:element name="obtenCliente" type="tns:obtenCliente"/>
+
+<xs:element name="obtenClienteResponse" type="tns:obtenClienteResponse"/>
 
 <xs:element name="validaCedula" type="tns:validaCedula"/>
 
@@ -19,28 +23,6 @@
 <xs:element name="validaRuc" type="tns:validaRuc"/>
 
 <xs:element name="validaRucResponse" type="tns:validaRucResponse"/>
-
-<xs:complexType name="validaCedula">
-<xs:sequence>
-<xs:element name="cedCedula" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="validaCedulaResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:boolean" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="getErrorConexionCliente">
-<xs:sequence/>
-</xs:complexType>
-
-<xs:complexType name="getErrorConexionClienteResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
 
 <xs:complexType name="validaEmail">
 <xs:sequence>
@@ -88,6 +70,38 @@
 <xs:complexType name="actualizaDataBaseClienteResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="obtenCliente">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="obtenClienteResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:cCliente" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validaCedula">
+<xs:sequence>
+<xs:element name="cedCedula" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validaCedulaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getErrorConexionCliente">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getErrorConexionClienteResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 </xs:schema>

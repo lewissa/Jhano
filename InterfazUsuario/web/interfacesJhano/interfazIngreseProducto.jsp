@@ -3,8 +3,6 @@
     Created on : 17/05/2014, 10:43:24 AM
     Author     : wmoina
 --%>
-<%@page import="com.google.common.util.concurrent.ExecutionError"%>
-<%@page import="javax.swing.JOptionPane"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
     <head>
@@ -117,7 +115,7 @@
         <table bgcolor="#C0C0C0" width="100%" height="100%" border="1">
             <tr>
                 <td width="12%">
-                    <table border="0.1" align="Center">
+                    <table border="0.1" align="left">
                         <tr>
                             <td>
                                 <a href="">
@@ -138,7 +136,7 @@
                         </tr>
                          <tr>
                             <td>
-                                <a href="http://localhost:8080/InterfazUsuario_1/interfacesJhano/interfazCargaProducto.jsp">
+                                <a href="../InterfazUsuario_1/interfacesJhano/interfazCargaProducto.jsp">
                                     <font face="Arial">
                                         Regresar
                                     </font>

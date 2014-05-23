@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.3 (tags/2.3-7528; 2013-04-29T19:34:10+0000) JAXWS-RI/2.2.8 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://proveedor.logicanegocio.jhano.lewissa.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://proveedor.logicanegocio.jhano.lewissa.com/">
+
+<xs:element name="actualizaDataBaseProveedor" type="tns:actualizaDataBaseProveedor"/>
+
+<xs:element name="actualizaDataBaseProveedorResponse" type="tns:actualizaDataBaseProveedorResponse"/>
+
+<xs:element name="cargaProveedor" type="tns:cargaProveedor"/>
+
+<xs:element name="cargaProveedorResponse" type="tns:cargaProveedorResponse"/>
+
+<xs:element name="eliminarProveedor" type="tns:eliminarProveedor"/>
+
+<xs:element name="eliminarProveedorResponse" type="tns:eliminarProveedorResponse"/>
+
+<xs:element name="getErrorConexionProveedor" type="tns:getErrorConexionProveedor"/>
+
+<xs:element name="getErrorConexionProveedorResponse" type="tns:getErrorConexionProveedorResponse"/>
+
+<xs:element name="validaCedula" type="tns:validaCedula"/>
+
+<xs:element name="validaCedulaResponse" type="tns:validaCedulaResponse"/>
+
+<xs:element name="validaCorreo" type="tns:validaCorreo"/>
+
+<xs:element name="validaCorreoResponse" type="tns:validaCorreoResponse"/>
+
+<xs:element name="validaRuc" type="tns:validaRuc"/>
+
+<xs:element name="validaRucResponse" type="tns:validaRucResponse"/>
+
+<xs:complexType name="validaRuc">
+<xs:sequence>
+<xs:element name="rucRuc" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validaRucResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarProveedor">
+<xs:sequence>
+<xs:element name="oProveedor" type="tns:cProveedor" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cProveedor">
+<xs:sequence>
+<xs:element name="celular" type="xs:string" minOccurs="0"/>
+<xs:element name="convencional" type="xs:string" minOccurs="0"/>
+<xs:element name="correo" type="xs:string" minOccurs="0"/>
+<xs:element name="direccion" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:string" minOccurs="0"/>
+<xs:element name="nombreComercial" type="xs:string" minOccurs="0"/>
+<xs:element name="nombreFiscal" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarProveedorResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getErrorConexionProveedor">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getErrorConexionProveedorResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cargaProveedor">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="cargaProveedorResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:cProveedor" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validaCorreo">
+<xs:sequence>
+<xs:element name="corCorreo" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validaCorreoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validaCedula">
+<xs:sequence>
+<xs:element name="cedCedula" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validaCedulaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizaDataBaseProveedor">
+<xs:sequence>
+<xs:element name="proProveedor" type="tns:cProveedor" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizaDataBaseProveedorResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

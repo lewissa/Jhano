@@ -7,17 +7,17 @@
 <xsd:import namespace="http://producto.accesodatos.jhano.lewissa.com/" schemaLocation="http://localhost:8080/LogicaNegocio/wsLogicaNegocioProducto?xsd=2"/>
 </xsd:schema>
 </types>
-<message name="actualizaDataBaseProducto">
-<part name="parameters" element="tns:actualizaDataBaseProducto"/>
-</message>
-<message name="actualizaDataBaseProductoResponse">
-<part name="parameters" element="tns:actualizaDataBaseProductoResponse"/>
-</message>
 <message name="validaRuc">
 <part name="parameters" element="tns:validaRuc"/>
 </message>
 <message name="validaRucResponse">
 <part name="parameters" element="tns:validaRucResponse"/>
+</message>
+<message name="actualizaDataBaseProducto">
+<part name="parameters" element="tns:actualizaDataBaseProducto"/>
+</message>
+<message name="actualizaDataBaseProductoResponse">
+<part name="parameters" element="tns:actualizaDataBaseProductoResponse"/>
 </message>
 <message name="getErrorConexionProducto">
 <part name="parameters" element="tns:getErrorConexionProducto"/>
@@ -26,13 +26,13 @@
 <part name="parameters" element="tns:getErrorConexionProductoResponse"/>
 </message>
 <portType name="wsLogicaNegocioProducto">
-<operation name="actualizaDataBaseProducto">
-<input wsam:Action="http://producto.jhano.lewissa.com/wsLogicaNegocioProducto/actualizaDataBaseProductoRequest" message="tns:actualizaDataBaseProducto"/>
-<output wsam:Action="http://producto.jhano.lewissa.com/wsLogicaNegocioProducto/actualizaDataBaseProductoResponse" message="tns:actualizaDataBaseProductoResponse"/>
-</operation>
 <operation name="validaRuc">
 <input wsam:Action="http://producto.jhano.lewissa.com/wsLogicaNegocioProducto/validaRucRequest" message="tns:validaRuc"/>
 <output wsam:Action="http://producto.jhano.lewissa.com/wsLogicaNegocioProducto/validaRucResponse" message="tns:validaRucResponse"/>
+</operation>
+<operation name="actualizaDataBaseProducto">
+<input wsam:Action="http://producto.jhano.lewissa.com/wsLogicaNegocioProducto/actualizaDataBaseProductoRequest" message="tns:actualizaDataBaseProducto"/>
+<output wsam:Action="http://producto.jhano.lewissa.com/wsLogicaNegocioProducto/actualizaDataBaseProductoResponse" message="tns:actualizaDataBaseProductoResponse"/>
 </operation>
 <operation name="getErrorConexionProducto">
 <input wsam:Action="http://producto.jhano.lewissa.com/wsLogicaNegocioProducto/getErrorConexionProductoRequest" message="tns:getErrorConexionProducto"/>
@@ -41,7 +41,7 @@
 </portType>
 <binding name="wsLogicaNegocioProductoPortBinding" type="tns:wsLogicaNegocioProducto">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="actualizaDataBaseProducto">
+<operation name="validaRuc">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -50,7 +50,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="validaRuc">
+<operation name="actualizaDataBaseProducto">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

@@ -58,4 +58,18 @@ public class wsAccesoDatosCliente {
         //TODO write your implementation code here:
         return cAccesoDatos.getInstanciaAccesoDatos().getExcErrorAcessoDatos();
     }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "obtenerCliente")
+    public String obtenerCliente() {
+        //TODO write your implementation code here:
+        String cli = null;
+        cTransaccionCliente traCliente = new cTransaccionCliente();
+        if (cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()){
+            cli = traCliente.cargarCliente();
+        }
+        return cli;
+    }
 }

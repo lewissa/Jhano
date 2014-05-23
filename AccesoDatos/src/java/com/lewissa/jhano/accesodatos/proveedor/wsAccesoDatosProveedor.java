@@ -49,4 +49,34 @@ public class wsAccesoDatosProveedor {
         booflag1 = (booflag1.equals(true)) && (booflag2.equals(true));
         return booflag1;
     }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "cargaProveedor")
+    public String cargaProveedor() {
+        //TODO write your implementation code here:
+        String strResultado = null;
+        cTransaccionProveedor oTransaccionProveedor = new cTransaccionProveedor();
+        if (cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()) {
+            strResultado = oTransaccionProveedor.cargarProveedor();
+        }
+
+        return strResultado;
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "eliminarProveedor")
+    public Boolean eliminarProveedor(@WebParam(name = "strCodigoProveedor") String strCodigoProveedor) {
+        //TODO write your implementation code here:
+        Boolean booResultado = false;
+        cTransaccionProveedor oTransaccionProveedor = new cTransaccionProveedor();
+        if (cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()) {
+            booResultado = oTransaccionProveedor.emilinarProveedor(strCodigoProveedor);
+        }
+        return booResultado;
+    }
+
 }

@@ -1,4 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<%@page import="javax.swing.JOptionPane"%>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -73,18 +74,23 @@
                         <ul id="MenuBar2" class="MenuBarHorizontal">
                             <li>
                                 <font face="Arial">
-                                    <a href="#"><center>Clientes</center></a>
+                                    <a href="../interfacesJhano/interfazCargaCliente.jsp"><center>Clientes</center></a>
                                 </font>
                             </li>
                             <li>
                                 <font face="Arial">
-                                    <a href="#"><center>Proveedores</center></a>
+                                    <a href="../interfacesJhano/interfazCargaProveedor.jsp"><center>Proveedores</center></a>
                                 </font>
                             </li>
                             <li>
                                 <font face="Arial">
                                     <a href="#"><center>Productos</center></a>
                                 </font>
+                                <ul>
+                                    <font face="Arial">
+                                        <a href="../interfacesJhano/interfazCargaFamiliaProducto.jsp"><center>Familias</center></a>
+                                    </font>
+                                </ul>
                             </li>
                             <li>
                                 <font face="Arial">
@@ -110,7 +116,7 @@
         <table bgcolor="#C0C0C0" width="100%" border="1">
             <tr>
                 <td width="12%">
-                    <table border="1" align="left">
+                    <table border="0.1" align="left">
                         <tr>
                             <td>
                                 <a href="../interfacesJhano/interfazConsultaFamiliaProducto.jsp">
@@ -154,7 +160,7 @@
                                         request.getSession().setAttribute("codigo", null);
                                         request.getSession().setAttribute("codigoVacio", 0);
                                         request.getSession().setAttribute("descripcionVacio", 0);
-                                        response.sendRedirect("../interfacesJhano/interfazConsultaFamiliaProducto.jsp");
+                                        response.sendRedirect("../interfacesJhano/interfazCargaFamiliaProducto");
                                     }
                                 }
                                 out.print("<table border=\"0\"  align=\"center\">");
@@ -168,12 +174,19 @@
                                             out.print("<td><input name=\"codigo\" type=\"text\" size=\"5\" maxlength=\"5\" value=\"" + request.getSession().getAttribute("codigoVacio") + "\" /><label ><font color=\"red\">Dato mal ingresado</font></label> </td>");
                                         }
                                     } else {
-                                        out.print("<td><input name=\"codigo\" type=\"text\" size=\"5\" maxlength=\"5\" value=\"" + request.getSession().getAttribute("codigoVacio") + "\"/> </td>");
+                                        if(booCodigo != null){
+                                        if((booCodigo == true)&&(booResul == false)){
+                                           out.print("<td><input name=\"codigo\" type=\"text\" size=\"5\" maxlength=\"5\" value=\"" + request.getSession().getAttribute("codigoVacio") + "\" /><label ><font color=\"red\">El codigo ya existe</font></label> </td>"); 
+                                        }else{
+                                           out.print("<td><input name=\"codigo\" type=\"text\" size=\"5\" maxlength=\"5\" value=\"" + request.getSession().getAttribute("codigoVacio") + "\" /></td>"); 
+                                        }
+                                    } else {
+                                            out.print("<td><input name=\"codigo\" type=\"text\" size=\"5\" maxlength=\"5\" value=\"" + request.getSession().getAttribute("codigoVacio") + "\" /></td>"); 
+                                        }
                                     }
-                                } else {
-                                    out.print("<td><input name=\"codigo\" type=\"text\" size=\"5\" maxlength=\"5\" placeholder=\"fm###\"/></td>");
-                                }
-
+                                }else{
+                                    out.print("<td><input name=\"codigo\" type=\"text\" size=\"5\" maxlength=\"5\"/></td>"); 
+                                } 
                                 out.print("</tr>");
                                 out.print("<tr>");
                                 out.print("<td><label>Descripcion:</label></td>");
@@ -192,7 +205,7 @@
                                 out.print("<tr>");
                                 out.print("<td colspan=\"2\" align=\"center\">");
                                 out.print("<input name=\"guardar\" type=\"submit\" value=\"Guardar\" />");
-                                out.print("<input name=\"cancelar\" type=\"button\" value=\"Cancelar\" />");
+                                out.print("<input name=\"cancelar\" type=\"button\" value=\"Cancelar\" onclick=\"location.href='../interfacesJhano/interfazCargaFamiliaProducto.jsp'\" />");
                                 out.print("</td>");
                                 out.print("<td>");
                                 out.print("</td>");

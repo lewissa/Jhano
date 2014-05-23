@@ -17,10 +17,10 @@ public class cTransaccionFamiliaProducto {
         String strSqlIngresoFamilia;
         Boolean booResultado = false;
         strSqlIngresoFamilia = "INSERT INTO familia VALUES ('" + strFamiliaProducto[0] + "','" + strFamiliaProducto[1] + "')";
-        booResultado = cAccesoDatos.getInstanciaAccesoDatos().actualizarDataBase(strSqlIngresoFamilia);
-        if (booResultado == null) {
-            booResultado = false;
+        if (cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()) {
+            booResultado = cAccesoDatos.getInstanciaAccesoDatos().actualizarDataBase(strSqlIngresoFamilia);
         }
+
         return booResultado;
     }
 }

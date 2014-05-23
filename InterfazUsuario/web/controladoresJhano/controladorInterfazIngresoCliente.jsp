@@ -4,7 +4,8 @@
     Author     : ECORAE
 --%>
 
-<%@page import="com.lewissa.jhano.cliente.CCliente"%>
+<%@page import="com.lewissa.jhano.logicanegocio.cliente.WsLogicaNegocioCliente_Service"%>
+<%@page import="com.lewissa.jhano.logicanegocio.cliente.CCliente"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -39,8 +40,8 @@
                         break;
                     }
                 }
-                com.lewissa.jhano.cliente.WsLogicaNegocioCliente_Service service = new com.lewissa.jhano.cliente.WsLogicaNegocioCliente_Service();
-                com.lewissa.jhano.cliente.WsLogicaNegocioCliente port = service.getWsLogicaNegocioClientePort();// TODO initialize WS operation arguments here
+                com.lewissa.jhano.logicanegocio.cliente.WsLogicaNegocioCliente_Service service = new WsLogicaNegocioCliente_Service();
+                com.lewissa.jhano.logicanegocio.cliente.WsLogicaNegocioCliente port = service.getWsLogicaNegocioClientePort();// TODO initialize WS operation arguments here
                 CCliente cliCliente = new CCliente();
                 if (strCelular.equals("0")) {
                     cliCliente.setStrCelular("");
@@ -70,7 +71,7 @@
                 java.lang.Boolean booCorreo = port.validaEmail(request.getParameter("correo"));
                 java.lang.Boolean booCedula = port.validaCedula(request.getParameter("ciruc"));
                 java.lang.Boolean booRuc = port.validaRuc(request.getParameter("ciruc"));
-
+                request.getSession().setAttribute("cliente", booResult);
                 request.getSession().setAttribute("cliente", booResult);
                 request.getSession().setAttribute("correo", booCorreo);
                 request.getSession().setAttribute("cedula", booCedula);

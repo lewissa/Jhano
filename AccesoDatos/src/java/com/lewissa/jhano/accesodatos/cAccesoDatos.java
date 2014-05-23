@@ -11,7 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Properties;
-import com.lewissa.jhano.utilidades.cConstantes;
+import com.lewissa.jhano.accesodatos.utilidades.cConstantes;
 import com.sun.rowset.WebRowSetImpl;
 import java.io.Serializable;
 import java.io.StringWriter;

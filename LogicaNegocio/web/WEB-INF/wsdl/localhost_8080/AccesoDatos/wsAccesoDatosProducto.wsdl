@@ -4,31 +4,31 @@
 <xsd:import namespace="http://producto.accesodatos.jhano.lewissa.com/" schemaLocation="http://localhost:8080/AccesoDatos/wsAccesoDatosProducto?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="actualizarDataBaseProducto">
-<part name="parameters" element="tns:actualizarDataBaseProducto"/>
-</message>
-<message name="actualizarDataBaseProductoResponse">
-<part name="parameters" element="tns:actualizarDataBaseProductoResponse"/>
-</message>
 <message name="getErrorConexion">
 <part name="parameters" element="tns:getErrorConexion"/>
 </message>
 <message name="getErrorConexionResponse">
 <part name="parameters" element="tns:getErrorConexionResponse"/>
 </message>
+<message name="actualizarDataBaseProducto">
+<part name="parameters" element="tns:actualizarDataBaseProducto"/>
+</message>
+<message name="actualizarDataBaseProductoResponse">
+<part name="parameters" element="tns:actualizarDataBaseProductoResponse"/>
+</message>
 <portType name="wsAccesoDatosProducto">
-<operation name="actualizarDataBaseProducto">
-<input wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/actualizarDataBaseProductoRequest" message="tns:actualizarDataBaseProducto"/>
-<output wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/actualizarDataBaseProductoResponse" message="tns:actualizarDataBaseProductoResponse"/>
-</operation>
 <operation name="getErrorConexion">
 <input wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/getErrorConexionRequest" message="tns:getErrorConexion"/>
 <output wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/getErrorConexionResponse" message="tns:getErrorConexionResponse"/>
 </operation>
+<operation name="actualizarDataBaseProducto">
+<input wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/actualizarDataBaseProductoRequest" message="tns:actualizarDataBaseProducto"/>
+<output wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/actualizarDataBaseProductoResponse" message="tns:actualizarDataBaseProductoResponse"/>
+</operation>
 </portType>
 <binding name="wsAccesoDatosProductoPortBinding" type="tns:wsAccesoDatosProducto">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="actualizarDataBaseProducto">
+<operation name="getErrorConexion">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -37,7 +37,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="getErrorConexion">
+<operation name="actualizarDataBaseProducto">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

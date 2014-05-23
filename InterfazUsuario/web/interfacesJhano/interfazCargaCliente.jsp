@@ -1,10 +1,11 @@
+<%@page import="java.util.List"%>
 <%@page import="com.google.common.util.concurrent.ExecutionError"%>
 <%@page import="javax.swing.JOptionPane"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>Jhano | Ingresar Cliente </title>
+        <title>Jhano | Cliente </title>
         <script src="SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
         <link href="SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
     </head>
@@ -75,18 +76,23 @@
                         <ul id="MenuBar2" class="MenuBarHorizontal">
                             <li>
                                 <font face="Arial">
-                                    <a href="#"><center>Clientes</center></a>
+                                    <a href="../interfacesJhano/interfazCargaCliente.jsp"><center>Clientes</center></a>
                                 </font>
                             </li>
                             <li>
                                 <font face="Arial">
-                                    <a href="#"><center>Proveedores</center></a>
+                                    <a href="../interfacesJhano/interfazCargaProveedor.jsp"><center>Proveedores</center></a>
                                 </font>
                             </li>
                             <li>
                                 <font face="Arial">
                                     <a href="#"><center>Productos</center></a>
                                 </font>
+                                <ul>
+                                    <font face="Arial">
+                                        <a href="../interfacesJhano/interfazCargaFamiliaProducto.jsp"><center>Familias</center></a>
+                                    </font>
+                                </ul>
                             </li>
                             <li>
                                 <font face="Arial">
@@ -133,7 +139,7 @@
                         </tr>
                         <tr>
                             <td>
-                                <a href="">
+                                <a href="../index.jsp">
                                     <font face="Arial">
                                         Regresar
                                     </font>
@@ -142,6 +148,26 @@
                         </tr>
                     </table>
                     <%
+                        String strCancelar;
+                        try {
+                            strCancelar = (request.getParameter("can") != null) ? "true" : "false";
+                        } catch (Exception excError) {
+                            strCancelar = "false";
+                        }
+                        if (strCancelar.equals("true")) {
+                            session.setAttribute("cliente", false);
+                            request.getSession().setAttribute("correo", null);
+                            request.getSession().setAttribute("cedula", null);
+                            request.getSession().setAttribute("ruc", null);
+                            request.getSession().setAttribute("correoVacio", 0);
+                            request.getSession().setAttribute("cedulaVacio", 0);
+                            request.getSession().setAttribute("rucVacio", 0);
+                            request.getSession().setAttribute("nombreComercialVacio", 0);
+                            request.getSession().setAttribute("nombreFiscalVacio", 0);
+                            request.getSession().setAttribute("celularVacio", 0);
+                            request.getSession().setAttribute("telefonoVacio", 0);
+                            request.getSession().setAttribute("direccionVacio", 0);
+                        }
                         String strErrorConexionCliente;
                         try {
                             strErrorConexionCliente = (String) request.getSession().getAttribute("errorCliente");
@@ -150,15 +176,52 @@
                         }
                         if (strErrorConexionCliente != null) {
                             out.print("<td >");
-                            out.print("<h3><center> <font size=\"5\" face=\"Arial, Helvetica, sans-serif\">MATRIZ CLIENTE</font></center></h3>");
                             out.print("</td>");
                             out.print("<h3><center> <font size=\"3\" face=\"Arial, Helvetica, sans-serif\">" + request.getSession().getAttribute("errorCliente") + "</font><a href=\"../interfacesJhano/interfazCargaCliente.jsp\"><input name=\"cancelar\" type=\"button\" value=\"Ocultar\" /></a></center></h3>");
                             request.getSession().setAttribute("errorCliente", null);
-                               
                         } else {
                     %>
                     <td width="88%">
-                        <h3><center> <font size="5" face="Arial, Helvetica, sans-serif">Matriz Cliente</font></center></h3>
+                        <form name="frmCargarClientes" action="../controladoresJhano/controladorInterfazCargarCliente.jsp" method="post" >
+                            <table width="700" align="center" border="1">
+                                <tr>
+                                    <td width="150" align="center">Cédula / RUC</td>
+                                    <td align="center">Nombre</td>
+                                    <td width="50" align="center">Modificar</td>
+                                    <td width="50" align="center">Eliminar</td>
+                                </tr>
+                                <%                
+                                    String strCarga = (request.getParameter("car") != null) ? "true" : "false";
+                                    if (strCarga.equals("false")) {
+                                        response.sendRedirect("../controladoresJhano/controladorInterfazCargarCliente.jsp");
+                                    }
+                                    List<com.lewissa.jhano.logicanegocio.cliente.CCliente> clientes = (List<com.lewissa.jhano.logicanegocio.cliente.CCliente>) request.getSession().getAttribute("clientes");
+                                    if (clientes != null) {
+                                        for (com.lewissa.jhano.logicanegocio.cliente.CCliente cliente : clientes) {
+                                            out.print("<tr>");
+                                            out.print("  <td>" + cliente.getStrIdCliente() + "</td>");
+                                            out.print("  <td>" + cliente.getStrNombreFiscal() + "</td>");
+                                            out.print("  <td>Modificar</td>");
+                                            out.print("  <td>Eliminar</td>");
+                                            //out.print("  <td><a href='controlador.jsp?act=del&id=" + estudiante.getIntCodigo().toString() + "'>Eliminar</a></td>");
+                                            out.print("</tr>");
+                                        }
+                                    } else {
+                                        out.print("<tr>");
+                                        out.print("  <td></td>");
+                                        out.print("  <td></td>");
+                                        out.print("  <td></td>");
+                                        out.print("  <td></td>");
+                                        out.print("</tr>");
+                                    }
+                                %>
+                                <tr>
+                                    <td align="right" colspan="4">
+                                    </td>
+                                </tr>
+                            </table>
+
+                        </form>
                     </td>
                     <%
                         }

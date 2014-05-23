@@ -16,6 +16,18 @@
 <message name="insertarProveedorResponse">
 <part name="parameters" element="tns:insertarProveedorResponse"/>
 </message>
+<message name="cargaProveedor">
+<part name="parameters" element="tns:cargaProveedor"/>
+</message>
+<message name="cargaProveedorResponse">
+<part name="parameters" element="tns:cargaProveedorResponse"/>
+</message>
+<message name="eliminarProveedor">
+<part name="parameters" element="tns:eliminarProveedor"/>
+</message>
+<message name="eliminarProveedorResponse">
+<part name="parameters" element="tns:eliminarProveedorResponse"/>
+</message>
 <portType name="wsAccesoDatosProveedor">
 <operation name="getErrorConexion">
 <input wsam:Action="http://proveedor.accesodatos.jhano.lewissa.com/wsAccesoDatosProveedor/getErrorConexionRequest" message="tns:getErrorConexion"/>
@@ -24,6 +36,14 @@
 <operation name="insertarProveedor">
 <input wsam:Action="http://proveedor.accesodatos.jhano.lewissa.com/wsAccesoDatosProveedor/insertarProveedorRequest" message="tns:insertarProveedor"/>
 <output wsam:Action="http://proveedor.accesodatos.jhano.lewissa.com/wsAccesoDatosProveedor/insertarProveedorResponse" message="tns:insertarProveedorResponse"/>
+</operation>
+<operation name="cargaProveedor">
+<input wsam:Action="http://proveedor.accesodatos.jhano.lewissa.com/wsAccesoDatosProveedor/cargaProveedorRequest" message="tns:cargaProveedor"/>
+<output wsam:Action="http://proveedor.accesodatos.jhano.lewissa.com/wsAccesoDatosProveedor/cargaProveedorResponse" message="tns:cargaProveedorResponse"/>
+</operation>
+<operation name="eliminarProveedor">
+<input wsam:Action="http://proveedor.accesodatos.jhano.lewissa.com/wsAccesoDatosProveedor/eliminarProveedorRequest" message="tns:eliminarProveedor"/>
+<output wsam:Action="http://proveedor.accesodatos.jhano.lewissa.com/wsAccesoDatosProveedor/eliminarProveedorResponse" message="tns:eliminarProveedorResponse"/>
 </operation>
 </portType>
 <binding name="wsAccesoDatosProveedorPortBinding" type="tns:wsAccesoDatosProveedor">
@@ -38,6 +58,24 @@
 </output>
 </operation>
 <operation name="insertarProveedor">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="cargaProveedor">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="eliminarProveedor">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

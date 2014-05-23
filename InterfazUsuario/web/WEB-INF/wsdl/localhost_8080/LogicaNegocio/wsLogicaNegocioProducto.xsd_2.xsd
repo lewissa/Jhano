@@ -2,18 +2,18 @@
 
 <xs:complexType name="cProducto">
 <xs:sequence>
-<xs:element name="douMargen_ganancia" type="xs:double" minOccurs="0"/>
-<xs:element name="douMargen_venta" type="xs:double" minOccurs="0"/>
-<xs:element name="douPrecio_costo" type="xs:double" minOccurs="0"/>
-<xs:element name="douPrecio_dos" type="xs:double" minOccurs="0"/>
+<xs:element name="douMargenGanancia" type="xs:double" minOccurs="0"/>
+<xs:element name="douMargenVenta" type="xs:double" minOccurs="0"/>
+<xs:element name="douPrecioCosto" type="xs:double" minOccurs="0"/>
+<xs:element name="douPrecioDos" type="xs:double" minOccurs="0"/>
 <xs:element name="intCantidad" type="xs:int" minOccurs="0"/>
-<xs:element name="intStock_maximo" type="xs:int" minOccurs="0"/>
-<xs:element name="intStock_minimo" type="xs:int" minOccurs="0"/>
-<xs:element name="strDescripcion_general" type="xs:string" minOccurs="0"/>
+<xs:element name="intStockMaximo" type="xs:int" minOccurs="0"/>
+<xs:element name="intStockMinimo" type="xs:int" minOccurs="0"/>
+<xs:element name="strDescripcionGeneral" type="xs:string" minOccurs="0"/>
 <xs:element name="strEan" type="xs:string" minOccurs="0"/>
 <xs:element name="strFabricante" type="xs:string" minOccurs="0"/>
-<xs:element name="strFamilia_produ" type="xs:string" minOccurs="0"/>
-<xs:element name="strProveedor_produ" type="xs:string" minOccurs="0"/>
+<xs:element name="strFamiliaProdu" type="xs:string" minOccurs="0"/>
+<xs:element name="strProveedorProdu" type="xs:string" minOccurs="0"/>
 <xs:element name="strSn" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>

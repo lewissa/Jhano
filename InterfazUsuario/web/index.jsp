@@ -1,15 +1,9 @@
-<%-- 
-    Document   : index
-    Created on : 07/05/2014, 11:49:48 AM
-    Author     : Usuario
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>Jhano | Plantilla </title>
+        <title>Jhano | Inicio </title>
         <script src="SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
         <link href="SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
     </head>
@@ -80,12 +74,12 @@
                         <ul id="MenuBar2" class="MenuBarHorizontal">
                             <li>
                                 <font face="Arial">
-                                    <a href="#"><center>Clientes</center></a>
+                                    <a href="interfacesJhano/interfazCargaCliente.jsp"><center>Clientes</center></a>
                                 </font>
                             </li>
                             <li>
                                 <font face="Arial">
-                                    <a href="#"><center>Proveedores</center></a>
+                                    <a href="interfacesJhano/interfazCargaProveedor.jsp"><center>Proveedores</center></a>
                                 </font>
                             </li>
                             <li>
@@ -93,8 +87,8 @@
                                     <a href="#"><center>Productos</center></a>
                                 </font>
                                 <ul>
-                                    <font face="Arial">
-                                        <a href="interfacesJhano/interfazFamiliaProducto.jsp"><center>Familias</center></a>
+                                <font face="Arial">
+                                        <a href="interfacesJhano/interfazCargaFamiliaProducto.jsp"><center>Familias</center></a>
                                 </font>
                                 </ul>
                             </li>
@@ -121,34 +115,11 @@
 
         <table bgcolor="#C0C0C0" width="100%" border="1">
                 <tr>
-                    <td width="12%">
-                        <table border="1" align="left">
-                            <tr>
-                                <td>
-                                    <a href="">
-                                        <font face="Arial">
-                                            Ingreso
-                                        </font>
-                                    </a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <a href="">
-                                        <font face="Arial">
-                                            Consulta
-                                        </font>
-                                    </a>
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
+                    
                     <td width="88%">
                         <font face="Arial">
-                        <h3><center>AREA DE TRABAJO</center></h3>
-                        <form id="form1" name="form1" method="post" action="">
-
-                        </form>
+                        <h1><center>BIENVENIDO</center></h1>
+                        
                         </font>
                     </td>
                 </tr>
@@ -162,3 +133,4 @@
         </script>
     </body>
 </html>
+

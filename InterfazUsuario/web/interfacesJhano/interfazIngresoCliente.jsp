@@ -75,18 +75,23 @@
                         <ul id="MenuBar2" class="MenuBarHorizontal">
                             <li>
                                 <font face="Arial">
-                                    <a href="#"><center>Clientes</center></a>
+                                    <a href="../interfacesJhano/interfazCargaCliente.jsp"><center>Clientes</center></a>
                                 </font>
                             </li>
                             <li>
                                 <font face="Arial">
-                                    <a href="#"><center>Proveedores</center></a>
+                                    <a href="../interfacesJhano/interfazCargaProveedor.jsp"><center>Proveedores</center></a>
                                 </font>
                             </li>
                             <li>
                                 <font face="Arial">
                                     <a href="#"><center>Productos</center></a>
                                 </font>
+                                <ul>
+                                <font face="Arial">
+                                        <a href="../interfacesJhano/interfazCargaFamiliaProducto.jsp"><center>Familias</center></a>
+                                </font>
+                                </ul>
                             </li>
                             <li>
                                 <font face="Arial">
@@ -112,7 +117,7 @@
         <table bgcolor="#C0C0C0" width="100%" height="100%" border="1">
             <tr>
                 <td width="12%">
-                    <table border="0.1" align="center">
+                    <table border="0.1" align="left">
                         <tr>
                             <td>
                                 <a href="">
@@ -147,7 +152,6 @@
                                 String strNombreComercialVacio = null;
                                 String strTelefonoVacio = null;
                                 String strCelularVacio = null;
-
                                 try {
                                     strNombreFiscalVacio = (String) request.getSession().getAttribute("nombreFiscalVacio");
                                 } catch (Exception e) {
@@ -203,14 +207,14 @@
                                 if ((booCedula != null) && (booRuc != null)) {
                                     if ((booCedula == false) && (booRuc == false)) {
                                         if (request.getSession().getAttribute("cedulaVacio").equals("0")) {
-                                            out.print("<td><input name=\"ciruc\" type=\"text\" size=\"13\" maxlength=\"13\"  /><label ><font color=\"red\">* Error--- Se requiere que el campo este lleno </font></label> </td>");
+                                            out.print("<td><input name=\"ciruc\" type=\"text\" size=\"13\" maxlength=\"13\"  /><label ><font color=\"red\">* Se requiere que el campo este lleno </font></label> </td>");
                                         } else {
-                                            out.print("<td><input name=\"ciruc\" type=\"text\" size=\"13\" maxlength=\"13\" value=\"" + request.getSession().getAttribute("cedulaVacio") + "\" /><label ><font color=\"red\">* Error--- Dato mal ingresado</font></label> </td>");
+                                            out.print("<td><input name=\"ciruc\" type=\"text\" size=\"13\" maxlength=\"13\" value=\"" + request.getSession().getAttribute("cedulaVacio") + "\" /><label ><font color=\"red\">* Dato mal ingresado</font></label> </td>");
                                         }
                                     } else {
                                         if (booResult!=null) {
-                                            if ((booCorreo == true) && (booResult == false)) {
-                                                out.print("<td><input name=\"ciruc\" type=\"text\" size=\"13\" maxlength=\"13\" value=\"" + request.getSession().getAttribute("cedulaVacio") + "\"/><font color=\"red\">* Error--- La cedula esta repetida</font></td>");
+                                            if (((booCedula == true) || (booRuc == true)) && (booCorreo == true) && (booResult == false)) {
+                                                out.print("<td><input name=\"ciruc\" type=\"text\" size=\"13\" maxlength=\"13\" value=\"" + request.getSession().getAttribute("cedulaVacio") + "\"/><font color=\"red\">* La cedula esta repetida</font></td>");
                                             } else {
                                                 out.print("<td><input name=\"ciruc\" type=\"text\" size=\"13\" maxlength=\"13\" value=\"" + request.getSession().getAttribute("cedulaVacio") + "\"/></td>");
                                             }
@@ -226,7 +230,7 @@
                                 out.print("<td><label>Nombre Fiscal:</label></td>");
                                 if (strNombreFiscalVacio != null) {
                                     if (strNombreFiscalVacio.equals("0")) {
-                                        out.print("<td><input name=\"nombrefiscal\" type=\"text\" size=\"50\" maxlength=\"50\"  /><label ><font color=\"red\">* Error--- Se requiere que el campo este lleno </font></label> </td>");
+                                        out.print("<td><input name=\"nombrefiscal\" type=\"text\" size=\"50\" maxlength=\"50\"  /><label ><font color=\"red\">* Se requiere que el campo este lleno </font></label> </td>");
                                     } else {
                                         out.print("<td><input name=\"nombrefiscal\" type=\"text\" size=\"50\" maxlength=\"50\" value=\"" + request.getSession().getAttribute("nombreFiscalVacio") + "\" /></td>");
 
@@ -252,7 +256,7 @@
                                 out.print("<td><label>Dirección:</label></td>");
                                 if (strDireccionVacio != null) {
                                     if (strDireccionVacio.equals("0")) {
-                                        out.print("<td><input name=\"direccion\" type=\"text\" size=\"50\" maxlength=\"50\"/><label ><font color=\"red\">* Error--- Se requiere que el campo este lleno </font></label> </td>");
+                                        out.print("<td><input name=\"direccion\" type=\"text\" size=\"50\" maxlength=\"50\"/><label ><font color=\"red\">* Se requiere que el campo este lleno </font></label> </td>");
                                     } else {
                                         out.print("<td><input name=\"direccion\" type=\"text\" size=\"50\" maxlength=\"50\" value=\"" + request.getSession().getAttribute("direccionVacio") + "\" /></td>");
                                     }
@@ -264,9 +268,9 @@
                                 out.print("<td><label>Teléfono Convencional:</label></td>");
                                 if (strTelefonoVacio != null) {
                                     if (request.getSession().getAttribute("telefonoVacio").equals("err0r")) {
-                                        out.print("<td><input name=\"convencional\" type=\"text\" size=\"7\" maxlength=\"7\" /><label ><font color=\"red\">* Error--- Dato mal ingresado</font></label></td>");
+                                        out.print("<td><input name=\"convencional\" type=\"text\" size=\"7\" maxlength=\"7\" /><label ><font color=\"red\">* Dato mal ingresado</font></label></td>");
                                     } else {
-                                        out.print("<td><input name=\"convencional\" type=\"text\" size=\"10\" maxlength=\"10\" /></td>");
+                                        out.print("<td><input name=\"convencional\" type=\"text\" size=\"7\" maxlength=\"7\" /></td>");
                                     }
                                 } else {
                                     out.print("<td><input name=\"convencional\" type=\"text\" size=\"7\" maxlength=\"7\"/></td>");
@@ -276,7 +280,7 @@
                                 out.print("<td><label>Celular:</label></td>");
                                 if (strCelularVacio != null) {
                                     if (request.getSession().getAttribute("celularVacio").equals("err0r")) {
-                                        out.print("<td><input name=\"celular\" type=\"text\" size=\"10\" maxlength=\"10\" /><label ><font color=\"red\">* Error--- Dato mal ingresado</font></label></td>");
+                                        out.print("<td><input name=\"celular\" type=\"text\" size=\"10\" maxlength=\"10\" /><label ><font color=\"red\">* Dato mal ingresado</font></label></td>");
                                     } else {
                                         out.print("<td><input name=\"celular\" type=\"text\" size=\"10\" maxlength=\"10\" /></td>");
                                     }
@@ -289,9 +293,9 @@
                                 if (booCorreo != null) {
                                     if (booCorreo == false) {
                                         if (request.getSession().getAttribute("correoVacio").equals("0")) {
-                                            out.print("<td><input name=\"correo\" type=\"text\" size=\"50\" maxlength=\"50\"  /><label ><font color=\"red\">* Error--- Se requiere que el campo este lleno </font></label> </td>");
+                                            out.print("<td><input name=\"correo\" type=\"text\" size=\"50\" maxlength=\"50\"  /><label ><font color=\"red\">* Se requiere que el campo este lleno </font></label> </td>");
                                         } else {
-                                            out.print("<td><input name=\"correo\" type=\"text\" size=\"50\" maxlength=\"50\" value=\"" + request.getSession().getAttribute("correoVacio") + "\" /><label ><font color=\"red\">* Error--- Dato mal ingresado</font></label> </td>");
+                                            out.print("<td><input name=\"correo\" type=\"text\" size=\"50\" maxlength=\"50\" value=\"" + request.getSession().getAttribute("correoVacio") + "\" /><label ><font color=\"red\">* Dato mal ingresado</font></label> </td>");
                                         }
                                     } else {
                                         out.print("<td><input name=\"correo\" type=\"text\" size=\"50\" maxlength=\"50\" value=\"" + request.getSession().getAttribute("correoVacio") + "\"/> </td>");
@@ -314,7 +318,7 @@
                                 out.print("<tr>");
                                 out.print("<td colspan=\"2\" align=\"right\">");
                                 out.print("<input name=\"guardar\" type=\"submit\" value=\"Guardar\" />");
-                                out.print("<a href=\"../interfacesJhano/interfazCargaCliente.jsp?cancelar=cancelar\"><input name=\"cancelar\" type=\"button\" value=\"Cancelar\" /></a>");
+                                out.print("<input name=\"cancelar\" type=\"button\" value=\"Cancelar\" onclick=\"location.href='../interfacesJhano/interfazCargaCliente.jsp?can=true'\" />");
                                 out.print("</td>");
                                 out.print("</tr>");
                             %>

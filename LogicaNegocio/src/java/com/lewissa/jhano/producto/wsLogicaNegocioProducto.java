@@ -6,7 +6,7 @@
 
 package com.lewissa.jhano.producto;
 
-import com.lewissa.jhano.utilidades.cRuc;
+import com.lewissa.jhano.logicanegocio.utilidades.cRuc;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
