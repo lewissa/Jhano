@@ -54,6 +54,7 @@
                 java.lang.Boolean booRuc = port.validaRuc(request.getParameter("ciruc"));
 
                 request.getSession().setAttribute("proveedor", booresult);
+<<<<<<< HEAD
                 request.getSession().setAttribute("correoProveedor", booCorreo);
                 request.getSession().setAttribute("cedulaProveedor", booCedula);
                 request.getSession().setAttribute("rucProveedor", booRuc);
@@ -73,6 +74,27 @@
                     request.getSession().setAttribute("telefonoVacioProveedor", strConvencional);
                 } catch (Exception e) {
                     request.getSession().setAttribute("telefonoVacioProveedor", "err0r");
+=======
+                request.getSession().setAttribute("correo", booCorreo);
+                request.getSession().setAttribute("cedula", booCedula);
+                request.getSession().setAttribute("ruc", booRuc);
+                request.getSession().setAttribute("correoVacio", strCorreo);
+                request.getSession().setAttribute("cedulaVacio", strCiruc);
+                request.getSession().setAttribute("rucVacio", strCiruc);
+                request.getSession().setAttribute("nombreComercialVacio", strNombrecomer);
+                request.getSession().setAttribute("nombreFiscalVacio", strNombrefiscal);
+                try {
+                    Integer intControl = Integer.parseInt(strCelular);
+                    request.getSession().setAttribute("celularVacio", strCelular);
+                } catch (Exception e) {
+                    request.getSession().setAttribute("celularVacio", "err0r");
+                }
+                try {
+                    Integer intControl = Integer.parseInt(strConvencional);
+                    request.getSession().setAttribute("telefonoVacio", strConvencional);
+                } catch (Exception e) {
+                    request.getSession().setAttribute("telefonoVacio", "err0r");
+>>>>>>> 0603c79e9ac0eb544a069588d3157d129ddce80b
                 }
                 if (port.getErrorConexionProveedor()!= null) {
                     String strError = port.getErrorConexionProveedor();  

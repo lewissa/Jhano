@@ -18,6 +18,15 @@
 </message>
 <message name="obtenerCliente">
 <part name="parameters" element="tns:obtenerCliente"/>
+<<<<<<< HEAD
+=======
+</message>
+<message name="obtenerClienteResponse">
+<part name="parameters" element="tns:obtenerClienteResponse"/>
+</message>
+<message name="actualizarDataBaseCliente">
+<part name="parameters" element="tns:actualizarDataBaseCliente"/>
+>>>>>>> 0603c79e9ac0eb544a069588d3157d129ddce80b
 </message>
 <message name="obtenerClienteResponse">
 <part name="parameters" element="tns:obtenerClienteResponse"/>
@@ -34,6 +43,13 @@
 <operation name="obtenerCliente">
 <input wsam:Action="http://cliente.accesodatos.jhano.lewissa.com/wsAccesoDatosCliente/obtenerClienteRequest" message="tns:obtenerCliente"/>
 <output wsam:Action="http://cliente.accesodatos.jhano.lewissa.com/wsAccesoDatosCliente/obtenerClienteResponse" message="tns:obtenerClienteResponse"/>
+<<<<<<< HEAD
+=======
+</operation>
+<operation name="actualizarDataBaseCliente">
+<input wsam:Action="http://cliente.accesodatos.jhano.lewissa.com/wsAccesoDatosCliente/actualizarDataBaseClienteRequest" message="tns:actualizarDataBaseCliente"/>
+<output wsam:Action="http://cliente.accesodatos.jhano.lewissa.com/wsAccesoDatosCliente/actualizarDataBaseClienteResponse" message="tns:actualizarDataBaseClienteResponse"/>
+>>>>>>> 0603c79e9ac0eb544a069588d3157d129ddce80b
 </operation>
 </portType>
 <binding name="wsAccesoDatosClientePortBinding" type="tns:wsAccesoDatosCliente">
@@ -57,6 +73,18 @@
 </output>
 </operation>
 <operation name="obtenerCliente">
+<<<<<<< HEAD
+=======
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="actualizarDataBaseCliente">
+>>>>>>> 0603c79e9ac0eb544a069588d3157d129ddce80b
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

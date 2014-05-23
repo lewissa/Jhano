@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
   <services>
+<<<<<<< HEAD
     <service name="wsLogicaNegocioProducto">
       <implementation-class>com.lewissa.jhano.producto.wsLogicaNegocioProducto</implementation-class>
     </service>
+=======
+>>>>>>> 0603c79e9ac0eb544a069588d3157d129ddce80b
     <service name="wsLogicaNegocioFamiliaProducto">
       <implementation-class>com.lewissa.jhano.logicanegocio.familiaproducto.wsLogicaNegocioFamiliaProducto</implementation-class>
     </service>

@@ -139,7 +139,11 @@
                         </tr>
                         <tr>
                             <td>
+<<<<<<< HEAD
                                 <a href="../index.jsp">
+=======
+                                <a href="../interfacesJhano/interfazInicio.jsp">
+>>>>>>> 0603c79e9ac0eb544a069588d3157d129ddce80b
                                     <font face="Arial">
                                         Regresar
                                     </font>
@@ -182,6 +186,7 @@
                         } else {
                     %>
                     <td width="88%">
+<<<<<<< HEAD
                         <form name="frmCargarClientes" action="../controladoresJhano/controladorInterfazCargarCliente.jsp" method="post" >
                             <table width="700" align="center" border="1">
                                 <tr>
@@ -221,6 +226,45 @@
                                 </tr>
                             </table>
 
+=======
+                        <h3><center> <font size="5" face="Arial, Helvetica, sans-serif">Matriz Cliente</font></center></h3>
+                        <form name="frmCargarClientes" action="../controladoresJhano/controladorInterfazCargarCliente.jsp" method="post">
+                        <table width="700" align="center" border="1">
+                            <tr>
+                                <td width="150" align="center">Cédula / RUC</td>
+                                <td align="center">Nombre</td>
+                                <td width="50" align="center">Modificar</td>
+                                <td width="50" align="center">Eliminar</td>
+                            </tr>
+                            <%
+                                List<com.lewissa.jhano.logicanegocio.cliente.CCliente> clientes = (List<com.lewissa.jhano.logicanegocio.cliente.CCliente>) request.getSession().getAttribute("clientes");
+                                if (clientes != null) {
+                                    for (com.lewissa.jhano.logicanegocio.cliente.CCliente cliente : clientes) {
+                                        out.print("<tr>");
+                                        out.print("  <td>" + cliente.getStrIdCliente() + "</td>");
+                                        out.print("  <td>" + cliente.getStrNombreFiscal() + "</td>");
+                                        out.print("  <td>Modificar</td>");
+                                        out.print("  <td>Eliminar</td>");
+                                        //out.print("  <td><a href='controlador.jsp?act=del&id=" + estudiante.getIntCodigo().toString() + "'>Eliminar</a></td>");
+                                        out.print("</tr>");
+                                    }
+                                } else {
+                                    out.print("<tr>");
+                                    out.print("  <td></td>");
+                                    out.print("  <td></td>");
+                                    out.print("  <td></td>");
+                                    out.print("  <td></td>");
+                                    out.print("</tr>");
+                                }
+                            %>
+                            <tr>
+                                <td align="right" colspan="4">
+                                    <input name="cargarClientes" type="submit" value="Cargar Clientes"/>
+                                </td>
+                            </tr>
+                        </table>
+                        
+>>>>>>> 0603c79e9ac0eb544a069588d3157d129ddce80b
                         </form>
                     </td>
                     <%

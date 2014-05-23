@@ -16,6 +16,7 @@
 <message name="validarCodigoResponse">
 <part name="parameters" element="tns:validarCodigoResponse"/>
 </message>
+<<<<<<< HEAD:InterfazUsuario/src/conf/xml-resources/web-service-references/wsLogicaNegocioFamiliaProducto/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto.wsdl
 <message name="getErrorConexionFamiliaProducto">
 <part name="parameters" element="tns:getErrorConexionFamiliaProducto"/>
 </message>
@@ -23,6 +24,13 @@
 <part name="parameters" element="tns:getErrorConexionFamiliaProductoResponse"/>
 </message>
 <portType name="wsLogicaNegocioFamiliaProducto">
+=======
+<portType name="wsLogicaNegocioFamiliaProducto">
+<operation name="getErrorConexionFamiliaProducto">
+<input wsam:Action="http://familiaproducto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioFamiliaProducto/getErrorConexionFamiliaProductoRequest" message="tns:getErrorConexionFamiliaProducto"/>
+<output wsam:Action="http://familiaproducto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioFamiliaProducto/getErrorConexionFamiliaProductoResponse" message="tns:getErrorConexionFamiliaProductoResponse"/>
+</operation>
+>>>>>>> 0603c79e9ac0eb544a069588d3157d129ddce80b:InterfazUsuario/src/conf/xml-resources/web-service-references/wsLogicaNegocioFamiliaProducto/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto.wsdl
 <operation name="insertarFamiliaProducto">
 <input wsam:Action="http://familiaproducto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioFamiliaProducto/insertarFamiliaProductoRequest" message="tns:insertarFamiliaProducto"/>
 <output wsam:Action="http://familiaproducto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioFamiliaProducto/insertarFamiliaProductoResponse" message="tns:insertarFamiliaProductoResponse"/>
@@ -30,10 +38,13 @@
 <operation name="validarCodigo">
 <input wsam:Action="http://familiaproducto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioFamiliaProducto/validarCodigoRequest" message="tns:validarCodigo"/>
 <output wsam:Action="http://familiaproducto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioFamiliaProducto/validarCodigoResponse" message="tns:validarCodigoResponse"/>
+<<<<<<< HEAD:InterfazUsuario/src/conf/xml-resources/web-service-references/wsLogicaNegocioFamiliaProducto/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto.wsdl
 </operation>
 <operation name="getErrorConexionFamiliaProducto">
 <input wsam:Action="http://familiaproducto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioFamiliaProducto/getErrorConexionFamiliaProductoRequest" message="tns:getErrorConexionFamiliaProducto"/>
 <output wsam:Action="http://familiaproducto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioFamiliaProducto/getErrorConexionFamiliaProductoResponse" message="tns:getErrorConexionFamiliaProductoResponse"/>
+=======
+>>>>>>> 0603c79e9ac0eb544a069588d3157d129ddce80b:InterfazUsuario/src/conf/xml-resources/web-service-references/wsLogicaNegocioFamiliaProducto/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto.wsdl
 </operation>
 </portType>
 <binding name="wsLogicaNegocioFamiliaProductoPortBinding" type="tns:wsLogicaNegocioFamiliaProducto">

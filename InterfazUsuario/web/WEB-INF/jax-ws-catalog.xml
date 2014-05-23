@@ -9,16 +9,22 @@
     <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioCliente?WSDL" uri="wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioCliente.wsdl"/>
     <system systemId="http://localhost:8080/LogicaNegocio/wsProveedor?WSDL" uri="wsdl/localhost_8080/LogicaNegocio/wsProveedor.wsdl"/>
     <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioFamiliaProdcuto?WSDL" uri="wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioFamiliaProdcuto.wsdl"/>
+<<<<<<< HEAD
     <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosProducto?wsdl" uri="wsdl/localhost_8080/AccesoDatos/wsAccesoDatosProducto.wsdl"/>
     <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosProducto?xsd=1" uri="wsdl/localhost_8080/AccesoDatos/wsAccesoDatosProducto.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioProducto?wsdl" uri="wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioProducto.wsdl"/>
     <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioProducto?xsd=1" uri="wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioProducto.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioProducto?xsd=2" uri="wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioProducto.xsd_2.xsd"/>
+=======
+>>>>>>> 0603c79e9ac0eb544a069588d3157d129ddce80b
     <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto?wsdl" uri="wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto.wsdl"/>
     <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto?xsd=1" uri="wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioProveedor?wsdl" uri="wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioProveedor.wsdl"/>
     <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioProveedor?xsd=1" uri="wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioProveedor.xsd_1.xsd"/>
+<<<<<<< HEAD
     <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioProducto?WSDL" uri="wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioProducto.wsdl"/>
     <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto?WSDL" uri="wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto.wsdl"/>
     <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioProveedor?WSDL" uri="wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioProveedor.wsdl"/>
+=======
+>>>>>>> 0603c79e9ac0eb544a069588d3157d129ddce80b
 </catalog>

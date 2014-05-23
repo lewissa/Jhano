@@ -21,7 +21,11 @@
                 java.util.List<com.lewissa.jhano.logicanegocio.cliente.CCliente> result = port.obtenCliente();
                 
                 request.getSession().setAttribute("clientes", result);
+<<<<<<< HEAD
                 response.sendRedirect("../interfacesJhano/interfazCargaCliente.jsp?car=true");
+=======
+                response.sendRedirect("../interfacesJhano/interfazCargaCliente.jsp");
+>>>>>>> 0603c79e9ac0eb544a069588d3157d129ddce80b
                 
                 //out.println("Result = " + result);
             } catch (Exception ex) {

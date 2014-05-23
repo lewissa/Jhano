@@ -2,10 +2,17 @@
 <jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
   <services/>
   <clients>
+<<<<<<< HEAD
     <client name="wsLogicaNegocioProducto">
       <wsdl-url>http://localhost:8080/LogicaNegocio/wsLogicaNegocioProducto?WSDL</wsdl-url>
       <local-wsdl-file>localhost_8080/LogicaNegocio/wsLogicaNegocioProducto.wsdl</local-wsdl-file>
       <package-name>com.lewissa.jhano.producto</package-name>
+=======
+    <client name="wsLogicaNegocioCliente">
+      <wsdl-url>http://localhost:8080/LogicaNegocio/wsLogicaNegocioCliente?wsdl</wsdl-url>
+      <local-wsdl-file>localhost_8080/LogicaNegocio/wsLogicaNegocioCliente.wsdl</local-wsdl-file>
+      <package-name>com.lewissa.jhano.logicanegocio.cliente</package-name>
+>>>>>>> 0603c79e9ac0eb544a069588d3157d129ddce80b
       <catalog-file>catalog.xml</catalog-file>
       <wsimport-options>
         <wsimport-option>
@@ -22,7 +29,11 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
+<<<<<<< HEAD
           <wsimport-option-value>http://localhost:8080/LogicaNegocio/wsLogicaNegocioProducto?WSDL</wsimport-option-value>
+=======
+          <wsimport-option-value>http://localhost:8080/LogicaNegocio/wsLogicaNegocioCliente?wsdl</wsimport-option-value>
+>>>>>>> 0603c79e9ac0eb544a069588d3157d129ddce80b
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>
@@ -35,7 +46,11 @@
       </wsimport-options>
     </client>
     <client name="wsLogicaNegocioFamiliaProducto">
+<<<<<<< HEAD
       <wsdl-url>http://localhost:8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto?WSDL</wsdl-url>
+=======
+      <wsdl-url>http://localhost:8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto?wsdl</wsdl-url>
+>>>>>>> 0603c79e9ac0eb544a069588d3157d129ddce80b
       <local-wsdl-file>localhost_8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto.wsdl</local-wsdl-file>
       <package-name>com.lewissa.jhano.logicanegocio.familiaproducto</package-name>
       <catalog-file>catalog.xml</catalog-file>
@@ -54,7 +69,11 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
+<<<<<<< HEAD
           <wsimport-option-value>http://localhost:8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto?WSDL</wsimport-option-value>
+=======
+          <wsimport-option-value>http://localhost:8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto?wsdl</wsimport-option-value>
+>>>>>>> 0603c79e9ac0eb544a069588d3157d129ddce80b
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>
@@ -67,7 +86,11 @@
       </wsimport-options>
     </client>
     <client name="wsLogicaNegocioProveedor">
+<<<<<<< HEAD
       <wsdl-url>http://localhost:8080/LogicaNegocio/wsLogicaNegocioProveedor?WSDL</wsdl-url>
+=======
+      <wsdl-url>http://localhost:8080/LogicaNegocio/wsLogicaNegocioProveedor?wsdl</wsdl-url>
+>>>>>>> 0603c79e9ac0eb544a069588d3157d129ddce80b
       <local-wsdl-file>localhost_8080/LogicaNegocio/wsLogicaNegocioProveedor.wsdl</local-wsdl-file>
       <package-name>com.lewissa.jhano.logicanegocio.proveedor</package-name>
       <catalog-file>catalog.xml</catalog-file>
@@ -86,6 +109,7 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
+<<<<<<< HEAD
           <wsimport-option-value>http://localhost:8080/LogicaNegocio/wsLogicaNegocioProveedor?WSDL</wsimport-option-value>
         </wsimport-option>
         <wsimport-option>
@@ -119,6 +143,9 @@
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
           <wsimport-option-value>http://localhost:8080/LogicaNegocio/wsLogicaNegocioCliente?WSDL</wsimport-option-value>
+=======
+          <wsimport-option-value>http://localhost:8080/LogicaNegocio/wsLogicaNegocioProveedor?wsdl</wsimport-option-value>
+>>>>>>> 0603c79e9ac0eb544a069588d3157d129ddce80b
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>

@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <%@page import="javax.swing.JOptionPane"%>
+=======
++<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+>>>>>>> 0603c79e9ac0eb544a069588d3157d129ddce80b
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -150,8 +154,11 @@
                                 }
                                 if ((booCodigo != null) && (booResul != null)) {
                                     if ((booCodigo == true) && (booResul == true)) {
+<<<<<<< HEAD
                                         response.sendRedirect("../interfacesJhano/interfazConsultaFamiliaProducto.jsp");
                                         String strConfirmacion = "Guardado Exitoso";
+=======
+>>>>>>> 0603c79e9ac0eb544a069588d3157d129ddce80b
                                         strDescripcionVacio = null;
                                         strCodigoVacio = null;
                                         booCodigo = null;

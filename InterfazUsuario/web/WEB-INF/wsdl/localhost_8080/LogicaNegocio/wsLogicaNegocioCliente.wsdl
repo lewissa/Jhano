@@ -10,17 +10,17 @@
 <message name="validaRucResponse">
 <part name="parameters" element="tns:validaRucResponse"/>
 </message>
-<message name="validaCedula">
-<part name="parameters" element="tns:validaCedula"/>
-</message>
-<message name="validaCedulaResponse">
-<part name="parameters" element="tns:validaCedulaResponse"/>
-</message>
 <message name="validaEmail">
 <part name="parameters" element="tns:validaEmail"/>
 </message>
 <message name="validaEmailResponse">
 <part name="parameters" element="tns:validaEmailResponse"/>
+</message>
+<message name="validaCedula">
+<part name="parameters" element="tns:validaCedula"/>
+</message>
+<message name="validaCedulaResponse">
+<part name="parameters" element="tns:validaCedulaResponse"/>
 </message>
 <message name="actualizaDataBaseCliente">
 <part name="parameters" element="tns:actualizaDataBaseCliente"/>
@@ -44,14 +44,24 @@
 <operation name="validaRuc">
 <input wsam:Action="http://cliente.logicanegocio.jhano.lewissa.com/wsLogicaNegocioCliente/validaRucRequest" message="tns:validaRuc"/>
 <output wsam:Action="http://cliente.logicanegocio.jhano.lewissa.com/wsLogicaNegocioCliente/validaRucResponse" message="tns:validaRucResponse"/>
+<<<<<<< HEAD
 </operation>
 <operation name="validaCedula">
 <input wsam:Action="http://cliente.logicanegocio.jhano.lewissa.com/wsLogicaNegocioCliente/validaCedulaRequest" message="tns:validaCedula"/>
 <output wsam:Action="http://cliente.logicanegocio.jhano.lewissa.com/wsLogicaNegocioCliente/validaCedulaResponse" message="tns:validaCedulaResponse"/>
+=======
+>>>>>>> 0603c79e9ac0eb544a069588d3157d129ddce80b
 </operation>
 <operation name="validaEmail">
 <input wsam:Action="http://cliente.logicanegocio.jhano.lewissa.com/wsLogicaNegocioCliente/validaEmailRequest" message="tns:validaEmail"/>
 <output wsam:Action="http://cliente.logicanegocio.jhano.lewissa.com/wsLogicaNegocioCliente/validaEmailResponse" message="tns:validaEmailResponse"/>
+<<<<<<< HEAD
+=======
+</operation>
+<operation name="validaCedula">
+<input wsam:Action="http://cliente.logicanegocio.jhano.lewissa.com/wsLogicaNegocioCliente/validaCedulaRequest" message="tns:validaCedula"/>
+<output wsam:Action="http://cliente.logicanegocio.jhano.lewissa.com/wsLogicaNegocioCliente/validaCedulaResponse" message="tns:validaCedulaResponse"/>
+>>>>>>> 0603c79e9ac0eb544a069588d3157d129ddce80b
 </operation>
 <operation name="actualizaDataBaseCliente">
 <input wsam:Action="http://cliente.logicanegocio.jhano.lewissa.com/wsLogicaNegocioCliente/actualizaDataBaseClienteRequest" message="tns:actualizaDataBaseCliente"/>
@@ -77,7 +87,11 @@
 <soap:body use="literal"/>
 </output>
 </operation>
+<<<<<<< HEAD
 <operation name="validaCedula">
+=======
+<operation name="validaEmail">
+>>>>>>> 0603c79e9ac0eb544a069588d3157d129ddce80b
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

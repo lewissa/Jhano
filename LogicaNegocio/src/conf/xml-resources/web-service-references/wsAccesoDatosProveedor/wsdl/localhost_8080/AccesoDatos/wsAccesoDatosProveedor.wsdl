@@ -16,6 +16,7 @@
 <message name="insertarProveedorResponse">
 <part name="parameters" element="tns:insertarProveedorResponse"/>
 </message>
+<<<<<<< HEAD
 <message name="cargaProveedor">
 <part name="parameters" element="tns:cargaProveedor"/>
 </message>
@@ -27,6 +28,19 @@
 </message>
 <message name="eliminarProveedorResponse">
 <part name="parameters" element="tns:eliminarProveedorResponse"/>
+=======
+<message name="eliminarProveedor">
+<part name="parameters" element="tns:eliminarProveedor"/>
+</message>
+<message name="eliminarProveedorResponse">
+<part name="parameters" element="tns:eliminarProveedorResponse"/>
+</message>
+<message name="cargaProveedor">
+<part name="parameters" element="tns:cargaProveedor"/>
+</message>
+<message name="cargaProveedorResponse">
+<part name="parameters" element="tns:cargaProveedorResponse"/>
+>>>>>>> 0603c79e9ac0eb544a069588d3157d129ddce80b
 </message>
 <portType name="wsAccesoDatosProveedor">
 <operation name="getErrorConexion">
@@ -37,6 +51,7 @@
 <input wsam:Action="http://proveedor.accesodatos.jhano.lewissa.com/wsAccesoDatosProveedor/insertarProveedorRequest" message="tns:insertarProveedor"/>
 <output wsam:Action="http://proveedor.accesodatos.jhano.lewissa.com/wsAccesoDatosProveedor/insertarProveedorResponse" message="tns:insertarProveedorResponse"/>
 </operation>
+<<<<<<< HEAD
 <operation name="cargaProveedor">
 <input wsam:Action="http://proveedor.accesodatos.jhano.lewissa.com/wsAccesoDatosProveedor/cargaProveedorRequest" message="tns:cargaProveedor"/>
 <output wsam:Action="http://proveedor.accesodatos.jhano.lewissa.com/wsAccesoDatosProveedor/cargaProveedorResponse" message="tns:cargaProveedorResponse"/>
@@ -44,6 +59,15 @@
 <operation name="eliminarProveedor">
 <input wsam:Action="http://proveedor.accesodatos.jhano.lewissa.com/wsAccesoDatosProveedor/eliminarProveedorRequest" message="tns:eliminarProveedor"/>
 <output wsam:Action="http://proveedor.accesodatos.jhano.lewissa.com/wsAccesoDatosProveedor/eliminarProveedorResponse" message="tns:eliminarProveedorResponse"/>
+=======
+<operation name="eliminarProveedor">
+<input wsam:Action="http://proveedor.accesodatos.jhano.lewissa.com/wsAccesoDatosProveedor/eliminarProveedorRequest" message="tns:eliminarProveedor"/>
+<output wsam:Action="http://proveedor.accesodatos.jhano.lewissa.com/wsAccesoDatosProveedor/eliminarProveedorResponse" message="tns:eliminarProveedorResponse"/>
+</operation>
+<operation name="cargaProveedor">
+<input wsam:Action="http://proveedor.accesodatos.jhano.lewissa.com/wsAccesoDatosProveedor/cargaProveedorRequest" message="tns:cargaProveedor"/>
+<output wsam:Action="http://proveedor.accesodatos.jhano.lewissa.com/wsAccesoDatosProveedor/cargaProveedorResponse" message="tns:cargaProveedorResponse"/>
+>>>>>>> 0603c79e9ac0eb544a069588d3157d129ddce80b
 </operation>
 </portType>
 <binding name="wsAccesoDatosProveedorPortBinding" type="tns:wsAccesoDatosProveedor">
@@ -66,7 +90,11 @@
 <soap:body use="literal"/>
 </output>
 </operation>
+<<<<<<< HEAD
 <operation name="cargaProveedor">
+=======
+<operation name="eliminarProveedor">
+>>>>>>> 0603c79e9ac0eb544a069588d3157d129ddce80b
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -75,7 +103,11 @@
 <soap:body use="literal"/>
 </output>
 </operation>
+<<<<<<< HEAD
 <operation name="eliminarProveedor">
+=======
+<operation name="cargaProveedor">
+>>>>>>> 0603c79e9ac0eb544a069588d3157d129ddce80b
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

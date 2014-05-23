@@ -119,6 +119,11 @@ public class wsLogicaNegocioCliente {
     }
 
     private String obtenerCliente() {
+<<<<<<< HEAD
+=======
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+>>>>>>> 0603c79e9ac0eb544a069588d3157d129ddce80b
         com.lewissa.jhano.accesodatos.cliente.WsAccesoDatosCliente port = service.getWsAccesoDatosClientePort();
         return port.obtenerCliente();
      }
