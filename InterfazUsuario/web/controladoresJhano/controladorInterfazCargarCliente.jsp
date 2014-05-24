@@ -12,7 +12,6 @@
         <title>Controlador Cargar</title>
     </head>
     <body>
-        <%-- start web service invocation --%><hr/>
         <%
             try {
                 com.lewissa.jhano.logicanegocio.cliente.WsLogicaNegocioCliente_Service service = new com.lewissa.jhano.logicanegocio.cliente.WsLogicaNegocioCliente_Service();
@@ -28,7 +27,6 @@
                 out.print("Error: " + ex.getMessage() );
             }
         %>
-        <%-- end web service invocation --%><hr/>
 
     </body>
 </html>

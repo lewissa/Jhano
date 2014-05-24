@@ -4,9 +4,37 @@
 
 <xs:element name="actualizarDataBaseProductoResponse" type="tns:actualizarDataBaseProductoResponse"/>
 
+<xs:element name="getDescripcionFamilaProducto" type="tns:getDescripcionFamilaProducto"/>
+
+<xs:element name="getDescripcionFamilaProductoResponse" type="tns:getDescripcionFamilaProductoResponse"/>
+
 <xs:element name="getErrorConexion" type="tns:getErrorConexion"/>
 
 <xs:element name="getErrorConexionResponse" type="tns:getErrorConexionResponse"/>
+
+<xs:element name="getNombreProveedor" type="tns:getNombreProveedor"/>
+
+<xs:element name="getNombreProveedorResponse" type="tns:getNombreProveedorResponse"/>
+
+<xs:complexType name="getDescripcionFamilaProducto">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getDescripcionFamilaProductoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getNombreProveedor">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getNombreProveedorResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
 
 <xs:complexType name="actualizarDataBaseProducto">
 <xs:sequence>

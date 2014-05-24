@@ -4,31 +4,51 @@
 <xsd:import namespace="http://producto.accesodatos.jhano.lewissa.com/" schemaLocation="http://localhost:8080/AccesoDatos/wsAccesoDatosProducto?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="getErrorConexion">
-<part name="parameters" element="tns:getErrorConexion"/>
-</message>
-<message name="getErrorConexionResponse">
-<part name="parameters" element="tns:getErrorConexionResponse"/>
-</message>
 <message name="actualizarDataBaseProducto">
 <part name="parameters" element="tns:actualizarDataBaseProducto"/>
 </message>
 <message name="actualizarDataBaseProductoResponse">
 <part name="parameters" element="tns:actualizarDataBaseProductoResponse"/>
 </message>
+<message name="getNombreProveedor">
+<part name="parameters" element="tns:getNombreProveedor"/>
+</message>
+<message name="getNombreProveedorResponse">
+<part name="parameters" element="tns:getNombreProveedorResponse"/>
+</message>
+<message name="getDescripcionFamilaProducto">
+<part name="parameters" element="tns:getDescripcionFamilaProducto"/>
+</message>
+<message name="getDescripcionFamilaProductoResponse">
+<part name="parameters" element="tns:getDescripcionFamilaProductoResponse"/>
+</message>
+<message name="getErrorConexion">
+<part name="parameters" element="tns:getErrorConexion"/>
+</message>
+<message name="getErrorConexionResponse">
+<part name="parameters" element="tns:getErrorConexionResponse"/>
+</message>
 <portType name="wsAccesoDatosProducto">
-<operation name="getErrorConexion">
-<input wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/getErrorConexionRequest" message="tns:getErrorConexion"/>
-<output wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/getErrorConexionResponse" message="tns:getErrorConexionResponse"/>
-</operation>
 <operation name="actualizarDataBaseProducto">
 <input wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/actualizarDataBaseProductoRequest" message="tns:actualizarDataBaseProducto"/>
 <output wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/actualizarDataBaseProductoResponse" message="tns:actualizarDataBaseProductoResponse"/>
 </operation>
+<operation name="getNombreProveedor">
+<input wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/getNombreProveedorRequest" message="tns:getNombreProveedor"/>
+<output wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/getNombreProveedorResponse" message="tns:getNombreProveedorResponse"/>
+</operation>
+<operation name="getDescripcionFamilaProducto">
+<input wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/getDescripcionFamilaProductoRequest" message="tns:getDescripcionFamilaProducto"/>
+<output wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/getDescripcionFamilaProductoResponse" message="tns:getDescripcionFamilaProductoResponse"/>
+</operation>
+<operation name="getErrorConexion">
+<input wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/getErrorConexionRequest" message="tns:getErrorConexion"/>
+<output wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/getErrorConexionResponse" message="tns:getErrorConexionResponse"/>
+</operation>
 </portType>
 <binding name="wsAccesoDatosProductoPortBinding" type="tns:wsAccesoDatosProducto">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="getErrorConexion">
+<operation name="actualizarDataBaseProducto">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -37,7 +57,25 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="actualizarDataBaseProducto">
+<operation name="getNombreProveedor">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getDescripcionFamilaProducto">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getErrorConexion">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

@@ -52,6 +52,5 @@ public class cTransaccionFamiliaProducto {
         strResultado = port.getErrorConexionFamiliaProducto();
         return strResultado;
     }
-
    
 }

@@ -7,17 +7,20 @@
 <xsd:import namespace="http://producto.accesodatos.jhano.lewissa.com/" schemaLocation="http://localhost:8080/LogicaNegocio/wsLogicaNegocioProducto?xsd=2"/>
 </xsd:schema>
 </types>
+<message name="getDescripcionFamiliaProducto">
+<part name="parameters" element="tns:getDescripcionFamiliaProducto"/>
+</message>
+<message name="getDescripcionFamiliaProductoResponse">
+<part name="parameters" element="tns:getDescripcionFamiliaProductoResponse"/>
+</message>
+<message name="SQLException">
+<part name="fault" element="tns:SQLException"/>
+</message>
 <message name="validaRuc">
 <part name="parameters" element="tns:validaRuc"/>
 </message>
 <message name="validaRucResponse">
 <part name="parameters" element="tns:validaRucResponse"/>
-</message>
-<message name="actualizaDataBaseProducto">
-<part name="parameters" element="tns:actualizaDataBaseProducto"/>
-</message>
-<message name="actualizaDataBaseProductoResponse">
-<part name="parameters" element="tns:actualizaDataBaseProductoResponse"/>
 </message>
 <message name="getErrorConexionProducto">
 <part name="parameters" element="tns:getErrorConexionProducto"/>
@@ -25,22 +28,56 @@
 <message name="getErrorConexionProductoResponse">
 <part name="parameters" element="tns:getErrorConexionProductoResponse"/>
 </message>
+<message name="getNombreProveedor">
+<part name="parameters" element="tns:getNombreProveedor"/>
+</message>
+<message name="getNombreProveedorResponse">
+<part name="parameters" element="tns:getNombreProveedorResponse"/>
+</message>
+<message name="actualizaDataBaseProducto">
+<part name="parameters" element="tns:actualizaDataBaseProducto"/>
+</message>
+<message name="actualizaDataBaseProductoResponse">
+<part name="parameters" element="tns:actualizaDataBaseProductoResponse"/>
+</message>
 <portType name="wsLogicaNegocioProducto">
+<operation name="getDescripcionFamiliaProducto">
+<input wsam:Action="http://producto.jhano.lewissa.com/wsLogicaNegocioProducto/getDescripcionFamiliaProductoRequest" message="tns:getDescripcionFamiliaProducto"/>
+<output wsam:Action="http://producto.jhano.lewissa.com/wsLogicaNegocioProducto/getDescripcionFamiliaProductoResponse" message="tns:getDescripcionFamiliaProductoResponse"/>
+<fault message="tns:SQLException" name="SQLException" wsam:Action="http://producto.jhano.lewissa.com/wsLogicaNegocioProducto/getDescripcionFamiliaProducto/Fault/SQLException"/>
+</operation>
 <operation name="validaRuc">
 <input wsam:Action="http://producto.jhano.lewissa.com/wsLogicaNegocioProducto/validaRucRequest" message="tns:validaRuc"/>
 <output wsam:Action="http://producto.jhano.lewissa.com/wsLogicaNegocioProducto/validaRucResponse" message="tns:validaRucResponse"/>
-</operation>
-<operation name="actualizaDataBaseProducto">
-<input wsam:Action="http://producto.jhano.lewissa.com/wsLogicaNegocioProducto/actualizaDataBaseProductoRequest" message="tns:actualizaDataBaseProducto"/>
-<output wsam:Action="http://producto.jhano.lewissa.com/wsLogicaNegocioProducto/actualizaDataBaseProductoResponse" message="tns:actualizaDataBaseProductoResponse"/>
 </operation>
 <operation name="getErrorConexionProducto">
 <input wsam:Action="http://producto.jhano.lewissa.com/wsLogicaNegocioProducto/getErrorConexionProductoRequest" message="tns:getErrorConexionProducto"/>
 <output wsam:Action="http://producto.jhano.lewissa.com/wsLogicaNegocioProducto/getErrorConexionProductoResponse" message="tns:getErrorConexionProductoResponse"/>
 </operation>
+<operation name="getNombreProveedor">
+<input wsam:Action="http://producto.jhano.lewissa.com/wsLogicaNegocioProducto/getNombreProveedorRequest" message="tns:getNombreProveedor"/>
+<output wsam:Action="http://producto.jhano.lewissa.com/wsLogicaNegocioProducto/getNombreProveedorResponse" message="tns:getNombreProveedorResponse"/>
+<fault message="tns:SQLException" name="SQLException" wsam:Action="http://producto.jhano.lewissa.com/wsLogicaNegocioProducto/getNombreProveedor/Fault/SQLException"/>
+</operation>
+<operation name="actualizaDataBaseProducto">
+<input wsam:Action="http://producto.jhano.lewissa.com/wsLogicaNegocioProducto/actualizaDataBaseProductoRequest" message="tns:actualizaDataBaseProducto"/>
+<output wsam:Action="http://producto.jhano.lewissa.com/wsLogicaNegocioProducto/actualizaDataBaseProductoResponse" message="tns:actualizaDataBaseProductoResponse"/>
+</operation>
 </portType>
 <binding name="wsLogicaNegocioProductoPortBinding" type="tns:wsLogicaNegocioProducto">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<operation name="getDescripcionFamiliaProducto">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+<fault name="SQLException">
+<soap:fault name="SQLException" use="literal"/>
+</fault>
+</operation>
 <operation name="validaRuc">
 <soap:operation soapAction=""/>
 <input>
@@ -50,7 +87,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="actualizaDataBaseProducto">
+<operation name="getErrorConexionProducto">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -59,7 +96,19 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="getErrorConexionProducto">
+<operation name="getNombreProveedor">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+<fault name="SQLException">
+<soap:fault name="SQLException" use="literal"/>
+</fault>
+</operation>
+<operation name="actualizaDataBaseProducto">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

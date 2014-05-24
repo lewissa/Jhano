@@ -112,10 +112,10 @@
         <table bgcolor="#C0C0C0" width="100%" height="100%" border="1">
             <tr>
                 <td border="0.1"width="12%">
-                    <table align="center">
+                    <table align="left">
                         <tr> 
                             <td>
-                                <a href="http://localhost:8080/InterfazUsuario_1/interfacesJhano/interfazIngreseProducto.jsp">
+                                <a href="../interfacesJhano/interfazIngresoProducto.jsp">
                                     <label>
                                         <font face="Arial">
                                             Ingreso
@@ -149,9 +149,44 @@
                     </table>
                 </td>
                 <td>
+                    <%
+                        String strCancelar;
+                        try {
+                            strCancelar = (request.getParameter("can") != null) ? "true" : "false";
+                        } catch (Exception excError) {
+                            strCancelar = "false";
+                        }
+                        if (strCancelar.equals("true")) {
+                            request.getSession().setAttribute("producto", false);
+                            request.getSession().setAttribute("eanProductoVacio", null);
+                            request.getSession().setAttribute("fabricacionProductoVacio", null);
+                            request.getSession().setAttribute("descripcionGeneralProductoVacio", null);
+                            request.getSession().setAttribute("margenGananciaProductoVacio", null);
+                            request.getSession().setAttribute("cantidadProductoVacio", null);
+                            request.getSession().setAttribute("precioCostoProductoVacio", null);
+                            request.getSession().setAttribute("margenVentaProductoVacio", null);
+                            request.getSession().setAttribute("stockMaximoProductoVacio", null);
+                            request.getSession().setAttribute("stockMinimoProductoVacio", null);
+                        }
+                        String strErrorConexionProducto;
+                        try {
+                            strErrorConexionProducto = (String) request.getSession().getAttribute("errorProducto");
+                        } catch (Exception excE) {
+                            strErrorConexionProducto = null;
+                        }
+                        if (strErrorConexionProducto != null) {
+                            out.print("<td >");
+                            out.print("</td>");
+                            out.print("<h3><center> <font size=\"3\" face=\"Arial, Helvetica, sans-serif\">" + request.getSession().getAttribute("errorProducto") + "</font><a href=\"../interfacesJhano/interfazCargaProducto.jsp\"><input name=\"cancelar\" type=\"button\" value=\"Ocultar\" /></a></center></h3>");
+                            request.getSession().setAttribute("errorProducto", null);
+                        } else {
+                    %>
                     <font face="Arial">
                         <h3><center>Producto</center></h3>
                     </font>
+                    <%
+                        }
+                    %>
                 </td>
             </tr>
         </table>

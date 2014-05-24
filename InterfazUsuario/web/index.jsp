@@ -84,7 +84,7 @@
                             </li>
                             <li>
                                 <font face="Arial">
-                                    <a href="#"><center>Productos</center></a>
+                                    <a href="interfacesJhano/interfazCargaProducto.jsp"><center>Productos</center></a>
                                 </font>
                                 <ul>
                                 <font face="Arial">

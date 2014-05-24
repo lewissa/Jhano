@@ -102,8 +102,8 @@ public class cAccesoDatos implements Serializable {
                 stmCreaQuery.execute("END");
                 stmCreaQuery.close();
             }
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
+        } catch (SQLException sqlE) {
+            excErrorAcessoDatos = sqlE;
         } finally {
             return strResultadoConsulta;
         }

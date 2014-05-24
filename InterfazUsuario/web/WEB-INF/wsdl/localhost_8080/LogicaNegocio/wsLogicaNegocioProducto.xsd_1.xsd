@@ -2,17 +2,103 @@
 
 <xs:import namespace="http://producto.accesodatos.jhano.lewissa.com/" schemaLocation="http://localhost:8080/LogicaNegocio/wsLogicaNegocioProducto?xsd=2"/>
 
+<xs:element name="SQLException" type="tns:SQLException"/>
+
 <xs:element name="actualizaDataBaseProducto" type="tns:actualizaDataBaseProducto"/>
 
 <xs:element name="actualizaDataBaseProductoResponse" type="tns:actualizaDataBaseProductoResponse"/>
+
+<xs:element name="getDescripcionFamiliaProducto" type="tns:getDescripcionFamiliaProducto"/>
+
+<xs:element name="getDescripcionFamiliaProductoResponse" type="tns:getDescripcionFamiliaProductoResponse"/>
 
 <xs:element name="getErrorConexionProducto" type="tns:getErrorConexionProducto"/>
 
 <xs:element name="getErrorConexionProductoResponse" type="tns:getErrorConexionProductoResponse"/>
 
+<xs:element name="getNombreProveedor" type="tns:getNombreProveedor"/>
+
+<xs:element name="getNombreProveedorResponse" type="tns:getNombreProveedorResponse"/>
+
 <xs:element name="validaRuc" type="tns:validaRuc"/>
 
 <xs:element name="validaRucResponse" type="tns:validaRucResponse"/>
+
+<xs:complexType name="getNombreProveedor">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getNombreProveedorResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:cProveedor" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cProveedor">
+<xs:sequence>
+<xs:element name="celular" type="xs:string" minOccurs="0"/>
+<xs:element name="convencional" type="xs:string" minOccurs="0"/>
+<xs:element name="correo" type="xs:string" minOccurs="0"/>
+<xs:element name="direccion" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:string" minOccurs="0"/>
+<xs:element name="nombreComercial" type="xs:string" minOccurs="0"/>
+<xs:element name="nombreFiscal" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="SQLException">
+<xs:sequence>
+<xs:element name="SQLState" type="xs:string" minOccurs="0"/>
+<xs:element name="errorCode" type="xs:int"/>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+<xs:element name="nextException" type="tns:sqlException" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="sqlException">
+<xs:complexContent>
+<xs:extension base="tns:exception">
+<xs:sequence>
+<xs:element name="nextException" type="tns:sqlException" minOccurs="0"/>
+</xs:sequence>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="exception">
+<xs:complexContent>
+<xs:extension base="tns:throwable">
+<xs:sequence/>
+</xs:extension>
+</xs:complexContent>
+</xs:complexType>
+
+<xs:complexType name="throwable">
+<xs:sequence>
+<xs:element name="stackTrace" type="tns:stackTraceElement" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="stackTraceElement" final="extension restriction">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getDescripcionFamiliaProducto">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getDescripcionFamiliaProductoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:cFamiliaProducto" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cFamiliaProducto">
+<xs:sequence>
+<xs:element name="strDescripcion" type="xs:string" minOccurs="0"/>
+<xs:element name="strId" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
 
 <xs:complexType name="actualizaDataBaseProducto">
 <xs:sequence>

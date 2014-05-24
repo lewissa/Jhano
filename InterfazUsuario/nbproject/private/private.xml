@@ -3,15 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/eborja/NetBeansProjects/Jhano/InterfazUsuario/web/interfacesJhano/interfazModificarFamiliaProducto.jsp</file>
             <file>file:/home/eborja/NetBeansProjects/Jhano/InterfazUsuario/web/interfacesJhano/interfazIngresoCliente.jsp</file>
-            <file>file:/home/eborja/NetBeansProjects/Jhano/InterfazUsuario/web/index.jsp</file>
-            <file>file:/home/eborja/NetBeansProjects/Jhano/InterfazUsuario/web/controladoresJhano/controladorIngresoProveedor.jsp</file>
-            <file>file:/home/eborja/NetBeansProjects/Jhano/InterfazUsuario/web/interfacesJhano/interfazIngresoProveedor.jsp</file>
-            <file>file:/home/eborja/NetBeansProjects/Jhano/InterfazUsuario/web/interfacesJhano/interfazCargaProveedor.jsp</file>
-            <file>file:/home/eborja/NetBeansProjects/Jhano/InterfazUsuario/web/controladoresJhano/controladorInterfazIngresoCliente.jsp</file>
-            <file>file:/home/eborja/NetBeansProjects/Jhano/InterfazUsuario/web/controladoresJhano/controladorInterfazCargarCliente.jsp</file>
-            <file>file:/home/eborja/NetBeansProjects/Jhano/InterfazUsuario/web/interfacesJhano/interfazIngreseProducto.jsp</file>
+            <file>file:/home/eborja/NetBeansProjects/Jhano/InterfazUsuario/web/interfacesJhano/interfazIngresoProducto.jsp</file>
+            <file>file:/home/eborja/NetBeansProjects/Jhano/InterfazUsuario/web/controladoresJhano/controladorIngresoProducto.jsp</file>
         </group>
     </open-files>
 </project-private>
