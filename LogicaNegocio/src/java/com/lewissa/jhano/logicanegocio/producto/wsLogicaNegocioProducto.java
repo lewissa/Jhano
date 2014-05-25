@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.lewissa.jhano.producto;
+package com.lewissa.jhano.logicanegocio.producto;
 
 import com.lewissa.jhano.logicanegocio.familiaproducto.cFamiliaProducto;
 import com.lewissa.jhano.logicanegocio.proveedor.cProveedor;
@@ -45,7 +45,7 @@ public class wsLogicaNegocioProducto {
      * Web service operation
      */
     @WebMethod(operationName = "getNombreProveedor")
-    public java.util.List<cProveedor> getNombreProveedor() throws SQLException {
+    public java.util.List<cProveedor> getNombreProveedor()  {
         cTransaccionProducto traProducto = new cTransaccionProducto();
         return traProducto.getNombreProvedor();
     }
@@ -55,7 +55,7 @@ public class wsLogicaNegocioProducto {
      * @return 
      */
     @WebMethod(operationName = "getDescripcionFamiliaProducto")
-    public java.util.List<cFamiliaProducto> getDescripcionFamiliaProducto() throws SQLException {
+    public java.util.List<cFamiliaProducto> getDescripcionFamiliaProducto(){
         cTransaccionProducto traProducto=new cTransaccionProducto();
         return traProducto.getDescripcionFamiliaProducto();
     }

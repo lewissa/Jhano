@@ -40,6 +40,16 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="getErrorConexionProveedor">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getErrorConexionProveedorResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="eliminarProveedor">
 <xs:sequence>
 <xs:element name="oProveedor" type="tns:cProveedor" minOccurs="0"/>
@@ -61,16 +71,6 @@
 <xs:complexType name="eliminarProveedorResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="getErrorConexionProveedor">
-<xs:sequence/>
-</xs:complexType>
-
-<xs:complexType name="getErrorConexionProveedorResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 

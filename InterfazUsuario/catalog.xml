@@ -15,18 +15,16 @@
     
 >>>>>>> 0603c79e9ac0eb544a069588d3157d129ddce80b
     <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioFamiliaProdcuto?WSDL" uri="src/conf/xml-resources/web-service-references/wsLogicaNegocioFamiliaProdcuto/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioFamiliaProdcuto.wsdl"/>
-    <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioCliente?wsdl" uri="src/conf/xml-resources/web-service-references/wsLogicaNegocioCliente/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioCliente.wsdl"/>
     <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioFamiliaProdcuto?wsdl" uri="src/conf/xml-resources/web-service-references/wsLogicaNegocioFamiliaProdcuto/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioFamiliaProdcuto.wsdl"/>
     <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioFamiliaProdcuto?xsd=1" uri="src/conf/xml-resources/web-service-references/wsLogicaNegocioFamiliaProdcuto/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioFamiliaProdcuto.xsd_1.xsd"/>
 <<<<<<< HEAD
 <<<<<<< HEAD
     <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosProducto?wsdl" uri="src/conf/xml-resources/web-service-references/wsAccesoDatosProducto/wsdl/localhost_8080/AccesoDatos/wsAccesoDatosProducto.wsdl"/>
     <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosProducto?xsd=1" uri="src/conf/xml-resources/web-service-references/wsAccesoDatosProducto/wsdl/localhost_8080/AccesoDatos/wsAccesoDatosProducto.xsd_1.xsd"/>
-    <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioProducto?wsdl" uri="src/conf/xml-resources/web-service-references/wsLogicaNegocioProducto/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioProducto.wsdl"/>
 =======
-    <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto?wsdl" uri="src/conf/xml-resources/web-service-references/wsLogicaNegocioFamiliaProducto/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto.wsdl"/>
-    <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioProveedor?wsdl" uri="src/conf/xml-resources/web-service-references/wsLogicaNegocioProveedor/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioProveedor.wsdl"/>
-    <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioCliente?wsdl" uri="src/conf/xml-resources/web-service-references/wsLogicaNegocioCliente/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioCliente.wsdl"/>
+    
+    
+    
 >>>>>>> 0603c79e9ac0eb544a069588d3157d129ddce80b
 
     
@@ -34,22 +32,31 @@
     
     
 =======
-    <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto?wsdl" uri="src/conf/xml-resources/web-service-references/wsLogicaNegocioFamiliaProducto/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto.wsdl"/>
-    <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioProveedor?wsdl" uri="src/conf/xml-resources/web-service-references/wsLogicaNegocioProveedor/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioProveedor.wsdl"/>
+    
+    
     <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioCliente?wsdl" uri="src/conf/xml-resources/web-service-references/wsLogicaNegocioCliente/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioCliente.wsdl"/>
 >>>>>>> 0603c79e9ac0eb544a069588d3157d129ddce80b
     
-    <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto?xsd=1" uri="src/conf/xml-resources/web-service-references/wsLogicaNegocioFamiliaProducto/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto.xsd_1.xsd"/>
-    <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioProveedor?xsd=1" uri="src/conf/xml-resources/web-service-references/wsLogicaNegocioProveedor/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioProveedor.xsd_1.xsd"/>
+    
+    
     <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioCliente?WSDL" uri="src/conf/xml-resources/web-service-references/wsLogicaNegocioCliente/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioCliente.wsdl"/>
-    <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioCliente?xsd=1" uri="src/conf/xml-resources/web-service-references/wsLogicaNegocioCliente/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioCliente.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto?WSDL" uri="src/conf/xml-resources/web-service-references/wsLogicaNegocioFamiliaProducto/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto.wsdl"/>
-    <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto?xsd=1" uri="src/conf/xml-resources/web-service-references/wsLogicaNegocioFamiliaProducto/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioProducto?WSDL" uri="src/conf/xml-resources/web-service-references/wsLogicaNegocioProducto/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioProducto.wsdl"/>
-    <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioProducto?xsd=1" uri="src/conf/xml-resources/web-service-references/wsLogicaNegocioProducto/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioProducto.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioProducto?xsd=2" uri="src/conf/xml-resources/web-service-references/wsLogicaNegocioProducto/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioProducto.xsd_2.xsd"/>
     <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioProveedor?WSDL" uri="src/conf/xml-resources/web-service-references/wsLogicaNegocioProveedor/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioProveedor.wsdl"/>
-    <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioProveedor?xsd=1" uri="src/conf/xml-resources/web-service-references/wsLogicaNegocioProveedor/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioProveedor.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioCliente?WSDL" uri="src/conf/xml-resources/web-service-references/wsLogicaNegocioCliente/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioCliente.wsdl"/>
+    <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto?wsdl" uri="src/conf/xml-resources/web-service-references/wsLogicaNegocioFamiliaProducto/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto.wsdl"/>
+    <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto?xsd=1" uri="src/conf/xml-resources/web-service-references/wsLogicaNegocioFamiliaProducto/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioProveedor?wsdl" uri="src/conf/xml-resources/web-service-references/wsLogicaNegocioProveedor/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioProveedor.wsdl"/>
+    <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioProveedor?xsd=1" uri="src/conf/xml-resources/web-service-references/wsLogicaNegocioProveedor/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioProveedor.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioCliente?wsdl" uri="src/conf/xml-resources/web-service-references/wsLogicaNegocioCliente/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioCliente.wsdl"/>
+    <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioCliente?xsd=1" uri="src/conf/xml-resources/web-service-references/wsLogicaNegocioCliente/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioCliente.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioProducto?wsdl" uri="src/conf/xml-resources/web-service-references/wsLogicaNegocioProducto/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioProducto.wsdl"/>
+    <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioProducto?xsd=1" uri="src/conf/xml-resources/web-service-references/wsLogicaNegocioProducto/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioProducto.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto?wsdl" uri="src/conf/xml-resources/web-service-references/wsLogicaNegocioFamiliaProducto/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto.wsdl"/>
+    <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto?xsd=1" uri="src/conf/xml-resources/web-service-references/wsLogicaNegocioFamiliaProducto/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioProveedor?wsdl" uri="src/conf/xml-resources/web-service-references/wsLogicaNegocioProveedor/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioProveedor.wsdl"/>
+    <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioProveedor?xsd=1" uri="src/conf/xml-resources/web-service-references/wsLogicaNegocioProveedor/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioProveedor.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioCliente?wsdl" uri="src/conf/xml-resources/web-service-references/wsLogicaNegocioCliente/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioCliente.wsdl"/>
     <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioCliente?xsd=1" uri="src/conf/xml-resources/web-service-references/wsLogicaNegocioCliente/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioCliente.xsd_1.xsd"/>
 </catalog>

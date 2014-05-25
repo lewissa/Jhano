@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.lewissa.jhano.producto;
+package com.lewissa.jhano.logicanegocio.producto;
 
 import com.lewissa.jhano.logicanegocio.familiaproducto.cFamiliaProducto;
 import com.lewissa.jhano.logicanegocio.proveedor.cProveedor;
@@ -81,15 +81,15 @@ public class cTransaccionProducto {
         return douPrecioDos;
     }
 
-    List<cProveedor> getNombreProvedor() throws SQLException {
+    List<cProveedor> getNombreProvedor() {
         com.lewissa.jhano.accesodatos.producto.WsAccesoDatosProducto_Service service = new com.lewissa.jhano.accesodatos.producto.WsAccesoDatosProducto_Service();
         com.lewissa.jhano.accesodatos.producto.WsAccesoDatosProducto port = service.getWsAccesoDatosProductoPort();
         String strError = null;
+        List<cProveedor> lisNombreProveedor = null;
         try {
             strError = port.getNombreProveedor();
-        } catch (Exception excError) {
-        }
-        List<cProveedor> lisNombreProveedor = new ArrayList<>();
+        
+         lisNombreProveedor= new ArrayList<>();
         if (!strError.equals("err0r")) {
             StringReader strLista = new StringReader(port.getNombreProveedor());
             WebRowSetImpl webLista = new WebRowSetImpl();
@@ -103,18 +103,20 @@ public class cTransaccionProducto {
         } else {
             lisNombreProveedor = null;
         }
+        } catch (Exception excError) {
+        }
         return lisNombreProveedor;
     }
 
-    List<cFamiliaProducto> getDescripcionFamiliaProducto() throws SQLException {
+    List<cFamiliaProducto> getDescripcionFamiliaProducto()  {
         com.lewissa.jhano.accesodatos.producto.WsAccesoDatosProducto_Service service = new com.lewissa.jhano.accesodatos.producto.WsAccesoDatosProducto_Service();
         com.lewissa.jhano.accesodatos.producto.WsAccesoDatosProducto port = service.getWsAccesoDatosProductoPort();
         String strError = null;
+        List<cFamiliaProducto> lisFamiliaProducto=null;
         try {
             strError = port.getDescripcionFamilaProducto();
-        } catch (Exception excError) {
-        }
-        List<cFamiliaProducto> lisFamiliaProducto = new ArrayList<>();
+       
+         lisFamiliaProducto= new ArrayList<>();
         StringReader strLista = new StringReader(port.getDescripcionFamilaProducto());
         if (!strError.equals("err0r")) {
             WebRowSetImpl webLista = new WebRowSetImpl();
@@ -127,6 +129,8 @@ public class cTransaccionProducto {
             }
         } else {
             lisFamiliaProducto = null;
+        }
+         } catch (Exception excError) {
         }
         return lisFamiliaProducto;
     }

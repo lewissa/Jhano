@@ -1,8 +1,4 @@
-<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.3 (tags/2.3-7528; 2013-04-29T19:34:10+0000) JAXWS-RI/2.2.8 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://producto.jhano.lewissa.com/" xmlns:ns1="http://producto.accesodatos.jhano.lewissa.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://producto.jhano.lewissa.com/">
-
-<xs:import namespace="http://producto.accesodatos.jhano.lewissa.com/" schemaLocation="http://localhost:8080/LogicaNegocio/wsLogicaNegocioProducto?xsd=2"/>
-
-<xs:element name="SQLException" type="tns:SQLException"/>
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.3 (tags/2.3-7528; 2013-04-29T19:34:10+0000) JAXWS-RI/2.2.8 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://producto.logicanegocio.jhano.lewissa.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://producto.logicanegocio.jhano.lewissa.com/">
 
 <xs:element name="actualizaDataBaseProducto" type="tns:actualizaDataBaseProducto"/>
 
@@ -24,65 +20,6 @@
 
 <xs:element name="validaRucResponse" type="tns:validaRucResponse"/>
 
-<xs:complexType name="getNombreProveedor">
-<xs:sequence/>
-</xs:complexType>
-
-<xs:complexType name="getNombreProveedorResponse">
-<xs:sequence>
-<xs:element name="return" type="tns:cProveedor" minOccurs="0" maxOccurs="unbounded"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="cProveedor">
-<xs:sequence>
-<xs:element name="celular" type="xs:string" minOccurs="0"/>
-<xs:element name="convencional" type="xs:string" minOccurs="0"/>
-<xs:element name="correo" type="xs:string" minOccurs="0"/>
-<xs:element name="direccion" type="xs:string" minOccurs="0"/>
-<xs:element name="id" type="xs:string" minOccurs="0"/>
-<xs:element name="nombreComercial" type="xs:string" minOccurs="0"/>
-<xs:element name="nombreFiscal" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="SQLException">
-<xs:sequence>
-<xs:element name="SQLState" type="xs:string" minOccurs="0"/>
-<xs:element name="errorCode" type="xs:int"/>
-<xs:element name="message" type="xs:string" minOccurs="0"/>
-<xs:element name="nextException" type="tns:sqlException" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="sqlException">
-<xs:complexContent>
-<xs:extension base="tns:exception">
-<xs:sequence>
-<xs:element name="nextException" type="tns:sqlException" minOccurs="0"/>
-</xs:sequence>
-</xs:extension>
-</xs:complexContent>
-</xs:complexType>
-
-<xs:complexType name="exception">
-<xs:complexContent>
-<xs:extension base="tns:throwable">
-<xs:sequence/>
-</xs:extension>
-</xs:complexContent>
-</xs:complexType>
-
-<xs:complexType name="throwable">
-<xs:sequence>
-<xs:element name="stackTrace" type="tns:stackTraceElement" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="stackTraceElement" final="extension restriction">
-<xs:sequence/>
-</xs:complexType>
-
 <xs:complexType name="getDescripcionFamiliaProducto">
 <xs:sequence/>
 </xs:complexType>
@@ -102,7 +39,25 @@
 
 <xs:complexType name="actualizaDataBaseProducto">
 <xs:sequence>
-<xs:element name="proProducto" type="ns1:cProducto" minOccurs="0"/>
+<xs:element name="proProducto" type="tns:cProducto" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cProducto">
+<xs:sequence>
+<xs:element name="douMargenGanancia" type="xs:double" minOccurs="0"/>
+<xs:element name="douMargenVenta" type="xs:double" minOccurs="0"/>
+<xs:element name="douPrecioCosto" type="xs:double" minOccurs="0"/>
+<xs:element name="douPrecioDos" type="xs:double" minOccurs="0"/>
+<xs:element name="intCantidad" type="xs:int" minOccurs="0"/>
+<xs:element name="intStockMaximo" type="xs:int" minOccurs="0"/>
+<xs:element name="intStockMinimo" type="xs:int" minOccurs="0"/>
+<xs:element name="strDescripcionGeneral" type="xs:string" minOccurs="0"/>
+<xs:element name="strEan" type="xs:string" minOccurs="0"/>
+<xs:element name="strFabricante" type="xs:string" minOccurs="0"/>
+<xs:element name="strFamiliaProdu" type="xs:string" minOccurs="0"/>
+<xs:element name="strProveedorProdu" type="xs:string" minOccurs="0"/>
+<xs:element name="strSn" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -131,6 +86,28 @@
 <xs:complexType name="validaRucResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getNombreProveedor">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getNombreProveedorResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:cProveedor" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cProveedor">
+<xs:sequence>
+<xs:element name="celular" type="xs:string" minOccurs="0"/>
+<xs:element name="convencional" type="xs:string" minOccurs="0"/>
+<xs:element name="correo" type="xs:string" minOccurs="0"/>
+<xs:element name="direccion" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:string" minOccurs="0"/>
+<xs:element name="nombreComercial" type="xs:string" minOccurs="0"/>
+<xs:element name="nombreFiscal" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 </xs:schema>
