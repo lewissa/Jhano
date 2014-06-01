@@ -10,6 +10,55 @@
                 JAX-WS WSGEN SECTION
                 ===================
             -->
+    <target name="wsgen-init" depends="init, -do-compile">
+        <mkdir dir="${build.generated.sources.dir}/jax-ws/resources/"/>
+        <mkdir dir="${build.classes.dir}"/>
+        <mkdir dir="${build.classes.dir}/META-INF"/>
+        <property name="j2ee.platform.wsgen.classpath" value="${libs.jaxws21.classpath}"/>
+        <taskdef name="wsgen" classname="com.sun.tools.ws.ant.WsGen">
+            <classpath path="${java.home}/../lib/tools.jar:${build.classes.dir}:${j2ee.platform.wsgen.classpath}:${javac.classpath}"/>
+        </taskdef>
+    </target>
+    <target name="wsgen-wsLogicaNegocioFamiliaProducto" depends="wsgen-init">
+        <copy todir="${build.classes.dir}/META-INF">
+            <fileset dir="${webinf.dir}" includes="wsit-com.lewissa.jhano.logicanegocio.familiaproducto.wsLogicaNegocioFamiliaProducto.xml"/>
+        </copy>
+        <wsgen sourcedestdir="${build.generated.sources.dir}/jax-ws" resourcedestdir="${build.generated.sources.dir}/jax-ws/resources/" destdir="${build.generated.sources.dir}/jax-ws" verbose="true" keep="true" genwsdl="true" sei="com.lewissa.jhano.logicanegocio.familiaproducto.wsLogicaNegocioFamiliaProducto" xendorsed="true">
+            <classpath path="${java.home}/../lib/tools.jar:${build.classes.dir}:${j2ee.platform.wsgen.classpath}:${javac.classpath}"/>
+        </wsgen>
+    </target>
+    <target name="wsgen-wsLogicaNegocioProducto" depends="wsgen-init">
+        <copy todir="${build.classes.dir}/META-INF">
+            <fileset dir="${webinf.dir}" includes="wsit-com.lewissa.jhano.logicanegocio.producto.wsLogicaNegocioProducto.xml"/>
+        </copy>
+        <wsgen sourcedestdir="${build.generated.sources.dir}/jax-ws" resourcedestdir="${build.generated.sources.dir}/jax-ws/resources/" destdir="${build.generated.sources.dir}/jax-ws" verbose="true" keep="true" genwsdl="true" sei="com.lewissa.jhano.logicanegocio.producto.wsLogicaNegocioProducto" xendorsed="true">
+            <classpath path="${java.home}/../lib/tools.jar:${build.classes.dir}:${j2ee.platform.wsgen.classpath}:${javac.classpath}"/>
+        </wsgen>
+    </target>
+    <target name="wsgen-wsLogicaNegocioFactura" depends="wsgen-init">
+        <copy todir="${build.classes.dir}/META-INF">
+            <fileset dir="${webinf.dir}" includes="wsit-com.lewissa.jhano.logicanegocio.factura.wsLogicaNegocioFactura.xml"/>
+        </copy>
+        <wsgen sourcedestdir="${build.generated.sources.dir}/jax-ws" resourcedestdir="${build.generated.sources.dir}/jax-ws/resources/" destdir="${build.generated.sources.dir}/jax-ws" verbose="true" keep="true" genwsdl="true" sei="com.lewissa.jhano.logicanegocio.factura.wsLogicaNegocioFactura" xendorsed="true">
+            <classpath path="${java.home}/../lib/tools.jar:${build.classes.dir}:${j2ee.platform.wsgen.classpath}:${javac.classpath}"/>
+        </wsgen>
+    </target>
+    <target name="wsgen-wsLogicaNegocioProveedor" depends="wsgen-init">
+        <copy todir="${build.classes.dir}/META-INF">
+            <fileset dir="${webinf.dir}" includes="wsit-com.lewissa.jhano.logicanegocio.proveedor.wsLogicaNegocioProveedor.xml"/>
+        </copy>
+        <wsgen sourcedestdir="${build.generated.sources.dir}/jax-ws" resourcedestdir="${build.generated.sources.dir}/jax-ws/resources/" destdir="${build.generated.sources.dir}/jax-ws" verbose="true" keep="true" genwsdl="true" sei="com.lewissa.jhano.logicanegocio.proveedor.wsLogicaNegocioProveedor" xendorsed="true">
+            <classpath path="${java.home}/../lib/tools.jar:${build.classes.dir}:${j2ee.platform.wsgen.classpath}:${javac.classpath}"/>
+        </wsgen>
+    </target>
+    <target name="wsgen-wsLogicaNegocioCliente" depends="wsgen-init">
+        <copy todir="${build.classes.dir}/META-INF">
+            <fileset dir="${webinf.dir}" includes="wsit-com.lewissa.jhano.logicanegocio.cliente.wsLogicaNegocioCliente.xml"/>
+        </copy>
+        <wsgen sourcedestdir="${build.generated.sources.dir}/jax-ws" resourcedestdir="${build.generated.sources.dir}/jax-ws/resources/" destdir="${build.generated.sources.dir}/jax-ws" verbose="true" keep="true" genwsdl="true" sei="com.lewissa.jhano.logicanegocio.cliente.wsLogicaNegocioCliente" xendorsed="true">
+            <classpath path="${java.home}/../lib/tools.jar:${build.classes.dir}:${j2ee.platform.wsgen.classpath}:${javac.classpath}"/>
+        </wsgen>
+    </target>
     <!--
                 ===================
                 JAX-WS WSIMPORT SECTION
@@ -90,5 +139,21 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/com/lewissa/jhano/accesodatos/producto"/>
         <delete dir="${build.generated.dir}/jax-wsCache/wsAccesoDatosProducto"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-wsAccesoDatosCliente, wsimport-client-wsAccesoDatosFamiliaProducto, wsimport-client-wsAccesoDatosProveedor, wsimport-client-wsAccesoDatosProducto"/>
+    <target name="wsimport-client-wsAccesoDatosFactura" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/wsAccesoDatosFactura"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/wsAccesoDatosFactura" destdir="${build.generated.dir}/jax-wsCache/wsAccesoDatosFactura" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/wsAccesoDatosFactura/wsdl/localhost_8080/AccesoDatos/wsAccesoDatosFactura.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/AccesoDatos/wsAccesoDatosFactura?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/wsAccesoDatosFactura/wsdl/localhost_8080/AccesoDatos/wsAccesoDatosFactura.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/wsAccesoDatosFactura"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/wsAccesoDatosFactura">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-wsAccesoDatosFactura" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/lewissa/jhano/accesodatos/factura"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/wsAccesoDatosFactura"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-wsAccesoDatosCliente, wsimport-client-wsAccesoDatosFamiliaProducto, wsimport-client-wsAccesoDatosProveedor, wsimport-client-wsAccesoDatosProducto, wsimport-client-wsAccesoDatosFactura"/>
 </project>
