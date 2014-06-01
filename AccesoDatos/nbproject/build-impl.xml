@@ -1006,7 +1006,11 @@ exists or setup the property manually. For example like this:
     </target>
     <target depends="init" name="library-inclusion-in-archive" unless="dist.ear.dir">
         <copyfiles files="${libs.PostgreSQLDriver.classpath}" todir="${build.web.dir}/WEB-INF/lib"/>
+<<<<<<< HEAD
         <copyfiles files="${libs.junit_4.classpath}" todir="${build.web.dir}/WEB-INF/lib"/>
+=======
+           <copyfiles files="${libs.junit_4.classpath}" todir="${build.web.dir}/WEB-INF/lib"/>
+>>>>>>> 6fa04f9fcfdf2370ee73126d223aa590c998de67
     </target>
     <target depends="init" if="dist.ear.dir" name="-clean-webinf-lib">
         <delete dir="${build.web.dir}/WEB-INF/lib"/>

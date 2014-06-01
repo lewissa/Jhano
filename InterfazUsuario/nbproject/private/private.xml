@@ -2,6 +2,27 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
         <group/>
+=======
+        <group>
+            <file>file:/home/eborja/NetBeansProjects/Jhano/InterfazUsuario/nbproject/jaxws-build.xml</file>
+            <file>file:/home/eborja/NetBeansProjects/Jhano/InterfazUsuario/web/interfacesJhano/interfazModificarProveedor.jsp</file>
+            <file>file:/home/eborja/NetBeansProjects/Jhano/InterfazUsuario/web/interfacesJhano/interfazModificarFamiliaProducto.jsp</file>
+            <file>file:/home/eborja/NetBeansProjects/Jhano/InterfazUsuario/web/interfacesJhano/interfazIngresoCliente.jsp</file>
+            <file>file:/home/eborja/NetBeansProjects/Jhano/InterfazUsuario/web/interfacesJhano/interfazCargaProveedor.jsp</file>
+            <file>file:/home/eborja/NetBeansProjects/Jhano/InterfazUsuario/web/controladoresJhano/controladorIngresoProducto.jsp</file>
+            <file>file:/home/eborja/NetBeansProjects/Jhano/InterfazUsuario/web/controladoresJhano/controladorEliminarProveedor.jsp</file>
+            <file>file:/home/eborja/NetBeansProjects/Jhano/InterfazUsuario/web/controladoresJhano/controladorIngresoProveedor.jsp</file>
+            <file>file:/home/eborja/NetBeansProjects/Jhano/InterfazUsuario/web/controladoresJhano/controladorInterfazCargaFamiliaProducto.jsp</file>
+            <file>file:/home/eborja/NetBeansProjects/Jhano/InterfazUsuario/web/controladoresJhano/controladorInterfazCargaProducto.jsp</file>
+            <file>file:/home/eborja/NetBeansProjects/Jhano/InterfazUsuario/web/controladoresJhano/controladorInterfazCargaProveedor.jsp</file>
+            <file>file:/home/eborja/NetBeansProjects/Jhano/InterfazUsuario/web/controladoresJhano/controladorInterfazIngresoCliente.jsp</file>
+            <file>file:/home/eborja/NetBeansProjects/Jhano/InterfazUsuario/web/controladoresJhano/controladorInterfazIngresoFamiliaProducto.jsp</file>
+            <file>file:/home/eborja/NetBeansProjects/Jhano/InterfazUsuario/web/controladoresJhano/controladorModificarProveedor.jsp</file>
+            <file>file:/home/eborja/NetBeansProjects/Jhano/InterfazUsuario/web/index.jsp</file>
+            <file>file:/home/eborja/NetBeansProjects/Jhano/InterfazUsuario/web/controladoresJhano/controladorInterfazCargarCliente.jsp</file>
+        </group>
+>>>>>>> 6fa04f9fcfdf2370ee73126d223aa590c998de67
     </open-files>
 </project-private>

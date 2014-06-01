@@ -16,6 +16,15 @@
     <service name="wsLogicaNegocioCliente">
       <implementation-class>com.lewissa.jhano.logicanegocio.cliente.wsLogicaNegocioCliente</implementation-class>
     </service>
+<<<<<<< HEAD
+=======
+    <service name="wsLogicaNegocioProducto">
+      <implementation-class>com.lewissa.jhano.logicanegocio.producto.wsLogicaNegocioProducto</implementation-class>
+    </service>
+    <service name="wsLogicaNegocioFactura">
+      <implementation-class>com.lewissa.jhano.logicanegocio.factura.wsLogicaNegocioFactura</implementation-class>
+    </service>
+>>>>>>> 6fa04f9fcfdf2370ee73126d223aa590c998de67
   </services>
   <clients>
     <client name="wsAccesoDatosCliente">
