@@ -64,11 +64,33 @@ public class wsAccesoDatosCliente {
     @WebMethod(operationName = "obtenerCliente")
     public String obtenerCliente() {
         //TODO write your implementation code here:
-        String cli = null;
+        String strcli = null;
         cTransaccionCliente traCliente = new cTransaccionCliente();
         if (cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()){
-            cli = traCliente.cargarCliente();
+            strcli = traCliente.cargarCliente();
         }
-        return cli;
+        return strcli;
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "eliminarCliente")
+    public Boolean eliminarCliente(@WebParam(name = "strCli") String strCli) {
+        //TODO write your implementation code here:
+        Boolean booFlag1 = false; // revisa la respuesta de la base
+        Boolean booFlag2 = false; // revisa la conexion
+        cTransaccionCliente traCliente = new cTransaccionCliente();
+        if (!cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()) {
+            booFlag2 = false; //error en la conexion
+        } else {
+            booFlag2 = true; // conexion correcta
+            booFlag1 = traCliente.eliminarCliente(strCli);
+            if (booFlag1 == null) {
+                booFlag1 = false;
+            }
+        }
+        booFlag1 = (booFlag1.equals(true)) && (booFlag2.equals(true));
+        return booFlag1;
     }
 }

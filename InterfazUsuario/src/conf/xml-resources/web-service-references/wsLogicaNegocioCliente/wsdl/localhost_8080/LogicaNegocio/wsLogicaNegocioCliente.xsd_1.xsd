@@ -4,6 +4,10 @@
 
 <xs:element name="actualizaDataBaseClienteResponse" type="tns:actualizaDataBaseClienteResponse"/>
 
+<xs:element name="eliminarCliente" type="tns:eliminarCliente"/>
+
+<xs:element name="eliminarClienteResponse" type="tns:eliminarClienteResponse"/>
+
 <xs:element name="getErrorConexionCliente" type="tns:getErrorConexionCliente"/>
 
 <xs:element name="getErrorConexionClienteResponse" type="tns:getErrorConexionClienteResponse"/>
@@ -80,6 +84,18 @@
 <xs:complexType name="obtenClienteResponse">
 <xs:sequence>
 <xs:element name="return" type="tns:cCliente" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarCliente">
+<xs:sequence>
+<xs:element name="strId" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarClienteResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 

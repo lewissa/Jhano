@@ -183,13 +183,16 @@
                         } else {
                     %>
                     <td width="88%">
+                        <h3><center> <font size="5" face="Arial, Helvetica, sans-serif">Matriz Cliente</font></center></h3>
                         <form name="frmCargarClientes" action="../controladoresJhano/controladorInterfazCargarCliente.jsp" method="post" >
-                            <table width="700" align="center" border="1">
+                            <table width="1000" align="center" border="1" bgcolor="white">
                                 <tr>
-                                    <td width="150" align="center">Cédula / RUC</td>
-                                    <td align="center">Nombre</td>
-                                    <td width="50" align="center">Modificar</td>
-                                    <td width="50" align="center">Eliminar</td>
+                                    <td width="100" align="center">Cédula / RUC</td>
+                                    <td width="250" align="center">Nombre y Apellido</td>
+                                    <td width="400" align="center">Dirección</td>
+                                    <td width="100" align="center">Teléfono</td>
+                                    <td width="150" align="center" colspan="2">Acciones</td>
+                                    
                                 </tr>
                                 <%
                                     String strCarga = (request.getParameter("car") != null) ? "true" : "false";
@@ -202,9 +205,11 @@
                                             out.print("<tr>");
                                             out.print("  <td>" + cliente.getStrIdCliente() + "</td>");
                                             out.print("  <td>" + cliente.getStrNombreFiscal() + "</td>");
+                                            out.print("  <td>" + cliente.getStrDireccion()+ "</td>");
+                                            out.print("  <td>" + cliente.getStrConvencional()+ "</td>");
                                             out.print("  <td>Modificar</td>");
-                                            out.print("  <td>Eliminar</td>");
-                                            //out.print("  <td><a href='controlador.jsp?act=del&id=" + estudiante.getIntCodigo().toString() + "'>Eliminar</a></td>");
+                                            //out.print("  <td>Eliminar</td>");
+                                            out.print("  <td><a href='../controladoresJhano/controladorEliminarCliente.jsp?accion=delete&id=" + cliente.getStrIdCliente() + "'>Eliminar</a></td>");
                                             out.print("</tr>");
                                         }
                                     } else {
@@ -213,15 +218,14 @@
                                         out.print("  <td></td>");
                                         out.print("  <td></td>");
                                         out.print("  <td></td>");
+                                        out.print("  <td></td>");
+                                        out.print("  <td></td>");
                                         out.print("</tr>");
                                     }
                                 %>
-                                <tr>
-                                    <td align="right" colspan="4">
-                                    </td>
-                                </tr>
+                                
                             </table>
-                            <h3><center> <font size="5" face="Arial, Helvetica, sans-serif">Matriz Cliente</font></center></h3>
+                            
                     </td>
                     <%
                         }

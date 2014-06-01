@@ -106,6 +106,8 @@ public class wsLogicaNegocioCliente {
                 cCliente c = new cCliente();
                 c.setStrIdCliente(wrs.getString("Id_cliente"));
                 c.setStrNombreFiscal(wrs.getString("Nombre_fiscal"));
+                c.setStrDireccion(wrs.getString("Direccion"));
+                c.setStrConvencional(wrs.getString("Convencional"));
                 clientes.add(c);
             }
         } catch (Exception ex) {
@@ -117,6 +119,15 @@ public class wsLogicaNegocioCliente {
     private String obtenerCliente() {
         com.lewissa.jhano.accesodatos.cliente.WsAccesoDatosCliente port = service.getWsAccesoDatosClientePort();
         return port.obtenerCliente();
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "eliminarCliente")
+    public Boolean eliminarCliente(@WebParam(name = "strId") String strId) {
+        com.lewissa.jhano.accesodatos.cliente.WsAccesoDatosCliente port = service.getWsAccesoDatosClientePort();
+        return port.eliminarCliente(strId);
     }
 
     

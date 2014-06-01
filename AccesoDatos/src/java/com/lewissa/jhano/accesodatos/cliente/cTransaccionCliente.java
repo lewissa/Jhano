@@ -27,57 +27,57 @@ public class cTransaccionCliente {
      * cleinte.
      */
     public Boolean ingresarCliente(String strCli[]) {
-        String strSqlIngreso=null;
-        Boolean booBandera=true;
+        String strSqlIngreso = null;
+        Boolean booBandera = true;
         Boolean booFlag = false;
-        if (strCli[2].equals("") && strCli[4].equals("") && strCli[5].equals("")&&booBandera.equals(true)) {
+        if (strCli[2].equals("") && strCli[4].equals("") && strCli[5].equals("") && booBandera.equals(true)) {
             strSqlIngreso = "INSERT INTO cliente VALUES ('" + strCli[0] + "', '" + strCli[1] + "'"
                     + ",null, '" + strCli[3] + "', null"
                     + ", null,'" + strCli[6] + "','" + strCli[7] + "')";
-            booBandera=false;
+            booBandera = false;
         }
-        if (strCli[2].equals("") && strCli[5].equals("")&&booBandera.equals(true)) {
+        if (strCli[2].equals("") && strCli[5].equals("") && booBandera.equals(true)) {
             strSqlIngreso = "INSERT INTO cliente VALUES ('" + strCli[0] + "', '" + strCli[1] + "'"
                     + ", null, '" + strCli[3] + "', '" + strCli[4] + "'"
                     + ", null, '" + strCli[6] + "', '" + strCli[7] + "')";
-            booBandera=false;
+            booBandera = false;
         }
-        if (strCli[2].equals("") && strCli[4].equals("")&&booBandera.equals(true)) {
+        if (strCli[2].equals("") && strCli[4].equals("") && booBandera.equals(true)) {
             strSqlIngreso = "INSERT INTO cliente VALUES ('" + strCli[0] + "', '" + strCli[1] + "'"
                     + ", null, '" + strCli[3] + "', null"
                     + ", '" + strCli[5] + "','" + strCli[6] + "', '" + strCli[7] + "')";
-            booBandera=false;
+            booBandera = false;
         }
-        if (strCli[4].equals("") && strCli[5].equals("")&&booBandera.equals(true)) {
+        if (strCli[4].equals("") && strCli[5].equals("") && booBandera.equals(true)) {
             strSqlIngreso = "INSERT INTO cliente VALUES ('" + strCli[0] + "', '" + strCli[1] + "'"
                     + ", '" + strCli[2] + "', '" + strCli[3] + "', null"
                     + ", null, '" + strCli[6] + "', '" + strCli[7] + "')";
-            booBandera=false;
+            booBandera = false;
         }
-        if (strCli[4].equals("")&&booBandera.equals(true)) {
+        if (strCli[4].equals("") && booBandera.equals(true)) {
             strSqlIngreso = "INSERT INTO cliente VALUES ('" + strCli[0] + "', '" + strCli[1] + "'"
                     + ", '" + strCli[2] + "', '" + strCli[3] + "', null"
                     + ", '" + strCli[5] + "', '" + strCli[6] + "', '" + strCli[7] + "')";
-            booBandera=false;
+            booBandera = false;
         }
 
-        if (strCli[5].equals("")&&booBandera.equals(true)) {
+        if (strCli[5].equals("") && booBandera.equals(true)) {
             strSqlIngreso = "INSERT INTO cliente VALUES ('" + strCli[0] + "', '" + strCli[1] + "'"
                     + ", '" + strCli[2] + "', '" + strCli[3] + "', '" + strCli[4] + "'"
                     + ", null, '" + strCli[6] + "', '" + strCli[7] + "')";
-            booBandera=false;
+            booBandera = false;
         }
-        if (strCli[2].equals("")&&booBandera.equals(true)) {
+        if (strCli[2].equals("") && booBandera.equals(true)) {
             strSqlIngreso = "INSERT INTO cliente VALUES ('" + strCli[0] + "', '" + strCli[1] + "'"
                     + ", null, '" + strCli[3] + "', '" + strCli[4] + "'"
                     + ", '" + strCli[5] + "', '" + strCli[6] + "', '" + strCli[7] + "')";
-            booBandera=false;
+            booBandera = false;
         }
-        if (!(strCli[2].equals("") && strCli[4].equals("") && strCli[5].equals(""))&&booBandera.equals(true)) {
+        if (!(strCli[2].equals("") && strCli[4].equals("") && strCli[5].equals("")) && booBandera.equals(true)) {
             strSqlIngreso = "INSERT INTO cliente VALUES ('" + strCli[0] + "', '" + strCli[1] + "'"
                     + ", '" + strCli[2] + "', '" + strCli[3] + "', '" + strCli[4] + "'"
                     + ", '" + strCli[5] + "', '" + strCli[6] + "', '" + strCli[7] + "')";
-            booBandera=false;
+            booBandera = false;
         }
         booFlag = cAccesoDatos.getInstanciaAccesoDatos().actualizarDataBase(strSqlIngreso);
         if (booFlag == null) {
@@ -88,9 +88,22 @@ public class cTransaccionCliente {
 
     public String cargarCliente() {
         String strSqlConsulta, strCliente;
-        strSqlConsulta = "SELECT \"Id_cliente\", \"Nombre_fiscal\" FROM cliente";
+        //strSqlConsulta = "SELECT \"Id_cliente\", \"Nombre_fiscal\", \"Direccion\", \"Convencional\" FROM cliente"
+                //+ "WHERE \"Estado\" = TRUE;";
+        strSqlConsulta = "SELECT \"Id_cliente\", \"Nombre_fiscal\", \"Direccion\", \"Convencional\" FROM cliente WHERE \"Estado\" = TRUE;";
         strCliente = cAccesoDatos.getInstanciaAccesoDatos().consultarDataBase(strSqlConsulta);
         return strCliente;
+    }
+
+    public Boolean eliminarCliente(String strCli) {
+        String strSqlEliminar;
+        Boolean booFlag;
+        strSqlEliminar = "UPDATE cliente SET \"Estado\"=FALSE WHERE \"Id_cliente\" = ('" + strCli + "');";
+        booFlag=cAccesoDatos.getInstanciaAccesoDatos().actualizarDataBase(strSqlEliminar);
+        if (booFlag ==null){
+            booFlag=false;
+        }
+        return booFlag;
     }
 
 }
