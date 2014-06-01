@@ -10,6 +10,7 @@ import com.lewissa.jhano.logicanegocio.utilidades.cCedula;
 import com.lewissa.jhano.logicanegocio.utilidades.cCorreo;
 import com.lewissa.jhano.logicanegocio.utilidades.cRuc;
 import java.util.ArrayList;
+import com.lewissa.jhano.logicanegocio.proveedor.cProveedor;
 import java.util.List;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
@@ -92,13 +93,24 @@ public class wsLogicaNegocioProveedor {
      * Web service operation
      */
     @WebMethod(operationName = "eliminarProveedor")
-    public Boolean eliminarProveedor(@WebParam(name = "oProveedor") cProveedor oProveedor) {
+    public Boolean eliminarProveedor(@WebParam(name = "oProveedor") cProveedor oProveedor, Integer intTipoEliminacion) {
         //TODO write your implementation code here:
         Boolean booResultado = false;
         cTransaccionProveedor oTransaccionProveedor = new cTransaccionProveedor();
         if (oProveedor != null) {
-            booResultado = oTransaccionProveedor.eliminarProveedor(oProveedor);
+            booResultado = oTransaccionProveedor.eliminarProveedor(oProveedor, intTipoEliminacion);
         }
+        return booResultado;
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "modificarProveedor")
+    public Boolean modificarProveedor(@WebParam(name = "oProveedor") cProveedor oProveedor) {
+        Boolean booResultado = false;
+        cTransaccionProveedor oTransacionProveedor = new cTransaccionProveedor();
+        booResultado=oTransacionProveedor.modificarProveedor(oProveedor);
         return booResultado;
     }
 }

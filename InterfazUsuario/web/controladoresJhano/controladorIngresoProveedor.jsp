@@ -18,6 +18,8 @@
     <body>
         <%
             try {
+                
+                String strAccion = request.getParameter("accion");                
                 String strNombrecomer = (request.getParameter("nombrecomer").equals("")) ? "0" : request.getParameter("nombrecomer");
                 String strCiruc = (request.getParameter("ciruc").equals("")) ? "0" : request.getParameter("ciruc");
                 String strNombrefiscal = (request.getParameter("nombrefiscal").equals("")) ? "0" : request.getParameter("nombrefiscal");
@@ -38,8 +40,10 @@
                 } else {
                     proProveedor.setConvencional(strConvencional);
                 }
+                
                 proProveedor.setCorreo(strCorreo);
                 proProveedor.setDireccion(strDireccion);
+                
                 if (strNombrecomer.equals("0")) {
                     proProveedor.setNombreComercial("");
                 } else {
@@ -48,11 +52,10 @@
                 proProveedor.setNombreFiscal(strNombrefiscal);
                 proProveedor.setId(strCiruc);
                 // TODO process result here
-                java.lang.Boolean booresult = port.actualizaDataBaseProveedor(proProveedor);
                 java.lang.Boolean booCorreo = port.validaCorreo(request.getParameter("correo"));
                 java.lang.Boolean booCedula = port.validaCedula(request.getParameter("ciruc"));
                 java.lang.Boolean booRuc = port.validaRuc(request.getParameter("ciruc"));
-
+                java.lang.Boolean booresult = port.actualizaDataBaseProveedor(proProveedor);
                 request.getSession().setAttribute("proveedor", booresult);
                 request.getSession().setAttribute("correoProveedor", booCorreo);
                 request.getSession().setAttribute("cedulaProveedor", booCedula);
@@ -80,7 +83,7 @@
                     request.getSession().setAttribute("errorProveedor", strError);
                     response.sendRedirect("../interfacesJhano/interfazCargaProveedor.jsp");
                 } else {
-                    response.sendRedirect("../interfacesJhano/interfazCargaProveedor.jsp");
+                    response.sendRedirect("../interfacesJhano/interfazIngresoProveedor.jsp");
                 }
             } catch (Exception e) {
                 out.print("ERROR: " + e.getMessage());

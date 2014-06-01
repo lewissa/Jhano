@@ -73,6 +73,30 @@ public class cTransaccionProveedor {
         }
         return booFlag;
     }
+    /**
+     * metodo que permite capturar los datos de proveedor en un List<String>
+     * y prmite enviarlos al metodo para ser modificados
+     * @param oProveedor, objeto priveedor que contirne los datso del proveedor
+     * @return un List<String> que contine los datos a ser modificados
+     */
+    public Boolean modificarProveedor(cProveedor oProveedor)
+    {
+        Boolean booResultado=false;
+        List<String> strProveedor = new ArrayList<String>();
+        cCorreo oCorreo = new cCorreo(oProveedor.getCorreo());
+        if(oCorreo.validaEmail() )
+        {
+            strProveedor.add(0, oProveedor.getId());
+            strProveedor.add(1, oProveedor.getNombreFiscal());
+            strProveedor.add(2, oProveedor.getNombreComercial());
+            strProveedor.add(3, oProveedor.getDireccion());
+            strProveedor.add(4, oProveedor.getConvencional());
+            strProveedor.add(5, oProveedor.getCelular());
+            strProveedor.add(6, oProveedor.getCorreo());
+            booResultado=modificarProveedor(strProveedor);            
+        }        
+        return booResultado;
+    }
 
     /**
      * Metodo que permite cargar los proveedores
@@ -92,8 +116,8 @@ public class cTransaccionProveedor {
                 proveedor.setNombreComercial(wrs.getString("Nombre_comercial"));
                 proveedor.setDireccion(wrs.getString("Direccion"));
                 proveedor.setConvencional(wrs.getString("Convencional"));
-                proveedor.setCelular("Celular");
-                proveedor.setCorreo("Correo");
+                proveedor.setCelular(wrs.getString("Celular"));
+                proveedor.setCorreo(wrs.getString("Correo"));
                 lisProveedor.add(proveedor);
             }
         } catch (Exception ex) {
@@ -107,22 +131,30 @@ public class cTransaccionProveedor {
  * @param oProveedor, cProveedor cintien los datos de un proveedor
  * @return Boolean, contiene la confirmacio de la realizacion del metodo
  */
-    public Boolean eliminarProveedor(cProveedor oProveedor) {
+    public Boolean eliminarProveedor(cProveedor oProveedor, Integer intTipoEliminacion) {
         Boolean booResulado = false;
-        cTransaccionProveedor oTransaccionProveedor = new cTransaccionProveedor();
         String strCodigoProveedor;
-        if (oProveedor != null) {
+        if(oProveedor != null)
+        {
             strCodigoProveedor=oProveedor.getId();
-            booResulado=eliminarProveedor_1(strCodigoProveedor);                   
+            if(intTipoEliminacion == 1) //Realiza eliminacion FISICA
+            {
+              booResulado=eliminarFisicoProveedor(strCodigoProveedor);
+            }
+            else
+            {
+              if(intTipoEliminacion == 0) //Realiza eliminacion LOGICA 
+              {
+                  booResulado=eliminarLogicoProveedor(strCodigoProveedor);
+              }
+            }
         }
         return booResulado;
     }
+    
+    
+    
 
-    private static Boolean insertarProveedor(java.util.List<java.lang.String> strProveedor) {
-        com.lewissa.jhano.accesodatos.proveedor.WsAccesoDatosProveedor_Service service = new com.lewissa.jhano.accesodatos.proveedor.WsAccesoDatosProveedor_Service();
-        com.lewissa.jhano.accesodatos.proveedor.WsAccesoDatosProveedor port = service.getWsAccesoDatosProveedorPort();
-        return port.insertarProveedor(strProveedor);
-    }
 
     /**
      * permite consumir el servico de la capa de Acceso a datos para cargar a
@@ -136,10 +168,26 @@ public class cTransaccionProveedor {
         return port.cargaProveedor();
     }
 
-    private static Boolean eliminarProveedor_1(java.lang.String strCodigoProveedor) {
+    private static Boolean eliminarFisicoProveedor(java.lang.String strCodigoProveedor) {
         com.lewissa.jhano.accesodatos.proveedor.WsAccesoDatosProveedor_Service service = new com.lewissa.jhano.accesodatos.proveedor.WsAccesoDatosProveedor_Service();
         com.lewissa.jhano.accesodatos.proveedor.WsAccesoDatosProveedor port = service.getWsAccesoDatosProveedorPort();
-        return port.eliminarProveedor(strCodigoProveedor);
+        return port.eliminarFisicoProveedor(strCodigoProveedor);
     }
 
+    private static Boolean eliminarLogicoProveedor(java.lang.String strCodigoProveedor) {
+        com.lewissa.jhano.accesodatos.proveedor.WsAccesoDatosProveedor_Service service = new com.lewissa.jhano.accesodatos.proveedor.WsAccesoDatosProveedor_Service();
+        com.lewissa.jhano.accesodatos.proveedor.WsAccesoDatosProveedor port = service.getWsAccesoDatosProveedorPort();
+        return port.eliminarLogicoProveedor(strCodigoProveedor);
+    }
+
+    private static Boolean modificarProveedor(java.util.List<java.lang.String> strProveedor) {
+        com.lewissa.jhano.accesodatos.proveedor.WsAccesoDatosProveedor_Service service = new com.lewissa.jhano.accesodatos.proveedor.WsAccesoDatosProveedor_Service();
+        com.lewissa.jhano.accesodatos.proveedor.WsAccesoDatosProveedor port = service.getWsAccesoDatosProveedorPort();
+        return port.modificarProveedor(strProveedor);
+    }
+
+
+
+    
+    
 }

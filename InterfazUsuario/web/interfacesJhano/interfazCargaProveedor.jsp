@@ -1,3 +1,4 @@
+<%@page import="com.lewissa.jhano.logicanegocio.proveedor.CProveedor;"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -90,9 +91,6 @@
                                     <font face="Arial">
                                         <a href="../interfacesJhano/interfazCargaFamiliaProducto.jsp"><center>Familias</center></a>
                                     </font>
-                                    <font face="Arial">
-                                        <a href="../interfacesJhano/interfazCargaFamiliaProducto.jsp"><center>Familias</center></a>
-                                    </font>
                                 </ul>
                             </li>
                             <li>
@@ -128,6 +126,7 @@
                                             request.getSession().setAttribute("proveedor", null);
                                             request.getSession().setAttribute("convencional", null);
                                             request.getSession().setAttribute("celular", null);
+                                            request.getSession().setAttribute("errorCorreo",null);
                                         %>
                                     </font>
                                 </a>
@@ -154,33 +153,119 @@
                         </tr>
                     </table>
                     <%
-                        String strErrorConexionProveedor;
-                        try {
-                            strErrorConexionProveedor = (String) request.getSession().getAttribute("errorProveedor");
-
-                        } catch (Exception excE) {
-                            strErrorConexionProveedor = null;
-                        }
-                        if (strErrorConexionProveedor != null) {
+                       
+                       String strErrorConexionProveedor=null;
+                       if (request.getSession().getAttribute("errorProveedor")!= null) {
+                            strErrorConexionProveedor=(String)request.getSession().getAttribute("errorProveedor");
                             out.print("<td >");
                             out.print("</td>");
-                            out.print("<h3><center> <font size=\"3\" face=\"Arial, Helvetica, sans-serif\">" + request.getSession().getAttribute("errorProveedor") + "</font><a href=\"../interfacesJhano/interfazCargaProveedor.jsp\"><input name=\"cancelar\" type=\"button\" value=\"Ocultar\" /></a></center></h3>");
+                            out.print("<h3><center> <font size=\"3\" face=\"Arial, Helvetica, sans-serif\">" + strErrorConexionProveedor + "</font><a href=\"../interfacesJhano/interfazCargaProveedor.jsp\"><input name=\"cancelar\" type=\"button\" value=\"Ocultar\" /></a></center></h3>");
                             request.getSession().setAttribute("errorProveedor", null);
 
                     %>
-                    <% } else {
+                    <% } else {                   
+  
+                                
                     %>
                     <td width="88%">
                         <h3><center> <font size="5" face="Arial, Helvetica, sans-serif">Matriz Proveedor</font></center></h3>
+                        <% 
+                            Boolean booErrorElimiancion=null;
+                            String strCodigoElimiando=null;
+                                    
+                            if(request.getSession().getAttribute("errorEliminacion") != null)
+                            {
+                                 booErrorElimiancion=(Boolean)request.getSession().getAttribute("errorEliminacion");
+                                 strCodigoElimiando=(String)request.getSession().getAttribute("codigoElimando");
+                            }
+                            if((request.getSession().getAttribute("errorEliminacion") != null) && booErrorElimiancion == false)
+                                    {
+                                        request.getSession().setAttribute("id", strCodigoElimiando);
+                                        out.print("<form name=\"frmEliminar\" method=\"post\" action=\"../controladoresJhano/controladorEliminarProveedor.jsp\" >");
+                                        out.print("<fieldset><legend>Advertencia</legend>El proveedor de CI/RUC: "+strCodigoElimiando+", posee documentos asociados. Decea realizar eliminacion logica?  ");
+                                        out.print("<input type=\"submit\" name=\"accion\" value=\"Aceptar\" />");
+                                        out.print("<input type=\"submit\" name=\"accion\" value=\"Cancelar\" /></fieldset> ");
+                                        out.print("<br>");
+                                        out.print("</form>");
+                                    }
+                            %>
+                        <table border="1" align="center">
+                              <tr>
+                                <td>
+                                    Identificacion
+                                </td>
+                                <td>
+                                    Nombre Fiscal
+                                </td>
+                                <td>
+                                    Nombre Comercial
+                                </td>
+                                <td>
+                                    Direccion
+                                </td>
+                                <td>
+                                    Telefono Convencional
+                                </td>
+                                <td>
+                                    Telefono Celular
+                                </td>
+                                <td>
+                                    Correo Electronico
+                                </td>
+                                <td colspan="2" align="center">
+                                    Accion
+                                </td>
+                            </tr>
+                              <%
+                                try {
+                                                                       
+                                    com.lewissa.jhano.logicanegocio.proveedor.WsLogicaNegocioProveedor_Service service = new com.lewissa.jhano.logicanegocio.proveedor.WsLogicaNegocioProveedor_Service();
+                                    com.lewissa.jhano.logicanegocio.proveedor.WsLogicaNegocioProveedor port = service.getWsLogicaNegocioProveedorPort();
+                                    // TODO process result here
+                                    java.util.List<com.lewissa.jhano.logicanegocio.proveedor.CProveedor> listProveedor = port.cargaProveedor();
+                                    
+                                    if(port.getErrorConexionProveedor() != null)
+                                    {
+                                        String strError = (String) port.getErrorConexionProveedor();
+                                        request.getSession().setAttribute("errorProveedor", strError);
+                                        response.sendRedirect("../interfacesJhano/interfazCargaProveedor.jsp");
+                                    }
+                                    
+                                    for(CProveedor oProveedor : listProveedor)
+                                    {
+                                        
+                                        out.print("<tr>");
+                                            out.print("<td>"+oProveedor.getId()+"</td>");
+                                            out.print("<td>"+oProveedor.getNombreFiscal()+"</td>");
+                                            out.print("<td>"+oProveedor.getNombreComercial()+"</td>");
+                                            out.print("<td>"+oProveedor.getDireccion()+"</td>");
+                                            out.print("<td>"+oProveedor.getConvencional()+"</td>");
+                                            out.print("<td>"+oProveedor.getCelular()+"</td>");
+                                            out.print("<td>"+oProveedor.getCorreo()+"</td>");                                            
+                                            out.print("<td><a href=\"../controladoresJhano/controladorEliminarProveedor.jsp?id="+oProveedor.getId()+"\">Eliminar</a></td>");
+                                            //request.getSession().setAttribute("oProveedor", oProveedor);
+                                            out.print("<td><a href=\"../interfacesJhano/interfazModificarProveedor.jsp?accion=modificar&id="+oProveedor.getId()
+                                                                   +"&nombreF="+oProveedor.getNombreFiscal()+"&nombreC="+oProveedor.getNombreComercial()
+                                                                   +"&direccion="+oProveedor.getDireccion()+"&convencional="+oProveedor.getConvencional()
+                                                                   +"&celular="+oProveedor.getCelular()+"&correo="+oProveedor.getCorreo()+"\">Modificar</a></td>");
+                                        out.print("</tr>");
+                                    }
+                                    } catch (Exception ex) {
+                                    out.print(ex.getMessage());
+                                    }    
+                                }
+                               %>
+                        </table>
                     </td>
-                    <%
-                        }
-                    %>
+                  
+                    
+                       
+                    
                 </td>
-
+                </tr>                     
             </tr>
         </table>
-
+                   
         <script type="text/javascript">
             var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown: "SpryAssets/SpryMenuBarDownHover.gif", imgRight: "SpryAssets/SpryMenuBarRightHover.gif"});
             var MenuBar2 = new Spry.Widget.MenuBar("MenuBar2", {imgDown: "SpryAssets/SpryMenuBarDownHover.gif", imgRight: "SpryAssets/SpryMenuBarRightHover.gif"});

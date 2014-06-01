@@ -4,9 +4,13 @@
 
 <xs:element name="cargaProveedorResponse" type="tns:cargaProveedorResponse"/>
 
-<xs:element name="eliminarProveedor" type="tns:eliminarProveedor"/>
+<xs:element name="eliminarFisicoProveedor" type="tns:eliminarFisicoProveedor"/>
 
-<xs:element name="eliminarProveedorResponse" type="tns:eliminarProveedorResponse"/>
+<xs:element name="eliminarFisicoProveedorResponse" type="tns:eliminarFisicoProveedorResponse"/>
+
+<xs:element name="eliminarLogicoProveedor" type="tns:eliminarLogicoProveedor"/>
+
+<xs:element name="eliminarLogicoProveedorResponse" type="tns:eliminarLogicoProveedorResponse"/>
 
 <xs:element name="getErrorConexion" type="tns:getErrorConexion"/>
 
@@ -15,6 +19,22 @@
 <xs:element name="insertarProveedor" type="tns:insertarProveedor"/>
 
 <xs:element name="insertarProveedorResponse" type="tns:insertarProveedorResponse"/>
+
+<xs:element name="modificarProveedor" type="tns:modificarProveedor"/>
+
+<xs:element name="modificarProveedorResponse" type="tns:modificarProveedorResponse"/>
+
+<xs:complexType name="eliminarFisicoProveedor">
+<xs:sequence>
+<xs:element name="strCodigoProveedor" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarFisicoProveedorResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
 
 <xs:complexType name="cargaProveedor">
 <xs:sequence/>
@@ -26,13 +46,25 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="eliminarProveedor">
+<xs:complexType name="eliminarLogicoProveedor">
 <xs:sequence>
 <xs:element name="strCodigoProveedor" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="eliminarProveedorResponse">
+<xs:complexType name="eliminarLogicoProveedorResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="modificarProveedor">
+<xs:sequence>
+<xs:element name="strProveedor" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="modificarProveedorResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean" minOccurs="0"/>
 </xs:sequence>

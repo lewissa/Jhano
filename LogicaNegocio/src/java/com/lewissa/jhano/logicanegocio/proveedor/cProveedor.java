@@ -18,6 +18,16 @@ public class cProveedor {
     private String strConvencional;
     private String strCelular;
     private String strCorreo;
+    private Boolean booeliminado;
+
+    public Boolean isBooeliminado() {
+        return booeliminado;
+    }
+
+    public void setBooeliminado(Boolean booeliminado) {
+        this.booeliminado = booeliminado;
+    }
+    
 
     public void setId(String strId) {
         strIdProveedor = strId;

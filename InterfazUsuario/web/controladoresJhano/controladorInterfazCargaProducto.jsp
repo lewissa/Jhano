@@ -14,11 +14,10 @@
     <body> 
         <%
             try {
-                com.lewissa.jhano.producto.WsLogicaNegocioProducto_Service service = new com.lewissa.jhano.producto.WsLogicaNegocioProducto_Service();
-                com.lewissa.jhano.producto.WsLogicaNegocioProducto port = service.getWsLogicaNegocioProductoPort();
+                com.lewissa.jhano.logicanegocio.producto.WsLogicaNegocioProducto_Service service = new com.lewissa.jhano.logicanegocio.producto.WsLogicaNegocioProducto_Service();
+                com.lewissa.jhano.logicanegocio.producto.WsLogicaNegocioProducto port = service.getWsLogicaNegocioProductoPort();
                 
             } catch (Exception ex) {
-                // TODO handle custom exceptions here
             }
         %>
     </body>

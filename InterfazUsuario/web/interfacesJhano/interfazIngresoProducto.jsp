@@ -78,18 +78,23 @@
                         <ul id="MenuBar2" class="MenuBarHorizontal">
                             <li>
                                 <font face="Arial">
-                                    <a href="#"><center>Clientes</center></a>
+                                    <a href="../interfacesJhano/interfazCargaCliente.jsp"><center>Clientes</center></a>
                                 </font>
                             </li>
                             <li>
                                 <font face="Arial">
-                                    <a href="#"><center>Proveedores</center></a>
+                                    <a href="../interfacesJhano/interfazCargaProveedor.jsp"><center>Proveedores</center></a>
                                 </font>
                             </li>
                             <li>
                                 <font face="Arial">
-                                    <a href="#"><center>Productos</center></a>
+                                    <a href="../interfacesJhano/interfazCargaProducto.jsp"><center>Productos</center></a>
                                 </font>
+                                <ul>
+                                    <font face="Arial">
+                                        <a href="../interfacesJhano/interfazCargaFamiliaProducto.jsp"><center>Familias</center></a>
+                                    </font>
+                                </ul>
                             </li>
                             <li>
                                 <font face="Arial">
@@ -332,9 +337,9 @@
                                 </tr>
                                 <tr>
                                     <%
-                                        com.lewissa.jhano.producto.WsLogicaNegocioProducto_Service service = new com.lewissa.jhano.producto.WsLogicaNegocioProducto_Service();
-                                        com.lewissa.jhano.producto.WsLogicaNegocioProducto port = service.getWsLogicaNegocioProductoPort();
-                                        java.util.List<com.lewissa.jhano.producto.CProveedor> lisNombreProveedor = port.getNombreProveedor();
+                                        com.lewissa.jhano.logicanegocio.producto.WsLogicaNegocioProducto_Service service = new com.lewissa.jhano.logicanegocio.producto.WsLogicaNegocioProducto_Service();
+                                        com.lewissa.jhano.logicanegocio.producto.WsLogicaNegocioProducto port = service.getWsLogicaNegocioProductoPort();
+                                        java.util.List<com.lewissa.jhano.logicanegocio.producto.CProveedor> lisNombreProveedor = port.getNombreProveedor();
                                         if (port.getErrorConexionProducto() != null) {
                                             String strError = port.getErrorConexionProducto();
                                             request.getSession().setAttribute("errorProducto", strError);
@@ -343,7 +348,7 @@
                                         out.print("<td><label>Proveedor:</label></td>");
                                         out.print("<td><select  name=\"proveedor\" size=\"1\"/>");
                                         if (lisNombreProveedor != null) {
-                                            for (com.lewissa.jhano.producto.CProveedor proProveedor : lisNombreProveedor) {
+                                            for (com.lewissa.jhano.logicanegocio.producto.CProveedor proProveedor : lisNombreProveedor) {
                                                 out.print("<option value=\"" + proProveedor.getId() + "\">" + proProveedor.getNombreFiscal() + "</option>");
                                             }
 
@@ -390,11 +395,11 @@
                                 </tr>
                                 <tr>
                                     <%
-                                        java.util.List<com.lewissa.jhano.producto.CFamiliaProducto> lisFamiliaProducto = port.getDescripcionFamiliaProducto();
+                                        java.util.List<com.lewissa.jhano.logicanegocio.producto.CFamiliaProducto> lisFamiliaProducto = port.getDescripcionFamiliaProducto();
                                         out.print("<td><label>Familia de Producto:</label></td>");
                                         out.print("<td><select  name=\"familiaProducto\" size=\"1\"/>");
                                         if (lisFamiliaProducto != null) {
-                                            for (com.lewissa.jhano.producto.CFamiliaProducto famFamilia : lisFamiliaProducto) {
+                                            for (com.lewissa.jhano.logicanegocio.producto.CFamiliaProducto famFamilia : lisFamiliaProducto) {
                                                 out.print("<option value=\"" + famFamilia.getStrId() + "\">" + famFamilia.getStrDescripcion() + "</option>");
                                             }
                                         }

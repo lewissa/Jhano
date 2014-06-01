@@ -6,7 +6,6 @@
 package com.lewissa.jhano.accesodatos.proveedor;
 
 import com.lewissa.jhano.accesodatos.cAccesoDatos;
-import com.lewissa.jhano.accesodatos.cliente.cTransaccionCliente;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -68,14 +67,40 @@ public class wsAccesoDatosProveedor {
     /**
      * Web service operation
      */
-    @WebMethod(operationName = "eliminarProveedor")
-    public Boolean eliminarProveedor(@WebParam(name = "strCodigoProveedor") String strCodigoProveedor) {
+    @WebMethod(operationName = "eliminarFisicoProveedor")
+    public Boolean eliminarFisicoProveedor(@WebParam(name = "strCodigoProveedor") String strCodigoProveedor) {
         //TODO write your implementation code here:
         Boolean booResultado = false;
         cTransaccionProveedor oTransaccionProveedor = new cTransaccionProveedor();
         if (cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()) {
-            booResultado = oTransaccionProveedor.emilinarProveedor(strCodigoProveedor);
+            booResultado = oTransaccionProveedor.eliminarFisicoProveedor(strCodigoProveedor);
         }
+        return booResultado;
+    }
+    
+    @WebMethod(operationName = "eliminarLogicoProveedor")
+    public Boolean eliminarLogicoProveedor(@WebParam(name = "strCodigoProveedor") String strCodigoProveedor) {
+        //TODO write your implementation code here:
+        Boolean booResultado = false;
+        cTransaccionProveedor oTransaccionProveedor = new cTransaccionProveedor();
+        if (cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()) {
+            booResultado = oTransaccionProveedor.eliminarLogicoProveedor(strCodigoProveedor);
+        }
+        return booResultado;
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "modificarProveedor")
+    public Boolean modificarProveedor(@WebParam(name = "strProveedor") java.lang.String[] strProveedor) {
+        Boolean booResultado= false;
+        cTransaccionProveedor oTransaccionProveedor = new cTransaccionProveedor();
+        if(cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase())
+        {
+            booResultado=oTransaccionProveedor.modificarProveedor(strProveedor);
+        }
+        
         return booResultado;
     }
 

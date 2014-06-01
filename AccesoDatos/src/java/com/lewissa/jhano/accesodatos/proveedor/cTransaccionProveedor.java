@@ -13,7 +13,7 @@ import com.lewissa.jhano.accesodatos.cAccesoDatos;
  */
 public class cTransaccionProveedor {
 
-    public Boolean ingresarProveedor(String strProveedor[]) {
+    public Boolean ingresarProveedor(java.lang.String[] strProveedor) {
         Boolean booResultado = false;
         
         String strQuery;
@@ -32,9 +32,8 @@ public class cTransaccionProveedor {
  * @return strProveedor, el cual es un archivo XML que contiene a todos los prveedores
  */
     public String cargarProveedor() {
-        Boolean booResultado = false;
         String strProveedor = null;
-        String strQuery = "SELECT * FROM proveedor";
+        String strQuery = "SELECT * FROM proveedor WHERE eliminado=false";
         if (cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()) {
             strProveedor = cAccesoDatos.getInstanciaAccesoDatos().consultarDataBase(strQuery);
         }
@@ -42,37 +41,63 @@ public class cTransaccionProveedor {
         return strProveedor;
     }
 /**
- * Metod permite elinar un proveedor especifico segun su codigo
+ * Metod permite eliminar un proveedor especifico segun su codigo
  * @param strCodigoProveedor, contiene el codgo del proveedor a eliminar
  * @return booResultado, Boolean que contiene la confimacion de la eliminacion
  */
-    public Boolean emilinarProveedor(String strCodigoProveedor) {
+    public Boolean eliminarFisicoProveedor(String strCodigoProveedor) {
         Boolean booResultado = false;
         String strQuery;
-        strQuery = "DELETE FROM estudiante WHERE Id_prove=" + strCodigoProveedor + ")";
-        if (cAccesoDatos.getInstanciaAccesoDatos().actualizarDataBase(strQuery)) {
-            booResultado = true;
+        strQuery = "DELETE FROM proveedor WHERE \"Id_prove\" like '"+ strCodigoProveedor+"'";
+        if (cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()) {
+            booResultado = cAccesoDatos.getInstanciaAccesoDatos().actualizarDataBase(strQuery);
         }
 
         return booResultado;
     }
-
     /**
-     * Metod que me permite cargar los datos de los proveedores
-     *
+     
+     * metodo que oelrmite eliminar los datos de un proveedor LPGICAMENTE
      * @author Fredy Janeta
-     * @return strProveedor, el cual es un archivo XML que contiene a todos los
-     * prveedores
+     * @param strCodigoProveedor
+     * @return Boolean, booResultdo contiene la confirmacion de la aplicacion del metodo
      */
+    public Boolean eliminarLogicoProveedor(String strCodigoProveedor){
+        Boolean booResultado=false;
+        String strQuery;
+        strQuery="UPDATE proveedor SET eliminado=true WHERE \"Id_prove\"='"+strCodigoProveedor+"'";
+        if(cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()){
+            booResultado=cAccesoDatos.getInstanciaAccesoDatos().actualizarDataBase(strQuery);
+        }
+        return booResultado;
+    }
+    /**
+     * @author Fredy Janeta
+     * Metodo que permite modificar los datos de un proveedor
+     * @param strProveedor
+     * @return Boolean , boo Resulatdo que contiene la confirmacion de la aplicacion del metodo
+     */
+    public Boolean modificarProveedor(String strProveedor[])
+    {
+        Boolean booResultado=false;
+        String strQuery;
+        strQuery="UPDATE proveedor SET \"Nombre_fiscal\"='"+strProveedor[1]+
+                "', \"Nombre_comercial\"='"+strProveedor[2]+"', \"Direccion\"='"+
+                strProveedor[3]+"',\"Convencional\"='"+strProveedor[4]+"',\"Celular\"='"+
+                strProveedor[5]+"', \"Correo\"='"+strProveedor[6]+"' WHERE \"Id_prove\"='"+
+                strProveedor[0]+"'";
+        if(cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase())
+        {
+            booResultado = cAccesoDatos.getInstanciaAccesoDatos().actualizarDataBase(strQuery);
+        }   
+        
+        return booResultado;
+    }
+
+    
  
 
-    /**
-     * Metod permite elinar un proveedor especifico segun su codigo
-     *
-     * @param strCodigoProveedor, contiene el codgo del proveedor a eliminar
-     * @return booResultado, Boolean que contiene la confimacion de la
-     * eliminacion
-     */
+ 
  
 
 }

@@ -19,7 +19,6 @@ import java.util.ArrayList;
  * @version 2.0 09-05-2014
  */
 public class cTransaccionFamiliaProducto {
-    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/AccesoDatos/wsAccesoDatosFamiliaProducto.wsdl")
     private com.lewissa.jhano.accesodatos.familiaproducto.WsAccesoDatosFamiliaProducto_Service service = new WsAccesoDatosFamiliaProducto_Service();
     private com.lewissa.jhano.accesodatos.familiaproducto.WsAccesoDatosFamiliaProducto port = service.getWsAccesoDatosFamiliaProductoPort();
     

@@ -12,4 +12,7 @@
     <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosFamiliaProducto?WSDL" uri="wsdl/localhost_8080/AccesoDatos/wsAccesoDatosFamiliaProducto.wsdl"/>
     <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosProveedor?WSDL" uri="wsdl/localhost_8080/AccesoDatos/wsAccesoDatosProveedor.wsdl"/>
     <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosProducto?WSDL" uri="wsdl/localhost_8080/AccesoDatos/wsAccesoDatosProducto.wsdl"/>
+    <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosFactura?wsdl" uri="wsdl/localhost_8080/AccesoDatos/wsAccesoDatosFactura.wsdl"/>
+    <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosFactura?xsd=1" uri="wsdl/localhost_8080/AccesoDatos/wsAccesoDatosFactura.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosFactura?WSDL" uri="wsdl/localhost_8080/AccesoDatos/wsAccesoDatosFactura.wsdl"/>
 </catalog>

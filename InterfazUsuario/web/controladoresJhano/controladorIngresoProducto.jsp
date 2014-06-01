@@ -4,7 +4,8 @@
     Author     : eborja
 --%>
 
-<%@page import="com.lewissa.jhano.accesodatos.producto.CProducto"%>
+<%@page import="com.lewissa.jhano.logicanegocio.producto.CProducto"%>
+<%@page import="com.lewissa.jhano.logicanegocio.producto.WsLogicaNegocioProducto_Service"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -15,8 +16,8 @@
     <body>
         <%
             try {
-                com.lewissa.jhano.producto.WsLogicaNegocioProducto_Service service = new com.lewissa.jhano.producto.WsLogicaNegocioProducto_Service();
-                com.lewissa.jhano.producto.WsLogicaNegocioProducto port = service.getWsLogicaNegocioProductoPort();
+                com.lewissa.jhano.logicanegocio.producto.WsLogicaNegocioProducto_Service service = new WsLogicaNegocioProducto_Service();
+                com.lewissa.jhano.logicanegocio.producto.WsLogicaNegocioProducto port = service.getWsLogicaNegocioProductoPort();
                 String strEan = (request.getParameter("ean").equals("")) ? "0" : request.getParameter("ean");
                 String strFabricacion = (request.getParameter("fabricacion").equals("")) ? "0" : request.getParameter("fabricacion");
                 String strDescripcionGeneral = (request.getParameter("descripcionGeneral").equals("")) ? "0" : request.getParameter("descripcionGeneral");

@@ -16,6 +16,10 @@
 
 <xs:element name="getErrorConexionProveedorResponse" type="tns:getErrorConexionProveedorResponse"/>
 
+<xs:element name="modificarProveedor" type="tns:modificarProveedor"/>
+
+<xs:element name="modificarProveedorResponse" type="tns:modificarProveedorResponse"/>
+
 <xs:element name="validaCedula" type="tns:validaCedula"/>
 
 <xs:element name="validaCedulaResponse" type="tns:validaCedulaResponse"/>
@@ -27,6 +31,31 @@
 <xs:element name="validaRuc" type="tns:validaRuc"/>
 
 <xs:element name="validaRucResponse" type="tns:validaRucResponse"/>
+
+<xs:complexType name="modificarProveedor">
+<xs:sequence>
+<xs:element name="oProveedor" type="tns:cProveedor" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cProveedor">
+<xs:sequence>
+<xs:element name="booeliminado" type="xs:boolean" minOccurs="0"/>
+<xs:element name="celular" type="xs:string" minOccurs="0"/>
+<xs:element name="convencional" type="xs:string" minOccurs="0"/>
+<xs:element name="correo" type="xs:string" minOccurs="0"/>
+<xs:element name="direccion" type="xs:string" minOccurs="0"/>
+<xs:element name="id" type="xs:string" minOccurs="0"/>
+<xs:element name="nombreComercial" type="xs:string" minOccurs="0"/>
+<xs:element name="nombreFiscal" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="modificarProveedorResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
 
 <xs:complexType name="validaRuc">
 <xs:sequence>
@@ -53,18 +82,7 @@
 <xs:complexType name="eliminarProveedor">
 <xs:sequence>
 <xs:element name="oProveedor" type="tns:cProveedor" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="cProveedor">
-<xs:sequence>
-<xs:element name="celular" type="xs:string" minOccurs="0"/>
-<xs:element name="convencional" type="xs:string" minOccurs="0"/>
-<xs:element name="correo" type="xs:string" minOccurs="0"/>
-<xs:element name="direccion" type="xs:string" minOccurs="0"/>
-<xs:element name="id" type="xs:string" minOccurs="0"/>
-<xs:element name="nombreComercial" type="xs:string" minOccurs="0"/>
-<xs:element name="nombreFiscal" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:int" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -74,13 +92,15 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="cargaProveedor">
-<xs:sequence/>
+<xs:complexType name="validaCedula">
+<xs:sequence>
+<xs:element name="cedCedula" type="xs:string" minOccurs="0"/>
+</xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="cargaProveedorResponse">
+<xs:complexType name="validaCedulaResponse">
 <xs:sequence>
-<xs:element name="return" type="tns:cProveedor" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -96,15 +116,13 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="validaCedula">
-<xs:sequence>
-<xs:element name="cedCedula" type="xs:string" minOccurs="0"/>
-</xs:sequence>
+<xs:complexType name="cargaProveedor">
+<xs:sequence/>
 </xs:complexType>
 
-<xs:complexType name="validaCedulaResponse">
+<xs:complexType name="cargaProveedorResponse">
 <xs:sequence>
-<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+<xs:element name="return" type="tns:cProveedor" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
 </xs:complexType>
 
