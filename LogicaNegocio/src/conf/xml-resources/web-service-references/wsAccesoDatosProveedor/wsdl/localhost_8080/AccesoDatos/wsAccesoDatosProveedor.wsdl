@@ -22,17 +22,17 @@
 <message name="cargaProveedorResponse">
 <part name="parameters" element="tns:cargaProveedorResponse"/>
 </message>
-<message name="eliminarLogicoProveedor">
-<part name="parameters" element="tns:eliminarLogicoProveedor"/>
-</message>
-<message name="eliminarLogicoProveedorResponse">
-<part name="parameters" element="tns:eliminarLogicoProveedorResponse"/>
-</message>
 <message name="eliminarFisicoProveedor">
 <part name="parameters" element="tns:eliminarFisicoProveedor"/>
 </message>
 <message name="eliminarFisicoProveedorResponse">
 <part name="parameters" element="tns:eliminarFisicoProveedorResponse"/>
+</message>
+<message name="eliminarLogicoProveedor">
+<part name="parameters" element="tns:eliminarLogicoProveedor"/>
+</message>
+<message name="eliminarLogicoProveedorResponse">
+<part name="parameters" element="tns:eliminarLogicoProveedorResponse"/>
 </message>
 <message name="modificarProveedor">
 <part name="parameters" element="tns:modificarProveedor"/>
@@ -53,13 +53,13 @@
 <input wsam:Action="http://proveedor.accesodatos.jhano.lewissa.com/wsAccesoDatosProveedor/cargaProveedorRequest" message="tns:cargaProveedor"/>
 <output wsam:Action="http://proveedor.accesodatos.jhano.lewissa.com/wsAccesoDatosProveedor/cargaProveedorResponse" message="tns:cargaProveedorResponse"/>
 </operation>
-<operation name="eliminarLogicoProveedor">
-<input wsam:Action="http://proveedor.accesodatos.jhano.lewissa.com/wsAccesoDatosProveedor/eliminarLogicoProveedorRequest" message="tns:eliminarLogicoProveedor"/>
-<output wsam:Action="http://proveedor.accesodatos.jhano.lewissa.com/wsAccesoDatosProveedor/eliminarLogicoProveedorResponse" message="tns:eliminarLogicoProveedorResponse"/>
-</operation>
 <operation name="eliminarFisicoProveedor">
 <input wsam:Action="http://proveedor.accesodatos.jhano.lewissa.com/wsAccesoDatosProveedor/eliminarFisicoProveedorRequest" message="tns:eliminarFisicoProveedor"/>
 <output wsam:Action="http://proveedor.accesodatos.jhano.lewissa.com/wsAccesoDatosProveedor/eliminarFisicoProveedorResponse" message="tns:eliminarFisicoProveedorResponse"/>
+</operation>
+<operation name="eliminarLogicoProveedor">
+<input wsam:Action="http://proveedor.accesodatos.jhano.lewissa.com/wsAccesoDatosProveedor/eliminarLogicoProveedorRequest" message="tns:eliminarLogicoProveedor"/>
+<output wsam:Action="http://proveedor.accesodatos.jhano.lewissa.com/wsAccesoDatosProveedor/eliminarLogicoProveedorResponse" message="tns:eliminarLogicoProveedorResponse"/>
 </operation>
 <operation name="modificarProveedor">
 <input wsam:Action="http://proveedor.accesodatos.jhano.lewissa.com/wsAccesoDatosProveedor/modificarProveedorRequest" message="tns:modificarProveedor"/>
@@ -95,7 +95,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="eliminarLogicoProveedor">
+<operation name="eliminarFisicoProveedor">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -104,7 +104,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="eliminarFisicoProveedor">
+<operation name="eliminarLogicoProveedor">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

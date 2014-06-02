@@ -16,16 +16,6 @@
 
 <xs:element name="obtenerClienteResponse" type="tns:obtenerClienteResponse"/>
 
-<xs:complexType name="getErrorConexion">
-<xs:sequence/>
-</xs:complexType>
-
-<xs:complexType name="getErrorConexionResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
 <xs:complexType name="actualizarDataBaseCliente">
 <xs:sequence>
 <xs:element name="strCli" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
@@ -38,11 +28,11 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="obtenerCliente">
+<xs:complexType name="getErrorConexion">
 <xs:sequence/>
 </xs:complexType>
 
-<xs:complexType name="obtenerClienteResponse">
+<xs:complexType name="getErrorConexionResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
@@ -57,6 +47,16 @@
 <xs:complexType name="eliminarClienteResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="obtenerCliente">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="obtenerClienteResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 </xs:schema>

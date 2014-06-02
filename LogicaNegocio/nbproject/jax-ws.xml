@@ -16,81 +16,8 @@
     <service name="wsLogicaNegocioCliente">
       <implementation-class>com.lewissa.jhano.logicanegocio.cliente.wsLogicaNegocioCliente</implementation-class>
     </service>
-<<<<<<< HEAD
-=======
-    <service name="wsLogicaNegocioProducto">
-      <implementation-class>com.lewissa.jhano.logicanegocio.producto.wsLogicaNegocioProducto</implementation-class>
-    </service>
-    <service name="wsLogicaNegocioFactura">
-      <implementation-class>com.lewissa.jhano.logicanegocio.factura.wsLogicaNegocioFactura</implementation-class>
-    </service>
->>>>>>> 6fa04f9fcfdf2370ee73126d223aa590c998de67
   </services>
   <clients>
-    <client name="wsAccesoDatosCliente">
-      <wsdl-url>http://localhost:8080/AccesoDatos/wsAccesoDatosCliente?WSDL</wsdl-url>
-      <local-wsdl-file>localhost_8080/AccesoDatos/wsAccesoDatosCliente.wsdl</local-wsdl-file>
-      <package-name>com.lewissa.jhano.accesodatos.cliente</package-name>
-      <catalog-file>catalog.xml</catalog-file>
-      <wsimport-options>
-        <wsimport-option>
-          <wsimport-option-name>extension</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>verbose</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>fork</wsimport-option-name>
-          <wsimport-option-value>false</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:8080/AccesoDatos/wsAccesoDatosCliente?WSDL</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>xnocompile</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>xendorsed</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-      </wsimport-options>
-    </client>
-    <client name="wsAccesoDatosFamiliaProducto">
-      <wsdl-url>http://localhost:8080/AccesoDatos/wsAccesoDatosFamiliaProducto?WSDL</wsdl-url>
-      <local-wsdl-file>localhost_8080/AccesoDatos/wsAccesoDatosFamiliaProducto.wsdl</local-wsdl-file>
-      <package-name>com.lewissa.jhano.accesodatos.familiaproducto</package-name>
-      <catalog-file>catalog.xml</catalog-file>
-      <wsimport-options>
-        <wsimport-option>
-          <wsimport-option-name>extension</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>verbose</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>fork</wsimport-option-name>
-          <wsimport-option-value>false</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:8080/AccesoDatos/wsAccesoDatosFamiliaProducto?WSDL</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>xnocompile</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>xendorsed</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-      </wsimport-options>
-    </client>
     <client name="wsAccesoDatosProveedor">
       <wsdl-url>http://localhost:8080/AccesoDatos/wsAccesoDatosProveedor?WSDL</wsdl-url>
       <local-wsdl-file>localhost_8080/AccesoDatos/wsAccesoDatosProveedor.wsdl</local-wsdl-file>
@@ -155,6 +82,38 @@
         </wsimport-option>
       </wsimport-options>
     </client>
+    <client name="wsAccesoDatosCliente">
+      <wsdl-url>http://localhost:8080/AccesoDatos/wsAccesoDatosCliente?WSDL</wsdl-url>
+      <local-wsdl-file>localhost_8080/AccesoDatos/wsAccesoDatosCliente.wsdl</local-wsdl-file>
+      <package-name>com.lewissa.jhano.accesodatos.cliente</package-name>
+      <catalog-file>catalog.xml</catalog-file>
+      <wsimport-options>
+        <wsimport-option>
+          <wsimport-option-name>extension</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>verbose</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>fork</wsimport-option-name>
+          <wsimport-option-value>false</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>wsdlLocation</wsimport-option-name>
+          <wsimport-option-value>http://localhost:8080/AccesoDatos/wsAccesoDatosCliente?WSDL</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>xnocompile</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>xendorsed</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+      </wsimport-options>
+    </client>
     <client name="wsAccesoDatosFactura">
       <wsdl-url>http://localhost:8080/AccesoDatos/wsAccesoDatosFactura?WSDL</wsdl-url>
       <local-wsdl-file>localhost_8080/AccesoDatos/wsAccesoDatosFactura.wsdl</local-wsdl-file>
@@ -176,6 +135,38 @@
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
           <wsimport-option-value>http://localhost:8080/AccesoDatos/wsAccesoDatosFactura?WSDL</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>xnocompile</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>xendorsed</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+      </wsimport-options>
+    </client>
+    <client name="wsAccesoDatosFamiliaProducto">
+      <wsdl-url>http://localhost:8080/AccesoDatos/wsAccesoDatosFamiliaProducto?WSDL</wsdl-url>
+      <local-wsdl-file>localhost_8080/AccesoDatos/wsAccesoDatosFamiliaProducto.wsdl</local-wsdl-file>
+      <package-name>com.lewissa.jhano.accesodatos.familiaproducto</package-name>
+      <catalog-file>catalog.xml</catalog-file>
+      <wsimport-options>
+        <wsimport-option>
+          <wsimport-option-name>extension</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>verbose</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>fork</wsimport-option-name>
+          <wsimport-option-value>false</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>wsdlLocation</wsimport-option-name>
+          <wsimport-option-value>http://localhost:8080/AccesoDatos/wsAccesoDatosFamiliaProducto?WSDL</wsimport-option-value>
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>

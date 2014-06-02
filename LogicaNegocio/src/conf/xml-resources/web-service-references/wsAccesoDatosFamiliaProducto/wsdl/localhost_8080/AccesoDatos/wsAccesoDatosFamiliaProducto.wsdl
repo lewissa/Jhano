@@ -4,31 +4,31 @@
 <xsd:import namespace="http://familiaproducto.accesodatos.jhano.lewissa.com/" schemaLocation="http://localhost:8080/AccesoDatos/wsAccesoDatosFamiliaProducto?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="getErrorConexionFamiliaProducto">
-<part name="parameters" element="tns:getErrorConexionFamiliaProducto"/>
-</message>
-<message name="getErrorConexionFamiliaProductoResponse">
-<part name="parameters" element="tns:getErrorConexionFamiliaProductoResponse"/>
-</message>
 <message name="ingresarFamiliaProducto">
 <part name="parameters" element="tns:ingresarFamiliaProducto"/>
 </message>
 <message name="ingresarFamiliaProductoResponse">
 <part name="parameters" element="tns:ingresarFamiliaProductoResponse"/>
 </message>
+<message name="getErrorConexionFamiliaProducto">
+<part name="parameters" element="tns:getErrorConexionFamiliaProducto"/>
+</message>
+<message name="getErrorConexionFamiliaProductoResponse">
+<part name="parameters" element="tns:getErrorConexionFamiliaProductoResponse"/>
+</message>
 <portType name="wsAccesoDatosFamiliaProducto">
-<operation name="getErrorConexionFamiliaProducto">
-<input wsam:Action="http://familiaproducto.accesodatos.jhano.lewissa.com/wsAccesoDatosFamiliaProducto/getErrorConexionFamiliaProductoRequest" message="tns:getErrorConexionFamiliaProducto"/>
-<output wsam:Action="http://familiaproducto.accesodatos.jhano.lewissa.com/wsAccesoDatosFamiliaProducto/getErrorConexionFamiliaProductoResponse" message="tns:getErrorConexionFamiliaProductoResponse"/>
-</operation>
 <operation name="ingresarFamiliaProducto">
 <input wsam:Action="http://familiaproducto.accesodatos.jhano.lewissa.com/wsAccesoDatosFamiliaProducto/ingresarFamiliaProductoRequest" message="tns:ingresarFamiliaProducto"/>
 <output wsam:Action="http://familiaproducto.accesodatos.jhano.lewissa.com/wsAccesoDatosFamiliaProducto/ingresarFamiliaProductoResponse" message="tns:ingresarFamiliaProductoResponse"/>
 </operation>
+<operation name="getErrorConexionFamiliaProducto">
+<input wsam:Action="http://familiaproducto.accesodatos.jhano.lewissa.com/wsAccesoDatosFamiliaProducto/getErrorConexionFamiliaProductoRequest" message="tns:getErrorConexionFamiliaProducto"/>
+<output wsam:Action="http://familiaproducto.accesodatos.jhano.lewissa.com/wsAccesoDatosFamiliaProducto/getErrorConexionFamiliaProductoResponse" message="tns:getErrorConexionFamiliaProductoResponse"/>
+</operation>
 </portType>
 <binding name="wsAccesoDatosFamiliaProductoPortBinding" type="tns:wsAccesoDatosFamiliaProducto">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="getErrorConexionFamiliaProducto">
+<operation name="ingresarFamiliaProducto">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -37,7 +37,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="ingresarFamiliaProducto">
+<operation name="getErrorConexionFamiliaProducto">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

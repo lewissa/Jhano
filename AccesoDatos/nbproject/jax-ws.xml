@@ -7,7 +7,6 @@
     <service name="wsAccesoDatosProducto">
       <implementation-class>com.lewissa.jhano.accesodatos.producto.wsAccesoDatosProducto</implementation-class>
     </service>
-<<<<<<< HEAD
     <service name="wsAccesoDatosCliente">
       <implementation-class>com.lewissa.jhano.accesodatos.cliente.wsAccesoDatosCliente</implementation-class>
     </service>
@@ -17,12 +16,6 @@
     <service name="wsAccesoDatosFamiliaProducto">
       <implementation-class>com.lewissa.jhano.accesodatos.familiaproducto.wsAccesoDatosFamiliaProducto</implementation-class>
     </service>
-=======
-    <service name="wsAccesoDatosFactura">
-      <implementation-class>com.lewissa.jhano.accesodatos.factura.wsAccesoDatosFactura</implementation-class>
-    </service>
->>>>>>> 6fa04f9fcfdf2370ee73126d223aa590c998de67
   </services>
-  <clients>
-    </clients>
+  <clients/>
 </jax-ws>
