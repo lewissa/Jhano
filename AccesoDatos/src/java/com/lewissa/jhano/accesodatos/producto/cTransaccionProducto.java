@@ -70,7 +70,8 @@ public class cTransaccionProducto {
             strProducto = cAccesoDatos.getInstanciaAccesoDatos().consultarDataBase(strQuery);
         }
 
-        return strProducto;
+
+      return strProducto;
     }
     
     public Boolean eliminarFisicoProducto(String strCodigoProducto) {

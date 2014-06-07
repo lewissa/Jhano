@@ -94,6 +94,7 @@ public class wsAccesoDatosProducto {
         
     }
 
+
     @WebMethod(operationName = "cargaProducto")
     public String cargaProducto() {
         //TODO write your implementation code here:
