@@ -107,6 +107,73 @@ public class cTransaccionProducto {
         }
         return lisNombreProveedor;
     }
+    
+    private static String cargaProducto() {
+        com.lewissa.jhano.accesodatos.producto.WsAccesoDatosProducto_Service service = new com.lewissa.jhano.accesodatos.producto.WsAccesoDatosProducto_Service();
+        com.lewissa.jhano.accesodatos.producto.WsAccesoDatosProducto port = service.getWsAccesoDatosProductoPort();
+        return port.cargaProducto();
+    }
+    
+    public List<cProducto> cargarProducto() {
+        List<cProducto> lisProducto = new ArrayList<cProducto>();
+        try {
+            StringReader sr = new StringReader(cargaProducto());
+            WebRowSetImpl wrs = new WebRowSetImpl();
+            wrs.readXml(sr);
+            while (wrs.next()) {
+                cProducto producto = new cProducto();
+                producto.setStrIdProdu(wrs.getString("Id_produ"));
+                producto.setStrEan(wrs.getString("Ean"));
+                producto.setStrFabricante(wrs.getString("Fabricante"));
+                producto.setStrDescripcionGeneral(wrs.getString("Descripcion_general"));
+                producto.setDouMargenGanancia(wrs.getDouble("Margen_ganancia"));
+                producto.setIntCantidad(wrs.getInt("Cantidad"));
+                producto.setDouPrecioCosto(wrs.getDouble("Precio_costo"));
+                producto.setDouMargenVenta(wrs.getDouble("Margen_venta"));
+                producto.setDouPrecioDos(wrs.getDouble("Precio_dos"));
+                producto.setStrProveedorProdu(wrs.getString("proveedor_produ"));
+                producto.setIntStockMaximo(wrs.getInt("Stock_maximo"));
+                producto.setIntStockMinimo(wrs.getInt("Stock_minimo"));
+                producto.setStrFamiliaProdu(wrs.getString("familia_produ"));
+                producto.setStrEstado(wrs.getString("estado"));
+                lisProducto.add(producto);
+            }
+        } catch (Exception ex) {
+        }
+
+        return lisProducto;
+    }
+    
+    public Boolean eliminarProducto(String strCodigoProducto, Integer intTipoEliminacion) {
+        Boolean booResulado = false;
+        if(strCodigoProducto != null)
+        {
+            if(intTipoEliminacion == 1) //Realiza eliminacion FISICA
+            {
+              booResulado=eliminarFisicoProducto(strCodigoProducto);
+            }
+            else
+            {
+              if(intTipoEliminacion == 0) //Realiza eliminacion LOGICA 
+              {
+                  booResulado=eliminarLogicoProducto(strCodigoProducto);
+              }
+            }
+        }
+        return booResulado;
+    }
+    
+    private static Boolean eliminarFisicoProducto(java.lang.String strCodigoProducto) {
+        com.lewissa.jhano.accesodatos.producto.WsAccesoDatosProducto_Service service = new com.lewissa.jhano.accesodatos.producto.WsAccesoDatosProducto_Service();
+        com.lewissa.jhano.accesodatos.producto.WsAccesoDatosProducto port = service.getWsAccesoDatosProductoPort();
+        return port.eliminarFisicoProducto(strCodigoProducto);
+    }
+
+    private static Boolean eliminarLogicoProducto(java.lang.String strCodigoProducto) {
+        com.lewissa.jhano.accesodatos.producto.WsAccesoDatosProducto_Service service = new com.lewissa.jhano.accesodatos.producto.WsAccesoDatosProducto_Service();
+        com.lewissa.jhano.accesodatos.producto.WsAccesoDatosProducto port = service.getWsAccesoDatosProductoPort();
+        return port.eliminarLogicoProducto(strCodigoProducto);
+    }
 
     List<cFamiliaProducto> getDescripcionFamiliaProducto()  {
         com.lewissa.jhano.accesodatos.producto.WsAccesoDatosProducto_Service service = new com.lewissa.jhano.accesodatos.producto.WsAccesoDatosProducto_Service();
@@ -168,6 +235,61 @@ public class cTransaccionProducto {
         com.lewissa.jhano.accesodatos.producto.WsAccesoDatosProducto_Service service = new com.lewissa.jhano.accesodatos.producto.WsAccesoDatosProducto_Service();
         com.lewissa.jhano.accesodatos.producto.WsAccesoDatosProducto port = service.getWsAccesoDatosProductoPort();
         return port.buscarProducto(strParametro);
+    }
+
+    public Boolean modificaProducto(cProducto datDatos) {
+        com.lewissa.jhano.accesodatos.producto.WsAccesoDatosProducto_Service service = new com.lewissa.jhano.accesodatos.producto.WsAccesoDatosProducto_Service();
+        com.lewissa.jhano.accesodatos.producto.WsAccesoDatosProducto port = service.getWsAccesoDatosProductoPort();
+        Boolean booFlag = false;
+    
+        List<String> strProducto = new ArrayList<String>();
+        strProducto.add(0, datDatos.getStrSn());
+        strProducto.add(1, datDatos.getStrEan());
+        strProducto.add(2, datDatos.getStrFabricante());
+        strProducto.add(3, datDatos.getStrDescripcionGeneral());
+        if (datDatos.getDouMargenGanancia() != null) {
+            strProducto.add(4, (datDatos.getDouMargenGanancia().toString()));
+        } else {
+            strProducto.add(4, null);
+        }
+        if (datDatos.getIntCantidad() != null) {
+            strProducto.add(5, datDatos.getIntCantidad().toString());
+        } else {
+            strProducto.add(5, null);
+        }
+        if (datDatos.getDouPrecioCosto() != null) {
+            strProducto.add(6, datDatos.getDouPrecioCosto().toString());
+        } else {
+            strProducto.add(6, null);
+        }
+        if (datDatos.getDouMargenVenta() != null) {
+            strProducto.add(7, datDatos.getDouMargenVenta().toString());
+        } else {
+            strProducto.add(7, null);
+        }
+        try {
+            strProducto.add(8, calculoSumaPrecioDos(datDatos).toString());
+        } catch (Exception excError) {
+            strProducto.add(8, null);
+        }
+        strProducto.add(9, datDatos.getStrProveedorProdu());
+        if (datDatos.getIntStockMaximo() != null) {
+            strProducto.add(10, datDatos.getIntStockMaximo().toString());
+        } else {
+            strProducto.add(10, null);
+        }
+        if (datDatos.getIntStockMinimo() != null) {
+            strProducto.add(11, datDatos.getIntStockMinimo().toString());
+        } else {
+            strProducto.add(11, null);
+        }
+        strProducto.add(12, datDatos.getStrFamiliaProdu().toString());
+        booFlag = port.modificarDataBaseProducto(strProducto);
+        if (booFlag == null) {
+            booFlag = false;
+        }
+        return booFlag;
+
     }
 
 }

@@ -63,4 +63,78 @@ public class cTransaccionProducto {
         return strResultado;
     }
 
+    public String cargarProducto() {
+        String strProducto = null;
+        String strQuery = "SELECT * FROM producto WHERE estado=true";
+        if (cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()) {
+            strProducto = cAccesoDatos.getInstanciaAccesoDatos().consultarDataBase(strQuery);
+        }
+
+        return strProducto;
+    }
+    
+    public Boolean eliminarFisicoProducto(String strCodigoProducto) {
+        Boolean booResultado = false;
+        String strQuery;
+        strQuery = "DELETE FROM producto WHERE \"Id_produ\" = '"+ strCodigoProducto+"'";
+        if (cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()) {
+            booResultado = cAccesoDatos.getInstanciaAccesoDatos().actualizarDataBase(strQuery);
+        }
+
+        return booResultado;
+    }
+    /**
+     
+     * metodo que oelrmite eliminar los datos de un proveedor LPGICAMENTE
+     * @author Fredy Janeta
+     * @param strCodigoProveedor
+     * @return Boolean, booResultdo contiene la confirmacion de la aplicacion del metodo
+     */
+    public Boolean eliminarLogicoProducto(String strCodigoProducto){
+        Boolean booResultado=false;
+        String strQuery;
+        strQuery="UPDATE producto SET estado=false WHERE \"Id_produ\"='"+strCodigoProducto+"'";
+        if(cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()){
+            booResultado=cAccesoDatos.getInstanciaAccesoDatos().actualizarDataBase(strQuery);
+        }
+        return booResultado;
+    }
+    
+     public Boolean modificarProdcuto(String strPro[]) {
+        String strSqlIngreso;
+        Boolean booFlag = false;
+        String strDescripcionGeneral = null;
+        String strEan = null;
+        String strFabricante = null;
+        if (strPro[3].equals("")) {
+            strDescripcionGeneral = "null";
+        } else {
+            strDescripcionGeneral = "'" + strPro[3] + "'";
+        }
+        if (strPro[1].equals("")) {
+            strEan = "null";
+        } else {
+            strEan = "'" + strPro[1] + "'";
+        }
+        if (strPro[2].equals("")) {
+            strFabricante = "null";
+        } else {
+            strFabricante = "'" + strPro[2] + "'";
+        }
+        strSqlIngreso = "UPDATE producto SET "
+                + "\"Ean\"=" + strEan + ", \"Fabricante\"=" + strFabricante + ", \"Descripcion_general\"=" + strDescripcionGeneral + ", \"Margen_ganancia\"='" + strPro[4] + "',"
+                + "\"Cantidad\"='" + strPro[5] + "', \"Precio_costo\"='" + strPro[6] + "', \"Margen_venta\"='" + strPro[7] + "', \"Precio_dos\"='" + strPro[8] + "', proveedor_produ='" + strPro[9] + "',"
+                + "\"Stock_maximo\"='" + strPro[10] + "', \"Stock_minimo\"='" + strPro[11] + "', familia_produ='" + strPro[12] + " 'WHERE \"Id_produ\"='" + strPro[0] + "'";
+        booFlag = cAccesoDatos.getInstanciaAccesoDatos().actualizarDataBase(strSqlIngreso);
+        return booFlag;
+
+    }
+     
+     public String consultarProducto(String id) {
+        String strSqlConsulta, strPoducto;
+        strSqlConsulta = "SELECT * FROM producto WHERE \"Id_produ\" = '" + id + "'";
+        strPoducto = cAccesoDatos.getInstanciaAccesoDatos().consultarDataBase(strSqlConsulta);
+        return strPoducto;
+    }
+     
 }

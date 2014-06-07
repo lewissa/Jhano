@@ -4,18 +4,6 @@
 <xsd:import namespace="http://producto.logicanegocio.jhano.lewissa.com/" schemaLocation="http://localhost:8080/LogicaNegocio/wsLogicaNegocioProducto?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="validaRuc">
-<part name="parameters" element="tns:validaRuc"/>
-</message>
-<message name="validaRucResponse">
-<part name="parameters" element="tns:validaRucResponse"/>
-</message>
-<message name="getNombreProveedor">
-<part name="parameters" element="tns:getNombreProveedor"/>
-</message>
-<message name="getNombreProveedorResponse">
-<part name="parameters" element="tns:getNombreProveedorResponse"/>
-</message>
 <message name="actualizaDataBaseProducto">
 <part name="parameters" element="tns:actualizaDataBaseProducto"/>
 </message>
@@ -34,15 +22,49 @@
 <message name="getDescripcionFamiliaProductoResponse">
 <part name="parameters" element="tns:getDescripcionFamiliaProductoResponse"/>
 </message>
+<message name="validaRuc">
+<part name="parameters" element="tns:validaRuc"/>
+</message>
+<message name="validaRucResponse">
+<part name="parameters" element="tns:validaRucResponse"/>
+</message>
+<message name="getNombreProveedor">
+<part name="parameters" element="tns:getNombreProveedor"/>
+</message>
+<message name="getNombreProveedorResponse">
+<part name="parameters" element="tns:getNombreProveedorResponse"/>
+</message>
+<message name="buscarProducto">
+<part name="parameters" element="tns:buscarProducto"/>
+</message>
+<message name="buscarProductoResponse">
+<part name="parameters" element="tns:buscarProductoResponse"/>
+</message>
+<message name="eliminarProducto">
+<part name="parameters" element="tns:eliminarProducto"/>
+</message>
+<message name="eliminarProductoResponse">
+<part name="parameters" element="tns:eliminarProductoResponse"/>
+</message>
+<message name="obtieneProducto">
+<part name="parameters" element="tns:obtieneProducto"/>
+</message>
+<message name="obtieneProductoResponse">
+<part name="parameters" element="tns:obtieneProductoResponse"/>
+</message>
+<message name="cargaProducto">
+<part name="parameters" element="tns:cargaProducto"/>
+</message>
+<message name="cargaProductoResponse">
+<part name="parameters" element="tns:cargaProductoResponse"/>
+</message>
+<message name="actualizaModificarDataBaseProducto">
+<part name="parameters" element="tns:actualizaModificarDataBaseProducto"/>
+</message>
+<message name="actualizaModificarDataBaseProductoResponse">
+<part name="parameters" element="tns:actualizaModificarDataBaseProductoResponse"/>
+</message>
 <portType name="wsLogicaNegocioProducto">
-<operation name="validaRuc">
-<input wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/validaRucRequest" message="tns:validaRuc"/>
-<output wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/validaRucResponse" message="tns:validaRucResponse"/>
-</operation>
-<operation name="getNombreProveedor">
-<input wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/getNombreProveedorRequest" message="tns:getNombreProveedor"/>
-<output wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/getNombreProveedorResponse" message="tns:getNombreProveedorResponse"/>
-</operation>
 <operation name="actualizaDataBaseProducto">
 <input wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/actualizaDataBaseProductoRequest" message="tns:actualizaDataBaseProducto"/>
 <output wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/actualizaDataBaseProductoResponse" message="tns:actualizaDataBaseProductoResponse"/>
@@ -55,27 +77,37 @@
 <input wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/getDescripcionFamiliaProductoRequest" message="tns:getDescripcionFamiliaProducto"/>
 <output wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/getDescripcionFamiliaProductoResponse" message="tns:getDescripcionFamiliaProductoResponse"/>
 </operation>
+<operation name="validaRuc">
+<input wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/validaRucRequest" message="tns:validaRuc"/>
+<output wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/validaRucResponse" message="tns:validaRucResponse"/>
+</operation>
+<operation name="getNombreProveedor">
+<input wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/getNombreProveedorRequest" message="tns:getNombreProveedor"/>
+<output wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/getNombreProveedorResponse" message="tns:getNombreProveedorResponse"/>
+</operation>
+<operation name="buscarProducto">
+<input wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/buscarProductoRequest" message="tns:buscarProducto"/>
+<output wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/buscarProductoResponse" message="tns:buscarProductoResponse"/>
+</operation>
+<operation name="eliminarProducto">
+<input wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/eliminarProductoRequest" message="tns:eliminarProducto"/>
+<output wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/eliminarProductoResponse" message="tns:eliminarProductoResponse"/>
+</operation>
+<operation name="obtieneProducto">
+<input wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/obtieneProductoRequest" message="tns:obtieneProducto"/>
+<output wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/obtieneProductoResponse" message="tns:obtieneProductoResponse"/>
+</operation>
+<operation name="cargaProducto">
+<input wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/cargaProductoRequest" message="tns:cargaProducto"/>
+<output wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/cargaProductoResponse" message="tns:cargaProductoResponse"/>
+</operation>
+<operation name="actualizaModificarDataBaseProducto">
+<input wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/actualizaModificarDataBaseProductoRequest" message="tns:actualizaModificarDataBaseProducto"/>
+<output wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/actualizaModificarDataBaseProductoResponse" message="tns:actualizaModificarDataBaseProductoResponse"/>
+</operation>
 </portType>
 <binding name="wsLogicaNegocioProductoPortBinding" type="tns:wsLogicaNegocioProducto">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="validaRuc">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getNombreProveedor">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
 <operation name="actualizaDataBaseProducto">
 <soap:operation soapAction=""/>
 <input>
@@ -95,6 +127,69 @@
 </output>
 </operation>
 <operation name="getDescripcionFamiliaProducto">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="validaRuc">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getNombreProveedor">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="buscarProducto">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="eliminarProducto">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="obtieneProducto">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="cargaProducto">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="actualizaModificarDataBaseProducto">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

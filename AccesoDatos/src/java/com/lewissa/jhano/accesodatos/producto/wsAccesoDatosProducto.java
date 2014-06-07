@@ -80,6 +80,7 @@ public class wsAccesoDatosProducto {
         return strFamilia;
     }
 
+
     /**
      * Web service operation
      */
@@ -92,4 +93,69 @@ public class wsAccesoDatosProducto {
         return strResultado;
         
     }
+
+    @WebMethod(operationName = "cargaProducto")
+    public String cargaProducto() {
+        //TODO write your implementation code here:
+        String strResultado = null;
+        cTransaccionProducto oTransaccionProducto = new cTransaccionProducto();
+        if (cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()) {
+            strResultado = oTransaccionProducto.cargarProducto();
+        }
+
+        return strResultado;
+    }
+    
+    @WebMethod(operationName = "eliminarFisicoProducto")
+    public Boolean eliminarFisicoProducto(@WebParam(name = "strCodigoProducto") String strCodigoProducto) {
+        //TODO write your implementation code here:
+        Boolean booResultado = false;
+        cTransaccionProducto oTransaccionProducto = new cTransaccionProducto();
+        if (cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()) {
+            booResultado = oTransaccionProducto.eliminarFisicoProducto(strCodigoProducto);
+        }
+        return booResultado;
+    }
+    
+    @WebMethod(operationName = "eliminarLogicoProducto")
+    public Boolean eliminarLogicoProducto(@WebParam(name = "strCodigoProducto") String strCodigoProducto) {
+        //TODO write your implementation code here:
+        Boolean booResultado = false;
+        cTransaccionProducto oTransaccionProducto = new cTransaccionProducto();
+        if (cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()) {
+            booResultado = oTransaccionProducto.eliminarLogicoProducto(strCodigoProducto);
+        }
+        return booResultado;
+    }
+    
+        @WebMethod(operationName = "modificarDataBaseProducto")
+    public Boolean modificaDataBaseProducto(@WebParam(name = "strPro") String[] strPro) {
+        Boolean booFlag1 = false; // revisa la respuesta de la base
+        Boolean booFlag2 = false; // revisa la conexion
+        cTransaccionProducto traProducto = new cTransaccionProducto();
+        if (!cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()) {
+            booFlag2 = false; //error en la conexion
+        } else {
+            booFlag2 = true; // conexion correcta
+            booFlag1 = traProducto.modificarProdcuto(strPro);
+            if (booFlag1 == null) {
+                booFlag1 = false;
+            }
+        }
+        booFlag1 = (booFlag1.equals(true)) && (booFlag2.equals(true));
+        return booFlag1;
+    }
+    
+     @WebMethod(operationName = "consultarProducto")
+    public String consultarProducto(String id) {
+        //TODO write your implementation code here:
+        String pro = null;
+        cTransaccionProducto traProducto = new cTransaccionProducto();
+        if (cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()){
+            pro = traProducto.consultarProducto(id);
+        }
+        return pro;
+    }
+
+
 }

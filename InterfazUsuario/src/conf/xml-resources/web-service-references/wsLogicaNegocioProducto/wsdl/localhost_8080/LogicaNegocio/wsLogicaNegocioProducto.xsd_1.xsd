@@ -4,6 +4,22 @@
 
 <xs:element name="actualizaDataBaseProductoResponse" type="tns:actualizaDataBaseProductoResponse"/>
 
+<xs:element name="actualizaModificarDataBaseProducto" type="tns:actualizaModificarDataBaseProducto"/>
+
+<xs:element name="actualizaModificarDataBaseProductoResponse" type="tns:actualizaModificarDataBaseProductoResponse"/>
+
+<xs:element name="buscarProducto" type="tns:buscarProducto"/>
+
+<xs:element name="buscarProductoResponse" type="tns:buscarProductoResponse"/>
+
+<xs:element name="cargaProducto" type="tns:cargaProducto"/>
+
+<xs:element name="cargaProductoResponse" type="tns:cargaProductoResponse"/>
+
+<xs:element name="eliminarProducto" type="tns:eliminarProducto"/>
+
+<xs:element name="eliminarProductoResponse" type="tns:eliminarProductoResponse"/>
+
 <xs:element name="getDescripcionFamiliaProducto" type="tns:getDescripcionFamiliaProducto"/>
 
 <xs:element name="getDescripcionFamiliaProductoResponse" type="tns:getDescripcionFamiliaProductoResponse"/>
@@ -15,6 +31,10 @@
 <xs:element name="getNombreProveedor" type="tns:getNombreProveedor"/>
 
 <xs:element name="getNombreProveedorResponse" type="tns:getNombreProveedorResponse"/>
+
+<xs:element name="obtieneProducto" type="tns:obtieneProducto"/>
+
+<xs:element name="obtieneProductoResponse" type="tns:obtieneProductoResponse"/>
 
 <xs:element name="validaRuc" type="tns:validaRuc"/>
 
@@ -54,8 +74,10 @@
 <xs:element name="intStockMinimo" type="xs:int" minOccurs="0"/>
 <xs:element name="strDescripcionGeneral" type="xs:string" minOccurs="0"/>
 <xs:element name="strEan" type="xs:string" minOccurs="0"/>
+<xs:element name="strEstado" type="xs:string" minOccurs="0"/>
 <xs:element name="strFabricante" type="xs:string" minOccurs="0"/>
 <xs:element name="strFamiliaProdu" type="xs:string" minOccurs="0"/>
+<xs:element name="strIdProdu" type="xs:string" minOccurs="0"/>
 <xs:element name="strProveedorProdu" type="xs:string" minOccurs="0"/>
 <xs:element name="strSn" type="xs:string" minOccurs="0"/>
 </xs:sequence>
@@ -64,16 +86,6 @@
 <xs:complexType name="actualizaDataBaseProductoResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="getErrorConexionProducto">
-<xs:sequence/>
-</xs:complexType>
-
-<xs:complexType name="getErrorConexionProductoResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -89,6 +101,28 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="getErrorConexionProducto">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getErrorConexionProductoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="obtieneProducto">
+<xs:sequence>
+<xs:element name="id" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="obtieneProductoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:cProducto" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="getNombreProveedor">
 <xs:sequence/>
 </xs:complexType>
@@ -101,6 +135,7 @@
 
 <xs:complexType name="cProveedor">
 <xs:sequence>
+<xs:element name="booeliminado" type="xs:boolean" minOccurs="0"/>
 <xs:element name="celular" type="xs:string" minOccurs="0"/>
 <xs:element name="convencional" type="xs:string" minOccurs="0"/>
 <xs:element name="correo" type="xs:string" minOccurs="0"/>
@@ -108,6 +143,53 @@
 <xs:element name="id" type="xs:string" minOccurs="0"/>
 <xs:element name="nombreComercial" type="xs:string" minOccurs="0"/>
 <xs:element name="nombreFiscal" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cargaProducto">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="cargaProductoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:cProducto" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarProducto">
+<xs:sequence>
+<xs:element name="strId" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarProductoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarProducto">
+<xs:sequence>
+<xs:element name="strParametro" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarProductoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:cProducto" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizaModificarDataBaseProducto">
+<xs:sequence>
+<xs:element name="proProducto" type="tns:cProducto" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizaModificarDataBaseProductoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 </xs:schema>

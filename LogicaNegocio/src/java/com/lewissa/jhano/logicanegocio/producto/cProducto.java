@@ -13,6 +13,7 @@ import java.io.Serializable;
  */
 public class cProducto implements Serializable {
 
+    private String strIdProdu;
     private String strEan;
     private String strFabricante;
     private String strDescripcionGeneral;
@@ -26,6 +27,7 @@ public class cProducto implements Serializable {
     private Integer intStockMinimo;
     private String strFamiliaProdu;
     private String strSn;
+    private String strEstado;
 
     public String getStrEan() {
         return strEan;
@@ -34,7 +36,20 @@ public class cProducto implements Serializable {
     public void setStrEan(String strEan) {
         this.strEan = strEan;
     }
+    public String getStrEstado() {
+        return strEstado;
+    }
 
+    public void setStrEstado(String strEstado) {
+        this.strEstado = strEstado;
+    }
+    public String getStrIdProdu() {
+        return strIdProdu;
+    }
+
+    public void setStrIdProdu(String strId) {
+        this.strIdProdu = strId;
+    }
     public String getStrFabricante() {
         return strFabricante;
     }

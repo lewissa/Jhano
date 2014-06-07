@@ -30,4 +30,8 @@
 
     <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioEmpresa?wsdl" uri="wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioEmpresa.wsdl"/>
     <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioEmpresa?xsd=1" uri="wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioEmpresa.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioFactura?wsdl" uri="wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioFactura.wsdl"/>
+    <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioFactura?xsd=1" uri="wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioFactura.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioListaProductos?wsdl" uri="wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioListaProductos.wsdl"/>
+    <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioListaProductos?xsd=1" uri="wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioListaProductos.xsd_1.xsd"/>
 </catalog>

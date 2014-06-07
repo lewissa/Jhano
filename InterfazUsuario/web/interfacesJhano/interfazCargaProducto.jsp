@@ -1,3 +1,4 @@
+<%@page import="com.lewissa.jhano.logicanegocio.producto.CProducto"%>
 <%@page import="com.google.common.util.concurrent.ExecutionError"%>
 <%@page import="javax.swing.JOptionPane"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -5,8 +6,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Jhano | Menú Producto </title>
-        <script src="SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
-        <link href="SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
+        <link href="SpryAssets/estilo.css" rel="stylesheet" type="text/css">
+            <script type="text/javascript" src="functions.js"></script>
+            <script src="SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
+            <link href="SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
     </head>
 
     <body>
@@ -16,15 +19,16 @@
                     <img src="Image/computech.jpg" alt="espoch" />
                 </td>
                 <td width="780">
-                    <center>
-                        <font color="#FFFFFF" size="+6" face="Arial, Helvetica, sans-serif">
-                            Computech
-                        </font><br/>
-                        <h3>
-                            <font color="#FFFFFF" face="Arial">
-                                Soluciones en Tecnología Computacional
-                            </font>
-                        </h3>
+                    <a href="../index.jsp">
+                        <center>
+                            <font color="#FFFFFF" size="+6" face="Arial, Helvetica, sans-serif">
+                                Computech
+                            </font><br/></a>
+                    <h3>
+                        <font color="#FFFFFF" face="Arial">
+                            Soluciones en Tecnología Computacional
+                        </font>
+                    </h3>
                     </center></td>
                 <td align="center" rowspan="2">
                     <table border="1" width="90%" height="90%">
@@ -114,7 +118,7 @@
             </tr>
         </table>
 
-        <table bgcolor="#C0C0C0" width="100%" height="100%" border="1">
+        <table bgcolor="#C0C0C0" width="90%" height="100%" border="1">
             <tr>
                 <td border="0.1"width="12%">
                     <table align="left">
@@ -142,7 +146,7 @@
                         </tr>
                         <tr>
                             <td>
-                                <a href="">
+                                <a href="../index.jsp">
                                     <label>
                                         <font face="Arial">
                                             Inicio
@@ -152,53 +156,103 @@
                             </td>
                         </tr>
                     </table>
-                </td>
-                <td>
                     <%
-                        String strCancelar;
-                        try {
-                            strCancelar = (request.getParameter("can") != null) ? "true" : "false";
-                        } catch (Exception excError) {
-                            strCancelar = "false";
-                        }
-                        if (strCancelar.equals("true")) {
-                            request.getSession().setAttribute("producto", false);
-                            request.getSession().setAttribute("eanProductoVacio", null);
-                            request.getSession().setAttribute("fabricacionProductoVacio", null);
-                            request.getSession().setAttribute("descripcionGeneralProductoVacio", null);
-                            request.getSession().setAttribute("margenGananciaProductoVacio", null);
-                            request.getSession().setAttribute("cantidadProductoVacio", null);
-                            request.getSession().setAttribute("precioCostoProductoVacio", null);
-                            request.getSession().setAttribute("margenVentaProductoVacio", null);
-                            request.getSession().setAttribute("stockMaximoProductoVacio", null);
-                            request.getSession().setAttribute("stockMinimoProductoVacio", null);
-                        }
-                        String strErrorConexionProducto;
-                        try {
+
+                        String strErrorConexionProducto = null;
+                        if (request.getSession().getAttribute("errorProducto") != null) {
                             strErrorConexionProducto = (String) request.getSession().getAttribute("errorProducto");
-                        } catch (Exception excE) {
-                            strErrorConexionProducto = null;
-                        }
-                        if (strErrorConexionProducto != null) {
                             out.print("<td >");
                             out.print("</td>");
-                            out.print("<h3><center> <font size=\"3\" face=\"Arial, Helvetica, sans-serif\">" + request.getSession().getAttribute("errorProducto") + "</font><a href=\"../interfacesJhano/interfazCargaProducto.jsp\"><input name=\"cancelar\" type=\"button\" value=\"Ocultar\" /></a></center></h3>");
+                            out.print("<h3><center> <font size=\"3\" face=\"Arial, Helvetica, sans-serif\">" + strErrorConexionProducto + "</font><a href=\"../interfacesJhano/interfazCargaProducto.jsp\"><input name=\"cancelar\" type=\"button\" value=\"Ocultar\" /></a></center></h3>");
                             request.getSession().setAttribute("errorProducto", null);
-                        } else {
-                    %>
-                    <font face="Arial">
-                        <h3><center>Producto</center></h3>
-                    </font>
-                    <%
-                        }
-                    %>
-                </td>
-            </tr>
-        </table>
 
-        <script type="text/javascript">
-            var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown: "SpryAssets/SpryMenuBarDownHover.gif", imgRight: "SpryAssets/SpryMenuBarRightHover.gif"});
-            var MenuBar2 = new Spry.Widget.MenuBar("MenuBar2", {imgDown: "SpryAssets/SpryMenuBarDownHover.gif", imgRight: "SpryAssets/SpryMenuBarRightHover.gif"});
-        </script>
-    </body>
-</html>
+                    %>
+                    <% } else {
+
+
+                    %>
+                    <td width="88%">
+                        <h3><center> <font size="5" face="Arial, Helvetica, sans-serif">Matriz Producto</font></center></h3>
+                                    <%                            Boolean booErrorElimiancion = null;
+                                        String strCodigoElimiando = null;
+
+                                        if (request.getSession().getAttribute("errorEliminacion") != null) {
+                                            booErrorElimiancion = (Boolean) request.getSession().getAttribute("errorEliminacion");
+                                            strCodigoElimiando = (String) request.getSession().getAttribute("codigoElimando");
+                                        }
+                                        if ((request.getSession().getAttribute("errorEliminacion") != null) && booErrorElimiancion == false) {
+                                            request.getSession().setAttribute("id", strCodigoElimiando);
+                                            out.print("<form name=\"frmEliminar\" method=\"post\" action=\"../controladoresJhano/controladorEliminarProducto.jsp\" >");
+                                            out.print("<fieldset><legend>Advertencia</legend>El producto de Id: " + strCodigoElimiando + ", posee documentos asociados. Decea realizar eliminacion logica?  ");
+                                            out.print("<input type=\"submit\" name=\"accion\" value=\"Aceptar\" />");
+                                            out.print("<input type=\"submit\" name=\"accion\" value=\"Cancelar\" /></fieldset> ");
+                                            out.print("<br>");
+                                            out.print("</form>");
+                                        }
+                                    %>
+
+                        <form name="frmCargarProductos" action="../controladoresJhano/controladorInterfazCargaProducto.jsp" method="post" >
+                            <div STYLE=" height: 325px; width: 1267px; font-size: 12px; overflow: auto;">
+                                <table width="1250" align="center" border="1" bgcolor="white" style="font-size:17px">
+                                    <tr>
+                                        <th width="10%" align="center" bgcolor="#C0C0C0">Ean</th>
+                                        <th width="5%"align="center" bgcolor="#C0C0C0">Fabricante</th>
+                                        <th width="10%"align="center" bgcolor="#C0C0C0">Descripcion general</th>
+                                        <th width="5%"align="center" bgcolor="#C0C0C0">Margen ganancia</th>
+                                        <th width="3%"align="center" bgcolor="#C0C0C0">Cantidad</th>
+                                        <th width="5%"align="center" bgcolor="#C0C0C0">Precio costo</th>
+                                        <th width="5%"align="center" bgcolor="#C0C0C0">Margen venta</th>
+                                        <th width="5%"align="center" bgcolor="#C0C0C0">Stock maximo</th>
+                                        <th width="5%"align="center" bgcolor="#C0C0C0">Stock minimo</th>
+
+                                    </tr>
+                                    <tr>
+                                        <%
+                                                try {
+
+                                                    com.lewissa.jhano.logicanegocio.producto.WsLogicaNegocioProducto_Service service = new com.lewissa.jhano.logicanegocio.producto.WsLogicaNegocioProducto_Service();
+                                                    com.lewissa.jhano.logicanegocio.producto.WsLogicaNegocioProducto port = service.getWsLogicaNegocioProductoPort();
+                                                    // TODO process result here
+                                                    java.util.List<com.lewissa.jhano.logicanegocio.producto.CProducto> listProducto = port.cargaProducto();
+
+                                                    if (port.getErrorConexionProducto() != null) {
+                                                        String strError = (String) port.getErrorConexionProducto();
+                                                        request.getSession().setAttribute("errorProducto", strError);
+                                                        response.sendRedirect("../interfacesJhano/interfazCargaProducto.jsp");
+                                                    }
+
+                                                    for (CProducto oProducto : listProducto) {
+
+                                                        out.print("<tr>");
+                                                        out.print("<td width=\"10%\">" + oProducto.getStrEan() + "</td>");
+                                                        out.print("<td width=\"5%\" align=\"center\">" + oProducto.getStrFabricante() + "</td>");
+                                                        out.print("  <td width=\"10%\" align=\"center\">" + oProducto.getStrDescripcionGeneral() + "</td>");
+                                                        out.print("  <td width=\"5%\" align=\"center\">" + oProducto.getDouMargenGanancia() + "</td>");
+                                                        out.print("  <td width=\"3%\" align=\"center\">" + oProducto.getIntCantidad() + "</td>");
+                                                        out.print("  <td width=\"5%\" align=\"center\">" + oProducto.getDouPrecioCosto() + "</td>");
+                                                        out.print("  <td width=\"5%\" align=\"center\">" + oProducto.getDouMargenVenta() + "</td>");
+                                                        out.print("  <td width=\"5%\" align=\"center\">" + oProducto.getIntStockMaximo() + "</td>");
+                                                        out.print("  <td width=\"5%\" align=\"center\">" + oProducto.getIntStockMinimo() + "</td>");
+                                                        out.print("  <td width=\"5%\" align=\"center\"><a href=\"../controladoresJhano/controladorInterfazModificarProducto.jsp?id=" + oProducto.getStrIdProdu() + "\">Modificar</a></td>");
+                                                        out.print("  <td width=\"5%\" align=\"center\"><a href=\"../controladoresJhano/controladorEliminarProducto.jsp?id=" + oProducto.getStrIdProdu() + "\">Eliminar</a></td>");
+
+                                                        out.print("</tr>");
+                                                    }
+                                                } catch (Exception ex) {
+                                                    out.print(ex.getMessage());
+                                                }
+                                            }
+                                        %>
+                                </table>
+                                </td>
+                                </td>
+                                </tr>                     
+                                </tr>
+                                </table>
+
+                                <script type="text/javascript">
+                                    var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown: "SpryAssets/SpryMenuBarDownHover.gif", imgRight: "SpryAssets/SpryMenuBarRightHover.gif"});
+                                    var MenuBar2 = new Spry.Widget.MenuBar("MenuBar2", {imgDown: "SpryAssets/SpryMenuBarDownHover.gif", imgRight: "SpryAssets/SpryMenuBarRightHover.gif"});
+                                </script>
+                                </body>
+                                </html>
