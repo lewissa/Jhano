@@ -79,4 +79,17 @@ public class wsAccesoDatosProducto {
         }
         return strFamilia;
     }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "buscarProducto")
+    public String buscarProducto(@WebParam(name = "strParametro") String strParametro) {
+        //TODO write your implementation code here:
+        String strResultado = null;
+        cTransaccionProducto oTransaccionProducto = new cTransaccionProducto();
+        strResultado = oTransaccionProducto.buscarProducto(strParametro);
+        return strResultado;
+        
+    }
 }

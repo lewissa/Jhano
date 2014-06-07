@@ -94,6 +94,18 @@ public class cTransaccionCliente {
         strCliente = cAccesoDatos.getInstanciaAccesoDatos().consultarDataBase(strSqlConsulta);
         return strCliente;
     }
+    
+    public String buscarCliente(String strId) {
+        String strSqlConsulta, strCliente=null;
+        //strSqlConsulta = "SELECT \"Id_cliente\", \"Nombre_fiscal\", \"Direccion\", \"Convencional\" FROM cliente"
+                //+ "WHERE \"Estado\" = TRUE;";
+        strSqlConsulta = "SELECT * FROM cliente WHERE \"Id_cliente\"='"+strId+"';";
+        if(cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase())
+        {
+            strCliente = cAccesoDatos.getInstanciaAccesoDatos().consultarDataBase(strSqlConsulta);
+        }
+        return strCliente;
+    }
 
     public Boolean eliminarCliente(String strCli) {
         String strSqlEliminar;

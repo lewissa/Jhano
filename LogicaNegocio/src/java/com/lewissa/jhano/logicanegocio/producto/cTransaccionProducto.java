@@ -134,5 +134,40 @@ public class cTransaccionProducto {
         }
         return lisFamiliaProducto;
     }
+    
+    public List<cProducto> buscarProducto(String strParametro)
+    {
+        List<cProducto> lisProductos = new ArrayList<cProducto>();
+        try {
+            cProducto oProducto;
+            WebRowSetImpl wrsImplement = new WebRowSetImpl();
+            StringReader strReader = new StringReader(buscarProducto_1(strParametro));
+            wrsImplement.readXml(strReader);
+            while (wrsImplement.next()) {                
+                oProducto= new cProducto();
+                oProducto.setStrEan(wrsImplement.getString("Ean"));
+                oProducto.setStrFabricante(wrsImplement.getString("Fabricante"));
+                oProducto.setStrDescripcionGeneral(wrsImplement.getString("Descripcion_general"));
+                oProducto.setDouMargenGanancia(wrsImplement.getDouble("Margen_ganancia"));
+                oProducto.setIntCantidad(wrsImplement.getInt("Cantidad"));
+                oProducto.setDouPrecioCosto(wrsImplement.getDouble("Precio_costo"));
+                oProducto.setDouMargenVenta(wrsImplement.getDouble("Margen_venta"));
+                oProducto.setDouPrecioDos(wrsImplement.getDouble("Precio_dos"));
+                oProducto.setStrProveedorProdu(wrsImplement.getString("proveedor_produ"));
+                oProducto.setIntStockMaximo(wrsImplement.getInt("Stock_maximo"));
+                oProducto.setIntStockMinimo(wrsImplement.getInt("Stock_minimo"));
+                oProducto.setStrFamiliaProdu(wrsImplement.getString("familia_produ"));
+                lisProductos.add(oProducto);               
+            }
+        } catch (Exception e) {
+        }
+        return lisProductos;
+    }
+
+    private static String buscarProducto_1(java.lang.String strParametro) {
+        com.lewissa.jhano.accesodatos.producto.WsAccesoDatosProducto_Service service = new com.lewissa.jhano.accesodatos.producto.WsAccesoDatosProducto_Service();
+        com.lewissa.jhano.accesodatos.producto.WsAccesoDatosProducto port = service.getWsAccesoDatosProductoPort();
+        return port.buscarProducto(strParametro);
+    }
 
 }

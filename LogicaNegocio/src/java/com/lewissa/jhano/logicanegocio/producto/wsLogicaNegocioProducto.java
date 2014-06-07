@@ -9,9 +9,11 @@ import com.lewissa.jhano.logicanegocio.familiaproducto.cFamiliaProducto;
 import com.lewissa.jhano.logicanegocio.proveedor.cProveedor;
 import com.lewissa.jhano.logicanegocio.utilidades.cRuc;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
+import java.util.List;
 
 /**
  *
@@ -58,5 +60,17 @@ public class wsLogicaNegocioProducto {
     public java.util.List<cFamiliaProducto> getDescripcionFamiliaProducto(){
         cTransaccionProducto traProducto=new cTransaccionProducto();
         return traProducto.getDescripcionFamiliaProducto();
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "buscarProducto")
+    public java.util.List<cProducto> buscarProducto(@WebParam(name = "strParametro") String strParametro) {
+        //TODO write your implementation code here:
+        List<cProducto> lisProductos = new ArrayList<cProducto>();
+        cTransaccionProducto oTransaccionProducto = new cTransaccionProducto();
+        lisProductos = oTransaccionProducto.buscarProducto(strParametro);
+        return lisProductos;
     }
 }

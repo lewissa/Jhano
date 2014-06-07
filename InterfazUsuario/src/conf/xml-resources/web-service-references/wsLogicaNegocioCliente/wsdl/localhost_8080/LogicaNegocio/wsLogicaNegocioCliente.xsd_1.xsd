@@ -4,6 +4,10 @@
 
 <xs:element name="actualizaDataBaseClienteResponse" type="tns:actualizaDataBaseClienteResponse"/>
 
+<xs:element name="buscarCliente" type="tns:buscarCliente"/>
+
+<xs:element name="buscarClienteResponse" type="tns:buscarClienteResponse"/>
+
 <xs:element name="eliminarCliente" type="tns:eliminarCliente"/>
 
 <xs:element name="eliminarClienteResponse" type="tns:eliminarClienteResponse"/>
@@ -40,6 +44,31 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="buscarCliente">
+<xs:sequence>
+<xs:element name="strParametro" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarClienteResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:cCliente" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cCliente">
+<xs:sequence>
+<xs:element name="strCelular" type="xs:string" minOccurs="0"/>
+<xs:element name="strConvencional" type="xs:string" minOccurs="0"/>
+<xs:element name="strCorreo" type="xs:string" minOccurs="0"/>
+<xs:element name="strDireccion" type="xs:string" minOccurs="0"/>
+<xs:element name="strIdCliente" type="xs:string" minOccurs="0"/>
+<xs:element name="strNombreComercial" type="xs:string" minOccurs="0"/>
+<xs:element name="strNombreFiscal" type="xs:string" minOccurs="0"/>
+<xs:element name="strTipoCliente" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="validaRuc">
 <xs:sequence>
 <xs:element name="rucRu" type="xs:string" minOccurs="0"/>
@@ -58,32 +87,9 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="cCliente">
-<xs:sequence>
-<xs:element name="strCelular" type="xs:string" minOccurs="0"/>
-<xs:element name="strConvencional" type="xs:string" minOccurs="0"/>
-<xs:element name="strCorreo" type="xs:string" minOccurs="0"/>
-<xs:element name="strDireccion" type="xs:string" minOccurs="0"/>
-<xs:element name="strIdCliente" type="xs:string" minOccurs="0"/>
-<xs:element name="strNombreComercial" type="xs:string" minOccurs="0"/>
-<xs:element name="strNombreFiscal" type="xs:string" minOccurs="0"/>
-<xs:element name="strTipoCliente" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
 <xs:complexType name="actualizaDataBaseClienteResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="obtenCliente">
-<xs:sequence/>
-</xs:complexType>
-
-<xs:complexType name="obtenClienteResponse">
-<xs:sequence>
-<xs:element name="return" type="tns:cCliente" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -96,6 +102,16 @@
 <xs:complexType name="eliminarClienteResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="obtenCliente">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="obtenClienteResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:cCliente" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
 </xs:complexType>
 

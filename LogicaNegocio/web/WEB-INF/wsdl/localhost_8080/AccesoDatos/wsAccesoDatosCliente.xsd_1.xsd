@@ -4,6 +4,10 @@
 
 <xs:element name="actualizarDataBaseClienteResponse" type="tns:actualizarDataBaseClienteResponse"/>
 
+<xs:element name="buscarCliente" type="tns:buscarCliente"/>
+
+<xs:element name="buscarClienteResponse" type="tns:buscarClienteResponse"/>
+
 <xs:element name="eliminarCliente" type="tns:eliminarCliente"/>
 
 <xs:element name="eliminarClienteResponse" type="tns:eliminarClienteResponse"/>
@@ -15,6 +19,18 @@
 <xs:element name="obtenerCliente" type="tns:obtenerCliente"/>
 
 <xs:element name="obtenerClienteResponse" type="tns:obtenerClienteResponse"/>
+
+<xs:complexType name="buscarCliente">
+<xs:sequence>
+<xs:element name="strIdCliente" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarClienteResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
 
 <xs:complexType name="actualizarDataBaseCliente">
 <xs:sequence>

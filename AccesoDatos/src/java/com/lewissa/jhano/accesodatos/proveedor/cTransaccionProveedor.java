@@ -81,11 +81,23 @@ public class cTransaccionProveedor {
     {
         Boolean booResultado=false;
         String strQuery;
-        strQuery="UPDATE proveedor SET \"Nombre_fiscal\"='"+strProveedor[1]+
-                "', \"Nombre_comercial\"='"+strProveedor[2]+"', \"Direccion\"='"+
-                strProveedor[3]+"',\"Convencional\"='"+strProveedor[4]+"',\"Celular\"='"+
-                strProveedor[5]+"', \"Correo\"='"+strProveedor[6]+"' WHERE \"Id_prove\"='"+
-                strProveedor[0]+"'";
+        
+        
+        
+//        strQuery="UPDATE proveedor SET \"Nombre_fiscal\"='"+strProveedor[1]+
+//                "', \"Nombre_comercial\"='"+strProveedor[2]+"', \"Direccion\"='"+
+//                strProveedor[3]+"',\"Convencional\"='"+strProveedor[4]+"',\"Celular\"='"+
+//                strProveedor[5]+"', \"Correo\"='"+strProveedor[6]+"' WHERE \"Id_prove\"='"+
+//                strProveedor[0]+"'";
+//        
+        
+        strQuery="UPDATE proveedor SET \"Nombre_fiscal\""+verificarNull(strProveedor[1])+
+           ",\"Nombre_comercial\""+verificarNull(strProveedor[2])+", \"Direccion\""+verificarNull(strProveedor[3])+
+           ",\"Convencional\""+verificarNull(strProveedor[4])+",\"Celular\""+verificarNull(strProveedor[5])+
+                ", \"Correo\""+verificarNull(strProveedor[6])+" WHERE \"Id_prove\"='"+strProveedor[0]+"'";
+  
+        
+        
         if(cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase())
         {
             booResultado = cAccesoDatos.getInstanciaAccesoDatos().actualizarDataBase(strQuery);
@@ -93,9 +105,25 @@ public class cTransaccionProveedor {
         
         return booResultado;
     }
-
-    
- 
+/**
+ * Este metod permite almacenar valores nulos evitando que en la base d edatos se gurarde "null" como un string
+ * @param strParametro, parametro a ser agreago en la sentecia sql
+ * @return me devuelve el fragmento de la sentencia qsl, que permite almacenar correctamentos los datos
+ */
+    public String verificarNull (String strParametro)
+    {
+        String cadena = null;
+        
+        if(strParametro == null)
+        {
+            cadena=" = "+strParametro+" ";
+        }
+        else
+        {
+            cadena=" = '"+strParametro+"' ";
+        }
+        return cadena;
+    }
 
  
  

@@ -49,5 +49,18 @@ public class cTransaccionProducto {
     public String getNombreProducto() {
         return cAccesoDatos.getInstanciaAccesoDatos().consultarDataBase("SELECT \"Id_prove\",\"Nombre_fiscal\" FROM proveedor");
     }
+    
+    public String buscarProducto(String strParametroBusqueda)
+    {
+        String strResultado=null;
+        String strQuery="SELECT * FROM producto WHERE \"Ean\" like '"+strParametroBusqueda
+                +"%' OR \"Fabricante\" like '"+strParametroBusqueda+"%' OR \"Descripcion_general\" like '"
+                +strParametroBusqueda+"%';";
+        if(cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase())
+        {
+            strResultado=cAccesoDatos.getInstanciaAccesoDatos().consultarDataBase(strQuery);
+        }
+        return strResultado;
+    }
 
 }

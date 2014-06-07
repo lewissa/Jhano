@@ -16,6 +16,12 @@
     <service name="wsLogicaNegocioCliente">
       <implementation-class>com.lewissa.jhano.logicanegocio.cliente.wsLogicaNegocioCliente</implementation-class>
     </service>
+    <service name="wsLogicaNegocioEmpresa">
+      <implementation-class>com.lewissa.jhano.logicanegocio.empresa.wsLogicaNegocioEmpresa</implementation-class>
+    </service>
+    <service name="wsLogicaNegocioListaProductos">
+      <implementation-class>com.lewissa.jhano.logicanegocio.listaproductos.wsLogicaNegocioListaProductos</implementation-class>
+    </service>
   </services>
   <clients>
     <client name="wsAccesoDatosProveedor">
@@ -167,6 +173,70 @@
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
           <wsimport-option-value>http://localhost:8080/AccesoDatos/wsAccesoDatosFamiliaProducto?WSDL</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>xnocompile</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>xendorsed</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+      </wsimport-options>
+    </client>
+    <client name="wsAccesoDatosListaProductos">
+      <wsdl-url>http://localhost:8080/AccesoDatos/wsAccesoDatosListaProductos?wsdl</wsdl-url>
+      <local-wsdl-file>localhost_8080/AccesoDatos/wsAccesoDatosListaProductos.wsdl</local-wsdl-file>
+      <package-name>com.lewissa.jhano.accesodatos.listaproductos</package-name>
+      <catalog-file>catalog.xml</catalog-file>
+      <wsimport-options>
+        <wsimport-option>
+          <wsimport-option-name>extension</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>verbose</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>fork</wsimport-option-name>
+          <wsimport-option-value>false</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>wsdlLocation</wsimport-option-name>
+          <wsimport-option-value>http://localhost:8080/AccesoDatos/wsAccesoDatosListaProductos?wsdl</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>xnocompile</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>xendorsed</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+      </wsimport-options>
+    </client>
+    <client name="wsAccesoDatosEmpresa">
+      <wsdl-url>http://localhost:8080/AccesoDatos/wsAccesoDatosEmpresa?wsdl</wsdl-url>
+      <local-wsdl-file>localhost_8080/AccesoDatos/wsAccesoDatosEmpresa.wsdl</local-wsdl-file>
+      <package-name>com.lewissa.jhano.accesodatos.empresa</package-name>
+      <catalog-file>catalog.xml</catalog-file>
+      <wsimport-options>
+        <wsimport-option>
+          <wsimport-option-name>extension</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>verbose</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>fork</wsimport-option-name>
+          <wsimport-option-value>false</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>wsdlLocation</wsimport-option-name>
+          <wsimport-option-value>http://localhost:8080/AccesoDatos/wsAccesoDatosEmpresa?wsdl</wsimport-option-value>
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>

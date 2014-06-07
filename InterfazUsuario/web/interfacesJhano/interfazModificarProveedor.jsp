@@ -48,6 +48,7 @@
                                     <font color="#FFFFFF" face="Arial">
                                         Hora de inicio de sesión
                                     </font>
+                                    
                                 </center>
                             </td>
                         </tr>
@@ -155,11 +156,39 @@
                                 {
                                     oProveedor.setId(request.getParameter("id"));
                                     oProveedor.setNombreFiscal(request.getParameter("nombreF"));
-                                    oProveedor.setNombreComercial(request.getParameter("nombreC"));
-                                    oProveedor.setDireccion(request.getParameter("direccion"));
-                                    oProveedor.setConvencional(request.getParameter("convencional"));
-                                    oProveedor.setCelular(request.getParameter("celular"));
-                                    oProveedor.setCorreo(request.getParameter("correo"));
+                                    
+                                    if(request.getParameter("nombreC").equals("null")){
+                                        oProveedor.setNombreComercial(request.getParameter(""));
+                                    }else{
+                                        oProveedor.setNombreComercial(request.getParameter("nombreC"));
+                                    }
+                                    
+                                    if(request.getParameter("direccion").equals("null")){
+                                        oProveedor.setDireccion(request.getParameter(""));
+                                    }else{
+                                        oProveedor.setDireccion(request.getParameter("direccion"));
+                                    }
+                                    
+                                    if(request.getParameter("convencional").equals("null")){
+                                        oProveedor.setConvencional(request.getParameter(""));
+                                    }else{
+                                        oProveedor.setConvencional(request.getParameter("convencional"));
+                                    }
+                                    
+                                    
+                                    if(request.getParameter("celular").equals("null")){
+                                        oProveedor.setCelular(request.getParameter(""));
+                                    }else{
+                                        oProveedor.setCelular(request.getParameter("celular"));
+                                    }
+                                    
+                                    if(request.getParameter("correo").equals("null")){
+                                        oProveedor.setCorreo(request.getParameter(""));
+                                    }else{
+                                        oProveedor.setCorreo(request.getParameter("correo"));
+                                    }
+                                    
+                                    
                                 }else
                                 {
                                     oProveedor= (CProveedor) request.getSession().getAttribute("oProveedor");
@@ -174,7 +203,7 @@
                                    out.print("<tr>"); 
                                    
                                     out.print("<td><label>Nombre Fiscal: </label></td>");
-                                    if(oProveedor.getNombreFiscal().equals("0")){
+                                    if(oProveedor.getNombreFiscal() == null){
                                     out.print("<td><input type=\"text\" size=\"50\" maxlength=\"50\" name=\"nombreF\" /><font color=\"red\"> *Se requiere que el campo este lleno</font></td>");
                                     }else{
                                      out.print("<td><input type=\"text\" size=\"50\" maxlength=\"50\" name=\"nombreF\" value="+oProveedor.getNombreFiscal()+" /></td>");   
@@ -184,7 +213,7 @@
                                     
                                     
                                     out.print("<td><label>Nombre Comercial: </label></td>");
-                                    if(oProveedor.getNombreComercial().equals("0")){
+                                    if(oProveedor.getNombreComercial() == null){
                                     out.print("<td><input type=\"text\" size=\50\" maxlength=\"50\" name=\"nombreC\" /></td>");
                                     }else{
                                         out.print("<td><input type=\"text\" size=\50\" maxlength=\"50\" name=\"nombreC\"  value="+oProveedor.getNombreComercial()+" /></td>");
@@ -194,7 +223,7 @@
                                     
                                     
                                     out.print("<td><label>Direccion: </label></td>");
-                                    if(oProveedor.getDireccion().equals("0")){
+                                    if(oProveedor.getDireccion() == null){
                                     out.print("<td><input type=\"text\" size=\"50\" maxlength=\"50\" name=\"direccion\" /></td>");
                                     }else{
                                     out.print("<td><input type=\"text\" size=\"50\" maxlength=\"50\" name=\"direccion\"  value="+oProveedor.getDireccion()+" /></td>");
@@ -204,39 +233,60 @@
                                     
                                     
                                     out.print("<td><label>Telefono Convencional: </label></td>");
-                                    if(oProveedor.getConvencional().equals("0"))
-                                    {
-                                    out.print("<td><input type=\"text\" name=\"telefonoCon\" size=\"7\" maxlength=\"7\"  /></td>");
+                                    if(oProveedor.getConvencional() == null){
+                                        out.print("<td><input type=\"text\" name=\"telefonoCon\" size=\"7\" maxlength=\"7\"  /></td>");
                                     }else{
+                                        if(request.getSession().getAttribute("errorConvencional") != null){
+                                            Boolean booConvencional = (Boolean) request.getSession().getAttribute("errorConvencional");
+                                            if(booConvencional == false){
+                                                out.print("<td><input type=\"text\" name=\"telefonoCon\" size=\"7\" maxlength=\"7\" value="+oProveedor.getConvencional()+"  /><font color=\"red\">*Dato mal ingresado</font></td>");
+                                            }else
+                                            {
+                                                out.print("<td><input type=\"text\" name=\"telefonoCon\" size=\"7\" maxlength=\"7\"  value="+oProveedor.getConvencional()+" /></td>");
+                                            }
+                                        }else{
                                         out.print("<td><input type=\"text\" name=\"telefonoCon\" size=\"7\" maxlength=\"7\"  value="+oProveedor.getConvencional()+" /></td>");
+                                        }
                                     }
                                     out.print("</tr>");
                                     out.print("<tr>");
                                     
                                     
                                     out.print("<td><label>Telefono Celular: </label></td>");
-                                    if(oProveedor.getCelular().equals("0")){
-                                    out.print("<td><input type=\"text\" name=\"telefonoCel\" size=\"10\" maxlength=\"10\" /></td>");
+                                    if(oProveedor.getCelular()== null){
+                                        out.print("<td><input type=\"text\" name=\"telefonoCel\" size=\"10\" maxlength=\"10\" /></td>");
                                     }else{
-                                    out.print("<td><input type=\"text\" name=\"telefonoCel\" size=\"10\" maxlength=\"10\" value="+oProveedor.getCelular()+" /></td>");
+                                        if(request.getSession().getAttribute("errorCelular") != null){
+                                            Boolean booCelular = (Boolean) request.getSession().getAttribute("errorCelular");
+                                            if(booCelular == false){
+                                                out.print("<td><input type=\"text\" name=\"telefonoCel\" size=\"10\" maxlength=\"10\" value="+oProveedor.getCelular()+" /><font color=\"red\">*Dato mal ingresado</font></td>");
+                                            }else
+                                            {
+                                              out.print("<td><input type=\"text\" name=\"telefonoCel\" size=\"10\" maxlength=\"10\" value="+oProveedor.getCelular()+" /></td>");  
+                                            }
+                                        }else{                                        
+                                            out.print("<td><input type=\"text\" name=\"telefonoCel\" size=\"10\" maxlength=\"10\" value="+oProveedor.getCelular()+" /></td>");
+                                        }
                                     }
                                     out.print("</tr>");
                                     out.print("<tr>");
                                     
                                     out.print("<td><label>Correo Electronico: </label></td>");
-                                    if(oProveedor.getCorreo().equals("0")){
-                                    out.print("<td><input type=\"text\" size=\"50\" maxlength=\"50\" name=\"correo\" /><font color=\"red\">*Se requiere que el campo este lleno</font> </td>");
-                                    }else
-                                    {
+                                    if(oProveedor.getCorreo() == null){
+                                    out.print("<td><input type=\"text\" size=\"50\" maxlength=\"50\" name=\"correo\" /></td>");
+                                    }else{
                                         if(request.getSession().getAttribute("errorCorreo") != null){
                                             Boolean booCorreo= (Boolean) request.getSession().getAttribute("errorCorreo");
                                             if(booCorreo == false){
                                                 out.print("<td><input type=\"text\" size=\"50\" maxlength=\"50\" name=\"correo\" value="+oProveedor.getCorreo()+" /><font color=\"red\">*Dato mal ingresado</font></td>");
-                                            }
+                                            }else{
+                                                out.print("<td><input type=\"text\" size=\"50\" maxlength=\"50\" name=\"correo\" value="+oProveedor.getCorreo()+" /></td>");
+                                            }                                            
                                         }else{
-                                            out.print("<td><input type=\"text\" size=\"50\" maxlength=\"50\" name=\"correo\" value="+oProveedor.getCorreo()+" /></td>");
+                                            out.print("<td><input type=\"text\" size=\"50\" maxlength=\"50\" name=\"correo\" value="+oProveedor.getCorreo()+" ></td>");
                                         }
                                     }
+                                    
                                     out.print("</tr>");
                                     out.print("<tr>");
                                     out.print("<td colspan=\"2\" align=\"center\"><input type=\"submit\" name=\"boton\" value=\"Guardar Cambios\" />");

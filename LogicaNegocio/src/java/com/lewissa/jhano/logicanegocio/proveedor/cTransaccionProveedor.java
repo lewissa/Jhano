@@ -82,10 +82,7 @@ public class cTransaccionProveedor {
     public Boolean modificarProveedor(cProveedor oProveedor)
     {
         Boolean booResultado=false;
-        List<String> strProveedor = new ArrayList<String>();
-        cCorreo oCorreo = new cCorreo(oProveedor.getCorreo());
-        if(oCorreo.validaEmail() )
-        {
+            List<String> strProveedor = new ArrayList<>();
             strProveedor.add(0, oProveedor.getId());
             strProveedor.add(1, oProveedor.getNombreFiscal());
             strProveedor.add(2, oProveedor.getNombreComercial());
@@ -93,8 +90,8 @@ public class cTransaccionProveedor {
             strProveedor.add(4, oProveedor.getConvencional());
             strProveedor.add(5, oProveedor.getCelular());
             strProveedor.add(6, oProveedor.getCorreo());
-            booResultado=modificarProveedor(strProveedor);            
-        }        
+            booResultado=modificarProveedor(strProveedor);  
+                     
         return booResultado;
     }
 

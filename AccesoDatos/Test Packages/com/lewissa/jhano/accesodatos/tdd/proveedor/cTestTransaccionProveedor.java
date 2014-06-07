@@ -46,13 +46,13 @@ public class cTestTransaccionProveedor extends TestCase{
     public void testModificarProveedor(){
         cTransaccionProveedor oTransaccionProveedor = new cTransaccionProveedor();
         String strQuery[]= new String[7];
-        strQuery[0]="1723834931";
-        strQuery[1]="1";
-        strQuery[2]="1";
-        strQuery[3]="1";
-        strQuery[4]="1111110";
-        strQuery[5]="1111111111";
-        strQuery[6]="1";
+        strQuery[0]="1111111111";
+        strQuery[1]="88888";
+        strQuery[2]=null;
+        strQuery[3]=null;
+        strQuery[4]=null;
+        strQuery[5]=null;
+        strQuery[6]=null;
         assertTrue(oTransaccionProveedor.modificarProveedor(strQuery));    
         
     }

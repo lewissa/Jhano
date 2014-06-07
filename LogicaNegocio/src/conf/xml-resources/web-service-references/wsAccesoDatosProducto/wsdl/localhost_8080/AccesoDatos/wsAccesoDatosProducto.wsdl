@@ -28,6 +28,12 @@
 <message name="getDescripcionFamilaProductoResponse">
 <part name="parameters" element="tns:getDescripcionFamilaProductoResponse"/>
 </message>
+<message name="buscarProducto">
+<part name="parameters" element="tns:buscarProducto"/>
+</message>
+<message name="buscarProductoResponse">
+<part name="parameters" element="tns:buscarProductoResponse"/>
+</message>
 <portType name="wsAccesoDatosProducto">
 <operation name="getErrorConexion">
 <input wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/getErrorConexionRequest" message="tns:getErrorConexion"/>
@@ -44,6 +50,10 @@
 <operation name="getDescripcionFamilaProducto">
 <input wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/getDescripcionFamilaProductoRequest" message="tns:getDescripcionFamilaProducto"/>
 <output wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/getDescripcionFamilaProductoResponse" message="tns:getDescripcionFamilaProductoResponse"/>
+</operation>
+<operation name="buscarProducto">
+<input wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/buscarProductoRequest" message="tns:buscarProducto"/>
+<output wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/buscarProductoResponse" message="tns:buscarProductoResponse"/>
 </operation>
 </portType>
 <binding name="wsAccesoDatosProductoPortBinding" type="tns:wsAccesoDatosProducto">
@@ -76,6 +86,15 @@
 </output>
 </operation>
 <operation name="getDescripcionFamilaProducto">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="buscarProducto">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

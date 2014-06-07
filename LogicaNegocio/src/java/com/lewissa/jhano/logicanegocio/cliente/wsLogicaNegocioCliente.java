@@ -130,5 +130,17 @@ public class wsLogicaNegocioCliente {
         return port.eliminarCliente(strId);
     }
 
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "buscarCliente")
+    public java.util.List<cCliente> buscarCliente(@WebParam(name = "strParametro") String strParametro) {
+        //TODO write your implementation code here:
+        List<cCliente> lisClientes = new ArrayList<cCliente>();
+        cTransaccionCliente oTransaccionCliente = new cTransaccionCliente();
+        lisClientes = oTransaccionCliente.buscarCliente(strParametro);
+        return lisClientes;
+    }
+
     
 }

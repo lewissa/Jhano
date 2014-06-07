@@ -4,6 +4,8 @@ import com.lewissa.jhano.logicanegocio.utilidades.cCedula;
 import com.lewissa.jhano.logicanegocio.utilidades.cCorreo;
 import com.lewissa.jhano.logicanegocio.utilidades.cRuc;
 import com.lewissa.jhano.accesodatos.cliente.WsAccesoDatosCliente_Service;
+import com.sun.rowset.WebRowSetImpl;
+import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,6 +50,38 @@ public class cTransaccionCliente {
             booFlag = false;
         }
         return booFlag;
+    }
+    
+    public List<cCliente> buscarCliente(String strParametro)
+    {
+        List<cCliente> lisClientes = new ArrayList<cCliente>();
+        try {
+            StringReader strReader = new StringReader(buscarCliente_1(strParametro));
+            WebRowSetImpl wrsImplement = new WebRowSetImpl();
+            wrsImplement.readXml(strReader);
+            cCliente oCliente;
+            while (wrsImplement.next()) 
+            {                
+                oCliente = new cCliente();
+                oCliente.setStrIdCliente(wrsImplement.getString("Id_cliente"));
+                oCliente.setStrNombreFiscal(wrsImplement.getString("Nombre_fiscal"));
+                oCliente.setStrNombreComercial(wrsImplement.getString("Nombre_ccomercial"));
+                oCliente.setStrDireccion(wrsImplement.getString("Direccion"));
+                oCliente.setStrConvencional(wrsImplement.getString("Convencional"));
+                oCliente.setStrCelular(wrsImplement.getString("Celular"));
+                oCliente.setStrCorreo(wrsImplement.getString("Correo"));
+                oCliente.setStrTipoCliente(wrsImplement.getString("tipo_clien"));
+                lisClientes.add(oCliente);
+            }
+        } catch (Exception e) {
+        }
+        return lisClientes;
+    }
+
+    private static String buscarCliente_1(java.lang.String strIdCliente) {
+        com.lewissa.jhano.accesodatos.cliente.WsAccesoDatosCliente_Service service = new com.lewissa.jhano.accesodatos.cliente.WsAccesoDatosCliente_Service();
+        com.lewissa.jhano.accesodatos.cliente.WsAccesoDatosCliente port = service.getWsAccesoDatosClientePort();
+        return port.buscarCliente(strIdCliente);
     }
 
 }

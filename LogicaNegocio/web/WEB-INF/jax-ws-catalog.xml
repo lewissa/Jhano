@@ -10,4 +10,8 @@
     <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosFactura?xsd=1" uri="wsdl/localhost_8080/AccesoDatos/wsAccesoDatosFactura.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosFamiliaProducto?WSDL" uri="wsdl/localhost_8080/AccesoDatos/wsAccesoDatosFamiliaProducto.wsdl"/>
     <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosFamiliaProducto?xsd=1" uri="wsdl/localhost_8080/AccesoDatos/wsAccesoDatosFamiliaProducto.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosListaProductos?wsdl" uri="wsdl/localhost_8080/AccesoDatos/wsAccesoDatosListaProductos.wsdl"/>
+    <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosListaProductos?xsd=1" uri="wsdl/localhost_8080/AccesoDatos/wsAccesoDatosListaProductos.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosEmpresa?wsdl" uri="wsdl/localhost_8080/AccesoDatos/wsAccesoDatosEmpresa.wsdl"/>
+    <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosEmpresa?xsd=1" uri="wsdl/localhost_8080/AccesoDatos/wsAccesoDatosEmpresa.xsd_1.xsd"/>
 </catalog>

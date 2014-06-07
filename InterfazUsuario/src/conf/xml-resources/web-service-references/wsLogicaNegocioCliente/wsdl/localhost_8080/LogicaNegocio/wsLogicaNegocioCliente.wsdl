@@ -4,35 +4,17 @@
 <xsd:import namespace="http://cliente.logicanegocio.jhano.lewissa.com/" schemaLocation="http://localhost:8080/LogicaNegocio/wsLogicaNegocioCliente?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="eliminarCliente">
-<part name="parameters" element="tns:eliminarCliente"/>
+<message name="validaEmail">
+<part name="parameters" element="tns:validaEmail"/>
 </message>
-<message name="eliminarClienteResponse">
-<part name="parameters" element="tns:eliminarClienteResponse"/>
-</message>
-<message name="getErrorConexionCliente">
-<part name="parameters" element="tns:getErrorConexionCliente"/>
-</message>
-<message name="getErrorConexionClienteResponse">
-<part name="parameters" element="tns:getErrorConexionClienteResponse"/>
-</message>
-<message name="actualizaDataBaseCliente">
-<part name="parameters" element="tns:actualizaDataBaseCliente"/>
-</message>
-<message name="actualizaDataBaseClienteResponse">
-<part name="parameters" element="tns:actualizaDataBaseClienteResponse"/>
+<message name="validaEmailResponse">
+<part name="parameters" element="tns:validaEmailResponse"/>
 </message>
 <message name="validaRuc">
 <part name="parameters" element="tns:validaRuc"/>
 </message>
 <message name="validaRucResponse">
 <part name="parameters" element="tns:validaRucResponse"/>
-</message>
-<message name="validaEmail">
-<part name="parameters" element="tns:validaEmail"/>
-</message>
-<message name="validaEmailResponse">
-<part name="parameters" element="tns:validaEmailResponse"/>
 </message>
 <message name="obtenCliente">
 <part name="parameters" element="tns:obtenCliente"/>
@@ -46,26 +28,38 @@
 <message name="validaCedulaResponse">
 <part name="parameters" element="tns:validaCedulaResponse"/>
 </message>
+<message name="eliminarCliente">
+<part name="parameters" element="tns:eliminarCliente"/>
+</message>
+<message name="eliminarClienteResponse">
+<part name="parameters" element="tns:eliminarClienteResponse"/>
+</message>
+<message name="actualizaDataBaseCliente">
+<part name="parameters" element="tns:actualizaDataBaseCliente"/>
+</message>
+<message name="actualizaDataBaseClienteResponse">
+<part name="parameters" element="tns:actualizaDataBaseClienteResponse"/>
+</message>
+<message name="getErrorConexionCliente">
+<part name="parameters" element="tns:getErrorConexionCliente"/>
+</message>
+<message name="getErrorConexionClienteResponse">
+<part name="parameters" element="tns:getErrorConexionClienteResponse"/>
+</message>
+<message name="buscarCliente">
+<part name="parameters" element="tns:buscarCliente"/>
+</message>
+<message name="buscarClienteResponse">
+<part name="parameters" element="tns:buscarClienteResponse"/>
+</message>
 <portType name="wsLogicaNegocioCliente">
-<operation name="eliminarCliente">
-<input wsam:Action="http://cliente.logicanegocio.jhano.lewissa.com/wsLogicaNegocioCliente/eliminarClienteRequest" message="tns:eliminarCliente"/>
-<output wsam:Action="http://cliente.logicanegocio.jhano.lewissa.com/wsLogicaNegocioCliente/eliminarClienteResponse" message="tns:eliminarClienteResponse"/>
-</operation>
-<operation name="getErrorConexionCliente">
-<input wsam:Action="http://cliente.logicanegocio.jhano.lewissa.com/wsLogicaNegocioCliente/getErrorConexionClienteRequest" message="tns:getErrorConexionCliente"/>
-<output wsam:Action="http://cliente.logicanegocio.jhano.lewissa.com/wsLogicaNegocioCliente/getErrorConexionClienteResponse" message="tns:getErrorConexionClienteResponse"/>
-</operation>
-<operation name="actualizaDataBaseCliente">
-<input wsam:Action="http://cliente.logicanegocio.jhano.lewissa.com/wsLogicaNegocioCliente/actualizaDataBaseClienteRequest" message="tns:actualizaDataBaseCliente"/>
-<output wsam:Action="http://cliente.logicanegocio.jhano.lewissa.com/wsLogicaNegocioCliente/actualizaDataBaseClienteResponse" message="tns:actualizaDataBaseClienteResponse"/>
+<operation name="validaEmail">
+<input wsam:Action="http://cliente.logicanegocio.jhano.lewissa.com/wsLogicaNegocioCliente/validaEmailRequest" message="tns:validaEmail"/>
+<output wsam:Action="http://cliente.logicanegocio.jhano.lewissa.com/wsLogicaNegocioCliente/validaEmailResponse" message="tns:validaEmailResponse"/>
 </operation>
 <operation name="validaRuc">
 <input wsam:Action="http://cliente.logicanegocio.jhano.lewissa.com/wsLogicaNegocioCliente/validaRucRequest" message="tns:validaRuc"/>
 <output wsam:Action="http://cliente.logicanegocio.jhano.lewissa.com/wsLogicaNegocioCliente/validaRucResponse" message="tns:validaRucResponse"/>
-</operation>
-<operation name="validaEmail">
-<input wsam:Action="http://cliente.logicanegocio.jhano.lewissa.com/wsLogicaNegocioCliente/validaEmailRequest" message="tns:validaEmail"/>
-<output wsam:Action="http://cliente.logicanegocio.jhano.lewissa.com/wsLogicaNegocioCliente/validaEmailResponse" message="tns:validaEmailResponse"/>
 </operation>
 <operation name="obtenCliente">
 <input wsam:Action="http://cliente.logicanegocio.jhano.lewissa.com/wsLogicaNegocioCliente/obtenClienteRequest" message="tns:obtenCliente"/>
@@ -75,28 +69,26 @@
 <input wsam:Action="http://cliente.logicanegocio.jhano.lewissa.com/wsLogicaNegocioCliente/validaCedulaRequest" message="tns:validaCedula"/>
 <output wsam:Action="http://cliente.logicanegocio.jhano.lewissa.com/wsLogicaNegocioCliente/validaCedulaResponse" message="tns:validaCedulaResponse"/>
 </operation>
+<operation name="eliminarCliente">
+<input wsam:Action="http://cliente.logicanegocio.jhano.lewissa.com/wsLogicaNegocioCliente/eliminarClienteRequest" message="tns:eliminarCliente"/>
+<output wsam:Action="http://cliente.logicanegocio.jhano.lewissa.com/wsLogicaNegocioCliente/eliminarClienteResponse" message="tns:eliminarClienteResponse"/>
+</operation>
+<operation name="actualizaDataBaseCliente">
+<input wsam:Action="http://cliente.logicanegocio.jhano.lewissa.com/wsLogicaNegocioCliente/actualizaDataBaseClienteRequest" message="tns:actualizaDataBaseCliente"/>
+<output wsam:Action="http://cliente.logicanegocio.jhano.lewissa.com/wsLogicaNegocioCliente/actualizaDataBaseClienteResponse" message="tns:actualizaDataBaseClienteResponse"/>
+</operation>
+<operation name="getErrorConexionCliente">
+<input wsam:Action="http://cliente.logicanegocio.jhano.lewissa.com/wsLogicaNegocioCliente/getErrorConexionClienteRequest" message="tns:getErrorConexionCliente"/>
+<output wsam:Action="http://cliente.logicanegocio.jhano.lewissa.com/wsLogicaNegocioCliente/getErrorConexionClienteResponse" message="tns:getErrorConexionClienteResponse"/>
+</operation>
+<operation name="buscarCliente">
+<input wsam:Action="http://cliente.logicanegocio.jhano.lewissa.com/wsLogicaNegocioCliente/buscarClienteRequest" message="tns:buscarCliente"/>
+<output wsam:Action="http://cliente.logicanegocio.jhano.lewissa.com/wsLogicaNegocioCliente/buscarClienteResponse" message="tns:buscarClienteResponse"/>
+</operation>
 </portType>
 <binding name="wsLogicaNegocioClientePortBinding" type="tns:wsLogicaNegocioCliente">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="eliminarCliente">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getErrorConexionCliente">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="actualizaDataBaseCliente">
+<operation name="validaEmail">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -106,15 +98,6 @@
 </output>
 </operation>
 <operation name="validaRuc">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="validaEmail">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -133,6 +116,42 @@
 </output>
 </operation>
 <operation name="validaCedula">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="eliminarCliente">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="actualizaDataBaseCliente">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getErrorConexionCliente">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="buscarCliente">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

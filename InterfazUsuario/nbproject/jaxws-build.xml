@@ -90,5 +90,21 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/com/lewissa/jhano/logicanegocio/cliente"/>
         <delete dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioCliente"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-wsLogicaNegocioProducto, wsimport-client-wsLogicaNegocioFamiliaProducto, wsimport-client-wsLogicaNegocioProveedor, wsimport-client-wsLogicaNegocioCliente"/>
+    <target name="wsimport-client-wsLogicaNegocioEmpresa" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioEmpresa"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioEmpresa" destdir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioEmpresa" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/wsLogicaNegocioEmpresa/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioEmpresa.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/LogicaNegocio/wsLogicaNegocioEmpresa?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/wsLogicaNegocioEmpresa/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioEmpresa.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioEmpresa"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioEmpresa">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-wsLogicaNegocioEmpresa" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/lewissa/jhano/logicanegocio/empresa"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioEmpresa"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-wsLogicaNegocioProducto, wsimport-client-wsLogicaNegocioFamiliaProducto, wsimport-client-wsLogicaNegocioProveedor, wsimport-client-wsLogicaNegocioCliente, wsimport-client-wsLogicaNegocioEmpresa"/>
 </project>

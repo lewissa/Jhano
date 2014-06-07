@@ -127,6 +127,9 @@
                                             request.getSession().setAttribute("convencional", null);
                                             request.getSession().setAttribute("celular", null);
                                             request.getSession().setAttribute("errorCorreo",null);
+                                            request.getSession().setAttribute("errorConvencional", null);
+                                            request.getSession().setAttribute("errorCelular", null);
+                                            
                                         %>
                                     </font>
                                 </a>
@@ -170,6 +173,9 @@
                     <td width="88%">
                         <h3><center> <font size="5" face="Arial, Helvetica, sans-serif">Matriz Proveedor</font></center></h3>
                         <% 
+                            request.getSession().setAttribute("errorCorreo",null);
+                            request.getSession().setAttribute("errorConvencional", null);
+                            request.getSession().setAttribute("errorCelular", null);
                             Boolean booErrorElimiancion=null;
                             String strCodigoElimiando=null;
                                     
@@ -237,13 +243,41 @@
                                         out.print("<tr>");
                                             out.print("<td>"+oProveedor.getId()+"</td>");
                                             out.print("<td>"+oProveedor.getNombreFiscal()+"</td>");
-                                            out.print("<td>"+oProveedor.getNombreComercial()+"</td>");
-                                            out.print("<td>"+oProveedor.getDireccion()+"</td>");
-                                            out.print("<td>"+oProveedor.getConvencional()+"</td>");
-                                            out.print("<td>"+oProveedor.getCelular()+"</td>");
-                                            out.print("<td>"+oProveedor.getCorreo()+"</td>");                                            
+                                            
+                                            if(oProveedor.getNombreComercial() == null){
+                                                out.print("<td> </td>");
+                                            }else
+                                            {
+                                                out.print("<td>"+oProveedor.getNombreComercial()+"</td>");
+                                            }
+                                            
+                                            if(oProveedor.getDireccion() == null  ){
+                                                out.print("<td> </td>");
+                                            }else{
+                                                out.print("<td>"+oProveedor.getDireccion()+"</td>");
+                                            }
+                                            
+                                            if(oProveedor.getConvencional() == null){
+                                                out.print("<td> </td>");
+                                            }else{
+                                                out.print("<td>"+oProveedor.getConvencional()+"</td>");
+                                            }
+                                            
+                                            if(oProveedor.getCelular()== null){
+                                                out.print("<td> </td>");
+                                            }else{
+                                                out.print("<td>"+oProveedor.getCelular()+"</td>");
+                                            }
+                                            
+                                            if(oProveedor.getCorreo() == null)
+                                            {
+                                                out.print("<td> </td>");                                            
+                                            }else{
+                                                out.print("<td>"+oProveedor.getCorreo()+"</td>");                                            
+                                            }                                           
+                                            
+                                            
                                             out.print("<td><a href=\"../controladoresJhano/controladorEliminarProveedor.jsp?id="+oProveedor.getId()+"\">Eliminar</a></td>");
-                                            //request.getSession().setAttribute("oProveedor", oProveedor);
                                             out.print("<td><a href=\"../interfacesJhano/interfazModificarProveedor.jsp?accion=modificar&id="+oProveedor.getId()
                                                                    +"&nombreF="+oProveedor.getNombreFiscal()+"&nombreC="+oProveedor.getNombreComercial()
                                                                    +"&direccion="+oProveedor.getDireccion()+"&convencional="+oProveedor.getConvencional()

@@ -16,6 +16,12 @@
     <service name="wsAccesoDatosFamiliaProducto">
       <implementation-class>com.lewissa.jhano.accesodatos.familiaproducto.wsAccesoDatosFamiliaProducto</implementation-class>
     </service>
+    <service name="wsAccesoDatosEmpresa">
+      <implementation-class>com.lewissa.jhano.accesodatos.empresa.wsAccesoDatosEmpresa</implementation-class>
+    </service>
+    <service name="wsAccesoDatosListaProductos">
+      <implementation-class>com.lewissa.jhano.accesodatos.listaproductos.wsAccesoDatosListaProductos</implementation-class>
+    </service>
   </services>
   <clients/>
 </jax-ws>

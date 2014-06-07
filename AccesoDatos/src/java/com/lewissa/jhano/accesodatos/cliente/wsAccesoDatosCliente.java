@@ -93,4 +93,16 @@ public class wsAccesoDatosCliente {
         booFlag1 = (booFlag1.equals(true)) && (booFlag2.equals(true));
         return booFlag1;
     }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "buscarCliente")
+    public String buscarCliente(@WebParam(name = "strIdCliente") String strIdCliente) {
+        //TODO write your implementation code here:
+        String strResultado = null;
+        cTransaccionCliente oTransaccionCliente = new cTransaccionCliente();
+        strResultado = oTransaccionCliente.buscarCliente(strIdCliente);
+        return strResultado;
+    }
 }

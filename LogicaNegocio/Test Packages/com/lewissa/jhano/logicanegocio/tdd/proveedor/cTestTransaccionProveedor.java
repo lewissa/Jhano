@@ -23,12 +23,12 @@ public class cTestTransaccionProveedor extends TestCase{
         cProveedor oProveedor = new cProveedor();
         cTransaccionProveedor oTransaccionProveedor = new cTransaccionProveedor();
         oProveedor.setId("1723834931");
-        oProveedor.setNombreFiscal("FreduCorop");
-        oProveedor.setNombreComercial("Freducito");
-        oProveedor.setDireccion("PIPO");
-        oProveedor.setConvencional("2380277");
-        oProveedor.setCelular("0981403881");
-        oProveedor.setCorreo("fredd_dimitri@hotmail.com");
+        oProveedor.setNombreFiscal(null);
+        oProveedor.setNombreComercial(null);
+        oProveedor.setDireccion(null);
+        oProveedor.setConvencional(null);
+        oProveedor.setCelular(null);
+        oProveedor.setCorreo(null);
         assertTrue(oTransaccionProveedor.modificarProveedor(oProveedor));
     }
     

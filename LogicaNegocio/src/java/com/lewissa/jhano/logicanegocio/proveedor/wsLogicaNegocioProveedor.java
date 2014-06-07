@@ -11,6 +11,8 @@ import com.lewissa.jhano.logicanegocio.utilidades.cCorreo;
 import com.lewissa.jhano.logicanegocio.utilidades.cRuc;
 import java.util.ArrayList;
 import com.lewissa.jhano.logicanegocio.proveedor.cProveedor;
+import com.lewissa.jhano.logicanegocio.utilidades.cNumeroCelular;
+import com.lewissa.jhano.logicanegocio.utilidades.cNumeroConvencional;
 import java.util.List;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
@@ -111,6 +113,28 @@ public class wsLogicaNegocioProveedor {
         Boolean booResultado = false;
         cTransaccionProveedor oTransacionProveedor = new cTransaccionProveedor();
         booResultado=oTransacionProveedor.modificarProveedor(oProveedor);
+        return booResultado;
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "validarNumeroConvencional")
+    public Boolean validarNumeroConvencional(@WebParam(name = "oNumeroConvencional") cNumeroConvencional oNumeroConvencional) {
+        //TODO write your implementation code here:
+        Boolean booResultado = false;
+        booResultado=oNumeroConvencional.validarNumeroConvencional();
+        return booResultado;
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "validarNumeroCelular")
+    public Boolean validarNumeroCelular(@WebParam(name = "oNumeroCelular") cNumeroCelular oNumeroCelular) {
+        //TODO write your implementation code here:
+        Boolean booResultado = false;
+        booResultado=oNumeroCelular.validarNumeroCelular();
         return booResultado;
     }
 }

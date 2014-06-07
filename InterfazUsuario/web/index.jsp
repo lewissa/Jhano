@@ -94,7 +94,7 @@
                             </li>
                             <li>
                                 <font face="Arial">
-                                    <a href="#"><center>Facturas</center></a>
+                                    <a href="interfacesJhano/interfazIngresoFactura.jsp"><center>Facturas</center></a>
                                 </font>
                             </li>
                             <li>

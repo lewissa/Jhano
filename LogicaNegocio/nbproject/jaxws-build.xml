@@ -59,6 +59,22 @@
             <classpath path="${java.home}/../lib/tools.jar:${build.classes.dir}:${j2ee.platform.wsgen.classpath}:${javac.classpath}"/>
         </wsgen>
     </target>
+    <target name="wsgen-wsLogicaNegocioEmpresa" depends="wsgen-init">
+        <copy todir="${build.classes.dir}/META-INF">
+            <fileset dir="${webinf.dir}" includes="wsit-com.lewissa.jhano.logicanegocio.empresa.wsLogicaNegocioEmpresa.xml"/>
+        </copy>
+        <wsgen sourcedestdir="${build.generated.sources.dir}/jax-ws" resourcedestdir="${build.generated.sources.dir}/jax-ws/resources/" destdir="${build.generated.sources.dir}/jax-ws" verbose="true" keep="true" genwsdl="true" sei="com.lewissa.jhano.logicanegocio.empresa.wsLogicaNegocioEmpresa" xendorsed="true">
+            <classpath path="${java.home}/../lib/tools.jar:${build.classes.dir}:${j2ee.platform.wsgen.classpath}:${javac.classpath}"/>
+        </wsgen>
+    </target>
+    <target name="wsgen-wsLogicaNegocioListaProductos" depends="wsgen-init">
+        <copy todir="${build.classes.dir}/META-INF">
+            <fileset dir="${webinf.dir}" includes="wsit-com.lewissa.jhano.logicanegocio.listaproductos.wsLogicaNegocioListaProductos.xml"/>
+        </copy>
+        <wsgen sourcedestdir="${build.generated.sources.dir}/jax-ws" resourcedestdir="${build.generated.sources.dir}/jax-ws/resources/" destdir="${build.generated.sources.dir}/jax-ws" verbose="true" keep="true" genwsdl="true" sei="com.lewissa.jhano.logicanegocio.listaproductos.wsLogicaNegocioListaProductos" xendorsed="true">
+            <classpath path="${java.home}/../lib/tools.jar:${build.classes.dir}:${j2ee.platform.wsgen.classpath}:${javac.classpath}"/>
+        </wsgen>
+    </target>
     <!--
                 ===================
                 JAX-WS WSIMPORT SECTION
@@ -155,5 +171,37 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/com/lewissa/jhano/accesodatos/familiaproducto"/>
         <delete dir="${build.generated.dir}/jax-wsCache/wsAccesoDatosFamiliaProducto"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-wsAccesoDatosProveedor, wsimport-client-wsAccesoDatosProducto, wsimport-client-wsAccesoDatosCliente, wsimport-client-wsAccesoDatosFactura, wsimport-client-wsAccesoDatosFamiliaProducto"/>
+    <target name="wsimport-client-wsAccesoDatosListaProductos" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/wsAccesoDatosListaProductos"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/wsAccesoDatosListaProductos" destdir="${build.generated.dir}/jax-wsCache/wsAccesoDatosListaProductos" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/wsAccesoDatosListaProductos/wsdl/localhost_8080/AccesoDatos/wsAccesoDatosListaProductos.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/AccesoDatos/wsAccesoDatosListaProductos?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/wsAccesoDatosListaProductos/wsdl/localhost_8080/AccesoDatos/wsAccesoDatosListaProductos.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/wsAccesoDatosListaProductos"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/wsAccesoDatosListaProductos">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-wsAccesoDatosListaProductos" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/lewissa/jhano/accesodatos/listaproductos"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/wsAccesoDatosListaProductos"/>
+    </target>
+    <target name="wsimport-client-wsAccesoDatosEmpresa" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/wsAccesoDatosEmpresa"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/wsAccesoDatosEmpresa" destdir="${build.generated.dir}/jax-wsCache/wsAccesoDatosEmpresa" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/wsAccesoDatosEmpresa/wsdl/localhost_8080/AccesoDatos/wsAccesoDatosEmpresa.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/AccesoDatos/wsAccesoDatosEmpresa?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/wsAccesoDatosEmpresa/wsdl/localhost_8080/AccesoDatos/wsAccesoDatosEmpresa.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/wsAccesoDatosEmpresa"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/wsAccesoDatosEmpresa">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-wsAccesoDatosEmpresa" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/lewissa/jhano/accesodatos/empresa"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/wsAccesoDatosEmpresa"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-wsAccesoDatosProveedor, wsimport-client-wsAccesoDatosProducto, wsimport-client-wsAccesoDatosCliente, wsimport-client-wsAccesoDatosFactura, wsimport-client-wsAccesoDatosFamiliaProducto, wsimport-client-wsAccesoDatosListaProductos, wsimport-client-wsAccesoDatosEmpresa"/>
 </project>
