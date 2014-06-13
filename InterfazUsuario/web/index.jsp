@@ -96,6 +96,11 @@
                                 <font face="Arial">
                                     <a href="interfacesJhano/interfazIngresoFactura.jsp"><center>Facturas</center></a>
                                 </font>
+                                <ul>
+                                <font face="Arial">
+                                        <a href="interfacesJhano/interfazCargaPagos.jsp"><center>Pagos</center></a>
+                                </font>
+                                </ul>
                             </li>
                             <li>
                                 <font face="Arial">

@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.3 (tags/2.3-7528; 2013-04-29T19:34:10+0000) JAXWS-RI/2.2.8 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://pago.logicanegocio.jhano.lewissa.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://pago.logicanegocio.jhano.lewissa.com/">
+
+<xs:element name="cargaPago" type="tns:cargaPago"/>
+
+<xs:element name="cargaPagoResponse" type="tns:cargaPagoResponse"/>
+
+<xs:element name="getErrorConexion" type="tns:getErrorConexion"/>
+
+<xs:element name="getErrorConexionResponse" type="tns:getErrorConexionResponse"/>
+
+<xs:complexType name="getErrorConexion">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getErrorConexionResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cargaPago">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="cargaPagoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:cPago" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cPago">
+<xs:sequence>
+<xs:element name="douMontoReal" type="xs:double" minOccurs="0"/>
+<xs:element name="intFormaPago" type="xs:int" minOccurs="0"/>
+<xs:element name="intIdPago" type="xs:int" minOccurs="0"/>
+<xs:element name="strFacturaPago" type="xs:string" minOccurs="0"/>
+<xs:element name="strFechaPago" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
