@@ -30,6 +30,12 @@ public class cTransaccionPago {
                 + "WHERE \"Id_pago\"='" + strPago[0] + "'";
         booFlag = cAccesoDatos.getInstanciaAccesoDatos().actualizarDataBase(strSqlIngreso);
         return booFlag;
-
+    }
+    
+    public String mostrarDatosPago(String idPago) {
+        String strSqlConsulta, strPago;
+        strSqlConsulta = "SELECT * FROM \"pago\" WHERE \"Id_pago\" = '" + idPago + "'";
+        strPago = cAccesoDatos.getInstanciaAccesoDatos().consultarDataBase(strSqlConsulta);
+        return strPago;
     }
 }

@@ -4,6 +4,12 @@
 <xsd:import namespace="http://pago.accesodatos.jhano.lewissa.com/" schemaLocation="http://localhost:8080/AccesoDatos/wsAccesoDatosPago?xsd=1"/>
 </xsd:schema>
 </types>
+<message name="modificarDataBasePago">
+<part name="parameters" element="tns:modificarDataBasePago"/>
+</message>
+<message name="modificarDataBasePagoResponse">
+<part name="parameters" element="tns:modificarDataBasePagoResponse"/>
+</message>
 <message name="getErrorConexion">
 <part name="parameters" element="tns:getErrorConexion"/>
 </message>
@@ -16,7 +22,17 @@
 <message name="cargarPagoResponse">
 <part name="parameters" element="tns:cargarPagoResponse"/>
 </message>
+<message name="mostrarDatosPagos">
+<part name="parameters" element="tns:mostrarDatosPagos"/>
+</message>
+<message name="mostrarDatosPagosResponse">
+<part name="parameters" element="tns:mostrarDatosPagosResponse"/>
+</message>
 <portType name="wsAccesoDatosPago">
+<operation name="modificarDataBasePago">
+<input wsam:Action="http://pago.accesodatos.jhano.lewissa.com/wsAccesoDatosPago/modificarDataBasePagoRequest" message="tns:modificarDataBasePago"/>
+<output wsam:Action="http://pago.accesodatos.jhano.lewissa.com/wsAccesoDatosPago/modificarDataBasePagoResponse" message="tns:modificarDataBasePagoResponse"/>
+</operation>
 <operation name="getErrorConexion">
 <input wsam:Action="http://pago.accesodatos.jhano.lewissa.com/wsAccesoDatosPago/getErrorConexionRequest" message="tns:getErrorConexion"/>
 <output wsam:Action="http://pago.accesodatos.jhano.lewissa.com/wsAccesoDatosPago/getErrorConexionResponse" message="tns:getErrorConexionResponse"/>
@@ -25,9 +41,22 @@
 <input wsam:Action="http://pago.accesodatos.jhano.lewissa.com/wsAccesoDatosPago/cargarPagoRequest" message="tns:cargarPago"/>
 <output wsam:Action="http://pago.accesodatos.jhano.lewissa.com/wsAccesoDatosPago/cargarPagoResponse" message="tns:cargarPagoResponse"/>
 </operation>
+<operation name="mostrarDatosPagos">
+<input wsam:Action="http://pago.accesodatos.jhano.lewissa.com/wsAccesoDatosPago/mostrarDatosPagosRequest" message="tns:mostrarDatosPagos"/>
+<output wsam:Action="http://pago.accesodatos.jhano.lewissa.com/wsAccesoDatosPago/mostrarDatosPagosResponse" message="tns:mostrarDatosPagosResponse"/>
+</operation>
 </portType>
 <binding name="wsAccesoDatosPagoPortBinding" type="tns:wsAccesoDatosPago">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<operation name="modificarDataBasePago">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="getErrorConexion">
 <soap:operation soapAction=""/>
 <input>
@@ -38,6 +67,15 @@
 </output>
 </operation>
 <operation name="cargarPago">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="mostrarDatosPagos">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

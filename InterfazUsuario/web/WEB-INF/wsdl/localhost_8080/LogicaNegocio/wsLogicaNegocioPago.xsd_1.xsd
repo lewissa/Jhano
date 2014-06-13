@@ -8,6 +8,32 @@
 
 <xs:element name="getErrorConexionResponse" type="tns:getErrorConexionResponse"/>
 
+<xs:element name="modificarDataBasePago" type="tns:modificarDataBasePago"/>
+
+<xs:element name="modificarDataBasePagoResponse" type="tns:modificarDataBasePagoResponse"/>
+
+<xs:complexType name="modificarDataBasePago">
+<xs:sequence>
+<xs:element name="strPago" type="tns:cPago" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cPago">
+<xs:sequence>
+<xs:element name="douMontoReal" type="xs:double" minOccurs="0"/>
+<xs:element name="intFormaPago" type="xs:int" minOccurs="0"/>
+<xs:element name="intIdPago" type="xs:int" minOccurs="0"/>
+<xs:element name="strFacturaPago" type="xs:string" minOccurs="0"/>
+<xs:element name="strFechaPago" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="modificarDataBasePagoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="getErrorConexion">
 <xs:sequence/>
 </xs:complexType>
@@ -25,16 +51,6 @@
 <xs:complexType name="cargaPagoResponse">
 <xs:sequence>
 <xs:element name="return" type="tns:cPago" minOccurs="0" maxOccurs="unbounded"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="cPago">
-<xs:sequence>
-<xs:element name="douMontoReal" type="xs:double" minOccurs="0"/>
-<xs:element name="intFormaPago" type="xs:int" minOccurs="0"/>
-<xs:element name="intIdPago" type="xs:int" minOccurs="0"/>
-<xs:element name="strFacturaPago" type="xs:string" minOccurs="0"/>
-<xs:element name="strFechaPago" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 </xs:schema>

@@ -41,6 +41,42 @@ public class wsAccesoDatosPago {
         }
         return strResultado;
     }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "modificarDataBasePago")
+    public Boolean modificarDataBasePago(@WebParam(name = "strPago") java.lang.String[] strPago) {
+        //TODO write your implementation code here:
+        Boolean booFlag1 = false; // revisa la respuesta de la base
+        Boolean booFlag2 = false; // revisa la conexion
+        cTransaccionPago traPago = new cTransaccionPago();
+        if (!cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()) {
+            booFlag2 = false; //error en la conexion
+        } else {
+            booFlag2 = true; // conexion correcta
+            booFlag1 = traPago.modificarPago(strPago);
+            if (booFlag1 == null) {
+                booFlag1 = false;
+            }
+        }
+        booFlag1 = (booFlag1.equals(true)) && (booFlag2.equals(true));
+        return booFlag1;        
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "mostrarDatosPagos")
+    public String mostrarDatosPagos(@WebParam(name = "strIdPago") String strIdPago) {
+        //TODO write your implementation code here:
+        String pago = null;
+        cTransaccionPago traPago = new cTransaccionPago();
+        if (cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()){
+            pago = traPago.mostrarDatosPago(strIdPago);
+        }
+        return pago;        
+    }
     
     
 }

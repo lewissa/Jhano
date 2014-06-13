@@ -8,6 +8,14 @@
 
 <xs:element name="getErrorConexionResponse" type="tns:getErrorConexionResponse"/>
 
+<xs:element name="modificarDataBasePago" type="tns:modificarDataBasePago"/>
+
+<xs:element name="modificarDataBasePagoResponse" type="tns:modificarDataBasePagoResponse"/>
+
+<xs:element name="mostrarDatosPagos" type="tns:mostrarDatosPagos"/>
+
+<xs:element name="mostrarDatosPagosResponse" type="tns:mostrarDatosPagosResponse"/>
+
 <xs:complexType name="cargarPago">
 <xs:sequence/>
 </xs:complexType>
@@ -15,6 +23,30 @@
 <xs:complexType name="cargarPagoResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="mostrarDatosPagos">
+<xs:sequence>
+<xs:element name="strIdPago" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="mostrarDatosPagosResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="modificarDataBasePago">
+<xs:sequence>
+<xs:element name="strPago" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="modificarDataBasePagoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 

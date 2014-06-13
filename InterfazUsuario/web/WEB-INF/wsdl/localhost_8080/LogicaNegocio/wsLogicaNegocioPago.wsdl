@@ -4,11 +4,11 @@
 <xsd:import namespace="http://pago.logicanegocio.jhano.lewissa.com/" schemaLocation="http://localhost:8080/LogicaNegocio/wsLogicaNegocioPago?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="cargaPago">
-<part name="parameters" element="tns:cargaPago"/>
+<message name="modificarDataBasePago">
+<part name="parameters" element="tns:modificarDataBasePago"/>
 </message>
-<message name="cargaPagoResponse">
-<part name="parameters" element="tns:cargaPagoResponse"/>
+<message name="modificarDataBasePagoResponse">
+<part name="parameters" element="tns:modificarDataBasePagoResponse"/>
 </message>
 <message name="getErrorConexion">
 <part name="parameters" element="tns:getErrorConexion"/>
@@ -16,19 +16,29 @@
 <message name="getErrorConexionResponse">
 <part name="parameters" element="tns:getErrorConexionResponse"/>
 </message>
+<message name="cargaPago">
+<part name="parameters" element="tns:cargaPago"/>
+</message>
+<message name="cargaPagoResponse">
+<part name="parameters" element="tns:cargaPagoResponse"/>
+</message>
 <portType name="wsLogicaNegocioPago">
-<operation name="cargaPago">
-<input wsam:Action="http://pago.logicanegocio.jhano.lewissa.com/wsLogicaNegocioPago/cargaPagoRequest" message="tns:cargaPago"/>
-<output wsam:Action="http://pago.logicanegocio.jhano.lewissa.com/wsLogicaNegocioPago/cargaPagoResponse" message="tns:cargaPagoResponse"/>
+<operation name="modificarDataBasePago">
+<input wsam:Action="http://pago.logicanegocio.jhano.lewissa.com/wsLogicaNegocioPago/modificarDataBasePagoRequest" message="tns:modificarDataBasePago"/>
+<output wsam:Action="http://pago.logicanegocio.jhano.lewissa.com/wsLogicaNegocioPago/modificarDataBasePagoResponse" message="tns:modificarDataBasePagoResponse"/>
 </operation>
 <operation name="getErrorConexion">
 <input wsam:Action="http://pago.logicanegocio.jhano.lewissa.com/wsLogicaNegocioPago/getErrorConexionRequest" message="tns:getErrorConexion"/>
 <output wsam:Action="http://pago.logicanegocio.jhano.lewissa.com/wsLogicaNegocioPago/getErrorConexionResponse" message="tns:getErrorConexionResponse"/>
 </operation>
+<operation name="cargaPago">
+<input wsam:Action="http://pago.logicanegocio.jhano.lewissa.com/wsLogicaNegocioPago/cargaPagoRequest" message="tns:cargaPago"/>
+<output wsam:Action="http://pago.logicanegocio.jhano.lewissa.com/wsLogicaNegocioPago/cargaPagoResponse" message="tns:cargaPagoResponse"/>
+</operation>
 </portType>
 <binding name="wsLogicaNegocioPagoPortBinding" type="tns:wsLogicaNegocioPago">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="cargaPago">
+<operation name="modificarDataBasePago">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -38,6 +48,15 @@
 </output>
 </operation>
 <operation name="getErrorConexion">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="cargaPago">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
