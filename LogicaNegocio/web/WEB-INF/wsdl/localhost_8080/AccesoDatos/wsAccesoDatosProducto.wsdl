@@ -4,6 +4,30 @@
 <xsd:import namespace="http://producto.accesodatos.jhano.lewissa.com/" schemaLocation="http://localhost:8080/AccesoDatos/wsAccesoDatosProducto?xsd=1"/>
 </xsd:schema>
 </types>
+<message name="buscarProducto">
+<part name="parameters" element="tns:buscarProducto"/>
+</message>
+<message name="buscarProductoResponse">
+<part name="parameters" element="tns:buscarProductoResponse"/>
+</message>
+<message name="consultarProducto">
+<part name="parameters" element="tns:consultarProducto"/>
+</message>
+<message name="consultarProductoResponse">
+<part name="parameters" element="tns:consultarProductoResponse"/>
+</message>
+<message name="getErrorConexion">
+<part name="parameters" element="tns:getErrorConexion"/>
+</message>
+<message name="getErrorConexionResponse">
+<part name="parameters" element="tns:getErrorConexionResponse"/>
+</message>
+<message name="getDescripcionFamilaProducto">
+<part name="parameters" element="tns:getDescripcionFamilaProducto"/>
+</message>
+<message name="getDescripcionFamilaProductoResponse">
+<part name="parameters" element="tns:getDescripcionFamilaProductoResponse"/>
+</message>
 <message name="actualizarDataBaseProducto">
 <part name="parameters" element="tns:actualizarDataBaseProducto"/>
 </message>
@@ -16,23 +40,11 @@
 <message name="getNombreProveedorResponse">
 <part name="parameters" element="tns:getNombreProveedorResponse"/>
 </message>
-<message name="modificarDataBaseProducto">
-<part name="parameters" element="tns:modificarDataBaseProducto"/>
-</message>
-<message name="modificarDataBaseProductoResponse">
-<part name="parameters" element="tns:modificarDataBaseProductoResponse"/>
-</message>
 <message name="eliminarLogicoProducto">
 <part name="parameters" element="tns:eliminarLogicoProducto"/>
 </message>
 <message name="eliminarLogicoProductoResponse">
 <part name="parameters" element="tns:eliminarLogicoProductoResponse"/>
-</message>
-<message name="buscarProducto">
-<part name="parameters" element="tns:buscarProducto"/>
-</message>
-<message name="buscarProductoResponse">
-<part name="parameters" element="tns:buscarProductoResponse"/>
 </message>
 <message name="eliminarFisicoProducto">
 <part name="parameters" element="tns:eliminarFisicoProducto"/>
@@ -40,23 +52,11 @@
 <message name="eliminarFisicoProductoResponse">
 <part name="parameters" element="tns:eliminarFisicoProductoResponse"/>
 </message>
-<message name="consultarProducto">
-<part name="parameters" element="tns:consultarProducto"/>
+<message name="modificarDataBaseProducto">
+<part name="parameters" element="tns:modificarDataBaseProducto"/>
 </message>
-<message name="consultarProductoResponse">
-<part name="parameters" element="tns:consultarProductoResponse"/>
-</message>
-<message name="getDescripcionFamilaProducto">
-<part name="parameters" element="tns:getDescripcionFamilaProducto"/>
-</message>
-<message name="getDescripcionFamilaProductoResponse">
-<part name="parameters" element="tns:getDescripcionFamilaProductoResponse"/>
-</message>
-<message name="getErrorConexion">
-<part name="parameters" element="tns:getErrorConexion"/>
-</message>
-<message name="getErrorConexionResponse">
-<part name="parameters" element="tns:getErrorConexionResponse"/>
+<message name="modificarDataBaseProductoResponse">
+<part name="parameters" element="tns:modificarDataBaseProductoResponse"/>
 </message>
 <message name="cargaProducto">
 <part name="parameters" element="tns:cargaProducto"/>
@@ -65,6 +65,22 @@
 <part name="parameters" element="tns:cargaProductoResponse"/>
 </message>
 <portType name="wsAccesoDatosProducto">
+<operation name="buscarProducto">
+<input wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/buscarProductoRequest" message="tns:buscarProducto"/>
+<output wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/buscarProductoResponse" message="tns:buscarProductoResponse"/>
+</operation>
+<operation name="consultarProducto">
+<input wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/consultarProductoRequest" message="tns:consultarProducto"/>
+<output wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/consultarProductoResponse" message="tns:consultarProductoResponse"/>
+</operation>
+<operation name="getErrorConexion">
+<input wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/getErrorConexionRequest" message="tns:getErrorConexion"/>
+<output wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/getErrorConexionResponse" message="tns:getErrorConexionResponse"/>
+</operation>
+<operation name="getDescripcionFamilaProducto">
+<input wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/getDescripcionFamilaProductoRequest" message="tns:getDescripcionFamilaProducto"/>
+<output wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/getDescripcionFamilaProductoResponse" message="tns:getDescripcionFamilaProductoResponse"/>
+</operation>
 <operation name="actualizarDataBaseProducto">
 <input wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/actualizarDataBaseProductoRequest" message="tns:actualizarDataBaseProducto"/>
 <output wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/actualizarDataBaseProductoResponse" message="tns:actualizarDataBaseProductoResponse"/>
@@ -73,33 +89,17 @@
 <input wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/getNombreProveedorRequest" message="tns:getNombreProveedor"/>
 <output wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/getNombreProveedorResponse" message="tns:getNombreProveedorResponse"/>
 </operation>
-<operation name="modificarDataBaseProducto">
-<input wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/modificarDataBaseProductoRequest" message="tns:modificarDataBaseProducto"/>
-<output wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/modificarDataBaseProductoResponse" message="tns:modificarDataBaseProductoResponse"/>
-</operation>
 <operation name="eliminarLogicoProducto">
 <input wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/eliminarLogicoProductoRequest" message="tns:eliminarLogicoProducto"/>
 <output wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/eliminarLogicoProductoResponse" message="tns:eliminarLogicoProductoResponse"/>
-</operation>
-<operation name="buscarProducto">
-<input wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/buscarProductoRequest" message="tns:buscarProducto"/>
-<output wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/buscarProductoResponse" message="tns:buscarProductoResponse"/>
 </operation>
 <operation name="eliminarFisicoProducto">
 <input wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/eliminarFisicoProductoRequest" message="tns:eliminarFisicoProducto"/>
 <output wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/eliminarFisicoProductoResponse" message="tns:eliminarFisicoProductoResponse"/>
 </operation>
-<operation name="consultarProducto">
-<input wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/consultarProductoRequest" message="tns:consultarProducto"/>
-<output wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/consultarProductoResponse" message="tns:consultarProductoResponse"/>
-</operation>
-<operation name="getDescripcionFamilaProducto">
-<input wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/getDescripcionFamilaProductoRequest" message="tns:getDescripcionFamilaProducto"/>
-<output wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/getDescripcionFamilaProductoResponse" message="tns:getDescripcionFamilaProductoResponse"/>
-</operation>
-<operation name="getErrorConexion">
-<input wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/getErrorConexionRequest" message="tns:getErrorConexion"/>
-<output wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/getErrorConexionResponse" message="tns:getErrorConexionResponse"/>
+<operation name="modificarDataBaseProducto">
+<input wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/modificarDataBaseProductoRequest" message="tns:modificarDataBaseProducto"/>
+<output wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/modificarDataBaseProductoResponse" message="tns:modificarDataBaseProductoResponse"/>
 </operation>
 <operation name="cargaProducto">
 <input wsam:Action="http://producto.accesodatos.jhano.lewissa.com/wsAccesoDatosProducto/cargaProductoRequest" message="tns:cargaProducto"/>
@@ -108,6 +108,42 @@
 </portType>
 <binding name="wsAccesoDatosProductoPortBinding" type="tns:wsAccesoDatosProducto">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<operation name="buscarProducto">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="consultarProducto">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getErrorConexion">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getDescripcionFamilaProducto">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="actualizarDataBaseProducto">
 <soap:operation soapAction=""/>
 <input>
@@ -126,25 +162,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="modificarDataBaseProducto">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
 <operation name="eliminarLogicoProducto">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="buscarProducto">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -162,25 +180,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="consultarProducto">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getDescripcionFamilaProducto">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getErrorConexion">
+<operation name="modificarDataBaseProducto">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

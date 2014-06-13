@@ -9,16 +9,19 @@
     <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosFactura?WSDL" uri="src/conf/xml-resources/web-service-references/wsAccesoDatosFactura/wsdl/localhost_8080/AccesoDatos/wsAccesoDatosFactura.wsdl"/>
     <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosFactura?xsd=1" uri="src/conf/xml-resources/web-service-references/wsAccesoDatosFactura/wsdl/localhost_8080/AccesoDatos/wsAccesoDatosFactura.xsd_1.xsd"/>
 <<<<<<< HEAD
-    <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosListaProductos?wsdl" uri="src/conf/xml-resources/web-service-references/wsAccesoDatosListaProductos/wsdl/localhost_8080/AccesoDatos/wsAccesoDatosListaProductos.wsdl"/>
-    <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosListaProductos?xsd=1" uri="src/conf/xml-resources/web-service-references/wsAccesoDatosListaProductos/wsdl/localhost_8080/AccesoDatos/wsAccesoDatosListaProductos.xsd_1.xsd"/>
-    <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosEmpresa?wsdl" uri="src/conf/xml-resources/web-service-references/wsAccesoDatosEmpresa/wsdl/localhost_8080/AccesoDatos/wsAccesoDatosEmpresa.wsdl"/>
-    <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosEmpresa?xsd=1" uri="src/conf/xml-resources/web-service-references/wsAccesoDatosEmpresa/wsdl/localhost_8080/AccesoDatos/wsAccesoDatosEmpresa.xsd_1.xsd"/>
+    
 =======
     <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosFamiliaProducto?WSDL" uri="src/conf/xml-resources/web-service-references/wsAccesoDatosFamiliaProducto/wsdl/localhost_8080/AccesoDatos/wsAccesoDatosFamiliaProducto.wsdl"/>
     <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosFamiliaProducto?xsd=1" uri="src/conf/xml-resources/web-service-references/wsAccesoDatosFamiliaProducto/wsdl/localhost_8080/AccesoDatos/wsAccesoDatosFamiliaProducto.xsd_1.xsd"/>
-    <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosProducto?WSDL" uri="src/conf/xml-resources/web-service-references/wsAccesoDatosProducto/wsdl/localhost_8080/AccesoDatos/wsAccesoDatosProducto.wsdl"/>
 >>>>>>> 312c9ce16c8cf76867e4ea2a82ea5d45edca5ab5
 
     <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosProducto?wsdl" uri="src/conf/xml-resources/web-service-references/wsAccesoDatosProducto/wsdl/localhost_8080/AccesoDatos/wsAccesoDatosProducto.wsdl"/>
+    <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosProducto?WSDL" uri="src/conf/xml-resources/web-service-references/wsAccesoDatosProducto/wsdl/localhost_8080/AccesoDatos/wsAccesoDatosProducto.wsdl"/>
     <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosProducto?xsd=1" uri="src/conf/xml-resources/web-service-references/wsAccesoDatosProducto/wsdl/localhost_8080/AccesoDatos/wsAccesoDatosProducto.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosEmpresa?wsdl" uri="src/conf/xml-resources/web-service-references/wsAccesoDatosEmpresa/wsdl/localhost_8080/AccesoDatos/wsAccesoDatosEmpresa.wsdl"/>
+    <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosEmpresa?xsd=1" uri="src/conf/xml-resources/web-service-references/wsAccesoDatosEmpresa/wsdl/localhost_8080/AccesoDatos/wsAccesoDatosEmpresa.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosListaProductos?wsdl" uri="src/conf/xml-resources/web-service-references/wsAccesoDatosListaProductos/wsdl/localhost_8080/AccesoDatos/wsAccesoDatosListaProductos.wsdl"/>
+    <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosListaProductos?xsd=1" uri="src/conf/xml-resources/web-service-references/wsAccesoDatosListaProductos/wsdl/localhost_8080/AccesoDatos/wsAccesoDatosListaProductos.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosPago?wsdl" uri="src/conf/xml-resources/web-service-references/wsAccesoDatosPago/wsdl/localhost_8080/AccesoDatos/wsAccesoDatosPago.wsdl"/>
+    <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosPago?xsd=1" uri="src/conf/xml-resources/web-service-references/wsAccesoDatosPago/wsdl/localhost_8080/AccesoDatos/wsAccesoDatosPago.xsd_1.xsd"/>
 </catalog>

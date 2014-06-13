@@ -22,6 +22,9 @@
     <service name="wsAccesoDatosListaProductos">
       <implementation-class>com.lewissa.jhano.accesodatos.listaproductos.wsAccesoDatosListaProductos</implementation-class>
     </service>
+    <service name="wsAccesoDatosPago">
+      <implementation-class>com.lewissa.jhano.accesodatos.pago.wsAccesoDatosPago</implementation-class>
+    </service>
   </services>
   <clients/>
 </jax-ws>
