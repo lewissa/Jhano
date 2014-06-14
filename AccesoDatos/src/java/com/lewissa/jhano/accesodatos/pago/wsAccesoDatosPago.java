@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.lewissa.jhano.accesodatos.pago;
 
 import com.lewissa.jhano.accesodatos.cAccesoDatos;
@@ -25,7 +24,7 @@ public class wsAccesoDatosPago {
     public String getErrorConexion() {
         //TODO write your implementation code here:
         return cAccesoDatos.getInstanciaAccesoDatos().getExcErrorAcessoDatos();
-        
+
     }
 
     /**
@@ -61,7 +60,7 @@ public class wsAccesoDatosPago {
             }
         }
         booFlag1 = (booFlag1.equals(true)) && (booFlag2.equals(true));
-        return booFlag1;        
+        return booFlag1;
     }
 
     /**
@@ -72,11 +71,10 @@ public class wsAccesoDatosPago {
         //TODO write your implementation code here:
         String pago = null;
         cTransaccionPago traPago = new cTransaccionPago();
-        if (cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()){
+        if (cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()) {
             pago = traPago.mostrarDatosPago(strIdPago);
         }
-        return pago;        
+        return pago;
     }
-    
-    
+
 }

@@ -12,9 +12,19 @@
 
 <xs:element name="modificarDataBasePagoResponse" type="tns:modificarDataBasePagoResponse"/>
 
-<xs:complexType name="modificarDataBasePago">
+<xs:element name="mostrarDatosPagos" type="tns:mostrarDatosPagos"/>
+
+<xs:element name="mostrarDatosPagosResponse" type="tns:mostrarDatosPagosResponse"/>
+
+<xs:complexType name="mostrarDatosPagos">
 <xs:sequence>
-<xs:element name="strPago" type="tns:cPago" minOccurs="0"/>
+<xs:element name="strId" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="mostrarDatosPagosResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:cPago" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -25,6 +35,12 @@
 <xs:element name="intIdPago" type="xs:int" minOccurs="0"/>
 <xs:element name="strFacturaPago" type="xs:string" minOccurs="0"/>
 <xs:element name="strFechaPago" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="modificarDataBasePago">
+<xs:sequence>
+<xs:element name="strPago" type="tns:cPago" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 

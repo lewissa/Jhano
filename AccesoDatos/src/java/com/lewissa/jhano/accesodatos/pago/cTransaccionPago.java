@@ -1,3 +1,4 @@
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -31,7 +32,7 @@ public class cTransaccionPago {
         booFlag = cAccesoDatos.getInstanciaAccesoDatos().actualizarDataBase(strSqlIngreso);
         return booFlag;
     }
-    
+
     public String mostrarDatosPago(String idPago) {
         String strSqlConsulta, strPago;
         strSqlConsulta = "SELECT * FROM \"pago\" WHERE \"Id_pago\" = '" + idPago + "'";

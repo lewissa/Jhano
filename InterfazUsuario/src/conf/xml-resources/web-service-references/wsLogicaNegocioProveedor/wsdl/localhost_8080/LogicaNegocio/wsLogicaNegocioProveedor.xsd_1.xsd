@@ -83,18 +83,6 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="validaRuc">
-<xs:sequence>
-<xs:element name="rucRuc" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="validaRucResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:boolean" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
 <xs:complexType name="validarNumeroConvencional">
 <xs:sequence>
 <xs:element name="oNumeroConvencional" type="tns:cNumeroConvencional" minOccurs="0"/>
@@ -113,13 +101,15 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="getErrorConexionProveedor">
-<xs:sequence/>
+<xs:complexType name="validaRuc">
+<xs:sequence>
+<xs:element name="rucRuc" type="xs:string" minOccurs="0"/>
+</xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="getErrorConexionProveedorResponse">
+<xs:complexType name="validaRucResponse">
 <xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0"/>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -136,15 +126,13 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="validaCedula">
-<xs:sequence>
-<xs:element name="cedCedula" type="xs:string" minOccurs="0"/>
-</xs:sequence>
+<xs:complexType name="getErrorConexionProveedor">
+<xs:sequence/>
 </xs:complexType>
 
-<xs:complexType name="validaCedulaResponse">
+<xs:complexType name="getErrorConexionProveedorResponse">
 <xs:sequence>
-<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -155,6 +143,18 @@
 </xs:complexType>
 
 <xs:complexType name="validaCorreoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validaCedula">
+<xs:sequence>
+<xs:element name="cedCedula" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="validaCedulaResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean" minOccurs="0"/>
 </xs:sequence>

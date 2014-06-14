@@ -98,6 +98,7 @@
                             <li>
                                 <font face="Arial">
                                     <a href="../interfacesJhano/interfazCargaFactura.jsp"><center>Facturas</center></a>
+
                                 </font>
                             </li>
                             <li>
@@ -123,6 +124,7 @@
                         <tr>
                             <td>
                                 <a href="../interfacesJhano/interfazIngresoCliente.jsp">
+
                                     <font face="Arial">
                                         Ingreso
                                     </font>

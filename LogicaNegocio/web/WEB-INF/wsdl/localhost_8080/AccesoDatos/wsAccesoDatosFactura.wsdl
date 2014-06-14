@@ -4,6 +4,12 @@
 <xsd:import namespace="http://factura.accesodatos.jhano.lewissa.com/" schemaLocation="http://localhost:8080/AccesoDatos/wsAccesoDatosFactura?xsd=1"/>
 </xsd:schema>
 </types>
+<message name="cargarFacturas">
+<part name="parameters" element="tns:cargarFacturas"/>
+</message>
+<message name="cargarFacturasResponse">
+<part name="parameters" element="tns:cargarFacturasResponse"/>
+</message>
 <message name="ingresarFactura">
 <part name="parameters" element="tns:ingresarFactura"/>
 </message>
@@ -16,13 +22,11 @@
 <message name="getErrorConexionFacturaResponse">
 <part name="parameters" element="tns:getErrorConexionFacturaResponse"/>
 </message>
-<message name="cargarFacturas">
-<part name="parameters" element="tns:cargarFacturas"/>
-</message>
-<message name="cargarFacturasResponse">
-<part name="parameters" element="tns:cargarFacturasResponse"/>
-</message>
 <portType name="wsAccesoDatosFactura">
+<operation name="cargarFacturas">
+<input wsam:Action="http://factura.accesodatos.jhano.lewissa.com/wsAccesoDatosFactura/cargarFacturasRequest" message="tns:cargarFacturas"/>
+<output wsam:Action="http://factura.accesodatos.jhano.lewissa.com/wsAccesoDatosFactura/cargarFacturasResponse" message="tns:cargarFacturasResponse"/>
+</operation>
 <operation name="ingresarFactura">
 <input wsam:Action="http://factura.accesodatos.jhano.lewissa.com/wsAccesoDatosFactura/ingresarFacturaRequest" message="tns:ingresarFactura"/>
 <output wsam:Action="http://factura.accesodatos.jhano.lewissa.com/wsAccesoDatosFactura/ingresarFacturaResponse" message="tns:ingresarFacturaResponse"/>
@@ -31,13 +35,18 @@
 <input wsam:Action="http://factura.accesodatos.jhano.lewissa.com/wsAccesoDatosFactura/getErrorConexionFacturaRequest" message="tns:getErrorConexionFactura"/>
 <output wsam:Action="http://factura.accesodatos.jhano.lewissa.com/wsAccesoDatosFactura/getErrorConexionFacturaResponse" message="tns:getErrorConexionFacturaResponse"/>
 </operation>
-<operation name="cargarFacturas">
-<input wsam:Action="http://factura.accesodatos.jhano.lewissa.com/wsAccesoDatosFactura/cargarFacturasRequest" message="tns:cargarFacturas"/>
-<output wsam:Action="http://factura.accesodatos.jhano.lewissa.com/wsAccesoDatosFactura/cargarFacturasResponse" message="tns:cargarFacturasResponse"/>
-</operation>
 </portType>
 <binding name="wsAccesoDatosFacturaPortBinding" type="tns:wsAccesoDatosFactura">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<operation name="cargarFacturas">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="ingresarFactura">
 <soap:operation soapAction=""/>
 <input>
@@ -48,15 +57,6 @@
 </output>
 </operation>
 <operation name="getErrorConexionFactura">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="cargarFacturas">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

@@ -97,7 +97,7 @@
                             <li>
                                 <font face="Arial">
                                     <a href="interfacesJhano/interfazCargaFactura.jsp"><center>Facturas</center></a>
-                                </font>                                
+                                </font> 
                             </li>
                             <li>
                                 <font face="Arial">

@@ -19,7 +19,7 @@
                     </a>
                 </td>
                 <td width="780">
-                    <center>                        
+                    <center>                 
                         <font color="#FFFFFF" size="+6" face="Arial, Helvetica, sans-serif">
                             Computech
                         </font><br/>
@@ -89,6 +89,7 @@
                             <li>
                                 <font face="Arial">
                                     <a href="../interfacesJhano/interfazCargaProducto.jsp"><center>Productos</center></a>
+
                                 </font>
                                 <ul>
                                     <font face="Arial">
@@ -99,6 +100,7 @@
                             <li>
                                 <font face="Arial">
                                     <a href="../interfacesJhano/interfazCargaFactura.jsp"><center>Facturas</center></a>
+
                                 </font>
                             </li>
                             <li>
@@ -141,6 +143,7 @@
                         </tr>
                         <tr>
                             <td>                                
+
                                     <a href="../index.jsp">
                                         <font face="Arial">
                                             Regresar

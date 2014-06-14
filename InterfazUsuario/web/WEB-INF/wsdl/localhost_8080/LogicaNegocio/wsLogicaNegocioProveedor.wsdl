@@ -4,23 +4,11 @@
 <xsd:import namespace="http://proveedor.logicanegocio.jhano.lewissa.com/" schemaLocation="http://localhost:8080/LogicaNegocio/wsLogicaNegocioProveedor?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="eliminarProveedor">
-<part name="parameters" element="tns:eliminarProveedor"/>
+<message name="cargaProveedor">
+<part name="parameters" element="tns:cargaProveedor"/>
 </message>
-<message name="eliminarProveedorResponse">
-<part name="parameters" element="tns:eliminarProveedorResponse"/>
-</message>
-<message name="getErrorConexionProveedor">
-<part name="parameters" element="tns:getErrorConexionProveedor"/>
-</message>
-<message name="getErrorConexionProveedorResponse">
-<part name="parameters" element="tns:getErrorConexionProveedorResponse"/>
-</message>
-<message name="actualizaDataBaseProveedor">
-<part name="parameters" element="tns:actualizaDataBaseProveedor"/>
-</message>
-<message name="actualizaDataBaseProveedorResponse">
-<part name="parameters" element="tns:actualizaDataBaseProveedorResponse"/>
+<message name="cargaProveedorResponse">
+<part name="parameters" element="tns:cargaProveedorResponse"/>
 </message>
 <message name="modificarProveedor">
 <part name="parameters" element="tns:modificarProveedor"/>
@@ -28,23 +16,17 @@
 <message name="modificarProveedorResponse">
 <part name="parameters" element="tns:modificarProveedorResponse"/>
 </message>
-<message name="cargaProveedor">
-<part name="parameters" element="tns:cargaProveedor"/>
+<message name="actualizaDataBaseProveedor">
+<part name="parameters" element="tns:actualizaDataBaseProveedor"/>
 </message>
-<message name="cargaProveedorResponse">
-<part name="parameters" element="tns:cargaProveedorResponse"/>
+<message name="actualizaDataBaseProveedorResponse">
+<part name="parameters" element="tns:actualizaDataBaseProveedorResponse"/>
 </message>
-<message name="validarNumeroConvencional">
-<part name="parameters" element="tns:validarNumeroConvencional"/>
+<message name="validaCedula">
+<part name="parameters" element="tns:validaCedula"/>
 </message>
-<message name="validarNumeroConvencionalResponse">
-<part name="parameters" element="tns:validarNumeroConvencionalResponse"/>
-</message>
-<message name="validarNumeroCelular">
-<part name="parameters" element="tns:validarNumeroCelular"/>
-</message>
-<message name="validarNumeroCelularResponse">
-<part name="parameters" element="tns:validarNumeroCelularResponse"/>
+<message name="validaCedulaResponse">
+<part name="parameters" element="tns:validaCedulaResponse"/>
 </message>
 <message name="validaRuc">
 <part name="parameters" element="tns:validaRuc"/>
@@ -58,40 +40,46 @@
 <message name="validaCorreoResponse">
 <part name="parameters" element="tns:validaCorreoResponse"/>
 </message>
-<message name="validaCedula">
-<part name="parameters" element="tns:validaCedula"/>
+<message name="getErrorConexionProveedor">
+<part name="parameters" element="tns:getErrorConexionProveedor"/>
 </message>
-<message name="validaCedulaResponse">
-<part name="parameters" element="tns:validaCedulaResponse"/>
+<message name="getErrorConexionProveedorResponse">
+<part name="parameters" element="tns:getErrorConexionProveedorResponse"/>
+</message>
+<message name="eliminarProveedor">
+<part name="parameters" element="tns:eliminarProveedor"/>
+</message>
+<message name="eliminarProveedorResponse">
+<part name="parameters" element="tns:eliminarProveedorResponse"/>
+</message>
+<message name="validarNumeroConvencional">
+<part name="parameters" element="tns:validarNumeroConvencional"/>
+</message>
+<message name="validarNumeroConvencionalResponse">
+<part name="parameters" element="tns:validarNumeroConvencionalResponse"/>
+</message>
+<message name="validarNumeroCelular">
+<part name="parameters" element="tns:validarNumeroCelular"/>
+</message>
+<message name="validarNumeroCelularResponse">
+<part name="parameters" element="tns:validarNumeroCelularResponse"/>
 </message>
 <portType name="wsLogicaNegocioProveedor">
-<operation name="eliminarProveedor">
-<input wsam:Action="http://proveedor.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProveedor/eliminarProveedorRequest" message="tns:eliminarProveedor"/>
-<output wsam:Action="http://proveedor.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProveedor/eliminarProveedorResponse" message="tns:eliminarProveedorResponse"/>
-</operation>
-<operation name="getErrorConexionProveedor">
-<input wsam:Action="http://proveedor.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProveedor/getErrorConexionProveedorRequest" message="tns:getErrorConexionProveedor"/>
-<output wsam:Action="http://proveedor.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProveedor/getErrorConexionProveedorResponse" message="tns:getErrorConexionProveedorResponse"/>
-</operation>
-<operation name="actualizaDataBaseProveedor">
-<input wsam:Action="http://proveedor.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProveedor/actualizaDataBaseProveedorRequest" message="tns:actualizaDataBaseProveedor"/>
-<output wsam:Action="http://proveedor.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProveedor/actualizaDataBaseProveedorResponse" message="tns:actualizaDataBaseProveedorResponse"/>
+<operation name="cargaProveedor">
+<input wsam:Action="http://proveedor.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProveedor/cargaProveedorRequest" message="tns:cargaProveedor"/>
+<output wsam:Action="http://proveedor.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProveedor/cargaProveedorResponse" message="tns:cargaProveedorResponse"/>
 </operation>
 <operation name="modificarProveedor">
 <input wsam:Action="http://proveedor.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProveedor/modificarProveedorRequest" message="tns:modificarProveedor"/>
 <output wsam:Action="http://proveedor.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProveedor/modificarProveedorResponse" message="tns:modificarProveedorResponse"/>
 </operation>
-<operation name="cargaProveedor">
-<input wsam:Action="http://proveedor.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProveedor/cargaProveedorRequest" message="tns:cargaProveedor"/>
-<output wsam:Action="http://proveedor.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProveedor/cargaProveedorResponse" message="tns:cargaProveedorResponse"/>
+<operation name="actualizaDataBaseProveedor">
+<input wsam:Action="http://proveedor.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProveedor/actualizaDataBaseProveedorRequest" message="tns:actualizaDataBaseProveedor"/>
+<output wsam:Action="http://proveedor.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProveedor/actualizaDataBaseProveedorResponse" message="tns:actualizaDataBaseProveedorResponse"/>
 </operation>
-<operation name="validarNumeroConvencional">
-<input wsam:Action="http://proveedor.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProveedor/validarNumeroConvencionalRequest" message="tns:validarNumeroConvencional"/>
-<output wsam:Action="http://proveedor.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProveedor/validarNumeroConvencionalResponse" message="tns:validarNumeroConvencionalResponse"/>
-</operation>
-<operation name="validarNumeroCelular">
-<input wsam:Action="http://proveedor.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProveedor/validarNumeroCelularRequest" message="tns:validarNumeroCelular"/>
-<output wsam:Action="http://proveedor.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProveedor/validarNumeroCelularResponse" message="tns:validarNumeroCelularResponse"/>
+<operation name="validaCedula">
+<input wsam:Action="http://proveedor.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProveedor/validaCedulaRequest" message="tns:validaCedula"/>
+<output wsam:Action="http://proveedor.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProveedor/validaCedulaResponse" message="tns:validaCedulaResponse"/>
 </operation>
 <operation name="validaRuc">
 <input wsam:Action="http://proveedor.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProveedor/validaRucRequest" message="tns:validaRuc"/>
@@ -101,32 +89,26 @@
 <input wsam:Action="http://proveedor.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProveedor/validaCorreoRequest" message="tns:validaCorreo"/>
 <output wsam:Action="http://proveedor.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProveedor/validaCorreoResponse" message="tns:validaCorreoResponse"/>
 </operation>
-<operation name="validaCedula">
-<input wsam:Action="http://proveedor.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProveedor/validaCedulaRequest" message="tns:validaCedula"/>
-<output wsam:Action="http://proveedor.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProveedor/validaCedulaResponse" message="tns:validaCedulaResponse"/>
+<operation name="getErrorConexionProveedor">
+<input wsam:Action="http://proveedor.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProveedor/getErrorConexionProveedorRequest" message="tns:getErrorConexionProveedor"/>
+<output wsam:Action="http://proveedor.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProveedor/getErrorConexionProveedorResponse" message="tns:getErrorConexionProveedorResponse"/>
+</operation>
+<operation name="eliminarProveedor">
+<input wsam:Action="http://proveedor.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProveedor/eliminarProveedorRequest" message="tns:eliminarProveedor"/>
+<output wsam:Action="http://proveedor.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProveedor/eliminarProveedorResponse" message="tns:eliminarProveedorResponse"/>
+</operation>
+<operation name="validarNumeroConvencional">
+<input wsam:Action="http://proveedor.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProveedor/validarNumeroConvencionalRequest" message="tns:validarNumeroConvencional"/>
+<output wsam:Action="http://proveedor.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProveedor/validarNumeroConvencionalResponse" message="tns:validarNumeroConvencionalResponse"/>
+</operation>
+<operation name="validarNumeroCelular">
+<input wsam:Action="http://proveedor.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProveedor/validarNumeroCelularRequest" message="tns:validarNumeroCelular"/>
+<output wsam:Action="http://proveedor.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProveedor/validarNumeroCelularResponse" message="tns:validarNumeroCelularResponse"/>
 </operation>
 </portType>
 <binding name="wsLogicaNegocioProveedorPortBinding" type="tns:wsLogicaNegocioProveedor">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="eliminarProveedor">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getErrorConexionProveedor">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="actualizaDataBaseProveedor">
+<operation name="cargaProveedor">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -144,7 +126,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="cargaProveedor">
+<operation name="actualizaDataBaseProveedor">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -153,16 +135,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="validarNumeroConvencional">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="validarNumeroCelular">
+<operation name="validaCedula">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -189,7 +162,34 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="validaCedula">
+<operation name="getErrorConexionProveedor">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="eliminarProveedor">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="validarNumeroConvencional">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="validarNumeroCelular">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

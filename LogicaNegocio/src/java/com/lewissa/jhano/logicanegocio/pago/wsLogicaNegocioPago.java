@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.lewissa.jhano.logicanegocio.pago;
 
 import com.lewissa.jhano.accesodatos.pago.WsAccesoDatosPago_Service;
@@ -22,6 +21,7 @@ import javax.xml.ws.WebServiceRef;
  */
 @WebService(serviceName = "wsLogicaNegocioPago")
 public class wsLogicaNegocioPago {
+
     @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/AccesoDatos/wsAccesoDatosPago.wsdl")
     private WsAccesoDatosPago_Service service;
 
@@ -56,7 +56,7 @@ public class wsLogicaNegocioPago {
     @WebMethod(operationName = "modificarDataBasePago")
     public Boolean modificarDataBasePago(@WebParam(name = "strPago") cPago strPago) {
         //TODO write your implementation code here:
-        cTransaccionPago traPago = new cTransaccionPago();        
+        cTransaccionPago traPago = new cTransaccionPago();
         return traPago.modificaPago(strPago);
     }
 
@@ -66,7 +66,7 @@ public class wsLogicaNegocioPago {
     @WebMethod(operationName = "mostrarDatosPagos")
     public cPago mostrarDatosPagos(@WebParam(name = "strId") String strId) {
         //TODO write your implementation code here:
-        com.lewissa.jhano.logicanegocio.pago.cPago pPago = new cPago();        
+        com.lewissa.jhano.logicanegocio.pago.cPago pPago = new cPago();
         try {
             StringReader sr = new StringReader(mostrarDatosPagos_1(strId));
             WebRowSetImpl wrs = new WebRowSetImpl();
@@ -77,11 +77,11 @@ public class wsLogicaNegocioPago {
                 pPago.setStrFechaPago(wrs.getString("fecha_pago"));
                 pPago.setIntFormaPago(wrs.getInt("forma_pago"));
                 pPago.setStrFacturaPago(wrs.getString("factura_pago"));
-                                
+
             }
         } catch (Exception ex) {
         }
-        return pPago;        
+        return pPago;
     }
 
     private String mostrarDatosPagos_1(java.lang.String strIdPago) {
@@ -90,6 +90,4 @@ public class wsLogicaNegocioPago {
         com.lewissa.jhano.accesodatos.pago.WsAccesoDatosPago port = service.getWsAccesoDatosPagoPort();
         return port.mostrarDatosPagos(strIdPago);
     }
-    
-    
 }

@@ -35,7 +35,6 @@ public class cTransaccionPago {
                 oPago.setStrFechaPago(wrs.getString("fecha_pago"));
                 oPago.setIntFormaPago(wrs.getInt("forma_pago"));
                 oPago.setStrFacturaPago(wrs.getString("factura_pago"));
-
                 lisPago.add(oPago);
             }
         } catch (Exception ex) {
@@ -67,5 +66,4 @@ public class cTransaccionPago {
         com.lewissa.jhano.accesodatos.pago.WsAccesoDatosPago port = service.getWsAccesoDatosPagoPort();
         return port.mostrarDatosPagos(strIdPago);
     }
-    
 }

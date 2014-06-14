@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jax-ws xmlns="http://www.netbeans.org/ns/jax-ws/1">
   <services>
-    <service name="wsAccesoDatosProveedor">
-      <implementation-class>com.lewissa.jhano.accesodatos.proveedor.wsAccesoDatosProveedor</implementation-class>
-    </service>
-    <service name="wsAccesoDatosProducto">
-      <implementation-class>com.lewissa.jhano.accesodatos.producto.wsAccesoDatosProducto</implementation-class>
-    </service>
-    <service name="wsAccesoDatosCliente">
-      <implementation-class>com.lewissa.jhano.accesodatos.cliente.wsAccesoDatosCliente</implementation-class>
-    </service>
-    <service name="wsAccesoDatosFactura">
-      <implementation-class>com.lewissa.jhano.accesodatos.factura.wsAccesoDatosFactura</implementation-class>
-    </service>
-    <service name="wsAccesoDatosFamiliaProducto">
-      <implementation-class>com.lewissa.jhano.accesodatos.familiaproducto.wsAccesoDatosFamiliaProducto</implementation-class>
-    </service>
     <service name="wsAccesoDatosEmpresa">
       <implementation-class>com.lewissa.jhano.accesodatos.empresa.wsAccesoDatosEmpresa</implementation-class>
     </service>
     <service name="wsAccesoDatosListaProductos">
       <implementation-class>com.lewissa.jhano.accesodatos.listaproductos.wsAccesoDatosListaProductos</implementation-class>
     </service>
+    <service name="wsAccesoDatosProducto">
+      <implementation-class>com.lewissa.jhano.accesodatos.producto.wsAccesoDatosProducto</implementation-class>
+    </service>
+    <service name="wsAccesoDatosFamiliaProducto">
+      <implementation-class>com.lewissa.jhano.accesodatos.familiaproducto.wsAccesoDatosFamiliaProducto</implementation-class>
+    </service>
     <service name="wsAccesoDatosPago">
       <implementation-class>com.lewissa.jhano.accesodatos.pago.wsAccesoDatosPago</implementation-class>
+    </service>
+    <service name="wsAccesoDatosProveedor">
+      <implementation-class>com.lewissa.jhano.accesodatos.proveedor.wsAccesoDatosProveedor</implementation-class>
+    </service>
+    <service name="wsAccesoDatosCliente">
+      <implementation-class>com.lewissa.jhano.accesodatos.cliente.wsAccesoDatosCliente</implementation-class>
+    </service>
+    <service name="wsAccesoDatosFactura">
+      <implementation-class>com.lewissa.jhano.accesodatos.factura.wsAccesoDatosFactura</implementation-class>
     </service>
   </services>
   <clients/>

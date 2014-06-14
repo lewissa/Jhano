@@ -40,26 +40,6 @@
 
 <xs:element name="modificarDataBaseProductoResponse" type="tns:modificarDataBaseProductoResponse"/>
 
-<xs:complexType name="cargaProducto">
-<xs:sequence/>
-</xs:complexType>
-
-<xs:complexType name="cargaProductoResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="getDescripcionFamilaProducto">
-<xs:sequence/>
-</xs:complexType>
-
-<xs:complexType name="getDescripcionFamilaProductoResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
 <xs:complexType name="consultarProducto">
 <xs:sequence>
 <xs:element name="arg0" type="xs:string" minOccurs="0"/>
@@ -72,6 +52,16 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="cargaProducto">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="cargaProductoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="buscarProducto">
 <xs:sequence>
 <xs:element name="strParametro" type="xs:string" minOccurs="0"/>
@@ -79,6 +69,16 @@
 </xs:complexType>
 
 <xs:complexType name="buscarProductoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getDescripcionFamilaProducto">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getDescripcionFamilaProductoResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>

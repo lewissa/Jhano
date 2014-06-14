@@ -107,6 +107,7 @@
                             <li>
                                 <font face="Arial">
                                     <a href="../interfacesJhano/interfazCargaFactura.jsp"><center>Facturas</center></a>
+
                                 </font>
                             </li>
                             <li>
@@ -136,6 +137,7 @@
                         <tr>
                             <td>
                                 <a href="../interfacesJhano/interfazCargaFactura.jsp">
+
                                     <font face="Arial">
                                         Regresar
                                     </font>
@@ -163,7 +165,7 @@
 	com.lewissa.jhano.logicanegocio.empresa.WsLogicaNegocioEmpresa_Service service = new com.lewissa.jhano.logicanegocio.empresa.WsLogicaNegocioEmpresa_Service();
 	com.lewissa.jhano.logicanegocio.empresa.WsLogicaNegocioEmpresa port = service.getWsLogicaNegocioEmpresaPort();
 	 // TODO initialize WS operation arguments here
-	java.lang.String strParametro = "1723834931001";
+	java.lang.String strParametro = "0000000000001";
         CEmpresa oEmpresa = new CEmpresa();
 	// TODO process result here
 	java.util.List<com.lewissa.jhano.logicanegocio.empresa.CEmpresa> listEmpresas = port.buscarEmpresa(strParametro);

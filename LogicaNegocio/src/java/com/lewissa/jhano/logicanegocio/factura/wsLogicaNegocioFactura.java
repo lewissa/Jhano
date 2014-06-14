@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.lewissa.jhano.logicanegocio.factura;
 
 import com.lewissa.jhano.accesodatos.factura.WsAccesoDatosFactura_Service;
@@ -22,6 +21,7 @@ import javax.xml.ws.WebServiceRef;
  */
 @WebService(serviceName = "wsLogicaNegocioFactura")
 public class wsLogicaNegocioFactura {
+
     @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/AccesoDatos/wsAccesoDatosFactura.wsdl")
     private WsAccesoDatosFactura_Service service;
 
@@ -41,8 +41,8 @@ public class wsLogicaNegocioFactura {
     public Boolean ingresarFactura(@WebParam(name = "oFactura") cFactura oFactura) {
         //TODO write your implementation code here:
         Boolean booResultado = false;
-        cTransaccionFactura oTansaccionFactura= new cTransaccionFactura();
-        booResultado=oTansaccionFactura.ingresarFactura(oFactura);
+        cTransaccionFactura oTansaccionFactura = new cTransaccionFactura();
+        booResultado = oTansaccionFactura.ingresarFactura(oFactura);
         return booResultado;
     }
 
@@ -71,11 +71,11 @@ public class wsLogicaNegocioFactura {
                 oFact.setStrFechaFactura(wrs.getString("Fecha"));
                 oFact.setStrClienteFactura(wrs.getString("cliente_factu"));
                 oFact.setDouTotalFactura(wrs.getDouble("Valor_total"));
-                
+
                 factura.add(oFact);
             }
         } catch (Exception ex) {
         }
-        return factura;        
-    }    
+        return factura;
+    }
 }

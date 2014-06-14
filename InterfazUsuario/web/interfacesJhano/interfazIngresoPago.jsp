@@ -1,17 +1,14 @@
 <%-- 
-    Document   : interfazCargaPagos
-    Created on : 12/06/2014, 07:28:24 PM
-    Author     : Usuario
+    Document   : interfazIngresoPago
+    Created on : 9/06/2014, 03:52:59 PM
+    Author     : wmoina
 --%>
 
-<%@page import="java.util.List"%>
-<%@page import="com.google.common.util.concurrent.ExecutionError"%>
-<%@page import="javax.swing.JOptionPane"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>Jhano | Pagos </title>
+        <title>Jhano | Ingresar Producto </title>
         <script src="SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
         <link href="SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
     </head>
@@ -20,13 +17,7 @@
         <table bgcolor="#192B75" width="100%" height="50%" border="1">
             <tr>
                 <td>
-<<<<<<< HEAD
-                    <a href="../index.jsp">
                     <img src="Image/computech.jpg" alt="espoch" />
-                    </a>
-=======
-                    <img src="Image/computech.jpg" alt="espoch" />
->>>>>>> 3fef4dffdf60fd19ef23cb5b575138f105a8c6e8
                 </td>
                 <td width="780">
                     <center>
@@ -98,11 +89,7 @@
                             </li>
                             <li>
                                 <font face="Arial">
-<<<<<<< HEAD
                                     <a href="../interfacesJhano/interfazCargaProducto.jsp"><center>Productos</center></a>
-=======
-                                    <a href="#"><center>Productos</center></a>
->>>>>>> 3fef4dffdf60fd19ef23cb5b575138f105a8c6e8
                                 </font>
                                 <ul>
                                     <font face="Arial">
@@ -112,11 +99,7 @@
                             </li>
                             <li>
                                 <font face="Arial">
-<<<<<<< HEAD
-                                    <a href="../interfacesJhano/interfazCargaFactura.jsp"><center>Facturas</center></a>
-=======
                                     <a href="#"><center>Facturas</center></a>
->>>>>>> 3fef4dffdf60fd19ef23cb5b575138f105a8c6e8
                                 </font>
                             </li>
                             <li>
@@ -138,18 +121,10 @@
         <table bgcolor="#C0C0C0" width="100%" height="100%" border="1">
             <tr>
                 <td width="12%">
-                    <table border="0,1" align="left">
+                    <table border="0.1" align="left">
                         <tr>
                             <td>
-<<<<<<< HEAD
-                                <a href="#">
-=======
-<<<<<<< HEAD
-                                <a href="interfazIngresoPago.jsp">
-=======
-                                <a href="#">
->>>>>>> 48d9147a1619ef7ef1c90b5b8c182277a8d5d787
->>>>>>> 3fef4dffdf60fd19ef23cb5b575138f105a8c6e8
+                                <a href="">
                                     <font face="Arial">
                                         Ingreso
                                     </font>
@@ -158,7 +133,7 @@
                         </tr>
                         <tr>
                             <td>
-                                <a href="#">
+                                <a href="">
                                     <font face="Arial">
                                         Consulta
                                     </font>
@@ -167,68 +142,57 @@
                         </tr>
                         <tr>
                             <td>
-                                <a href="../index.jsp">
-                                    <a href="../index.jsp">
-                                        <font face="Arial">
-                                            Regresar
-                                        </font>
-                                    </a>
+                                <a href="../interfacesJhano/interfazCargaProducto.jsp">
+                                    <font face="Arial">
+                                        Regresar
+                                    </font>
+                                </a>
                             </td>
                         </tr>
                     </table>
-
-                    <td width="88%">
-                        <h3><center> <font size="5" face="Arial, Helvetica, sans-serif">Matriz Pago de Facturas</font></center></h3>
-                        <form name="frmCargarPagos" action="../controladoresJhano/controladorInterfazCargaPago.jsp" method="post" >
-                            <table width="700" align="center" border="1" bgcolor="white">
+                </td>
+                <td width="88%">
+                    <font face="Arial">
+                        <h3><center>Ingreso Pagos</center></h3>
+                        <form name="form1" action="../controladoresJhano/controladorIngresoProducto.jsp" method="post">
+                            <table border="0" align="center">
                                 <tr>
-                                    <td width="100" align="center">Identificador</td>
-                                    <td width="100" align="center">Monto</td>
-                                    <td width="100" align="center">Fecha de Pago</td>
-                                    <td width="100" align="center">Forma de Pago</td>
-                                    <td width="100" align="center">Factura</td>
-                                    <td width="150" align="center" colspan="2">Acciones</td>
-
+                                    <td><label>Monto:</label></td>
+                                    <%
+                                        out.print("<td><input name=\"monto\" type=\"text\" size=\"50\" maxlength=\"50\"/></td>");
+                                    %>
                                 </tr>
-                                <%
-                                    String strCarga = (request.getParameter("car") != null) ? "true" : "false";
-                                    if (strCarga.equals("false")) {
-                                        response.sendRedirect("../controladoresJhano/controladorInterfazCargaPago.jsp");
-                                    }
-                                    List<com.lewissa.jhano.logicanegocio.pago.CPago> lispagos = (List<com.lewissa.jhano.logicanegocio.pago.CPago>) request.getSession().getAttribute("pagos");
-                                    if (lispagos != null) {
-                                        for (com.lewissa.jhano.logicanegocio.pago.CPago pago : lispagos) {
-                                            out.print("<tr>");
-                                            out.print("  <td>" + pago.getIntIdPago() + "</td>");
-                                            out.print("  <td align=\"right\">" + pago.getDouMontoReal() + "</td>");
-                                            out.print("  <td>" + pago.getStrFechaPago() + "</td>");
-                                            out.print("  <td>" + pago.getIntFormaPago() + "</td>");
-                                            out.print("  <td>" + pago.getStrFacturaPago() + "</td>");
-                                            out.print("  <td>Modificar</td>");
-                                            out.print("  <td>Eliminar</td>");
-                                            //out.print("  <td><a href='../controladoresJhano/controladorEliminarCliente.jsp?accion=delete&id=" + cliente.getStrIdCliente() + "'>Eliminar</a></td>");
-                                            out.print("</tr>");
-                                        }
-                                    } else {
-                                        out.print("<tr>");
-                                        out.print("  <td></td>");
-                                        out.print("  <td></td>");
-                                        out.print("  <td></td>");
-                                        out.print("  <td></td>");
-                                        out.print("  <td></td>");
-                                        out.print("  <td></td>");
-                                        out.print("  <td></td>");
-                                        out.print("</tr>");
-                                    }
-                                %>
-
-                            </table>
-
-                    </td>
-                    <%
-                        //}
-                    %>
-
+                                <tr>
+                                    <td><label>Fecha de pago:</label></td>
+                                    <%
+                                        out.print("<td><input name=\"fechaPago\" type=\"date\" size=\"50\" maxlength=\"50\"/></td>");
+                                    %>
+                                </tr>
+                                <tr>
+                                    <td><label>Forma de pago:</label></td>
+                                    <%
+                                        out.print("<td><input name=\"formaPago\" type=\"text\" size=\"50\" maxlength=\"50\"/></td>");
+                                    %>
+                                </tr>
+                                <tr>
+                                    <td><label>Estado:</label></td>
+                                    <%
+                                        out.print("<td>");
+                                        out.print("<select name=\"estado\" size=\"1\">");
+                                        out.print("<option value=\"1\">Pagado</option>");
+                                        out.print("<option value=\"2\">Pendiente</option>");
+                                        out.print("</select>");
+                                        out.print("</td>");
+                                    %>
+                                </tr>
+                                <td colspan="2" align="right">
+                                    <input name="guardar" type="submit" value="Guardar"  />
+                                    <input name="cancelar" type="button" value="Cancelar" onclick="location.href = '../interfacesJhano/interfazCargaProducto.jsp?can=true'"/>
+                                </td>
+                                </tr>
+                            </table> 
+                        </form>
+                    </font>
                 </td>
             </tr>
         </table>
@@ -238,14 +202,5 @@
             var MenuBar2 = new Spry.Widget.MenuBar("MenuBar2", {imgDown: "SpryAssets/SpryMenuBarDownHover.gif", imgRight: "SpryAssets/SpryMenuBarRightHover.gif"});
         </script>
     </body>
-<<<<<<< HEAD
 </html>
 
-=======
-<<<<<<< HEAD
-</html>
-=======
-</html>
-
->>>>>>> 48d9147a1619ef7ef1c90b5b8c182277a8d5d787
->>>>>>> 3fef4dffdf60fd19ef23cb5b575138f105a8c6e8

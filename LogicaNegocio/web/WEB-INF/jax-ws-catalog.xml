@@ -15,6 +15,23 @@
     <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosEmpresa?wsdl" uri="wsdl/localhost_8080/AccesoDatos/wsAccesoDatosEmpresa.wsdl"/>
     <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosEmpresa?xsd=1" uri="wsdl/localhost_8080/AccesoDatos/wsAccesoDatosEmpresa.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosProducto?wsdl" uri="wsdl/localhost_8080/AccesoDatos/wsAccesoDatosProducto.wsdl"/>
+<<<<<<< HEAD
     <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosPago?wsdl" uri="wsdl/localhost_8080/AccesoDatos/wsAccesoDatosPago.wsdl"/>
     <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosPago?xsd=1" uri="wsdl/localhost_8080/AccesoDatos/wsAccesoDatosPago.xsd_1.xsd"/>
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosEmpresa?WSDL" uri="wsdl/localhost_8080/AccesoDatos/wsAccesoDatosEmpresa.wsdl"/>
+    <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosListaProductos?WSDL" uri="wsdl/localhost_8080/AccesoDatos/wsAccesoDatosListaProductos.wsdl"/>
+=======
+    <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosPago?wsdl" uri="wsdl/localhost_8080/AccesoDatos/wsAccesoDatosPago.wsdl"/>
+    <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosPago?xsd=1" uri="wsdl/localhost_8080/AccesoDatos/wsAccesoDatosPago.xsd_1.xsd"/>
+>>>>>>> 67f68310ac730cda4f8fcddadb21fe4f00966676
+
+    <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosPago?WSDL" uri="wsdl/localhost_8080/AccesoDatos/wsAccesoDatosPago.wsdl"/>
+=======
+    <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosPago?wsdl" uri="wsdl/localhost_8080/AccesoDatos/wsAccesoDatosPago.wsdl"/>
+    <system systemId="http://localhost:8080/AccesoDatos/wsAccesoDatosPago?xsd=1" uri="wsdl/localhost_8080/AccesoDatos/wsAccesoDatosPago.xsd_1.xsd"/>
+>>>>>>> 48d9147a1619ef7ef1c90b5b8c182277a8d5d787
+>>>>>>> 3fef4dffdf60fd19ef23cb5b575138f105a8c6e8
 </catalog>

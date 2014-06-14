@@ -11,18 +11,12 @@ import com.lewissa.jhano.logicanegocio.proveedor.cProveedor;
 import com.lewissa.jhano.logicanegocio.utilidades.cRuc;
 import com.sun.rowset.WebRowSetImpl;
 import java.io.StringReader;
-import java.sql.SQLException;
 import java.util.ArrayList;
-import javax.jws.WebService;
-import javax.jws.WebMethod;
-import javax.jws.WebParam;
-import java.util.List;
 import java.util.List;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
 import javax.xml.ws.WebServiceRef;
-
 
 /**
  *
@@ -30,6 +24,7 @@ import javax.xml.ws.WebServiceRef;
  */
 @WebService(serviceName = "wsLogicaNegocioProducto")
 public class wsLogicaNegocioProducto {
+
     @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/AccesoDatos/wsAccesoDatosProducto.wsdl")
     private WsAccesoDatosProducto_Service service;
 
@@ -58,21 +53,21 @@ public class wsLogicaNegocioProducto {
      * Web service operation
      */
     @WebMethod(operationName = "getNombreProveedor")
-    public java.util.List<cProveedor> getNombreProveedor()  {
+    public java.util.List<cProveedor> getNombreProveedor() {
         cTransaccionProducto traProducto = new cTransaccionProducto();
         return traProducto.getNombreProvedor();
     }
 
     /**
      * Web service operation
-     * @return 
+     *
+     * @return
      */
     @WebMethod(operationName = "getDescripcionFamiliaProducto")
-    public java.util.List<cFamiliaProducto> getDescripcionFamiliaProducto(){
-        cTransaccionProducto traProducto=new cTransaccionProducto();
+    public java.util.List<cFamiliaProducto> getDescripcionFamiliaProducto() {
+        cTransaccionProducto traProducto = new cTransaccionProducto();
         return traProducto.getDescripcionFamiliaProducto();
     }
-
 
     /**
      * Web service operation
@@ -86,7 +81,6 @@ public class wsLogicaNegocioProducto {
         return lisProductos;
     }
 
-    
     @WebMethod(operationName = "cargaProducto")
     public List<cProducto> cargaProducto() {
         cTransaccionProducto oTransaccionesProducto = new cTransaccionProducto();
@@ -94,7 +88,7 @@ public class wsLogicaNegocioProducto {
         lisProductos = oTransaccionesProducto.cargarProducto();
         return lisProductos;
     }
-    
+
     @WebMethod(operationName = "eliminarProducto")
     public Boolean eliminarProducto(@WebParam(name = "strId") String strId, Integer intTipoEliminacion) {
         //TODO write your implementation code here:
@@ -105,14 +99,14 @@ public class wsLogicaNegocioProducto {
         }
         return booResultado;
     }
-    
-     @WebMethod(operationName = "actualizaModificarDataBaseProducto")
+
+    @WebMethod(operationName = "actualizaModificarDataBaseProducto")
     public Boolean actualizaModificarDataBaseProducto(@WebParam(name = "proProducto") cProducto proProducto) {
         cTransaccionProducto traTransaccion = new cTransaccionProducto();
         return traTransaccion.modificaProducto(proProducto);
     }
-    
-     @WebMethod(operationName = "obtieneProducto")
+
+    @WebMethod(operationName = "obtieneProducto")
     public com.lewissa.jhano.logicanegocio.producto.cProducto obtieneProducto(@WebParam(name = "id") String id) {
         //TODO write your implementation code here:
         com.lewissa.jhano.logicanegocio.producto.cProducto proProducto = new com.lewissa.jhano.logicanegocio.producto.cProducto();
@@ -181,8 +175,8 @@ public class wsLogicaNegocioProducto {
         }
         return proProducto;
     }
-    
-     private String consultarProducto(java.lang.String arg0) {
+
+    private String consultarProducto(java.lang.String arg0) {
         com.lewissa.jhano.accesodatos.producto.WsAccesoDatosProducto port = service.getWsAccesoDatosProductoPort();
         return port.consultarProducto(arg0);
     }
