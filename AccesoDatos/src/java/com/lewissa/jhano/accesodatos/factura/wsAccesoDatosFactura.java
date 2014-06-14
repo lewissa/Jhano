@@ -40,4 +40,18 @@ public class wsAccesoDatosFactura {
         strError=cAccesoDatos.getInstanciaAccesoDatos().getExcErrorAcessoDatos();
         return strError;
     }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "cargarFacturas")
+    public String cargarFacturas() {
+        //TODO write your implementation code here:
+        String strFact = null;
+        cTransaccionFactura traFactura = new cTransaccionFactura();
+        if (cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()){
+            strFact = traFactura.cargarFactura();
+        }
+        return strFact;        
+    }
 }

@@ -1,6 +1,6 @@
 <%-- 
-    Document   : interfazCargaPagos
-    Created on : 12/06/2014, 07:28:24 PM
+    Document   : interfazCargaFactura
+    Created on : 13/06/2014, 05:09:25 PM
     Author     : Usuario
 --%>
 
@@ -11,7 +11,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>Jhano | Pagos </title>
+        <title>Jhano | Factura </title>
         <script src="SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
         <link href="SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
     </head>
@@ -129,7 +129,7 @@
                     <table border="0,1" align="left">
                         <tr>
                             <td>
-                                <a href="#">
+                                <a href="../interfacesJhano/interfazIngresoFactura.jsp">
                                     <font face="Arial">
                                         Ingreso
                                     </font>
@@ -156,36 +156,34 @@
                             </td>
                         </tr>
                     </table>
-
+                    
                     <td width="88%">
-                        <h3><center> <font size="5" face="Arial, Helvetica, sans-serif">Matriz Pago de Facturas</font></center></h3>
-                        <form name="frmCargarPagos" action="../controladoresJhano/controladorInterfazCargaPago.jsp" method="post" >
-                            <table width="700" align="center" border="1" bgcolor="white">
+                        <h3><center> <font size="5" face="Arial, Helvetica, sans-serif">Matriz Factura</font></center></h3>
+                        <form name="frmCargarFacturas" action="../controladoresJhano/controladorInterfazCargarFactura.jsp" method="post" >
+                            <table width="1000" align="center" border="1" bgcolor="white">
                                 <tr>
-                                    <td width="100" align="center">Identificador</td>
-                                    <td width="100" align="center">Monto</td>
-                                    <td width="100" align="center">Fecha de Pago</td>
-                                    <td width="100" align="center">Forma de Pago</td>
-                                    <td width="100" align="center">Factura</td>
+                                    <td width="150" align="center">Número de Factura</td>
+                                    <td width="100" align="center">Fecha</td>
+                                    <td width="400" align="center">Cliente</td>
+                                    <td width="100" align="center">Valor Total</td>
                                     <td width="150" align="center" colspan="2">Acciones</td>
-
+                                    
                                 </tr>
                                 <%
                                     String strCarga = (request.getParameter("car") != null) ? "true" : "false";
                                     if (strCarga.equals("false")) {
-                                        response.sendRedirect("../controladoresJhano/controladorInterfazCargaPago.jsp");
+                                        response.sendRedirect("../controladoresJhano/controladorInterfazCargarFactura.jsp");
                                     }
-                                    List<com.lewissa.jhano.logicanegocio.pago.CPago> lispagos = (List<com.lewissa.jhano.logicanegocio.pago.CPago>) request.getSession().getAttribute("pagos");
-                                    if (lispagos != null) {
-                                        for (com.lewissa.jhano.logicanegocio.pago.CPago pago : lispagos) {
+                                    List<com.lewissa.jhano.logicanegocio.factura.CFactura> factura = (List<com.lewissa.jhano.logicanegocio.factura.CFactura>) request.getSession().getAttribute("facturas");
+                                    if (factura != null) {
+                                        for (com.lewissa.jhano.logicanegocio.factura.CFactura oFact : factura) {
                                             out.print("<tr>");
-                                            out.print("  <td>" + pago.getIntIdPago() + "</td>");
-                                            out.print("  <td align=\"right\">" + pago.getDouMontoReal() + "</td>");
-                                            out.print("  <td>" + pago.getStrFechaPago() + "</td>");
-                                            out.print("  <td>" + pago.getIntFormaPago() + "</td>");
-                                            out.print("  <td>" + pago.getStrFacturaPago() + "</td>");
-                                            out.print("  <td>Modificar</td>");
-                                            out.print("  <td>Eliminar</td>");
+                                            out.print("  <td>" + oFact.getStrIdFactura() + "</td>");
+                                            out.print("  <td>" + oFact.getStrFechaFactura() + "</td>");
+                                            out.print("  <td>" + oFact.getStrClienteFactura() + "</td>");
+                                            out.print("  <td align=\"right\" >" + oFact.getDouTotalFactura() + "</td>");
+                                            out.print("  <td width=\"75\" >Modificar</td>");
+                                            out.print("  <td width=\"75\" >Pago</td>");
                                             //out.print("  <td><a href='../controladoresJhano/controladorEliminarCliente.jsp?accion=delete&id=" + cliente.getStrIdCliente() + "'>Eliminar</a></td>");
                                             out.print("</tr>");
                                         }
@@ -197,16 +195,15 @@
                                         out.print("  <td></td>");
                                         out.print("  <td></td>");
                                         out.print("  <td></td>");
-                                        out.print("  <td></td>");
                                         out.print("</tr>");
                                     }
                                 %>
-
+                                
                             </table>
-
+                            
                     </td>
                     <%
-                        //}
+                        
                     %>
 
                 </td>
@@ -219,4 +216,3 @@
         </script>
     </body>
 </html>
-

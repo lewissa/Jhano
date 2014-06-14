@@ -19,7 +19,9 @@
         <table bgcolor='#192B75' width="100%" height="50%" border="1">
             <tr>
                 <td>
+                    <a href="../index.jsp">
                     <img src="Image/computech.jpg" alt="espoch" />
+                    </a>
                 </td>
                 <td width="780">
                     <center>
@@ -101,7 +103,7 @@
                             </li>
                             <li>
                                 <font face="Arial">
-                                    <a href="#"><center>Facturas</center></a>
+                                    <a href="../interfacesJhano/interfazCargaFactura.jsp"><center>Facturas</center></a>
                                 </font>
                             </li>
                             <li>
@@ -126,18 +128,14 @@
                         <table border="0.1" align="center">
                             <tr>
                                 <td>
-                                    <a href="">
-                                        <font face="Arial">
-                                            Ingreso
-                                        </font>
-                                    </a>
+                                    
                                 </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <a href="">
+                                    <a href="../interfacesJhano/interfazCargaProveedor.jsp">
                                         <font face="Arial">
-                                            Consulta
+                                            Regresar
                                         </font>
                                     </a>
                                 </td>

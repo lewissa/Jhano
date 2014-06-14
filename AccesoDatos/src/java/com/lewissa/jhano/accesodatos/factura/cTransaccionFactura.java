@@ -33,6 +33,11 @@ public class cTransaccionFactura {
         return booResultado;
     }
     
-    
+    public String cargarFactura() {
+        String strSqlConsulta, strFactura;       
+        strSqlConsulta = "SELECT \"Id_factu\", \"Fecha\", \"cliente_factu\", \"Valor_total\" FROM factura WHERE \"Estado\" = TRUE;";
+        strFactura = cAccesoDatos.getInstanciaAccesoDatos().consultarDataBase(strSqlConsulta);
+        return strFactura;
+    }
     
 }
