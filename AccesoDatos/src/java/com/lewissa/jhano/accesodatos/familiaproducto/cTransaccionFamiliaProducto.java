@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -49,3 +50,35 @@ public class cTransaccionFamiliaProducto {
         return cAccesoDatos.getInstanciaAccesoDatos().consultarDataBase("SELECT * FROM familia");
     }
 }
+=======
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.lewissa.jhano.accesodatos.familiaproducto;
+
+import com.lewissa.jhano.accesodatos.cAccesoDatos;
+
+/**
+ *
+ * @author Usuario
+ */
+public class cTransaccionFamiliaProducto {
+
+    public Boolean ingresarFamiliaProducto(String strFamiliaProducto[]) {
+        String strSqlIngresoFamilia;
+        Boolean booResultado = false;
+        strSqlIngresoFamilia = "INSERT INTO familia VALUES ('" + strFamiliaProducto[0] + "','" + strFamiliaProducto[1] + "')";
+        if (cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()) {
+            booResultado = cAccesoDatos.getInstanciaAccesoDatos().actualizarDataBase(strSqlIngresoFamilia);
+        }
+
+        return booResultado;
+    }
+
+    public String getDescripcionFamilaProducto() {
+        return cAccesoDatos.getInstanciaAccesoDatos().consultarDataBase("SELECT * FROM familia");
+    }
+}
+>>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034

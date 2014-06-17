@@ -26,6 +26,7 @@
       <implementation-class>com.lewissa.jhano.accesodatos.factura.wsAccesoDatosFactura</implementation-class>
     </service>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <service name="wsAccesoDatosFamiliaProducto">
       <implementation-class>com.lewissa.jhano.accesodatos.familiaproducto.wsAccesoDatosFamiliaProducto</implementation-class>
     </service>
@@ -38,6 +39,8 @@
     <service name="wsAccesoDatosPago">
       <implementation-class>com.lewissa.jhano.accesodatos.pago.wsAccesoDatosPago</implementation-class>
     </service>
+=======
+>>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
 =======
 >>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
   </services>

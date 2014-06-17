@@ -178,6 +178,9 @@
 <xs:complexType name="cargaProducto">
 <xs:sequence/>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
 </xs:complexType>
 
 <xs:complexType name="cargaProductoResponse">
@@ -186,6 +189,7 @@
 </xs:sequence>
 </xs:complexType>
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <xs:complexType name="consultarProductoPorFamilia">
 =======
@@ -213,6 +217,15 @@
 <<<<<<< HEAD
 >>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
 =======
+>>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
+=======
+<xs:complexType name="buscarProducto">
+<xs:sequence>
+<xs:element name="strParametro" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarProductoResponse">
 >>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
 <xs:sequence>
 <xs:element name="return" type="tns:cProducto" minOccurs="0" maxOccurs="unbounded"/>

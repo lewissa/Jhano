@@ -88,32 +88,32 @@ public class cTransaccionProducto {
         List<cProveedor> lisNombreProveedor = null;
         try {
             strError = port.getNombreProveedor();
-        
-         lisNombreProveedor= new ArrayList<>();
-        if (!strError.equals("err0r")) {
-            StringReader strLista = new StringReader(port.getNombreProveedor());
-            WebRowSetImpl webLista = new WebRowSetImpl();
-            webLista.readXml(strLista);
-            while (webLista.next()) {
-                cProveedor proProveedor = new cProveedor();
-                proProveedor.setId(webLista.getString("Id_prove"));
-                proProveedor.setNombreFiscal(webLista.getString("Nombre_fiscal"));
-                lisNombreProveedor.add(proProveedor);
+
+            lisNombreProveedor = new ArrayList<>();
+            if (!strError.equals("err0r")) {
+                StringReader strLista = new StringReader(port.getNombreProveedor());
+                WebRowSetImpl webLista = new WebRowSetImpl();
+                webLista.readXml(strLista);
+                while (webLista.next()) {
+                    cProveedor proProveedor = new cProveedor();
+                    proProveedor.setId(webLista.getString("Id_prove"));
+                    proProveedor.setNombreFiscal(webLista.getString("Nombre_fiscal"));
+                    lisNombreProveedor.add(proProveedor);
+                }
+            } else {
+                lisNombreProveedor = null;
             }
-        } else {
-            lisNombreProveedor = null;
-        }
         } catch (Exception excError) {
         }
         return lisNombreProveedor;
     }
-    
+
     private static String cargaProducto() {
         com.lewissa.jhano.accesodatos.producto.WsAccesoDatosProducto_Service service = new com.lewissa.jhano.accesodatos.producto.WsAccesoDatosProducto_Service();
         com.lewissa.jhano.accesodatos.producto.WsAccesoDatosProducto port = service.getWsAccesoDatosProductoPort();
         return port.cargaProducto();
     }
-    
+
     public List<cProducto> cargarProducto() {
         List<cProducto> lisProducto = new ArrayList<cProducto>();
         try {
@@ -143,26 +143,23 @@ public class cTransaccionProducto {
 
         return lisProducto;
     }
-    
+
     public Boolean eliminarProducto(String strCodigoProducto, Integer intTipoEliminacion) {
         Boolean booResulado = false;
-        if(strCodigoProducto != null)
-        {
-            if(intTipoEliminacion == 1) //Realiza eliminacion FISICA
+        if (strCodigoProducto != null) {
+            if (intTipoEliminacion == 1) //Realiza eliminacion FISICA
             {
-              booResulado=eliminarFisicoProducto(strCodigoProducto);
-            }
-            else
-            {
-              if(intTipoEliminacion == 0) //Realiza eliminacion LOGICA 
-              {
-                  booResulado=eliminarLogicoProducto(strCodigoProducto);
-              }
+                booResulado = eliminarFisicoProducto(strCodigoProducto);
+            } else {
+                if (intTipoEliminacion == 0) //Realiza eliminacion LOGICA 
+                {
+                    booResulado = eliminarLogicoProducto(strCodigoProducto);
+                }
             }
         }
         return booResulado;
     }
-    
+
     private static Boolean eliminarFisicoProducto(java.lang.String strCodigoProducto) {
         com.lewissa.jhano.accesodatos.producto.WsAccesoDatosProducto_Service service = new com.lewissa.jhano.accesodatos.producto.WsAccesoDatosProducto_Service();
         com.lewissa.jhano.accesodatos.producto.WsAccesoDatosProducto port = service.getWsAccesoDatosProductoPort();
@@ -175,43 +172,42 @@ public class cTransaccionProducto {
         return port.eliminarLogicoProducto(strCodigoProducto);
     }
 
-    List<cFamiliaProducto> getDescripcionFamiliaProducto()  {
+    List<cFamiliaProducto> getDescripcionFamiliaProducto() {
         com.lewissa.jhano.accesodatos.producto.WsAccesoDatosProducto_Service service = new com.lewissa.jhano.accesodatos.producto.WsAccesoDatosProducto_Service();
         com.lewissa.jhano.accesodatos.producto.WsAccesoDatosProducto port = service.getWsAccesoDatosProductoPort();
         String strError = null;
-        List<cFamiliaProducto> lisFamiliaProducto=null;
+        List<cFamiliaProducto> lisFamiliaProducto = null;
         try {
             strError = port.getDescripcionFamilaProducto();
-       
-         lisFamiliaProducto= new ArrayList<>();
-        StringReader strLista = new StringReader(port.getDescripcionFamilaProducto());
-        if (!strError.equals("err0r")) {
-            WebRowSetImpl webLista = new WebRowSetImpl();
-            webLista.readXml(strLista);
-            while (webLista.next()) {
-                cFamiliaProducto famFamilia = new cFamiliaProducto();
-                famFamilia.setStrId(webLista.getString("Id_fami"));
-                famFamilia.setStrDescripcion(webLista.getString("Descripcion"));
-                lisFamiliaProducto.add(famFamilia);
+
+            lisFamiliaProducto = new ArrayList<>();
+            StringReader strLista = new StringReader(port.getDescripcionFamilaProducto());
+            if (!strError.equals("err0r")) {
+                WebRowSetImpl webLista = new WebRowSetImpl();
+                webLista.readXml(strLista);
+                while (webLista.next()) {
+                    cFamiliaProducto famFamilia = new cFamiliaProducto();
+                    famFamilia.setStrId(webLista.getString("Id_fami"));
+                    famFamilia.setStrDescripcion(webLista.getString("Descripcion"));
+                    lisFamiliaProducto.add(famFamilia);
+                }
+            } else {
+                lisFamiliaProducto = null;
             }
-        } else {
-            lisFamiliaProducto = null;
-        }
-         } catch (Exception excError) {
+        } catch (Exception excError) {
         }
         return lisFamiliaProducto;
     }
-    
-    public List<cProducto> buscarProducto(String strParametro)
-    {
+
+    public List<cProducto> buscarProducto(String strParametro) {
         List<cProducto> lisProductos = new ArrayList<cProducto>();
         try {
             cProducto oProducto;
             WebRowSetImpl wrsImplement = new WebRowSetImpl();
             StringReader strReader = new StringReader(buscarProducto_1(strParametro));
             wrsImplement.readXml(strReader);
-            while (wrsImplement.next()) {                
-                oProducto= new cProducto();
+            while (wrsImplement.next()) {
+                oProducto = new cProducto();
                 oProducto.setStrEan(wrsImplement.getString("Ean"));
                 oProducto.setStrFabricante(wrsImplement.getString("Fabricante"));
                 oProducto.setStrDescripcionGeneral(wrsImplement.getString("Descripcion_general"));
@@ -224,7 +220,7 @@ public class cTransaccionProducto {
                 oProducto.setIntStockMaximo(wrsImplement.getInt("Stock_maximo"));
                 oProducto.setIntStockMinimo(wrsImplement.getInt("Stock_minimo"));
                 oProducto.setStrFamiliaProdu(wrsImplement.getString("familia_produ"));
-                lisProductos.add(oProducto);               
+                lisProductos.add(oProducto);
             }
         } catch (Exception e) {
         }
@@ -241,7 +237,7 @@ public class cTransaccionProducto {
         com.lewissa.jhano.accesodatos.producto.WsAccesoDatosProducto_Service service = new com.lewissa.jhano.accesodatos.producto.WsAccesoDatosProducto_Service();
         com.lewissa.jhano.accesodatos.producto.WsAccesoDatosProducto port = service.getWsAccesoDatosProductoPort();
         Boolean booFlag = false;
-    
+
         List<String> strProducto = new ArrayList<String>();
         strProducto.add(0, datDatos.getStrSn());
         strProducto.add(1, datDatos.getStrEan());

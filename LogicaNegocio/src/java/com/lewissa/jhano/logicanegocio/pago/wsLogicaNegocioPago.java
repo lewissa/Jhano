@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+<<<<<<< HEAD
 
 package com.lewissa.jhano.logicanegocio.pago;
 
@@ -14,10 +15,28 @@ import java.util.List;
 /**
  *
  * @author Fredy  Janeta
+=======
+package com.lewissa.jhano.logicanegocio.pago;
+
+import com.lewissa.jhano.accesodatos.pago.WsAccesoDatosPago_Service;
+import com.sun.rowset.WebRowSetImpl;
+import java.io.StringReader;
+import java.util.ArrayList;
+import java.util.List;
+import javax.jws.WebService;
+import javax.jws.WebMethod;
+import javax.jws.WebParam;
+import javax.xml.ws.WebServiceRef;
+
+/**
+ *
+ * @author Usuario
+>>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
  */
 @WebService(serviceName = "wsLogicaNegocioPago")
 public class wsLogicaNegocioPago {
 
+<<<<<<< HEAD
    
     /**
      * Web service operation
@@ -29,5 +48,74 @@ public class wsLogicaNegocioPago {
         cTransaccionPago oTransaccionPago = new cTransaccionPago();
         strListaPagosPendientes = oTransaccionPago.getPagosPendientes();
         return strListaPagosPendientes;
+=======
+    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/AccesoDatos/wsAccesoDatosPago.wsdl")
+    private WsAccesoDatosPago_Service service;
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "getErrorConexion")
+    public String getErrorConexion() {
+        //TODO write your implementation code here:
+        String strResultado;
+        com.lewissa.jhano.accesodatos.pago.WsAccesoDatosPago_Service service = new com.lewissa.jhano.accesodatos.pago.WsAccesoDatosPago_Service();
+        com.lewissa.jhano.accesodatos.pago.WsAccesoDatosPago port = service.getWsAccesoDatosPagoPort();
+        strResultado = port.getErrorConexion();
+        return strResultado;
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "cargaPago")
+    public java.util.List<com.lewissa.jhano.logicanegocio.pago.cPago> cargaPago() {
+        //TODO write your implementation code here:
+        cTransaccionPago oTransaccionPago = new cTransaccionPago();
+        List<cPago> lisPagos = new ArrayList<>();
+        lisPagos = oTransaccionPago.cargarPagos();
+        return lisPagos;
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "modificarDataBasePago")
+    public Boolean modificarDataBasePago(@WebParam(name = "strPago") cPago strPago) {
+        //TODO write your implementation code here:
+        cTransaccionPago traPago = new cTransaccionPago();
+        return traPago.modificaPago(strPago);
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "mostrarDatosPagos")
+    public cPago mostrarDatosPagos(@WebParam(name = "strId") String strId) {
+        //TODO write your implementation code here:
+        com.lewissa.jhano.logicanegocio.pago.cPago pPago = new cPago();
+        try {
+            StringReader sr = new StringReader(mostrarDatosPagos_1(strId));
+            WebRowSetImpl wrs = new WebRowSetImpl();
+            wrs.readXml(sr);
+            while (wrs.next()) {
+                pPago.setIntIdPago(wrs.getInt("Id_pago"));
+                pPago.setDouMontoReal(wrs.getDouble("monto"));
+                pPago.setStrFechaPago(wrs.getString("fecha_pago"));
+                pPago.setIntFormaPago(wrs.getInt("forma_pago"));
+                pPago.setStrFacturaPago(wrs.getString("factura_pago"));
+
+            }
+        } catch (Exception ex) {
+        }
+        return pPago;
+    }
+
+    private String mostrarDatosPagos_1(java.lang.String strIdPago) {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        com.lewissa.jhano.accesodatos.pago.WsAccesoDatosPago port = service.getWsAccesoDatosPagoPort();
+        return port.mostrarDatosPagos(strIdPago);
+>>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
     }
 }

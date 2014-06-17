@@ -2,6 +2,7 @@
     Document   : interfazCargaFactura
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     Created on : 10-jun-2014, 1:36:13
     Author     : Fredy Janeta
 --%>
@@ -13,6 +14,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Jhano | Inicio </title>
 =======
+=======
+>>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
 =======
 >>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
     Created on : 13/06/2014, 05:09:25 PM
@@ -28,6 +31,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Jhano | Factura </title>
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
+=======
 >>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
 =======
 >>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
@@ -36,6 +42,7 @@
     </head>
 
     <body>
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         <%
@@ -51,6 +58,8 @@
 =======
 =======
 >>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
+=======
+>>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
         <table bgcolor="#192B75" width="100%" height="50%" border="1">
             <tr>
                 <td>
@@ -58,6 +67,9 @@
                     <img src="Image/computech.jpg" alt="espoch" />
                     </a>
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
+=======
 >>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
 =======
 >>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
@@ -71,7 +83,11 @@
                             <font color="#FFFFFF" face="Arial">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 Soluciones en TecnologÃ­a Computacional
+=======
+                                Soluciones en Tecnología Computacional
+>>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
 =======
                                 Soluciones en Tecnología Computacional
 >>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
@@ -96,7 +112,11 @@
                                     <font color="#FFFFFF" face="Arial">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                         Hora de inicio de sesiÃ³n
+=======
+                                        Hora de inicio de sesión
+>>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
 =======
                                         Hora de inicio de sesión
 >>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
@@ -127,7 +147,11 @@
                                     <font color="#FFFFFF" face="Arial">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                         Cerrar SesiÃ³n
+=======
+                                        Cerrar Sesión
+>>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
 =======
                                         Cerrar Sesión
 >>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
@@ -148,7 +172,11 @@
                                 <font face="Arial">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                     <a href="interfacesJhano/interfazCargaCliente.jsp"><center>Clientes</center></a>
+=======
+                                    <a href="../interfacesJhano/interfazCargaCliente.jsp"><center>Clientes</center></a>
+>>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
 =======
                                     <a href="../interfacesJhano/interfazCargaCliente.jsp"><center>Clientes</center></a>
 >>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
@@ -159,6 +187,7 @@
                             </li>
                             <li>
                                 <font face="Arial">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                                     <a href="interfacesJhano/interfazCargaProveedor.jsp"><center>Proveedores</center></a>
@@ -168,10 +197,14 @@
 =======
                                     <a href="../interfacesJhano/interfazCargaProveedor.jsp"><center>Proveedores</center></a>
 >>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
+=======
+                                    <a href="../interfacesJhano/interfazCargaProveedor.jsp"><center>Proveedores</center></a>
+>>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
                                 </font>
                             </li>
                             <li>
                                 <font face="Arial">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
                                     <a href="interfacesJhano/interfazCargaProducto.jsp"><center>Productos</center></a>
@@ -183,6 +216,8 @@
 =======
 =======
 >>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
+=======
+>>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
                                     <a href="../interfacesJhano/interfazCargaProducto.jsp"><center>Productos</center></a>
                                 </font>
                                 <ul>
@@ -190,6 +225,9 @@
                                         <a href="../interfacesJhano/interfazCargaFamiliaProducto.jsp"><center>Familias</center></a>
                                     </font>
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
+=======
 >>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
 =======
 >>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
@@ -199,7 +237,11 @@
                                 <font face="Arial">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                                     <a href="interfacesJhano/interfazIngresoFactura.jsp"><center>Facturas</center></a>
+=======
+                                    <a href="../interfacesJhano/interfazCargaFactura.jsp"><center>Facturas</center></a>
+>>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
 =======
                                     <a href="../interfacesJhano/interfazCargaFactura.jsp"><center>Facturas</center></a>
 >>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
@@ -226,6 +268,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <table bgcolor="#C0C0C0" width="100%" border="1">
                 <tr>
                     
@@ -249,6 +292,8 @@
 
 
 =======
+=======
+>>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
 =======
 >>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
         <table bgcolor="#C0C0C0" width="100%" height="100%" border="1">
@@ -345,6 +390,9 @@
     </body>
 </html>
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
+=======
 >>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
 =======
 >>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034

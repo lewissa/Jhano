@@ -1,11 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+        <file>
+            <url>web/interfacesJhano/popupPago.jsp</url>
+            <bookmark id="1">
+                <name/>
+                <line>107</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/Usuario/Documents/GitHub/Jhano/InterfazUsuario/web/interfacesJhano/interfazIngresoFactura.jsp</file>
             <file>file:/C:/Users/Usuario/Documents/GitHub/Jhano/InterfazUsuario/web/javascript/insertarFactura.js</file>
             <file>file:/C:/Users/Usuario/Documents/GitHub/Jhano/InterfazUsuario/web/controladoresJhano/controladorInterfazIngresoFactura.jsp</file>
+=======
+            <file>file:/home/wmoina/NetBeansProjects/Jhano21/InterfazUsuario/web/interfacesJhano/interfazIngresoProducto.jsp</file>
+            <file>file:/home/wmoina/NetBeansProjects/Jhano21/InterfazUsuario/web/index.jsp</file>
+            <file>file:/home/wmoina/NetBeansProjects/Jhano21/InterfazUsuario/web/interfacesJhano/interfazCargaProducto.jsp</file>
+>>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
         </group>
     </open-files>
 </project-private>

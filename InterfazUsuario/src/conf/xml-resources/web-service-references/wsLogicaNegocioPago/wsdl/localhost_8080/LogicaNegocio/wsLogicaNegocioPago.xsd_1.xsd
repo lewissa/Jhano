@@ -2,6 +2,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <xs:element name="getPagosPendientes" type="tns:getPagosPendientes"/>
 
 <xs:element name="getPagosPendientesResponse" type="tns:getPagosPendientesResponse"/>
@@ -12,6 +13,8 @@
 
 <xs:complexType name="getPagosPendientesResponse">
 =======
+=======
+>>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
 =======
 >>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
 <xs:element name="cargaPago" type="tns:cargaPago"/>
@@ -70,6 +73,9 @@
 
 <xs:complexType name="getErrorConexionResponse">
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
+=======
 >>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
 =======
 >>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
@@ -79,7 +85,10 @@
 </xs:complexType>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
 =======
 >>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
 
@@ -93,6 +102,9 @@
 </xs:sequence>
 </xs:complexType>
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
+=======
 >>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
 =======
 >>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034

@@ -39,6 +39,9 @@
       <local-wsdl-file>localhost_8080/LogicaNegocio/wsLogicaNegocioProveedor.wsdl</local-wsdl-file>
       <package-name>com.lewissa.jhano.logicanegocio.proveedor</package-name>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
       <catalog-file>catalog.xml</catalog-file>
       <wsimport-options>
         <wsimport-option>
@@ -103,6 +106,9 @@
       <wsdl-url>http://localhost:8080/LogicaNegocio/wsLogicaNegocioProducto?WSDL</wsdl-url>
       <local-wsdl-file>localhost_8080/LogicaNegocio/wsLogicaNegocioProducto.wsdl</local-wsdl-file>
       <package-name>com.lewissa.jhano.logicanegocio.producto</package-name>
+<<<<<<< HEAD
+=======
+>>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
 =======
 >>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
       <catalog-file>catalog.xml</catalog-file>
@@ -122,9 +128,13 @@
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
 <<<<<<< HEAD
+<<<<<<< HEAD
           <wsimport-option-value>http://localhost:8080/LogicaNegocio/wsLogicaNegocioProducto?WSDL</wsimport-option-value>
 =======
           <wsimport-option-value>http://localhost:8080/LogicaNegocio/wsLogicaNegocioProveedor?wsdl</wsimport-option-value>
+>>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
+=======
+          <wsimport-option-value>http://localhost:8080/LogicaNegocio/wsLogicaNegocioProducto?WSDL</wsimport-option-value>
 >>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
         </wsimport-option>
         <wsimport-option>
@@ -137,10 +147,10 @@
         </wsimport-option>
       </wsimport-options>
     </client>
-    <client name="wsLogicaNegocioCliente">
-      <wsdl-url>http://localhost:8080/LogicaNegocio/wsLogicaNegocioCliente?wsdl</wsdl-url>
-      <local-wsdl-file>localhost_8080/LogicaNegocio/wsLogicaNegocioCliente.wsdl</local-wsdl-file>
-      <package-name>com.lewissa.jhano.logicanegocio.cliente</package-name>
+    <client name="wsLogicaNegocioFactura">
+      <wsdl-url>http://localhost:8080/LogicaNegocio/wsLogicaNegocioFactura?wsdl</wsdl-url>
+      <local-wsdl-file>localhost_8080/LogicaNegocio/wsLogicaNegocioFactura.wsdl</local-wsdl-file>
+      <package-name>com.lewissa.jhano.logicanegocio.factura</package-name>
       <catalog-file>catalog.xml</catalog-file>
       <wsimport-options>
         <wsimport-option>
@@ -157,7 +167,39 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:8080/LogicaNegocio/wsLogicaNegocioCliente?wsdl</wsimport-option-value>
+          <wsimport-option-value>http://localhost:8080/LogicaNegocio/wsLogicaNegocioFactura?wsdl</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>xnocompile</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>xendorsed</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+      </wsimport-options>
+    </client>
+    <client name="wsLogicaNegocioListaProductos">
+      <wsdl-url>http://localhost:8080/LogicaNegocio/wsLogicaNegocioListaProductos?wsdl</wsdl-url>
+      <local-wsdl-file>localhost_8080/LogicaNegocio/wsLogicaNegocioListaProductos.wsdl</local-wsdl-file>
+      <package-name>com.lewissa.jhano.logicanegocio.listaproductos</package-name>
+      <catalog-file>catalog.xml</catalog-file>
+      <wsimport-options>
+        <wsimport-option>
+          <wsimport-option-name>extension</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>verbose</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>fork</wsimport-option-name>
+          <wsimport-option-value>false</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>wsdlLocation</wsimport-option-name>
+          <wsimport-option-value>http://localhost:8080/LogicaNegocio/wsLogicaNegocioListaProductos?wsdl</wsimport-option-value>
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>
@@ -254,10 +296,10 @@
         </wsimport-option>
       </wsimport-options>
     </client>
-    <client name="wsLogicaNegocioListaProductos">
-      <wsdl-url>http://localhost:8080/LogicaNegocio/wsLogicaNegocioListaProductos?wsdl</wsdl-url>
-      <local-wsdl-file>localhost_8080/LogicaNegocio/wsLogicaNegocioListaProductos.wsdl</local-wsdl-file>
-      <package-name>com.lewissa.jhano.logicanegocio.listaproductos</package-name>
+    <client name="wsLogicaNegocioPago">
+      <wsdl-url>http://localhost:8080/LogicaNegocio/wsLogicaNegocioPago?wsdl</wsdl-url>
+      <local-wsdl-file>localhost_8080/LogicaNegocio/wsLogicaNegocioPago.wsdl</local-wsdl-file>
+      <package-name>com.lewissa.jhano.logicanegocio.pago</package-name>
       <catalog-file>catalog.xml</catalog-file>
       <wsimport-options>
         <wsimport-option>
@@ -274,6 +316,7 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
+<<<<<<< HEAD
           <wsimport-option-value>http://localhost:8080/LogicaNegocio/wsLogicaNegocioListaProductos?wsdl</wsimport-option-value>
 >>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
         </wsimport-option>
@@ -339,6 +382,8 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
+=======
+>>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
           <wsimport-option-value>http://localhost:8080/LogicaNegocio/wsLogicaNegocioPago?wsdl</wsimport-option-value>
         </wsimport-option>
         <wsimport-option>

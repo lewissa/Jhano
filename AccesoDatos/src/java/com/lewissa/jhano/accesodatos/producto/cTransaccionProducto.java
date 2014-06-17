@@ -137,6 +137,7 @@ public class cTransaccionProducto {
         strPoducto = cAccesoDatos.getInstanciaAccesoDatos().consultarDataBase(strSqlConsulta);
         return strPoducto;
     }
+<<<<<<< HEAD
      
      /**
       * @author Fredy Janeta
@@ -155,4 +156,6 @@ public class cTransaccionProducto {
          
          return strResultado;
      }
+=======
+>>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
 }
