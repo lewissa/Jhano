@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.3 (tags/2.3-7528; 2013-04-29T19:34:10+0000) JAXWS-RI/2.2.8 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://pago.logicanegocio.jhano.lewissa.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://pago.logicanegocio.jhano.lewissa.com/">
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 <xs:element name="getPagosPendientes" type="tns:getPagosPendientes"/>
 
 <xs:element name="getPagosPendientesResponse" type="tns:getPagosPendientesResponse"/>
@@ -11,6 +12,8 @@
 
 <xs:complexType name="getPagosPendientesResponse">
 =======
+=======
+>>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
 <xs:element name="cargaPago" type="tns:cargaPago"/>
 
 <xs:element name="cargaPagoResponse" type="tns:cargaPagoResponse"/>
@@ -66,13 +69,19 @@
 </xs:complexType>
 
 <xs:complexType name="getErrorConexionResponse">
+<<<<<<< HEAD
+>>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
+=======
 >>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
 
 <xs:complexType name="cargaPago">
 <xs:sequence/>
@@ -83,5 +92,8 @@
 <xs:element name="return" type="tns:cPago" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
 </xs:complexType>
+<<<<<<< HEAD
+>>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
+=======
 >>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
 </xs:schema>

@@ -153,6 +153,7 @@
     <target name="wsimport-client-clean-wsLogicaNegocioPago" depends="-init-project">
         <delete dir="${build.generated.sources.dir}/jax-ws/com/lewissa/jhano/logicanegocio/pago"/>
         <delete dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioPago"/>
+<<<<<<< HEAD
     </target>
     <target name="wsimport-client-wsLogicaNegocioPago" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioPago"/>
@@ -171,4 +172,8 @@
         <delete dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioPago"/>
     </target>
     <target name="wsimport-client-generate" depends="wsimport-client-wsLogicaNegocioFamiliaProducto, wsimport-client-wsLogicaNegocioProveedor, wsimport-client-wsLogicaNegocioCliente, wsimport-client-wsLogicaNegocioProducto, wsimport-client-wsLogicaNegocioFactura, wsimport-client-wsLogicaNegocioListaProductos, wsimport-client-wsLogicaNegocioEmpresa, wsimport-client-wsLogicaNegocioPago, wsimport-client-wsLogicaNegocioPago"/>
+=======
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-wsLogicaNegocioFamiliaProducto, wsimport-client-wsLogicaNegocioProveedor, wsimport-client-wsLogicaNegocioCliente, wsimport-client-wsLogicaNegocioProducto, wsimport-client-wsLogicaNegocioFactura, wsimport-client-wsLogicaNegocioListaProductos, wsimport-client-wsLogicaNegocioEmpresa, wsimport-client-wsLogicaNegocioPago"/>
+>>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
 </project>

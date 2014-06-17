@@ -1,0 +1,170 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.3 (tags/2.3-7528; 2013-04-29T19:34:10+0000) JAXWS-RI/2.2.8 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://producto.accesodatos.jhano.lewissa.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://producto.accesodatos.jhano.lewissa.com/">
+
+<xs:element name="actualizarDataBaseProducto" type="tns:actualizarDataBaseProducto"/>
+
+<xs:element name="actualizarDataBaseProductoResponse" type="tns:actualizarDataBaseProductoResponse"/>
+
+<xs:element name="buscarProducto" type="tns:buscarProducto"/>
+
+<xs:element name="buscarProductoResponse" type="tns:buscarProductoResponse"/>
+
+<xs:element name="cargaProducto" type="tns:cargaProducto"/>
+
+<xs:element name="cargaProductoResponse" type="tns:cargaProductoResponse"/>
+
+<xs:element name="consultarProducto" type="tns:consultarProducto"/>
+
+<xs:element name="consultarProductoPorFamilia" type="tns:consultarProductoPorFamilia"/>
+
+<xs:element name="consultarProductoPorFamiliaResponse" type="tns:consultarProductoPorFamiliaResponse"/>
+
+<xs:element name="consultarProductoResponse" type="tns:consultarProductoResponse"/>
+
+<xs:element name="eliminarFisicoProducto" type="tns:eliminarFisicoProducto"/>
+
+<xs:element name="eliminarFisicoProductoResponse" type="tns:eliminarFisicoProductoResponse"/>
+
+<xs:element name="eliminarLogicoProducto" type="tns:eliminarLogicoProducto"/>
+
+<xs:element name="eliminarLogicoProductoResponse" type="tns:eliminarLogicoProductoResponse"/>
+
+<xs:element name="getDescripcionFamilaProducto" type="tns:getDescripcionFamilaProducto"/>
+
+<xs:element name="getDescripcionFamilaProductoResponse" type="tns:getDescripcionFamilaProductoResponse"/>
+
+<xs:element name="getErrorConexion" type="tns:getErrorConexion"/>
+
+<xs:element name="getErrorConexionResponse" type="tns:getErrorConexionResponse"/>
+
+<xs:element name="getNombreProveedor" type="tns:getNombreProveedor"/>
+
+<xs:element name="getNombreProveedorResponse" type="tns:getNombreProveedorResponse"/>
+
+<xs:element name="modificarDataBaseProducto" type="tns:modificarDataBaseProducto"/>
+
+<xs:element name="modificarDataBaseProductoResponse" type="tns:modificarDataBaseProductoResponse"/>
+
+<xs:complexType name="consultarProductoPorFamilia">
+<xs:sequence>
+<xs:element name="strIdFamilia" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultarProductoPorFamiliaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cargaProducto">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="cargaProductoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultarProducto">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultarProductoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getDescripcionFamilaProducto">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getDescripcionFamilaProductoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarProducto">
+<xs:sequence>
+<xs:element name="strParametro" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarProductoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarLogicoProducto">
+<xs:sequence>
+<xs:element name="strCodigoProducto" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarLogicoProductoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getNombreProveedor">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getNombreProveedorResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizarDataBaseProducto">
+<xs:sequence>
+<xs:element name="strPro" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="actualizarDataBaseProductoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="modificarDataBaseProducto">
+<xs:sequence>
+<xs:element name="strPro" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="modificarDataBaseProductoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getErrorConexion">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getErrorConexionResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarFisicoProducto">
+<xs:sequence>
+<xs:element name="strCodigoProducto" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarFisicoProductoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

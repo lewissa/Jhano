@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.3 (tags/2.3-7528; 2013-04-29T19:34:10+0000) JAXWS-RI/2.2.8 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://proveedor.accesodatos.jhano.lewissa.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://proveedor.accesodatos.jhano.lewissa.com/">
+
+<xs:element name="cargaProveedor" type="tns:cargaProveedor"/>
+
+<xs:element name="cargaProveedorResponse" type="tns:cargaProveedorResponse"/>
+
+<xs:element name="eliminarFisicoProveedor" type="tns:eliminarFisicoProveedor"/>
+
+<xs:element name="eliminarFisicoProveedorResponse" type="tns:eliminarFisicoProveedorResponse"/>
+
+<xs:element name="eliminarLogicoProveedor" type="tns:eliminarLogicoProveedor"/>
+
+<xs:element name="eliminarLogicoProveedorResponse" type="tns:eliminarLogicoProveedorResponse"/>
+
+<xs:element name="getErrorConexion" type="tns:getErrorConexion"/>
+
+<xs:element name="getErrorConexionResponse" type="tns:getErrorConexionResponse"/>
+
+<xs:element name="insertarProveedor" type="tns:insertarProveedor"/>
+
+<xs:element name="insertarProveedorResponse" type="tns:insertarProveedorResponse"/>
+
+<xs:element name="modificarProveedor" type="tns:modificarProveedor"/>
+
+<xs:element name="modificarProveedorResponse" type="tns:modificarProveedorResponse"/>
+
+<xs:complexType name="cargaProveedor">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="cargaProveedorResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarFisicoProveedor">
+<xs:sequence>
+<xs:element name="strCodigoProveedor" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarFisicoProveedorResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarLogicoProveedor">
+<xs:sequence>
+<xs:element name="strCodigoProveedor" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarLogicoProveedorResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="modificarProveedor">
+<xs:sequence>
+<xs:element name="strProveedor" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="modificarProveedorResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getErrorConexion">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getErrorConexionResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="insertarProveedor">
+<xs:sequence>
+<xs:element name="strProveedor" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="insertarProveedorResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

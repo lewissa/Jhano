@@ -5,6 +5,7 @@
 </xsd:schema>
 </types>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <message name="getPagosPendientes">
 <part name="parameters" element="tns:getPagosPendientes"/>
 </message>
@@ -16,6 +17,8 @@
 <input wsam:Action="http://pago.logicanegocio.jhano.lewissa.com/wsLogicaNegocioPago/getPagosPendientesRequest" message="tns:getPagosPendientes"/>
 <output wsam:Action="http://pago.logicanegocio.jhano.lewissa.com/wsLogicaNegocioPago/getPagosPendientesResponse" message="tns:getPagosPendientesResponse"/>
 =======
+=======
+>>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
 <message name="getErrorConexion">
 <part name="parameters" element="tns:getErrorConexion"/>
 </message>
@@ -56,14 +59,20 @@
 <operation name="cargaPago">
 <input wsam:Action="http://pago.logicanegocio.jhano.lewissa.com/wsLogicaNegocioPago/cargaPagoRequest" message="tns:cargaPago"/>
 <output wsam:Action="http://pago.logicanegocio.jhano.lewissa.com/wsLogicaNegocioPago/cargaPagoResponse" message="tns:cargaPagoResponse"/>
+<<<<<<< HEAD
+>>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
+=======
 >>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
 </operation>
 </portType>
 <binding name="wsLogicaNegocioPagoPortBinding" type="tns:wsLogicaNegocioPago">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <operation name="getPagosPendientes">
 =======
+=======
+>>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
 <operation name="getErrorConexion">
 <soap:operation soapAction=""/>
 <input>
@@ -92,6 +101,9 @@
 </output>
 </operation>
 <operation name="cargaPago">
+<<<<<<< HEAD
+>>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
+=======
 >>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
 <soap:operation soapAction=""/>
 <input>
