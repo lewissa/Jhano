@@ -26,25 +26,41 @@
             <isset property="conf.dir"/>
         </condition>
     </target>
-    <target name="wsimport-client-wsLogicaNegocioFamiliaProducto" depends="wsimport-init">
-        <mkdir dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioFamiliaProducto"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioFamiliaProducto" destdir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioFamiliaProducto" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/wsLogicaNegocioFamiliaProducto/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto?wsdl" xnocompile="true" xendorsed="true">
-            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/wsLogicaNegocioFamiliaProducto/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto.wsdl"/>
-            <produces dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioFamiliaProducto"/>
+    <target name="wsimport-client-wsLogicaNegocioFactura" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioFactura"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioFactura" destdir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioFactura" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/wsLogicaNegocioFactura/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioFactura.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/LogicaNegocio/wsLogicaNegocioFactura?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/wsLogicaNegocioFactura/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioFactura.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioFactura"/>
         </wsimport>
         <copy todir="${build.generated.sources.dir}/jax-ws">
-            <fileset dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioFamiliaProducto">
+            <fileset dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioFactura">
                 <include name="**/*.java"/>
             </fileset>
         </copy>
     </target>
-    <target name="wsimport-client-clean-wsLogicaNegocioFamiliaProducto" depends="-init-project">
-        <delete dir="${build.generated.sources.dir}/jax-ws/com/lewissa/jhano/logicanegocio/familiaproducto"/>
-        <delete dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioFamiliaProducto"/>
+    <target name="wsimport-client-clean-wsLogicaNegocioFactura" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/lewissa/jhano/logicanegocio/factura"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioFactura"/>
+    </target>
+    <target name="wsimport-client-wsLogicaNegocioEmpresa" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioEmpresa"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioEmpresa" destdir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioEmpresa" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/wsLogicaNegocioEmpresa/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioEmpresa.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/LogicaNegocio/wsLogicaNegocioEmpresa?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/wsLogicaNegocioEmpresa/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioEmpresa.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioEmpresa"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioEmpresa">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-wsLogicaNegocioEmpresa" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/lewissa/jhano/logicanegocio/empresa"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioEmpresa"/>
     </target>
     <target name="wsimport-client-wsLogicaNegocioProveedor" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioProveedor"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioProveedor" destdir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioProveedor" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/wsLogicaNegocioProveedor/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioProveedor.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/LogicaNegocio/wsLogicaNegocioProveedor?wsdl" xnocompile="true" xendorsed="true">
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioProveedor" destdir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioProveedor" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/wsLogicaNegocioProveedor/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioProveedor.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/LogicaNegocio/wsLogicaNegocioProveedor?WSDL" xnocompile="true" xendorsed="true">
             <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/wsLogicaNegocioProveedor/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioProveedor.wsdl"/>
             <produces dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioProveedor"/>
         </wsimport>
@@ -58,9 +74,25 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/com/lewissa/jhano/logicanegocio/proveedor"/>
         <delete dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioProveedor"/>
     </target>
+    <target name="wsimport-client-wsLogicaNegocioPago" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioPago"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioPago" destdir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioPago" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/wsLogicaNegocioPago/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioPago.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/LogicaNegocio/wsLogicaNegocioPago?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/wsLogicaNegocioPago/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioPago.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioPago"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioPago">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-wsLogicaNegocioPago" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/lewissa/jhano/logicanegocio/pago"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioPago"/>
+    </target>
     <target name="wsimport-client-wsLogicaNegocioCliente" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioCliente"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioCliente" destdir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioCliente" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/wsLogicaNegocioCliente/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioCliente.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/LogicaNegocio/wsLogicaNegocioCliente?wsdl" xnocompile="true" xendorsed="true">
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioCliente" destdir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioCliente" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/wsLogicaNegocioCliente/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioCliente.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/LogicaNegocio/wsLogicaNegocioCliente?WSDL" xnocompile="true" xendorsed="true">
             <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/wsLogicaNegocioCliente/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioCliente.wsdl"/>
             <produces dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioCliente"/>
         </wsimport>
@@ -73,6 +105,38 @@
     <target name="wsimport-client-clean-wsLogicaNegocioCliente" depends="-init-project">
         <delete dir="${build.generated.sources.dir}/jax-ws/com/lewissa/jhano/logicanegocio/cliente"/>
         <delete dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioCliente"/>
+    </target>
+    <target name="wsimport-client-wsLogicaNegocioListaProductos" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioListaProductos"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioListaProductos" destdir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioListaProductos" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/wsLogicaNegocioListaProductos/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioListaProductos.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/LogicaNegocio/wsLogicaNegocioListaProductos?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/wsLogicaNegocioListaProductos/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioListaProductos.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioListaProductos"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioListaProductos">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-wsLogicaNegocioListaProductos" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/lewissa/jhano/logicanegocio/listaproductos"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioListaProductos"/>
+    </target>
+    <target name="wsimport-client-wsLogicaNegocioFamiliaProducto" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioFamiliaProducto"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioFamiliaProducto" destdir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioFamiliaProducto" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/wsLogicaNegocioFamiliaProducto/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/wsLogicaNegocioFamiliaProducto/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioFamiliaProducto"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioFamiliaProducto">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-wsLogicaNegocioFamiliaProducto" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/lewissa/jhano/logicanegocio/familiaproducto"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioFamiliaProducto"/>
     </target>
     <target name="wsimport-client-wsLogicaNegocioProducto" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioProducto"/>
@@ -90,95 +154,5 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/com/lewissa/jhano/logicanegocio/producto"/>
         <delete dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioProducto"/>
     </target>
-    <target name="wsimport-client-wsLogicaNegocioFactura" depends="wsimport-init">
-        <mkdir dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioFactura"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioFactura" destdir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioFactura" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/wsLogicaNegocioFactura/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioFactura.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/LogicaNegocio/wsLogicaNegocioFactura?wsdl" xnocompile="true" xendorsed="true">
-            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/wsLogicaNegocioFactura/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioFactura.wsdl"/>
-            <produces dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioFactura"/>
-        </wsimport>
-        <copy todir="${build.generated.sources.dir}/jax-ws">
-            <fileset dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioFactura">
-                <include name="**/*.java"/>
-            </fileset>
-        </copy>
-    </target>
-    <target name="wsimport-client-clean-wsLogicaNegocioFactura" depends="-init-project">
-        <delete dir="${build.generated.sources.dir}/jax-ws/com/lewissa/jhano/logicanegocio/factura"/>
-        <delete dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioFactura"/>
-    </target>
-    <target name="wsimport-client-wsLogicaNegocioListaProductos" depends="wsimport-init">
-        <mkdir dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioListaProductos"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioListaProductos" destdir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioListaProductos" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/wsLogicaNegocioListaProductos/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioListaProductos.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/LogicaNegocio/wsLogicaNegocioListaProductos?wsdl" xnocompile="true" xendorsed="true">
-            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/wsLogicaNegocioListaProductos/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioListaProductos.wsdl"/>
-            <produces dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioListaProductos"/>
-        </wsimport>
-        <copy todir="${build.generated.sources.dir}/jax-ws">
-            <fileset dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioListaProductos">
-                <include name="**/*.java"/>
-            </fileset>
-        </copy>
-    </target>
-    <target name="wsimport-client-clean-wsLogicaNegocioListaProductos" depends="-init-project">
-        <delete dir="${build.generated.sources.dir}/jax-ws/com/lewissa/jhano/logicanegocio/listaproductos"/>
-        <delete dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioListaProductos"/>
-    </target>
-    <target name="wsimport-client-wsLogicaNegocioEmpresa" depends="wsimport-init">
-        <mkdir dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioEmpresa"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioEmpresa" destdir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioEmpresa" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/wsLogicaNegocioEmpresa/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioEmpresa.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/LogicaNegocio/wsLogicaNegocioEmpresa?wsdl" xnocompile="true" xendorsed="true">
-            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/wsLogicaNegocioEmpresa/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioEmpresa.wsdl"/>
-            <produces dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioEmpresa"/>
-        </wsimport>
-        <copy todir="${build.generated.sources.dir}/jax-ws">
-            <fileset dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioEmpresa">
-                <include name="**/*.java"/>
-            </fileset>
-        </copy>
-    </target>
-    <target name="wsimport-client-clean-wsLogicaNegocioEmpresa" depends="-init-project">
-        <delete dir="${build.generated.sources.dir}/jax-ws/com/lewissa/jhano/logicanegocio/empresa"/>
-        <delete dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioEmpresa"/>
-    </target>
-    <target name="wsimport-client-wsLogicaNegocioPago" depends="wsimport-init">
-        <mkdir dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioPago"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioPago" destdir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioPago" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/wsLogicaNegocioPago/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioPago.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/LogicaNegocio/wsLogicaNegocioPago?wsdl" xnocompile="true" xendorsed="true">
-            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/wsLogicaNegocioPago/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioPago.wsdl"/>
-            <produces dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioPago"/>
-        </wsimport>
-        <copy todir="${build.generated.sources.dir}/jax-ws">
-            <fileset dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioPago">
-                <include name="**/*.java"/>
-            </fileset>
-        </copy>
-    </target>
-    <target name="wsimport-client-clean-wsLogicaNegocioPago" depends="-init-project">
-        <delete dir="${build.generated.sources.dir}/jax-ws/com/lewissa/jhano/logicanegocio/pago"/>
-        <delete dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioPago"/>
-<<<<<<< HEAD
-<<<<<<< HEAD
-    </target>
-    <target name="wsimport-client-wsLogicaNegocioPago" depends="wsimport-init">
-        <mkdir dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioPago"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioPago" destdir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioPago" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/wsLogicaNegocioPago/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioPago.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/LogicaNegocio/wsLogicaNegocioPago?wsdl" xnocompile="true" xendorsed="true">
-            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/wsLogicaNegocioPago/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioPago.wsdl"/>
-            <produces dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioPago"/>
-        </wsimport>
-        <copy todir="${build.generated.sources.dir}/jax-ws">
-            <fileset dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioPago">
-                <include name="**/*.java"/>
-            </fileset>
-        </copy>
-    </target>
-    <target name="wsimport-client-clean-wsLogicaNegocioPago" depends="-init-project">
-        <delete dir="${build.generated.sources.dir}/jax-ws/com/lewissa/jhano/logicanegocio/pago"/>
-        <delete dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioPago"/>
-    </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-wsLogicaNegocioFamiliaProducto, wsimport-client-wsLogicaNegocioProveedor, wsimport-client-wsLogicaNegocioCliente, wsimport-client-wsLogicaNegocioProducto, wsimport-client-wsLogicaNegocioFactura, wsimport-client-wsLogicaNegocioListaProductos, wsimport-client-wsLogicaNegocioEmpresa, wsimport-client-wsLogicaNegocioPago, wsimport-client-wsLogicaNegocioPago"/>
-=======
-    </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-wsLogicaNegocioFamiliaProducto, wsimport-client-wsLogicaNegocioProveedor, wsimport-client-wsLogicaNegocioCliente, wsimport-client-wsLogicaNegocioProducto, wsimport-client-wsLogicaNegocioFactura, wsimport-client-wsLogicaNegocioListaProductos, wsimport-client-wsLogicaNegocioEmpresa, wsimport-client-wsLogicaNegocioPago"/>
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
-=======
-    </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-wsLogicaNegocioFamiliaProducto, wsimport-client-wsLogicaNegocioProveedor, wsimport-client-wsLogicaNegocioCliente, wsimport-client-wsLogicaNegocioProducto, wsimport-client-wsLogicaNegocioFactura, wsimport-client-wsLogicaNegocioListaProductos, wsimport-client-wsLogicaNegocioEmpresa, wsimport-client-wsLogicaNegocioPago"/>
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
+    <target name="wsimport-client-generate" depends="wsimport-client-wsLogicaNegocioFactura, wsimport-client-wsLogicaNegocioEmpresa, wsimport-client-wsLogicaNegocioProveedor, wsimport-client-wsLogicaNegocioPago, wsimport-client-wsLogicaNegocioCliente, wsimport-client-wsLogicaNegocioListaProductos, wsimport-client-wsLogicaNegocioFamiliaProducto, wsimport-client-wsLogicaNegocioProducto"/>
 </project>

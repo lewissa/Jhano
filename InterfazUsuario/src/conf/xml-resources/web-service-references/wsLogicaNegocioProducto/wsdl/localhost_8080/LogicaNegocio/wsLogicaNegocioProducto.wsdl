@@ -4,17 +4,17 @@
 <xsd:import namespace="http://producto.logicanegocio.jhano.lewissa.com/" schemaLocation="http://localhost:8080/LogicaNegocio/wsLogicaNegocioProducto?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="getNombreProveedor">
-<part name="parameters" element="tns:getNombreProveedor"/>
+<message name="actualizaModificarDataBaseProducto">
+<part name="parameters" element="tns:actualizaModificarDataBaseProducto"/>
 </message>
-<message name="getNombreProveedorResponse">
-<part name="parameters" element="tns:getNombreProveedorResponse"/>
+<message name="actualizaModificarDataBaseProductoResponse">
+<part name="parameters" element="tns:actualizaModificarDataBaseProductoResponse"/>
 </message>
-<message name="buscarProducto">
-<part name="parameters" element="tns:buscarProducto"/>
+<message name="validaRuc">
+<part name="parameters" element="tns:validaRuc"/>
 </message>
-<message name="buscarProductoResponse">
-<part name="parameters" element="tns:buscarProductoResponse"/>
+<message name="validaRucResponse">
+<part name="parameters" element="tns:validaRucResponse"/>
 </message>
 <message name="cargaProducto">
 <part name="parameters" element="tns:cargaProducto"/>
@@ -22,26 +22,23 @@
 <message name="cargaProductoResponse">
 <part name="parameters" element="tns:cargaProductoResponse"/>
 </message>
-<message name="validaRuc">
-<part name="parameters" element="tns:validaRuc"/>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+<message name="actualizaDataBaseProducto">
+<part name="parameters" element="tns:actualizaDataBaseProducto"/>
 </message>
-<message name="validaRucResponse">
-<part name="parameters" element="tns:validaRucResponse"/>
+<message name="actualizaDataBaseProductoResponse">
+<part name="parameters" element="tns:actualizaDataBaseProductoResponse"/>
 </message>
-<message name="actualizaModificarDataBaseProducto">
-<part name="parameters" element="tns:actualizaModificarDataBaseProducto"/>
-=======
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
-=======
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
-=======
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
+<message name="buscarProducto">
+<part name="parameters" element="tns:buscarProducto"/>
 </message>
-<message name="validaRucResponse">
-<part name="parameters" element="tns:validaRucResponse"/>
+<message name="buscarProductoResponse">
+<part name="parameters" element="tns:buscarProductoResponse"/>
+</message>
+<message name="obtieneProducto">
+<part name="parameters" element="tns:obtieneProducto"/>
+</message>
+<message name="obtieneProductoResponse">
+<part name="parameters" element="tns:obtieneProductoResponse"/>
 </message>
 <message name="consultarProductoPorFamilia">
 <part name="parameters" element="tns:consultarProductoPorFamilia"/>
@@ -49,9 +46,12 @@
 <message name="consultarProductoPorFamiliaResponse">
 <part name="parameters" element="tns:consultarProductoPorFamiliaResponse"/>
 </message>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+<message name="getErrorConexionProducto">
+<part name="parameters" element="tns:getErrorConexionProducto"/>
+</message>
+<message name="getErrorConexionProductoResponse">
+<part name="parameters" element="tns:getErrorConexionProductoResponse"/>
+</message>
 <message name="getDescripcionFamiliaProducto">
 <part name="parameters" element="tns:getDescripcionFamiliaProducto"/>
 </message>
@@ -70,139 +70,39 @@
 <message name="eliminarProductoResponse">
 <part name="parameters" element="tns:eliminarProductoResponse"/>
 </message>
-<message name="actualizaDataBaseProducto">
-<part name="parameters" element="tns:actualizaDataBaseProducto"/>
-</message>
-<message name="actualizaDataBaseProductoResponse">
-<part name="parameters" element="tns:actualizaDataBaseProductoResponse"/>
-</message>
-=======
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
-=======
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
-=======
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
-<message name="getErrorConexionProducto">
-<part name="parameters" element="tns:getErrorConexionProducto"/>
-</message>
-<message name="getErrorConexionProductoResponse">
-<part name="parameters" element="tns:getErrorConexionProductoResponse"/>
-</message>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<message name="obtieneProducto">
-<part name="parameters" element="tns:obtieneProducto"/>
-=======
-=======
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
-<message name="getDescripcionFamiliaProducto">
-<part name="parameters" element="tns:getDescripcionFamiliaProducto"/>
-</message>
-<message name="getDescripcionFamiliaProductoResponse">
-<part name="parameters" element="tns:getDescripcionFamiliaProductoResponse"/>
-</message>
-<message name="eliminarProducto">
-<part name="parameters" element="tns:eliminarProducto"/>
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
-</message>
-<message name="obtieneProductoResponse">
-<part name="parameters" element="tns:obtieneProductoResponse"/>
-</message>
-<message name="buscarProducto">
-<part name="parameters" element="tns:buscarProducto"/>
-</message>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<message name="buscarProductoResponse">
-<part name="parameters" element="tns:buscarProductoResponse"/>
-=======
-<message name="getDescripcionFamiliaProducto">
-<part name="parameters" element="tns:getDescripcionFamiliaProducto"/>
-=======
-<message name="actualizaModificarDataBaseProducto">
-<part name="parameters" element="tns:actualizaModificarDataBaseProducto"/>
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
-=======
-<message name="actualizaModificarDataBaseProducto">
-<part name="parameters" element="tns:actualizaModificarDataBaseProducto"/>
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
-</message>
-<message name="actualizaModificarDataBaseProductoResponse">
-<part name="parameters" element="tns:actualizaModificarDataBaseProductoResponse"/>
-</message>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<message name="eliminarProducto">
-<part name="parameters" element="tns:eliminarProducto"/>
-</message>
-<message name="eliminarProductoResponse">
-<part name="parameters" element="tns:eliminarProductoResponse"/>
-</message>
-<message name="actualizaModificarDataBaseProducto">
-<part name="parameters" element="tns:actualizaModificarDataBaseProducto"/>
-</message>
-<message name="actualizaModificarDataBaseProductoResponse">
-<part name="parameters" element="tns:actualizaModificarDataBaseProductoResponse"/>
-</message>
-<message name="obtieneProducto">
-<part name="parameters" element="tns:obtieneProducto"/>
-</message>
-<message name="obtieneProductoResponse">
-<part name="parameters" element="tns:obtieneProductoResponse"/>
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
-=======
-<message name="obtieneProducto">
-<part name="parameters" element="tns:obtieneProducto"/>
-</message>
-<message name="obtieneProductoResponse">
-<part name="parameters" element="tns:obtieneProductoResponse"/>
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
-=======
-<message name="obtieneProducto">
-<part name="parameters" element="tns:obtieneProducto"/>
-</message>
-<message name="obtieneProductoResponse">
-<part name="parameters" element="tns:obtieneProductoResponse"/>
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
-</message>
 <portType name="wsLogicaNegocioProducto">
-<operation name="getNombreProveedor">
-<input wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/getNombreProveedorRequest" message="tns:getNombreProveedor"/>
-<output wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/getNombreProveedorResponse" message="tns:getNombreProveedorResponse"/>
+<operation name="actualizaModificarDataBaseProducto">
+<input wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/actualizaModificarDataBaseProductoRequest" message="tns:actualizaModificarDataBaseProducto"/>
+<output wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/actualizaModificarDataBaseProductoResponse" message="tns:actualizaModificarDataBaseProductoResponse"/>
 </operation>
-<operation name="buscarProducto">
-<input wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/buscarProductoRequest" message="tns:buscarProducto"/>
-<output wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/buscarProductoResponse" message="tns:buscarProductoResponse"/>
+<operation name="validaRuc">
+<input wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/validaRucRequest" message="tns:validaRuc"/>
+<output wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/validaRucResponse" message="tns:validaRucResponse"/>
 </operation>
 <operation name="cargaProducto">
 <input wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/cargaProductoRequest" message="tns:cargaProducto"/>
 <output wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/cargaProductoResponse" message="tns:cargaProductoResponse"/>
 </operation>
-<operation name="validaRuc">
-<input wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/validaRucRequest" message="tns:validaRuc"/>
-<output wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/validaRucResponse" message="tns:validaRucResponse"/>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+<operation name="actualizaDataBaseProducto">
+<input wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/actualizaDataBaseProductoRequest" message="tns:actualizaDataBaseProducto"/>
+<output wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/actualizaDataBaseProductoResponse" message="tns:actualizaDataBaseProductoResponse"/>
 </operation>
-<operation name="actualizaModificarDataBaseProducto">
-<input wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/actualizaModificarDataBaseProductoRequest" message="tns:actualizaModificarDataBaseProducto"/>
-<output wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/actualizaModificarDataBaseProductoResponse" message="tns:actualizaModificarDataBaseProductoResponse"/>
-=======
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
-=======
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
-=======
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
+<operation name="buscarProducto">
+<input wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/buscarProductoRequest" message="tns:buscarProducto"/>
+<output wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/buscarProductoResponse" message="tns:buscarProductoResponse"/>
+</operation>
+<operation name="obtieneProducto">
+<input wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/obtieneProductoRequest" message="tns:obtieneProducto"/>
+<output wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/obtieneProductoResponse" message="tns:obtieneProductoResponse"/>
 </operation>
 <operation name="consultarProductoPorFamilia">
 <input wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/consultarProductoPorFamiliaRequest" message="tns:consultarProductoPorFamilia"/>
 <output wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/consultarProductoPorFamiliaResponse" message="tns:consultarProductoPorFamiliaResponse"/>
 </operation>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+<operation name="getErrorConexionProducto">
+<input wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/getErrorConexionProductoRequest" message="tns:getErrorConexionProducto"/>
+<output wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/getErrorConexionProductoResponse" message="tns:getErrorConexionProductoResponse"/>
+</operation>
 <operation name="getDescripcionFamiliaProducto">
 <input wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/getDescripcionFamiliaProductoRequest" message="tns:getDescripcionFamiliaProducto"/>
 <output wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/getDescripcionFamiliaProductoResponse" message="tns:getDescripcionFamiliaProductoResponse"/>
@@ -215,77 +115,90 @@
 <input wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/eliminarProductoRequest" message="tns:eliminarProducto"/>
 <output wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/eliminarProductoResponse" message="tns:eliminarProductoResponse"/>
 </operation>
-<operation name="actualizaDataBaseProducto">
-<input wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/actualizaDataBaseProductoRequest" message="tns:actualizaDataBaseProducto"/>
-<output wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/actualizaDataBaseProductoResponse" message="tns:actualizaDataBaseProductoResponse"/>
-</operation>
-=======
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
-=======
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
-=======
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
-<operation name="getErrorConexionProducto">
-<input wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/getErrorConexionProductoRequest" message="tns:getErrorConexionProducto"/>
-<output wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/getErrorConexionProductoResponse" message="tns:getErrorConexionProductoResponse"/>
-</operation>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<operation name="obtieneProducto">
-<input wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/obtieneProductoRequest" message="tns:obtieneProducto"/>
-<output wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/obtieneProductoResponse" message="tns:obtieneProductoResponse"/>
-</operation>
-<operation name="buscarProducto">
-<input wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/buscarProductoRequest" message="tns:buscarProducto"/>
-<output wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/buscarProductoResponse" message="tns:buscarProductoResponse"/>
-=======
-=======
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
-<operation name="getDescripcionFamiliaProducto">
-<input wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/getDescripcionFamiliaProductoRequest" message="tns:getDescripcionFamiliaProducto"/>
-<output wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/getDescripcionFamiliaProductoResponse" message="tns:getDescripcionFamiliaProductoResponse"/>
-</operation>
-<operation name="eliminarProducto">
-<input wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/eliminarProductoRequest" message="tns:eliminarProducto"/>
-<output wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/eliminarProductoResponse" message="tns:eliminarProductoResponse"/>
-</operation>
-<operation name="actualizaModificarDataBaseProducto">
-<input wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/actualizaModificarDataBaseProductoRequest" message="tns:actualizaModificarDataBaseProducto"/>
-<output wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/actualizaModificarDataBaseProductoResponse" message="tns:actualizaModificarDataBaseProductoResponse"/>
-<<<<<<< HEAD
-</operation>
-<operation name="obtieneProducto">
-<input wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/obtieneProductoRequest" message="tns:obtieneProducto"/>
-<output wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/obtieneProductoResponse" message="tns:obtieneProductoResponse"/>
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
-=======
-<operation name="getDescripcionFamiliaProducto">
-<input wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/getDescripcionFamiliaProductoRequest" message="tns:getDescripcionFamiliaProducto"/>
-<output wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/getDescripcionFamiliaProductoResponse" message="tns:getDescripcionFamiliaProductoResponse"/>
-</operation>
-<operation name="eliminarProducto">
-<input wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/eliminarProductoRequest" message="tns:eliminarProducto"/>
-<output wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/eliminarProductoResponse" message="tns:eliminarProductoResponse"/>
-</operation>
-<operation name="actualizaModificarDataBaseProducto">
-<input wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/actualizaModificarDataBaseProductoRequest" message="tns:actualizaModificarDataBaseProducto"/>
-<output wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/actualizaModificarDataBaseProductoResponse" message="tns:actualizaModificarDataBaseProductoResponse"/>
-</operation>
-<operation name="obtieneProducto">
-<input wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/obtieneProductoRequest" message="tns:obtieneProducto"/>
-<output wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/obtieneProductoResponse" message="tns:obtieneProductoResponse"/>
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
-=======
-</operation>
-<operation name="obtieneProducto">
-<input wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/obtieneProductoRequest" message="tns:obtieneProducto"/>
-<output wsam:Action="http://producto.logicanegocio.jhano.lewissa.com/wsLogicaNegocioProducto/obtieneProductoResponse" message="tns:obtieneProductoResponse"/>
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
-</operation>
 </portType>
 <binding name="wsLogicaNegocioProductoPortBinding" type="tns:wsLogicaNegocioProducto">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<operation name="actualizaModificarDataBaseProducto">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="validaRuc">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="cargaProducto">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="actualizaDataBaseProducto">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="buscarProducto">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="obtieneProducto">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="consultarProductoPorFamilia">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getErrorConexionProducto">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getDescripcionFamiliaProducto">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="getNombreProveedor">
 <soap:operation soapAction=""/>
 <input>
@@ -295,180 +208,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<operation name="validaRuc">
-=======
-<operation name="buscarProducto">
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
-=======
-<operation name="buscarProducto">
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<operation name="actualizaModificarDataBaseProducto">
-=======
-<operation name="buscarProducto">
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
-=======
-<operation name="cargaProducto">
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
-=======
-<operation name="cargaProducto">
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<operation name="consultarProductoPorFamilia">
-=======
-<operation name="cargaProducto">
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
-=======
-<operation name="validaRuc">
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
-=======
-<operation name="validaRuc">
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<operation name="getDescripcionFamiliaProducto">
-=======
-<operation name="validaRuc">
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
-=======
-<operation name="actualizaDataBaseProducto">
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
-=======
-<operation name="actualizaDataBaseProducto">
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<operation name="actualizaDataBaseProducto">
-=======
-<operation name="getErrorConexionProducto">
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
-=======
-<operation name="getErrorConexionProducto">
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
 <operation name="eliminarProducto">
-=======
-<operation name="getErrorConexionProducto">
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
-=======
-<operation name="getDescripcionFamiliaProducto">
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
-=======
-<operation name="getDescripcionFamiliaProducto">
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<<<<<<< HEAD
-<operation name="actualizaDataBaseProducto">
-=======
-<operation name="getDescripcionFamiliaProducto">
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<operation name="getErrorConexionProducto">
-=======
-<operation name="actualizaModificarDataBaseProducto">
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
-=======
-<operation name="actualizaModificarDataBaseProducto">
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<operation name="obtieneProducto">
-=======
-<operation name="actualizaModificarDataBaseProducto">
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<<<<<<< HEAD
-<operation name="buscarProducto">
-=======
-<operation name="obtieneProducto">
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
-=======
-<operation name="obtieneProducto">
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
-=======
-<operation name="obtieneProducto">
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

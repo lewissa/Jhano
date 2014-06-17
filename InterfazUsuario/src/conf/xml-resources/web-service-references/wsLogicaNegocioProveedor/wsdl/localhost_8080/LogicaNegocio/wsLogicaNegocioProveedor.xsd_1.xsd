@@ -113,6 +113,16 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="getErrorConexionProveedor">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getErrorConexionProveedorResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="eliminarProveedor">
 <xs:sequence>
 <xs:element name="oProveedor" type="tns:cProveedor" minOccurs="0"/>
@@ -126,25 +136,13 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="getErrorConexionProveedor">
+<xs:complexType name="cargaProveedor">
 <xs:sequence/>
 </xs:complexType>
 
-<xs:complexType name="getErrorConexionProveedorResponse">
+<xs:complexType name="cargaProveedorResponse">
 <xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="validaCorreo">
-<xs:sequence>
-<xs:element name="corCorreo" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="validaCorreoResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:boolean" minOccurs="0"/>
+<xs:element name="return" type="tns:cProveedor" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -160,13 +158,15 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="cargaProveedor">
-<xs:sequence/>
+<xs:complexType name="validaCorreo">
+<xs:sequence>
+<xs:element name="corCorreo" type="xs:string" minOccurs="0"/>
+</xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="cargaProveedorResponse">
+<xs:complexType name="validaCorreoResponse">
 <xs:sequence>
-<xs:element name="return" type="tns:cProveedor" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 

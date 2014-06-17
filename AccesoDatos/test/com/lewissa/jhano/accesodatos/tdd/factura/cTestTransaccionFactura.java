@@ -35,8 +35,8 @@ public class cTestTransaccionFactura extends TestCase{
     public void testGetFacturas()
     {
         cTransaccionFactura oTransaccionFactura = new cTransaccionFactura();
-        String strParameto="FALSE";
-        assertNotNull(oTransaccionFactura.getFacturas(strParameto));
+
+        assertNotNull(oTransaccionFactura.cargarFactura());
     }
     
     public static Test suite()

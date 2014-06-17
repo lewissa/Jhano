@@ -93,16 +93,6 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="obtenCliente">
-<xs:sequence/>
-</xs:complexType>
-
-<xs:complexType name="obtenClienteResponse">
-<xs:sequence>
-<xs:element name="return" type="tns:cCliente" minOccurs="0" maxOccurs="unbounded"/>
-</xs:sequence>
-</xs:complexType>
-
 <xs:complexType name="eliminarCliente">
 <xs:sequence>
 <xs:element name="strId" type="xs:string" minOccurs="0"/>
@@ -112,6 +102,16 @@
 <xs:complexType name="eliminarClienteResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="obtenCliente">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="obtenClienteResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:cCliente" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
 </xs:complexType>
 

@@ -44,12 +44,12 @@ public class wsAccesoDatosFactura {
     /**
      * Web service operation
      */
-    @WebMethod(operationName = "getFacturas")
-    public String getFacturas(@WebParam(name = "strParametro") String strParametro) {
+    @WebMethod(operationName = "cargarFacturas")
+    public String cargarFacturas() {
         //TODO write your implementation code here:
         String strResultado = null;
         cTransaccionFactura oTransaccionFactura = new cTransaccionFactura();
-        strResultado=oTransaccionFactura.getFacturas(strParametro);        
+        strResultado=oTransaccionFactura.cargarFactura();
         return strResultado;
     }
 }

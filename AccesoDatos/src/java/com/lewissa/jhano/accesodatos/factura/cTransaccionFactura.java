@@ -39,12 +39,10 @@ public class cTransaccionFactura {
         return booResultado;
     }
 
-    public String getFacturas(String strParametro) {
-        String strResultado = null;
-        String strQuery = "SELECT * FROM factura WHERE \"Estado\"=" + strParametro + ";";
-        if (cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()) {
-            strResultado = cAccesoDatos.getInstanciaAccesoDatos().consultarDataBase(strQuery);
-        }
-        return strParametro;
+    public String cargarFactura() {
+        String strSqlConsulta, strFactura;       
+        strSqlConsulta = "SELECT \"Id_factu\", \"Fecha\", \"cliente_factu\", \"Valor_total\" FROM factura WHERE \"Estado\" = TRUE;";
+        strFactura = cAccesoDatos.getInstanciaAccesoDatos().consultarDataBase(strSqlConsulta);
+        return strFactura;
     }
 }
