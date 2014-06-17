@@ -5,11 +5,16 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Jhano | Inicio </title>
         <script src="SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
+        <script src="../SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
+        <link href="../SpryAssets/SpryMenuBarHorizontalw.css" rel="stylesheet" type="text/css" />
+        <link href="../SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
+        <link href="../SpryAssets/css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="../SpryAssets/css/bootstrap-responsive.min.css" rel="stylesheet">
         <link href="SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
     </head>
 
     <body>
-        <table bgcolor="#192B75" width="100%" height="50%" border="1">
+        <table style="background-color: #002a80; border: #f9f9f9" bgcolor="#192B75" width="100%" height="50%" border="1">
             <tr>
                 <td>
                     <a href="../index.jsp">
@@ -28,7 +33,7 @@
                         </h3>
                     </center></td>
                 <td align="center" rowspan="2">
-                    <table border="1" width="90%" height="90%">
+                    <table style="border: #f9f9f9" border="1" width="90%" height="90%">
                         <tr>
                             <td width="50%" height="10%">
                                 <center>
@@ -115,7 +120,7 @@
             </tr>
         </table>
 
-        <table bgcolor="#C0C0C0" width="100%" border="1">
+        <table style="background-color: #999999; border-color: #f9f9f9" bgcolor="#C0C0C0" width="100%" border="1">
                 <tr>
                     
                     <td width="88%">

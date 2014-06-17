@@ -99,13 +99,13 @@ ul.MenuBarHorizontal a
 ul.MenuBarHorizontal a:hover, ul.MenuBarHorizontal a:focus
 {
 	background-color: #33C;
-	color: #FFF;
+	color: #C0C0C0;
 }
 /* Menu items that are open with submenus are set to MenuBarItemHover with a blue background and white text */
 ul.MenuBarHorizontal a.MenuBarItemHover, ul.MenuBarHorizontal a.MenuBarItemSubmenuHover, ul.MenuBarHorizontal a.MenuBarSubmenuVisible
 {
 	background-color: #33C;
-	color: #FFF;
+	color: #C0C0C0;
 }
 
 /*******************************************************************************
@@ -163,6 +163,6 @@ ul.MenuBarHorizontal iframe
 	{
 		display: inline;
 		f\loat: left;
-		background: #FFF;
+		background: #C0C0C0;
 	}
 }

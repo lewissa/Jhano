@@ -11,7 +11,7 @@
  *******************************************************************************/
 
 /* The outermost container of the Menu Bar, an auto width box with no margin or padding */
-ul.MenuBarHorizontal
+ul.MenuBarHorizontalw
 {
 	margin: 0;
 	padding: 0;
@@ -26,7 +26,7 @@ ul.MenuBarActive
 	z-index: 1000;
 }
 /* Menu item containers, position children relative to this container and are a fixed width */
-ul.MenuBarHorizontal li
+ul.MenuBarHorizontalw li
 {
 	margin: 0;
 	padding: 0;
@@ -39,7 +39,7 @@ ul.MenuBarHorizontal li
 	float: left;
 }
 /* Submenus should appear below their parent (top: 0) with a higher z-index, but they are initially off the left side of the screen (-1000em) */
-ul.MenuBarHorizontal ul
+ul.MenuBarHorizontalw ul
 {
 	margin: 0;
 	padding: 0;
@@ -52,23 +52,23 @@ ul.MenuBarHorizontal ul
 	left: -1000em;
 }
 /* Submenu that is showing with class designation MenuBarSubmenuVisible, we set left to auto so it comes onto the screen below its parent menu item */
-ul.MenuBarHorizontal ul.MenuBarSubmenuVisible
+ul.MenuBarHorizontalw ul.MenuBarSubmenuVisible
 {
 	left: auto;
 }
 /* Menu item containers are same fixed width as parent */
-ul.MenuBarHorizontal ul li
+ul.MenuBarHorizontalw ul li
 {
 	width: 8.2em;
 }
 /* Submenus should appear slightly overlapping to the right (95%) and up (-5%) */
-ul.MenuBarHorizontal ul ul
+ul.MenuBarHorizontalw ul ul
 {
 	position: absolute;
 	margin: -5% 0 0 95%;
 }
 /* Submenu that is showing with class designation MenuBarSubmenuVisible, we set left to 0 so it comes onto the screen */
-ul.MenuBarHorizontal ul.MenuBarSubmenuVisible ul.MenuBarSubmenuVisible
+ul.MenuBarHorizontalw ul.MenuBarSubmenuVisible ul.MenuBarSubmenuVisible
 {
 	left: auto;
 	top: 0;
@@ -81,31 +81,31 @@ ul.MenuBarHorizontal ul.MenuBarSubmenuVisible ul.MenuBarSubmenuVisible
  *******************************************************************************/
 
 /* Submenu containers have borders on all sides */
-ul.MenuBarHorizontal ul
+ul.MenuBarHorizontalw ul
 {
-	border: 1px solid #CCC;
+	border: 1px solid #999999;
 }
 /* Menu items are a light gray block with padding and no text decoration */
-ul.MenuBarHorizontal a
+ul.MenuBarHorizontalw a
 {
 	display: block;
 	cursor: pointer;
-	background-color: #EEE;
-	padding: 0.5em 0.75em;
+	background-color: #999999;
+	padding: 0.8em 0.75em;
 	color: #333;
 	text-decoration: none;
 }
 /* Menu items that have mouse over or focus have a blue background and white text */
-ul.MenuBarHorizontal a:hover, ul.MenuBarHorizontal a:focus
+ul.MenuBarHorizontalw a:hover, ul.MenuBarHorizontalw a:focus
 {
-	background-color: #33C;
-	color: #C0C0C0;
+	background-color: #C0C0C0;
+	color: #9
 }
 /* Menu items that are open with submenus are set to MenuBarItemHover with a blue background and white text */
-ul.MenuBarHorizontal a.MenuBarItemHover, ul.MenuBarHorizontal a.MenuBarItemSubmenuHover, ul.MenuBarHorizontal a.MenuBarSubmenuVisible
+ul.MenuBarHorizontalw a.MenuBarItemHover, ul.MenuBarHorizontalw a.MenuBarItemSubmenuHover, ul.MenuBarHorizontalw a.MenuBarSubmenuVisible
 {
-	background-color: #33C;
-	color: #C0C0C0;
+	background-color: #C0C0C0;
+	color: #999999;
 }
 
 /*******************************************************************************
@@ -115,28 +115,28 @@ ul.MenuBarHorizontal a.MenuBarItemHover, ul.MenuBarHorizontal a.MenuBarItemSubme
  *******************************************************************************/
 
 /* Menu items that have a submenu have the class designation MenuBarItemSubmenu and are set to use a background image positioned on the far left (95%) and centered vertically (50%) */
-ul.MenuBarHorizontal a.MenuBarItemSubmenu
+ul.MenuBarHorizontalw a.MenuBarItemSubmenu
 {
 	background-image: url(SpryMenuBarDown.gif);
 	background-repeat: no-repeat;
 	background-position: 95% 50%;
 }
 /* Menu items that have a submenu have the class designation MenuBarItemSubmenu and are set to use a background image positioned on the far left (95%) and centered vertically (50%) */
-ul.MenuBarHorizontal ul a.MenuBarItemSubmenu
+ul.MenuBarHorizontalw ul a.MenuBarItemSubmenu
 {
 	background-image: url(SpryMenuBarRight.gif);
 	background-repeat: no-repeat;
 	background-position: 95% 50%;
 }
 /* Menu items that are open with submenus have the class designation MenuBarItemSubmenuHover and are set to use a "hover" background image positioned on the far left (95%) and centered vertically (50%) */
-ul.MenuBarHorizontal a.MenuBarItemSubmenuHover
+ul.MenuBarHorizontalw a.MenuBarItemSubmenuHover
 {
 	background-image: url(SpryMenuBarDownHover.gif);
 	background-repeat: no-repeat;
 	background-position: 95% 50%;
 }
 /* Menu items that are open with submenus have the class designation MenuBarItemSubmenuHover and are set to use a "hover" background image positioned on the far left (95%) and centered vertically (50%) */
-ul.MenuBarHorizontal ul a.MenuBarItemSubmenuHover
+ul.MenuBarHorizontalw ul a.MenuBarItemSubmenuHover
 {
 	background-image: url(SpryMenuBarRightHover.gif);
 	background-repeat: no-repeat;
@@ -150,7 +150,7 @@ ul.MenuBarHorizontal ul a.MenuBarItemSubmenuHover
  *******************************************************************************/
 
 /* HACK FOR IE: to make sure the sub menus show above form controls, we underlay each submenu with an iframe */
-ul.MenuBarHorizontal iframe
+ul.MenuBarHorizontalw iframe
 {
 	position: absolute;
 	z-index: 1010;
@@ -159,10 +159,10 @@ ul.MenuBarHorizontal iframe
 /* HACK FOR IE: to stabilize appearance of menu items; the slash in float is to keep IE 5.0 from parsing */
 @media screen, projection
 {
-	ul.MenuBarHorizontal li.MenuBarItemIE
+	ul.MenuBarHorizontalw li.MenuBarItemIE
 	{
 		display: inline;
 		f\loat: left;
-		background: #C0C0C0;
+		background: #999999
 	}
 }

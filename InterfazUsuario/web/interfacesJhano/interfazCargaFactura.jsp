@@ -183,7 +183,7 @@
                                             out.print("  <td>" + oFact.getStrClienteFactura() + "</td>");
                                             out.print("  <td align=\"right\" >" + oFact.getDouTotalFactura() + "</td>");
                                             out.print("  <td width=\"75\" >Modificar</td>");
-                                            out.print("  <td width=\"75\" >Pago</td>");
+                                            out.print("  <td><a href=\".../interfacesJhano/interfazCargaPagos.jsp\">Pago<a></th>");
                                             //out.print("  <td><a href='../controladoresJhano/controladorEliminarCliente.jsp?accion=delete&id=" + cliente.getStrIdCliente() + "'>Eliminar</a></td>");
                                             out.print("</tr>");
                                         }
