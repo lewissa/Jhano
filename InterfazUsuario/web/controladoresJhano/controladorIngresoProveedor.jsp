@@ -18,8 +18,8 @@
     <body>
         <%
             try {
-                
-                String strAccion = request.getParameter("accion");                
+
+                String strAccion = request.getParameter("accion");
                 String strNombrecomer = (request.getParameter("nombrecomer").equals("")) ? "0" : request.getParameter("nombrecomer");
                 String strCiruc = (request.getParameter("ciruc").equals("")) ? "0" : request.getParameter("ciruc");
                 String strNombrefiscal = (request.getParameter("nombrefiscal").equals("")) ? "0" : request.getParameter("nombrefiscal");
@@ -40,15 +40,18 @@
                 } else {
                     proProveedor.setConvencional(strConvencional);
                 }
-                
-                proProveedor.setCorreo(strCorreo);
-                proProveedor.setDireccion(strDireccion);
-                
+                if (strDireccion.equals("0")) {
+                    proProveedor.setDireccion("");
+                } else {
+                    proProveedor.setDireccion(strDireccion);
+                }
                 if (strNombrecomer.equals("0")) {
                     proProveedor.setNombreComercial("");
                 } else {
                     proProveedor.setNombreComercial(strNombrecomer);
                 }
+
+                proProveedor.setCorreo(strCorreo);
                 proProveedor.setNombreFiscal(strNombrefiscal);
                 proProveedor.setId(strCiruc);
                 // TODO process result here
@@ -91,6 +94,3 @@
         %>
     </body>
 </html>
-
-
-

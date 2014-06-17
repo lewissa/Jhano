@@ -17,8 +17,8 @@ public class cTransaccionProducto {
         String strSqlIngreso;
         Boolean booFlag = false;
         String strDescripcionGeneral = null;
-        String strEan=null;
-        String strFabricante=null;
+        String strEan = null;
+        String strFabricante = null;
         if (strPro[2].equals("")) {
             strDescripcionGeneral = "null";
         } else {
@@ -47,7 +47,7 @@ public class cTransaccionProducto {
     }
 
     public String getNombreProducto() {
-        return cAccesoDatos.getInstanciaAccesoDatos().consultarDataBase("SELECT \"Id_prove\",\"Nombre_fiscal\" FROM proveedor");
+        return cAccesoDatos.getInstanciaAccesoDatos().consultarDataBase("SELECT \"Id_prove\",\"Nombre_fiscal\" FROM proveedor WHERE eliminado=false");
     }
     
     public String buscarProducto(String strParametroBusqueda)
@@ -128,10 +128,10 @@ public class cTransaccionProducto {
                 + "\"Stock_maximo\"='" + strPro[10] + "', \"Stock_minimo\"='" + strPro[11] + "', familia_produ='" + strPro[12] + " 'WHERE \"Id_produ\"='" + strPro[0] + "'";
         booFlag = cAccesoDatos.getInstanciaAccesoDatos().actualizarDataBase(strSqlIngreso);
         return booFlag;
-
     }
      
      public String consultarProducto(String id) {
+
         String strSqlConsulta, strPoducto;
         strSqlConsulta = "SELECT * FROM producto WHERE \"Id_produ\" = '" + id + "'";
         strPoducto = cAccesoDatos.getInstanciaAccesoDatos().consultarDataBase(strSqlConsulta);
@@ -155,5 +155,4 @@ public class cTransaccionProducto {
          
          return strResultado;
      }
-     
 }

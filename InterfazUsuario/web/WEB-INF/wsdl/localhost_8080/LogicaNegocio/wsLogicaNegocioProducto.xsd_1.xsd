@@ -185,6 +185,7 @@
 </xs:sequence>
 </xs:complexType>
 
+<<<<<<< HEAD
 <xs:complexType name="consultarProductoPorFamilia">
 <xs:sequence>
 <xs:element name="strIdFamilia" type="xs:string" minOccurs="0"/>
@@ -192,6 +193,15 @@
 </xs:complexType>
 
 <xs:complexType name="consultarProductoPorFamiliaResponse">
+=======
+<xs:complexType name="buscarProducto">
+<xs:sequence>
+<xs:element name="strParametro" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="buscarProductoResponse">
+>>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
 <xs:sequence>
 <xs:element name="return" type="tns:cProducto" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>

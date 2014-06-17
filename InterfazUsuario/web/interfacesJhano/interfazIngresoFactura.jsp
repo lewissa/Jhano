@@ -65,7 +65,9 @@
         <table bgcolor="#192B75" width="100%" height="50%" border="1">
             <tr>
                 <td>
+                    <a href="../index.jsp">
                     <img src="Image/computech.jpg" alt="espoch" />
+                    </a>
                 </td>
                 <td width="780">
                     <center>
@@ -147,7 +149,8 @@
                             </li>
                             <li>
                                 <font face="Arial">
-                                    <a href="#"><center>Facturas</center></a>
+                                    <a href="../interfacesJhano/interfazCargaFactura.jsp"><center>Facturas</center></a>
+
                                 </font>
                             </li>
                             <li>
@@ -205,6 +208,7 @@
                             </td>                                    
                         </tr>
                         <tr>
+<<<<<<< HEAD
                               <td>
                                   <div id="columnaFamiliaProductos">
 
@@ -214,6 +218,18 @@
                         </table>
                      </fieldset>
                          
+=======
+                            <td>
+                                <a href="../interfacesJhano/interfazCargaFactura.jsp">
+
+                                    <font face="Arial">
+                                        Regresar
+                                    </font>
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+>>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
                 </td>
                 <%
                     String strError = (String) request.getSession().getAttribute("errorFamiliaProducto");
@@ -229,9 +245,26 @@
                     <font face="Arial">
                        
                         <%
+<<<<<<< HEAD
                             List<CProducto> listProductosSeleccionados = new ArrayList<CProducto>();
                             CCliente oClienteSelecionado =  new CCliente();
                             
+=======
+        List<CProducto> listProductos = new ArrayList<CProducto>();
+        
+  
+	com.lewissa.jhano.logicanegocio.empresa.WsLogicaNegocioEmpresa_Service service = new com.lewissa.jhano.logicanegocio.empresa.WsLogicaNegocioEmpresa_Service();
+	com.lewissa.jhano.logicanegocio.empresa.WsLogicaNegocioEmpresa port = service.getWsLogicaNegocioEmpresaPort();
+	 // TODO initialize WS operation arguments here
+	java.lang.String strParametro = "0000000000001";
+        CEmpresa oEmpresa = new CEmpresa();
+	// TODO process result here
+	java.util.List<com.lewissa.jhano.logicanegocio.empresa.CEmpresa> listEmpresas = port.buscarEmpresa(strParametro);
+        for(CEmpresa oEmpresa1 : listEmpresas)
+        {
+            oEmpresa=oEmpresa1;
+        }
+>>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
 
 
                             com.lewissa.jhano.logicanegocio.empresa.WsLogicaNegocioEmpresa_Service service = new com.lewissa.jhano.logicanegocio.empresa.WsLogicaNegocioEmpresa_Service();

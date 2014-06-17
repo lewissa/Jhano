@@ -34,6 +34,27 @@
     <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioFactura?xsd=1" uri="wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioFactura.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioListaProductos?wsdl" uri="wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioListaProductos.wsdl"/>
     <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioListaProductos?xsd=1" uri="wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioListaProductos.xsd_1.xsd"/>
+<<<<<<< HEAD
     <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioPago?wsdl" uri="wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioPago.wsdl"/>
     <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioPago?xsd=1" uri="wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioPago.xsd_1.xsd"/>
+=======
+<<<<<<< HEAD
+    <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioPago?wsdl" uri="wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioPago.wsdl"/>
+    <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioPago?xsd=1" uri="wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioPago.xsd_1.xsd"/>
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioListaProductos?WSDL" uri="wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioListaProductos.wsdl"/>
+    <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioFactura?WSDL" uri="wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioFactura.wsdl"/>
+    <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioEmpresa?WSDL" uri="wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioEmpresa.wsdl"/>
+=======
+    <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioPago?wsdl" uri="wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioPago.wsdl"/>
+    <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioPago?xsd=1" uri="wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioPago.xsd_1.xsd"/>
+>>>>>>> 67f68310ac730cda4f8fcddadb21fe4f00966676
+=======
+    <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioPago?wsdl" uri="wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioPago.wsdl"/>
+    <system systemId="http://localhost:8080/LogicaNegocio/wsLogicaNegocioPago?xsd=1" uri="wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioPago.xsd_1.xsd"/>
+>>>>>>> 48d9147a1619ef7ef1c90b5b8c182277a8d5d787
+>>>>>>> 3fef4dffdf60fd19ef23cb5b575138f105a8c6e8
+>>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
 </catalog>

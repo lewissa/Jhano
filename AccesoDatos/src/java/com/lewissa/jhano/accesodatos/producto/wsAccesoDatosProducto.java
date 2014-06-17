@@ -80,7 +80,6 @@ public class wsAccesoDatosProducto {
         return strFamilia;
     }
 
-
     /**
      * Web service operation
      */
@@ -91,9 +90,8 @@ public class wsAccesoDatosProducto {
         cTransaccionProducto oTransaccionProducto = new cTransaccionProducto();
         strResultado = oTransaccionProducto.buscarProducto(strParametro);
         return strResultado;
-        
-    }
 
+    }
 
     @WebMethod(operationName = "cargaProducto")
     public String cargaProducto() {
@@ -106,7 +104,7 @@ public class wsAccesoDatosProducto {
 
         return strResultado;
     }
-    
+
     @WebMethod(operationName = "eliminarFisicoProducto")
     public Boolean eliminarFisicoProducto(@WebParam(name = "strCodigoProducto") String strCodigoProducto) {
         //TODO write your implementation code here:
@@ -117,7 +115,7 @@ public class wsAccesoDatosProducto {
         }
         return booResultado;
     }
-    
+
     @WebMethod(operationName = "eliminarLogicoProducto")
     public Boolean eliminarLogicoProducto(@WebParam(name = "strCodigoProducto") String strCodigoProducto) {
         //TODO write your implementation code here:
@@ -128,8 +126,8 @@ public class wsAccesoDatosProducto {
         }
         return booResultado;
     }
-    
-        @WebMethod(operationName = "modificarDataBaseProducto")
+
+    @WebMethod(operationName = "modificarDataBaseProducto")
     public Boolean modificaDataBaseProducto(@WebParam(name = "strPro") String[] strPro) {
         Boolean booFlag1 = false; // revisa la respuesta de la base
         Boolean booFlag2 = false; // revisa la conexion
@@ -146,18 +144,17 @@ public class wsAccesoDatosProducto {
         booFlag1 = (booFlag1.equals(true)) && (booFlag2.equals(true));
         return booFlag1;
     }
-    
-     @WebMethod(operationName = "consultarProducto")
+
+    @WebMethod(operationName = "consultarProducto")
     public String consultarProducto(String id) {
         //TODO write your implementation code here:
         String pro = null;
         cTransaccionProducto traProducto = new cTransaccionProducto();
-        if (cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()){
+        if (cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()) {
             pro = traProducto.consultarProducto(id);
         }
         return pro;
     }
-
     /**
      * Web service operation
      */
@@ -169,6 +166,4 @@ public class wsAccesoDatosProducto {
         strResultado=oTransaccionProducto.consultarProductosPorFamilias(strIdFamilia);
         return strResultado;
     }
-
-
 }

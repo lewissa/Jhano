@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /InterfazUsuario1/nbproject/private/
 /InterfazUsuario/build/
 /php/nbproject/private/
@@ -22,3 +23,32 @@
 /LN/build/
 /LN/dist/
 /ln/nbproject/private/
+=======
+/InterfazUsuario1/nbproject/private/
+/InterfazUsuario/build/
+/php/nbproject/private/
+/php/build/
+/InterfazUsuario/dist/
+/kk2/nbproject/private/
+/kk2/build/
+/InterfazUsuario/nbproject/private/
+/LogicaNegocio/nbproject/private/
+/AccesoDatos/nbproject/private/
+/LogicaNegocio/build/
+/AccesoDatos/build/
+/AccesoDatos/dist/
+/LogicaNegocio/dist/
+/intu/nbproject/private/
+/kk/nbproject/private/
+/kk/dist/
+/kk/build/
+/InterfazUsuario1/build/
+/AD/nbproject/private/
+/LN/nbproject/private/
+/LN/build/
+/LN/dist/
+/ln/nbproject/private/
+/ac/nbproject/private/
+/ac/build/
+/ac/dist/
+>>>>>>> 3fef4dffdf60fd19ef23cb5b575138f105a8c6e8

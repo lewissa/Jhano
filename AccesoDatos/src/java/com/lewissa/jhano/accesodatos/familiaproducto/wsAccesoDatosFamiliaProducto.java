@@ -60,6 +60,4 @@ public class wsAccesoDatosFamiliaProducto {
         strResultrado = oTransaccionFamiliaProducto.getNumeroDeProductosPorFamilia(strIdFamilia);
         return strResultrado;
     }
-    
-    
 }

@@ -15,22 +15,48 @@ public class cTransaccionProveedor {
 
     public Boolean ingresarProveedor(java.lang.String[] strProveedor) {
         Boolean booResultado = false;
-        
         String strQuery;
+        String strNombreComercial = null;
+        String strDireccion = null;
+        String strConvencional = null;
+        String strCelular = null;
+        if (strProveedor[2].equals("")) {
+            strNombreComercial = "null";
+        } else {
+            strNombreComercial = "'" + strProveedor[2] + "'";
+        }
+        if (strProveedor[4].equals("")) {
+            strConvencional = "null";
+        } else {
+            strConvencional = "'" + strProveedor[4] + "'";
+        }
+        if (strProveedor[3].equals("")) {
+            strDireccion = "null";
+        } else {
+            strDireccion = "'" + strProveedor[3] + "'";
+        }
+        if (strProveedor[5].equals("")) {
+            strCelular = "null";
+        } else {
+            strCelular = "'" + strProveedor[5] + "'";
+        }
         strQuery = "INSERT INTO proveedor VALUES ('" + strProveedor[0] + "','" + strProveedor[1] + "',"
-                 +"'" + strProveedor[2] + "','" + strProveedor[2] + "','" + strProveedor[3] + "',"
-                + "'" + strProveedor[4] + "','" + strProveedor[5] + "','" + strProveedor[6] + "')";
+                + "" + strNombreComercial + "," + strDireccion + ","
+                + "" + strConvencional + "," + strCelular + ",'" + strProveedor[6] + "')";
         booResultado = cAccesoDatos.getInstanciaAccesoDatos().actualizarDataBase(strQuery);
         if (booResultado == null) {
             booResultado = false;
         }
         return booResultado;
     }
-/**
- * Metod que me permite cargar los datos de los proveedores
- * @author Fredy Janeta
- * @return strProveedor, el cual es un archivo XML que contiene a todos los prveedores
- */
+
+    /**
+     * Metod que me permite cargar los datos de los proveedores
+     *
+     * @author Fredy Janeta
+     * @return strProveedor, el cual es un archivo XML que contiene a todos los
+     * prveedores
+     */
     public String cargarProveedor() {
         String strProveedor = null;
         String strQuery = "SELECT * FROM proveedor WHERE eliminado=false";
@@ -40,50 +66,54 @@ public class cTransaccionProveedor {
 
         return strProveedor;
     }
-/**
- * Metod permite eliminar un proveedor especifico segun su codigo
- * @param strCodigoProveedor, contiene el codgo del proveedor a eliminar
- * @return booResultado, Boolean que contiene la confimacion de la eliminacion
- */
+
+    /**
+     * Metod permite eliminar un proveedor especifico segun su codigo
+     *
+     * @param strCodigoProveedor, contiene el codgo del proveedor a eliminar
+     * @return booResultado, Boolean que contiene la confimacion de la
+     * eliminacion
+     */
     public Boolean eliminarFisicoProveedor(String strCodigoProveedor) {
         Boolean booResultado = false;
         String strQuery;
-        strQuery = "DELETE FROM proveedor WHERE \"Id_prove\" like '"+ strCodigoProveedor+"'";
+        strQuery = "DELETE FROM proveedor WHERE \"Id_prove\" like '" + strCodigoProveedor + "'";
         if (cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()) {
             booResultado = cAccesoDatos.getInstanciaAccesoDatos().actualizarDataBase(strQuery);
         }
 
         return booResultado;
     }
+
     /**
-     
+     *
      * metodo que oelrmite eliminar los datos de un proveedor LPGICAMENTE
+     *
      * @author Fredy Janeta
      * @param strCodigoProveedor
-     * @return Boolean, booResultdo contiene la confirmacion de la aplicacion del metodo
+     * @return Boolean, booResultdo contiene la confirmacion de la aplicacion
+     * del metodo
      */
-    public Boolean eliminarLogicoProveedor(String strCodigoProveedor){
-        Boolean booResultado=false;
+    public Boolean eliminarLogicoProveedor(String strCodigoProveedor) {
+        Boolean booResultado = false;
         String strQuery;
-        strQuery="UPDATE proveedor SET eliminado=true WHERE \"Id_prove\"='"+strCodigoProveedor+"'";
-        if(cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()){
-            booResultado=cAccesoDatos.getInstanciaAccesoDatos().actualizarDataBase(strQuery);
+        strQuery = "UPDATE proveedor SET eliminado=true WHERE \"Id_prove\"='" + strCodigoProveedor + "'";
+        if (cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()) {
+            booResultado = cAccesoDatos.getInstanciaAccesoDatos().actualizarDataBase(strQuery);
         }
         return booResultado;
     }
+
     /**
-     * @author Fredy Janeta
-     * Metodo que permite modificar los datos de un proveedor
+     * @author Fredy Janeta Metodo que permite modificar los datos de un
+     * proveedor
      * @param strProveedor
-     * @return Boolean , boo Resulatdo que contiene la confirmacion de la aplicacion del metodo
+     * @return Boolean , boo Resulatdo que contiene la confirmacion de la
+     * aplicacion del metodo
      */
-    public Boolean modificarProveedor(String strProveedor[])
-    {
-        Boolean booResultado=false;
+    public Boolean modificarProveedor(String strProveedor[]) {
+        Boolean booResultado = false;
         String strQuery;
-        
-        
-        
 //        strQuery="UPDATE proveedor SET \"Nombre_fiscal\"='"+strProveedor[1]+
 //                "', \"Nombre_comercial\"='"+strProveedor[2]+"', \"Direccion\"='"+
 //                strProveedor[3]+"',\"Convencional\"='"+strProveedor[4]+"',\"Celular\"='"+
@@ -124,8 +154,4 @@ public class cTransaccionProveedor {
         }
         return cadena;
     }
-
- 
- 
-
 }

@@ -44,4 +44,8 @@ public class cTransaccionFamiliaProducto {
         }
         return strResultado;
     }
+
+    public String getDescripcionFamilaProducto() {
+        return cAccesoDatos.getInstanciaAccesoDatos().consultarDataBase("SELECT * FROM familia");
+    }
 }

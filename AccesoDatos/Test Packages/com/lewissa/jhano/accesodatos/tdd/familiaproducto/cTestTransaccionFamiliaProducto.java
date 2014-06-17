@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package com.lewissa.jhano.accesodatos.tdd.familiaproducto;
 
 import com.lewissa.jhano.accesodatos.cAccesoDatos;
@@ -16,39 +15,34 @@ import junit.framework.TestSuite;
  *
  * @author Usuario
  */
-public class cTestTransaccionFamiliaProducto extends TestCase{
+public class cTestTransaccionFamiliaProducto extends TestCase {
+
     cTransaccionFamiliaProducto oFamilia;
-   /* 
-    public void testInsertarFamiliaProducto(){
+    /* 
+     public void testInsertarFamiliaProducto(){
      oFamilia = new cTransaccionFamiliaProducto();
      String [] strFamilia = new String[2];
      strFamilia[0]="fm199";
      strFamilia[1]="Helados";
-        assertTrue(oFamilia.ingresarFamiliaProducto(strFamilia));
-    }
-    */
-    public void testGetFamiliasProductos()
-    {
+     assertTrue(oFamilia.ingresarFamiliaProducto(strFamilia));
+     }
+     */
+
+    public void testGetFamiliasProductos() {
         cTransaccionFamiliaProducto oTransaccionFamiliaProducto = new cTransaccionFamiliaProducto();
         assertNotNull(oTransaccionFamiliaProducto.getFamilaProducto());
     }
-    
-    public void testNumeroDeProductosPorFamilias()
-    {
+
+    public void testNumeroDeProductosPorFamilias() {
         cTransaccionFamiliaProducto oTransaccionFamiliaProducto = new cTransaccionFamiliaProducto();
         assertNotNull(oTransaccionFamiliaProducto.getNumeroDeProductosPorFamilia("fm123"));
     }
-    
-    
-    public static Test suite()
-    {
+
+    public static Test suite() {
         return new TestSuite(cTestTransaccionFamiliaProducto.class);
     }
-    public static void main(String [] srgs)
-    {
+
+    public static void main(String[] srgs) {
         junit.textui.TestRunner.run(suite());
     }
-    
-    
-    
 }

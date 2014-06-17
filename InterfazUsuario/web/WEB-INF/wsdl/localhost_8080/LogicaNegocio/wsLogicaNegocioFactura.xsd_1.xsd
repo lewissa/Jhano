@@ -8,6 +8,10 @@
 
 <xs:element name="ingresarFacturaResponse" type="tns:ingresarFacturaResponse"/>
 
+<xs:element name="obtenerFacturas" type="tns:obtenerFacturas"/>
+
+<xs:element name="obtenerFacturasResponse" type="tns:obtenerFacturasResponse"/>
+
 <xs:complexType name="getErrorConexionFactura">
 <xs:sequence/>
 </xs:complexType>
@@ -18,9 +22,13 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="ingresarFactura">
+<xs:complexType name="obtenerFacturas">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="obtenerFacturasResponse">
 <xs:sequence>
-<xs:element name="oFactura" type="tns:cFactura" minOccurs="0"/>
+<xs:element name="return" type="tns:cFactura" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -32,6 +40,12 @@
 <xs:element name="strDatosEmpresaFactura" type="xs:string" minOccurs="0"/>
 <xs:element name="strFechaFactura" type="xs:string" minOccurs="0"/>
 <xs:element name="strIdFactura" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ingresarFactura">
+<xs:sequence>
+<xs:element name="oFactura" type="tns:cFactura" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
