@@ -187,4 +187,16 @@ public class wsLogicaNegocioProducto {
         return port.consultarProducto(arg0);
     }
 
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "consultarProductoPorFamilia")
+    public List<cProducto> consultarProductoPorFamilia(@WebParam(name = "strIdFamilia") String strIdFamilia) {
+        //TODO write your implementation code here:
+        List<cProducto> lisProducto = new ArrayList<>();
+        cTransaccionProducto oTransaccionProducto = new cTransaccionProducto();
+         lisProducto = oTransaccionProducto.consultarProductoPorFamilia(strIdFamilia);
+        return lisProducto;
+    }
+
 }

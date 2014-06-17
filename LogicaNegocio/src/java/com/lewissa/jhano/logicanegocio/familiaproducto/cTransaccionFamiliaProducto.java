@@ -5,7 +5,10 @@
 
 package com.lewissa.jhano.logicanegocio.familiaproducto;
 import com.lewissa.jhano.accesodatos.familiaproducto.WsAccesoDatosFamiliaProducto_Service;
+import com.lewissa.jhano.logicanegocio.producto.cProducto;
 import com.lewissa.jhano.logicanegocio.utilidades.cCodigoFamiliaProducto;
+import com.sun.rowset.WebRowSetImpl;
+import java.io.StringReader;
 import javax.xml.ws.WebServiceRef;
 import java.util.List;
 import java.util.ArrayList;
@@ -45,11 +48,38 @@ public class cTransaccionFamiliaProducto {
         
     }
     
+    
+    
     public String getErrorConexionFamiliaProducto()
     {
         String strResultado;
         strResultado = port.getErrorConexionFamiliaProducto();
         return strResultado;
+    }
+    
+    public List<cFamiliaProducto> getFamiliaProducto()
+    {
+        List<cFamiliaProducto> listProductos = new ArrayList<cFamiliaProducto>();
+        try {
+            StringReader strReader =  new StringReader(getFamiliaProductos_1());
+            WebRowSetImpl wrsImplement = new WebRowSetImpl();
+            wrsImplement.readXml(strReader);
+            while (wrsImplement.next()) {
+                cFamiliaProducto oFamiliaProducto = new cFamiliaProducto();
+                oFamiliaProducto.setStrId(wrsImplement.getString("Id_fami"));
+                oFamiliaProducto.setStrDescripcion(wrsImplement.getString("Descripcion"));
+                listProductos.add(oFamiliaProducto);
+            }
+            
+        } catch (Exception e) {
+        }
+        return listProductos;
+    }
+
+    private static String getFamiliaProductos_1() {
+        com.lewissa.jhano.accesodatos.familiaproducto.WsAccesoDatosFamiliaProducto_Service service = new com.lewissa.jhano.accesodatos.familiaproducto.WsAccesoDatosFamiliaProducto_Service();
+        com.lewissa.jhano.accesodatos.familiaproducto.WsAccesoDatosFamiliaProducto port = service.getWsAccesoDatosFamiliaProductoPort();
+        return port.getFamiliaProductos();
     }
    
 }

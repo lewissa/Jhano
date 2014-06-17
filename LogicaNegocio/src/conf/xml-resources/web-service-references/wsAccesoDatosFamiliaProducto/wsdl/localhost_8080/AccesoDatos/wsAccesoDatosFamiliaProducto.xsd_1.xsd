@@ -4,6 +4,14 @@
 
 <xs:element name="getErrorConexionFamiliaProductoResponse" type="tns:getErrorConexionFamiliaProductoResponse"/>
 
+<xs:element name="getFamiliaProductos" type="tns:getFamiliaProductos"/>
+
+<xs:element name="getFamiliaProductosResponse" type="tns:getFamiliaProductosResponse"/>
+
+<xs:element name="getNumerodeProductosPorFamilia" type="tns:getNumerodeProductosPorFamilia"/>
+
+<xs:element name="getNumerodeProductosPorFamiliaResponse" type="tns:getNumerodeProductosPorFamiliaResponse"/>
+
 <xs:element name="ingresarFamiliaProducto" type="tns:ingresarFamiliaProducto"/>
 
 <xs:element name="ingresarFamiliaProductoResponse" type="tns:ingresarFamiliaProductoResponse"/>
@@ -25,6 +33,28 @@
 </xs:complexType>
 
 <xs:complexType name="getErrorConexionFamiliaProductoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getNumerodeProductosPorFamilia">
+<xs:sequence>
+<xs:element name="strIdFamilia" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getNumerodeProductosPorFamiliaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getFamiliaProductos">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getFamiliaProductosResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>

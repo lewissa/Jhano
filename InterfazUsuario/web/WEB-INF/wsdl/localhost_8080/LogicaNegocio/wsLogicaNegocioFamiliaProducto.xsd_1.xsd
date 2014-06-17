@@ -4,6 +4,14 @@
 
 <xs:element name="getErrorConexionFamiliaProductoResponse" type="tns:getErrorConexionFamiliaProductoResponse"/>
 
+<xs:element name="getFamiliaProductos" type="tns:getFamiliaProductos"/>
+
+<xs:element name="getFamiliaProductosResponse" type="tns:getFamiliaProductosResponse"/>
+
+<xs:element name="getNumeroDeProductosPorFamilia" type="tns:getNumeroDeProductosPorFamilia"/>
+
+<xs:element name="getNumeroDeProductosPorFamiliaResponse" type="tns:getNumeroDeProductosPorFamiliaResponse"/>
+
 <xs:element name="insertarFamiliaProducto" type="tns:insertarFamiliaProducto"/>
 
 <xs:element name="insertarFamiliaProductoResponse" type="tns:insertarFamiliaProductoResponse"/>
@@ -40,9 +48,13 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="insertarFamiliaProducto">
+<xs:complexType name="getFamiliaProductos">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getFamiliaProductosResponse">
 <xs:sequence>
-<xs:element name="oFamiliaProducto" type="tns:cFamiliaProducto" minOccurs="0"/>
+<xs:element name="return" type="tns:cFamiliaProducto" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -53,9 +65,27 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="insertarFamiliaProducto">
+<xs:sequence>
+<xs:element name="oFamiliaProducto" type="tns:cFamiliaProducto" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="insertarFamiliaProductoResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getNumeroDeProductosPorFamilia">
+<xs:sequence>
+<xs:element name="strIdFamilia" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getNumeroDeProductosPorFamiliaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 </xs:schema>

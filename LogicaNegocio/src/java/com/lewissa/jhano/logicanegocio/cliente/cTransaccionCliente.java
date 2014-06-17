@@ -59,13 +59,12 @@ public class cTransaccionCliente {
             StringReader strReader = new StringReader(buscarCliente_1(strParametro));
             WebRowSetImpl wrsImplement = new WebRowSetImpl();
             wrsImplement.readXml(strReader);
-            cCliente oCliente;
             while (wrsImplement.next()) 
             {                
-                oCliente = new cCliente();
+                cCliente oCliente = new cCliente();
                 oCliente.setStrIdCliente(wrsImplement.getString("Id_cliente"));
                 oCliente.setStrNombreFiscal(wrsImplement.getString("Nombre_fiscal"));
-                oCliente.setStrNombreComercial(wrsImplement.getString("Nombre_ccomercial"));
+                oCliente.setStrNombreComercial(wrsImplement.getString("Nombre_comercial"));
                 oCliente.setStrDireccion(wrsImplement.getString("Direccion"));
                 oCliente.setStrConvencional(wrsImplement.getString("Convencional"));
                 oCliente.setStrCelular(wrsImplement.getString("Celular"));
@@ -74,6 +73,7 @@ public class cTransaccionCliente {
                 lisClientes.add(oCliente);
             }
         } catch (Exception e) {
+            System.out.print(e.getMessage());
         }
         return lisClientes;
     }

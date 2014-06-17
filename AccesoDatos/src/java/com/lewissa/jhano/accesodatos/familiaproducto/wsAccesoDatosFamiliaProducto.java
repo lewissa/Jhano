@@ -36,4 +36,30 @@ public class wsAccesoDatosFamiliaProducto {
         //TODO write your implementation code here:
         return cAccesoDatos.getInstanciaAccesoDatos().getExcErrorAcessoDatos();
     }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "getFamiliaProductos")
+    public String getFamiliaProductos() {
+        //TODO write your implementation code here:
+        String strResultado=null;
+        cTransaccionFamiliaProducto oTransaccionFamiliaProducto = new cTransaccionFamiliaProducto();
+        strResultado = oTransaccionFamiliaProducto.getFamilaProducto();
+        return strResultado;
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "getNumerodeProductosPorFamilia")
+    public String getNumerodeProductosPorFamilia(@WebParam(name = "strIdFamilia") String strIdFamilia) {
+        //TODO write your implementation code here:
+        String strResultrado = null;
+        cTransaccionFamiliaProducto oTransaccionFamiliaProducto = new cTransaccionFamiliaProducto();
+        strResultrado = oTransaccionFamiliaProducto.getNumeroDeProductosPorFamilia(strIdFamilia);
+        return strResultrado;
+    }
+    
+    
 }

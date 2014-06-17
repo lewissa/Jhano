@@ -19,17 +19,24 @@ import junit.framework.Test;
  */
 public class cTestTransaccionFactura extends TestCase{
     
-    public void testIngresarFactura()
+//    public void testIngresarFactura()
+//    {
+//        cTransaccionFactura oTransaccionFactura = new cTransaccionFactura();
+//        String[] strFactura = new String[6];
+//        strFactura[0]="55";
+//        strFactura[1]="01-05-17 14:14:50" ;
+//        strFactura[2]="0601504582";
+//        strFactura[3]="1598.50";
+//        strFactura[4]="true";
+//        strFactura[5]="1723834931001";
+//        assertTrue(oTransaccionFactura.ingresarFactura(strFactura));      
+//    }
+    
+    public void testGetFacturas()
     {
         cTransaccionFactura oTransaccionFactura = new cTransaccionFactura();
-        String[] strFactura = new String[6];
-        strFactura[0]="55";
-        strFactura[1]="01-05-17 14:14:50" ;
-        strFactura[2]="0601504582";
-        strFactura[3]="1598.50";
-        strFactura[4]="true";
-        strFactura[5]="1723834931001";
-        assertTrue(oTransaccionFactura.ingresarFactura(strFactura));      
+        String strParameto="FALSE";
+        assertNotNull(oTransaccionFactura.getFacturas(strParameto));
     }
     
     public static Test suite()

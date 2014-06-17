@@ -20,7 +20,7 @@ public class cTestTransaccionCliente extends  TestCase{
     public void testBuscarCliente()
     {
         cTransaccionCliente oTransaccionCliente = new cTransaccionCliente();
-        assertNotNull(oTransaccionCliente.buscarCliente("0601504582"));
+        assertNotNull(oTransaccionCliente.buscarCliente("w"));
     }
     
     public static Test suite()

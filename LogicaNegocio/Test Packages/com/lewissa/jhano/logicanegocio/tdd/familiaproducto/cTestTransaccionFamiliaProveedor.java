@@ -18,13 +18,20 @@ import junit.framework.TestSuite;
  * @author Usuario
  */
 public class cTestTransaccionFamiliaProveedor extends TestCase{
-    
+  /*  
     public void testEliminar(){
         cFamiliaProducto oFamiliaP = new cFamiliaProducto();
         cTransaccionFamiliaProducto oTransaccionFp = new cTransaccionFamiliaProducto();
         oFamiliaP.setStrId("fm236");
         oFamiliaP.setStrDescripcion("ESPOCH");
         assertEquals(oTransaccionFp.insertarFamiliaProducto(oFamiliaP), "SELECT * FROM ");
+    }
+   */
+    
+    public void testGetFamilia()
+    {
+        cTransaccionFamiliaProducto oTransaccionFamiliaProducto = new cTransaccionFamiliaProducto();
+        assertNotNull(oTransaccionFamiliaProducto.getFamiliaProducto());
     }
     
     public static Test suite()

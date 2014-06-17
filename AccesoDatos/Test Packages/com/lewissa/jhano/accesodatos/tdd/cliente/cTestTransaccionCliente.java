@@ -19,7 +19,7 @@ public class cTestTransaccionCliente extends TestCase{
     
     public void testBuscar()
     {
-        String strId="0604949891";
+        String strId="w";
         cTransaccionCliente oTransaccionCliente= new cTransaccionCliente();
         assertNotNull(oTransaccionCliente.buscarCliente(strId));
     }

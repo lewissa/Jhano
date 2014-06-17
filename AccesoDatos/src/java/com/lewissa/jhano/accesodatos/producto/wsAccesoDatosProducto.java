@@ -73,7 +73,7 @@ public class wsAccesoDatosProducto {
         cTransaccionFamiliaProducto traFamilia = new cTransaccionFamiliaProducto();
         String strFamilia = null;
         if (cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()) {
-            strFamilia = traFamilia.getDescripcionFamilaProducto();
+            strFamilia = traFamilia.getFamilaProducto();
         } else {
             strFamilia = "err0r";
         }
@@ -156,6 +156,18 @@ public class wsAccesoDatosProducto {
             pro = traProducto.consultarProducto(id);
         }
         return pro;
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "consultarProductoPorFamilia")
+    public String consultarProductoPorFamilia(@WebParam(name = "strIdFamilia") String strIdFamilia) {
+        //TODO write your implementation code here:
+        String strResultado = null;
+        cTransaccionProducto oTransaccionProducto = new cTransaccionProducto();
+        strResultado=oTransaccionProducto.consultarProductosPorFamilias(strIdFamilia);
+        return strResultado;
     }
 
 

@@ -138,4 +138,22 @@ public class cTransaccionProducto {
         return strPoducto;
     }
      
+     /**
+      * @author Fredy Janeta
+      * Este metodo me permite sinsultar los datos de los produtos por la familia a la que pertenecen
+      * @param strIdFamilia, codigo del la familia abuscar
+      * @return un String que contine los datos de la consulta
+      */
+     public String consultarProductosPorFamilias(String strIdFamilia)
+     {
+         String strResultado=null;
+         String strQuery="SELECT * FROM producto WHERE familia_produ like '"+strIdFamilia+"'";
+         if(cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase())
+         {
+             strResultado=cAccesoDatos.getInstanciaAccesoDatos().consultarDataBase(strQuery);
+         }
+         
+         return strResultado;
+     }
+     
 }

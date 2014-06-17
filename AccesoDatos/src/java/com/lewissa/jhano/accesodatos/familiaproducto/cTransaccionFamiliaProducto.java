@@ -24,7 +24,24 @@ public class cTransaccionFamiliaProducto {
         return booResultado;
     }
 
-    public String getDescripcionFamilaProducto() {
-        return cAccesoDatos.getInstanciaAccesoDatos().consultarDataBase("SELECT * FROM familia");
+    public String getFamilaProducto() {
+       String strResultaro= null;
+       if(cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase())
+       {
+           strResultaro = cAccesoDatos.getInstanciaAccesoDatos().consultarDataBase("SELECT * FROM familia");
+       }
+        return strResultaro;
+        
+    }
+    
+    public String getNumeroDeProductosPorFamilia(String strIdFamilia)
+    {
+        String strResultado=null;
+        String strQuery="select count(*) as numero_registro  from familia inner join producto on familia.\"Id_fami\" like producto.familia_produ where \"Id_fami\" like '"+strIdFamilia+"'";
+        if(cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase())
+        {
+            strResultado = cAccesoDatos.getInstanciaAccesoDatos().consultarDataBase(strQuery);
+        }
+        return strResultado;
     }
 }

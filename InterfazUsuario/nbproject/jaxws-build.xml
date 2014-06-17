@@ -138,5 +138,21 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/com/lewissa/jhano/logicanegocio/listaproductos"/>
         <delete dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioListaProductos"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-wsLogicaNegocioFamiliaProducto, wsimport-client-wsLogicaNegocioProducto, wsimport-client-wsLogicaNegocioFactura, wsimport-client-wsLogicaNegocioProveedor, wsimport-client-wsLogicaNegocioCliente, wsimport-client-wsLogicaNegocioEmpresa, wsimport-client-wsLogicaNegocioListaProductos"/>
+    <target name="wsimport-client-wsLogicaNegocioPago" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioPago"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioPago" destdir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioPago" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/wsLogicaNegocioPago/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioPago.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/LogicaNegocio/wsLogicaNegocioPago?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/wsLogicaNegocioPago/wsdl/localhost_8080/LogicaNegocio/wsLogicaNegocioPago.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioPago"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioPago">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-wsLogicaNegocioPago" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/lewissa/jhano/logicanegocio/pago"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/wsLogicaNegocioPago"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-wsLogicaNegocioFamiliaProducto, wsimport-client-wsLogicaNegocioProducto, wsimport-client-wsLogicaNegocioFactura, wsimport-client-wsLogicaNegocioProveedor, wsimport-client-wsLogicaNegocioCliente, wsimport-client-wsLogicaNegocioEmpresa, wsimport-client-wsLogicaNegocioListaProductos, wsimport-client-wsLogicaNegocioPago"/>
 </project>

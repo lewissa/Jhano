@@ -6,10 +6,14 @@
 
 package com.lewissa.jhano.logicanegocio.familiaproducto;
 
+import com.lewissa.jhano.accesodatos.familiaproducto.WsAccesoDatosFamiliaProducto_Service;
 import com.lewissa.jhano.logicanegocio.utilidades.cCodigoFamiliaProducto;
+import java.util.ArrayList;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
+import java.util.List;
+import javax.xml.ws.WebServiceRef;
 
 /**
  *
@@ -17,6 +21,8 @@ import javax.jws.WebParam;
  */
 @WebService(serviceName = "wsLogicaNegocioFamiliaProducto")
 public class wsLogicaNegocioFamiliaProducto {
+    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/localhost_8080/AccesoDatos/wsAccesoDatosFamiliaProducto.wsdl")
+    private WsAccesoDatosFamiliaProducto_Service service;
 
     /**
      * Este metodo permite invocar la metodo de insercion del objeto
@@ -54,5 +60,36 @@ public class wsLogicaNegocioFamiliaProducto {
         return strError;
 
     }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "getFamiliaProductos")
+    public List<cFamiliaProducto> getFamiliaProductos() {
+        //TODO write your implementation code here:
+        List<cFamiliaProducto> lisFamiliaProductos= new ArrayList<cFamiliaProducto>();
+        cTransaccionFamiliaProducto oTransaccionFamiliaProducto = new cTransaccionFamiliaProducto();
+        lisFamiliaProductos = oTransaccionFamiliaProducto.getFamiliaProducto();
+        return lisFamiliaProductos;
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "getNumeroDeProductosPorFamilia")
+    public String getNumeroDeProductosPorFamilia(@WebParam(name = "strIdFamilia") String strIdFamilia) {
+        String strResultado = null;
+        strResultado = getNumerodeProductosPorFamilia(strIdFamilia);
+        return strResultado;
+    }
+
+    private String getNumerodeProductosPorFamilia(String strIdFamilia) {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        com.lewissa.jhano.accesodatos.familiaproducto.WsAccesoDatosFamiliaProducto port = service.getWsAccesoDatosFamiliaProductoPort();
+        return port.getNumerodeProductosPorFamilia(strIdFamilia);
+    }
+    
+    
 
 }

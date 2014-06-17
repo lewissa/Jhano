@@ -40,4 +40,16 @@ public class wsAccesoDatosFactura {
         strError=cAccesoDatos.getInstanciaAccesoDatos().getExcErrorAcessoDatos();
         return strError;
     }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "getFacturas")
+    public String getFacturas(@WebParam(name = "strParametro") String strParametro) {
+        //TODO write your implementation code here:
+        String strResultado = null;
+        cTransaccionFactura oTransaccionFactura = new cTransaccionFactura();
+        strResultado=oTransaccionFactura.getFacturas(strParametro);        
+        return strResultado;
+    }
 }

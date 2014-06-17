@@ -34,5 +34,15 @@ public class cTransaccionFactura {
     }
     
     
+    public  String getFacturas(String strParametro){
+        String strResultado= null;
+        String strQuery = "SELECT * FROM factura WHERE \"Estado\"="+strParametro+";";
+        if(cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase())
+        {
+            strResultado=cAccesoDatos.getInstanciaAccesoDatos().consultarDataBase(strQuery);
+        }
+        return  strParametro;
+    }
+    
     
 }

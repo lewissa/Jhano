@@ -25,10 +25,19 @@ public class cTestTransaccionProducto  extends TestCase{
         assertNotNull(oTransaccionProducto.buscarProducto(strParametro));
     }
     
+    public void testConsultarProdwcutosPorFamilia()
+    {
+        cTransaccionProducto oTransaccionProducto = new cTransaccionProducto();
+        assertNotNull(oTransaccionProducto.consultarProductosPorFamilias("fm123"));
+    }
+    
+    
     public static Test suite()
     {
         return new TestSuite(cTestTransaccionProducto.class);
     }
+    
+    
     
     public static void main(String [] args)
     {

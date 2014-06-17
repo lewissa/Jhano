@@ -18,7 +18,7 @@ import junit.framework.TestSuite;
  */
 public class cTestTransaccionFamiliaProducto extends TestCase{
     cTransaccionFamiliaProducto oFamilia;
-    
+   /* 
     public void testInsertarFamiliaProducto(){
      oFamilia = new cTransaccionFamiliaProducto();
      String [] strFamilia = new String[2];
@@ -26,6 +26,19 @@ public class cTestTransaccionFamiliaProducto extends TestCase{
      strFamilia[1]="Helados";
         assertTrue(oFamilia.ingresarFamiliaProducto(strFamilia));
     }
+    */
+    public void testGetFamiliasProductos()
+    {
+        cTransaccionFamiliaProducto oTransaccionFamiliaProducto = new cTransaccionFamiliaProducto();
+        assertNotNull(oTransaccionFamiliaProducto.getFamilaProducto());
+    }
+    
+    public void testNumeroDeProductosPorFamilias()
+    {
+        cTransaccionFamiliaProducto oTransaccionFamiliaProducto = new cTransaccionFamiliaProducto();
+        assertNotNull(oTransaccionFamiliaProducto.getNumeroDeProductosPorFamilia("fm123"));
+    }
+    
     
     public static Test suite()
     {

@@ -95,11 +95,10 @@ public class cTransaccionCliente {
         return strCliente;
     }
     
-    public String buscarCliente(String strId) {
+    public String buscarCliente(String strParametro) {
         String strSqlConsulta, strCliente=null;
-        //strSqlConsulta = "SELECT \"Id_cliente\", \"Nombre_fiscal\", \"Direccion\", \"Convencional\" FROM cliente"
-                //+ "WHERE \"Estado\" = TRUE;";
-        strSqlConsulta = "SELECT * FROM cliente WHERE \"Id_cliente\"='"+strId+"';";
+        strSqlConsulta = "SELECT * FROM cliente WHERE \"Id_cliente\" like '"+strParametro+"%' OR \"Nombre_fiscal\"='"
+                +strParametro+"%' OR \"Nombre_comercial\" like '"+strParametro+"%' OR \"Correo\" like '"+strParametro+"%';";
         if(cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase())
         {
             strCliente = cAccesoDatos.getInstanciaAccesoDatos().consultarDataBase(strSqlConsulta);
