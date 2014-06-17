@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -13,7 +9,6 @@ import com.lewissa.jhano.accesodatos.cAccesoDatos;
 
 /**
  *
-<<<<<<< HEAD
  * @author Fredy Janeta
  */
 public class cTransaccionPago {
@@ -31,12 +26,6 @@ public class cTransaccionPago {
         return strResultado;
     }
 
-=======
- * @author Usuario
- */
-public class cTransaccionPago {
-
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
     public String cargarPagos() {
         String strPago = null;
         String strQuery = "SELECT * FROM \"Pago\" WHERE \"estado\"=TRUE; ";

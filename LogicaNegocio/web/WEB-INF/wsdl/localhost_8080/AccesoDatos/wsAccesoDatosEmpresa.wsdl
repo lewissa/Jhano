@@ -4,31 +4,31 @@
 <xsd:import namespace="http://empresa.accesodatos.jhano.lewissa.com/" schemaLocation="http://localhost:8080/AccesoDatos/wsAccesoDatosEmpresa?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="getErrorConexion">
-<part name="parameters" element="tns:getErrorConexion"/>
-</message>
-<message name="getErrorConexionResponse">
-<part name="parameters" element="tns:getErrorConexionResponse"/>
-</message>
 <message name="buscarEmpresa">
 <part name="parameters" element="tns:buscarEmpresa"/>
 </message>
 <message name="buscarEmpresaResponse">
 <part name="parameters" element="tns:buscarEmpresaResponse"/>
 </message>
+<message name="getErrorConexion">
+<part name="parameters" element="tns:getErrorConexion"/>
+</message>
+<message name="getErrorConexionResponse">
+<part name="parameters" element="tns:getErrorConexionResponse"/>
+</message>
 <portType name="wsAccesoDatosEmpresa">
-<operation name="getErrorConexion">
-<input wsam:Action="http://empresa.accesodatos.jhano.lewissa.com/wsAccesoDatosEmpresa/getErrorConexionRequest" message="tns:getErrorConexion"/>
-<output wsam:Action="http://empresa.accesodatos.jhano.lewissa.com/wsAccesoDatosEmpresa/getErrorConexionResponse" message="tns:getErrorConexionResponse"/>
-</operation>
 <operation name="buscarEmpresa">
 <input wsam:Action="http://empresa.accesodatos.jhano.lewissa.com/wsAccesoDatosEmpresa/buscarEmpresaRequest" message="tns:buscarEmpresa"/>
 <output wsam:Action="http://empresa.accesodatos.jhano.lewissa.com/wsAccesoDatosEmpresa/buscarEmpresaResponse" message="tns:buscarEmpresaResponse"/>
 </operation>
+<operation name="getErrorConexion">
+<input wsam:Action="http://empresa.accesodatos.jhano.lewissa.com/wsAccesoDatosEmpresa/getErrorConexionRequest" message="tns:getErrorConexion"/>
+<output wsam:Action="http://empresa.accesodatos.jhano.lewissa.com/wsAccesoDatosEmpresa/getErrorConexionResponse" message="tns:getErrorConexionResponse"/>
+</operation>
 </portType>
 <binding name="wsAccesoDatosEmpresaPortBinding" type="tns:wsAccesoDatosEmpresa">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="getErrorConexion">
+<operation name="buscarEmpresa">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -37,7 +37,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="buscarEmpresa">
+<operation name="getErrorConexion">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

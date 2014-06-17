@@ -12,15 +12,11 @@ import javax.jws.WebParam;
 
 /**
  *
-<<<<<<< HEAD
  * <<<<<<< HEAD
  * @a
  *
  * uthor Fredy Janeta =======
  * @author Usuario >>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
-=======
- * @author Usuario
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
  */
 @WebService(serviceName = "wsAccesoDatosPago")
 public class wsAccesoDatosPago {
@@ -38,7 +34,6 @@ public class wsAccesoDatosPago {
     /**
      * Web service operation
      */
-<<<<<<< HEAD
     @WebMethod(operationName = "getPagosPendientes")
     public String getPagosPendientes() {
         String strResultado = null;
@@ -48,8 +43,6 @@ public class wsAccesoDatosPago {
 
     }
 
-=======
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
     @WebMethod(operationName = "cargarPago")
     public String cargarPago() {
         //TODO write your implementation code here:
@@ -96,8 +89,4 @@ public class wsAccesoDatosPago {
         }
         return pago;
     }
-<<<<<<< HEAD
-=======
-
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
 }

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.3 (tags/2.3-7528; 2013-04-29T19:34:10+0000) JAXWS-RI/2.2.8 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://familiaproducto.accesodatos.jhano.lewissa.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://familiaproducto.accesodatos.jhano.lewissa.com/">
 
 <xs:element name="getErrorConexionFamiliaProducto" type="tns:getErrorConexionFamiliaProducto"/>
@@ -60,37 +59,4 @@
 <xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
-=======
-<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.3 (tags/2.3-7528; 2013-04-29T19:34:10+0000) JAXWS-RI/2.2.8 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://familiaproducto.accesodatos.jhano.lewissa.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://familiaproducto.accesodatos.jhano.lewissa.com/">
-
-<xs:element name="getErrorConexionFamiliaProducto" type="tns:getErrorConexionFamiliaProducto"/>
-
-<xs:element name="getErrorConexionFamiliaProductoResponse" type="tns:getErrorConexionFamiliaProductoResponse"/>
-
-<xs:element name="ingresarFamiliaProducto" type="tns:ingresarFamiliaProducto"/>
-
-<xs:element name="ingresarFamiliaProductoResponse" type="tns:ingresarFamiliaProductoResponse"/>
-
-<xs:complexType name="ingresarFamiliaProducto">
-<xs:sequence>
-<xs:element name="srtFamiliaProducto" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="ingresarFamiliaProductoResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:boolean" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="getErrorConexionFamiliaProducto">
-<xs:sequence/>
-</xs:complexType>
-
-<xs:complexType name="getErrorConexionFamiliaProductoResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
 </xs:schema>

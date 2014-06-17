@@ -24,16 +24,6 @@
 
 <xs:element name="modificarProveedorResponse" type="tns:modificarProveedorResponse"/>
 
-<xs:complexType name="cargaProveedor">
-<xs:sequence/>
-</xs:complexType>
-
-<xs:complexType name="cargaProveedorResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
 <xs:complexType name="eliminarFisicoProveedor">
 <xs:sequence>
 <xs:element name="strCodigoProveedor" type="xs:string" minOccurs="0"/>
@@ -43,6 +33,16 @@
 <xs:complexType name="eliminarFisicoProveedorResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="cargaProveedor">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="cargaProveedorResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 

@@ -155,7 +155,6 @@ public class wsAccesoDatosProducto {
         }
         return pro;
     }
-<<<<<<< HEAD
     /**
      * Web service operation
      */
@@ -167,6 +166,4 @@ public class wsAccesoDatosProducto {
         strResultado=oTransaccionProducto.consultarProductosPorFamilias(strIdFamilia);
         return strResultado;
     }
-=======
->>>>>>> c5ada354b8e8925fb32c4ea2bb98c08598ab9034
 }

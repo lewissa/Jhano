@@ -10,18 +10,6 @@
 <message name="buscarClienteResponse">
 <part name="parameters" element="tns:buscarClienteResponse"/>
 </message>
-<message name="getErrorConexion">
-<part name="parameters" element="tns:getErrorConexion"/>
-</message>
-<message name="getErrorConexionResponse">
-<part name="parameters" element="tns:getErrorConexionResponse"/>
-</message>
-<message name="obtenerCliente">
-<part name="parameters" element="tns:obtenerCliente"/>
-</message>
-<message name="obtenerClienteResponse">
-<part name="parameters" element="tns:obtenerClienteResponse"/>
-</message>
 <message name="eliminarCliente">
 <part name="parameters" element="tns:eliminarCliente"/>
 </message>
@@ -34,18 +22,22 @@
 <message name="actualizarDataBaseClienteResponse">
 <part name="parameters" element="tns:actualizarDataBaseClienteResponse"/>
 </message>
+<message name="obtenerCliente">
+<part name="parameters" element="tns:obtenerCliente"/>
+</message>
+<message name="obtenerClienteResponse">
+<part name="parameters" element="tns:obtenerClienteResponse"/>
+</message>
+<message name="getErrorConexion">
+<part name="parameters" element="tns:getErrorConexion"/>
+</message>
+<message name="getErrorConexionResponse">
+<part name="parameters" element="tns:getErrorConexionResponse"/>
+</message>
 <portType name="wsAccesoDatosCliente">
 <operation name="buscarCliente">
 <input wsam:Action="http://cliente.accesodatos.jhano.lewissa.com/wsAccesoDatosCliente/buscarClienteRequest" message="tns:buscarCliente"/>
 <output wsam:Action="http://cliente.accesodatos.jhano.lewissa.com/wsAccesoDatosCliente/buscarClienteResponse" message="tns:buscarClienteResponse"/>
-</operation>
-<operation name="getErrorConexion">
-<input wsam:Action="http://cliente.accesodatos.jhano.lewissa.com/wsAccesoDatosCliente/getErrorConexionRequest" message="tns:getErrorConexion"/>
-<output wsam:Action="http://cliente.accesodatos.jhano.lewissa.com/wsAccesoDatosCliente/getErrorConexionResponse" message="tns:getErrorConexionResponse"/>
-</operation>
-<operation name="obtenerCliente">
-<input wsam:Action="http://cliente.accesodatos.jhano.lewissa.com/wsAccesoDatosCliente/obtenerClienteRequest" message="tns:obtenerCliente"/>
-<output wsam:Action="http://cliente.accesodatos.jhano.lewissa.com/wsAccesoDatosCliente/obtenerClienteResponse" message="tns:obtenerClienteResponse"/>
 </operation>
 <operation name="eliminarCliente">
 <input wsam:Action="http://cliente.accesodatos.jhano.lewissa.com/wsAccesoDatosCliente/eliminarClienteRequest" message="tns:eliminarCliente"/>
@@ -54,6 +46,14 @@
 <operation name="actualizarDataBaseCliente">
 <input wsam:Action="http://cliente.accesodatos.jhano.lewissa.com/wsAccesoDatosCliente/actualizarDataBaseClienteRequest" message="tns:actualizarDataBaseCliente"/>
 <output wsam:Action="http://cliente.accesodatos.jhano.lewissa.com/wsAccesoDatosCliente/actualizarDataBaseClienteResponse" message="tns:actualizarDataBaseClienteResponse"/>
+</operation>
+<operation name="obtenerCliente">
+<input wsam:Action="http://cliente.accesodatos.jhano.lewissa.com/wsAccesoDatosCliente/obtenerClienteRequest" message="tns:obtenerCliente"/>
+<output wsam:Action="http://cliente.accesodatos.jhano.lewissa.com/wsAccesoDatosCliente/obtenerClienteResponse" message="tns:obtenerClienteResponse"/>
+</operation>
+<operation name="getErrorConexion">
+<input wsam:Action="http://cliente.accesodatos.jhano.lewissa.com/wsAccesoDatosCliente/getErrorConexionRequest" message="tns:getErrorConexion"/>
+<output wsam:Action="http://cliente.accesodatos.jhano.lewissa.com/wsAccesoDatosCliente/getErrorConexionResponse" message="tns:getErrorConexionResponse"/>
 </operation>
 </portType>
 <binding name="wsAccesoDatosClientePortBinding" type="tns:wsAccesoDatosCliente">
@@ -67,7 +67,16 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="getErrorConexion">
+<operation name="eliminarCliente">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="actualizarDataBaseCliente">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -85,16 +94,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="eliminarCliente">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="actualizarDataBaseCliente">
+<operation name="getErrorConexion">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

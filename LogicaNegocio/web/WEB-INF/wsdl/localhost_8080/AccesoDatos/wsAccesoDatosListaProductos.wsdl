@@ -4,31 +4,31 @@
 <xsd:import namespace="http://listaproductos.accesodatos.jhano.lewissa.com/" schemaLocation="http://localhost:8080/AccesoDatos/wsAccesoDatosListaProductos?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="getErrorConexion">
-<part name="parameters" element="tns:getErrorConexion"/>
-</message>
-<message name="getErrorConexionResponse">
-<part name="parameters" element="tns:getErrorConexionResponse"/>
-</message>
 <message name="ingresarListaProductos">
 <part name="parameters" element="tns:ingresarListaProductos"/>
 </message>
 <message name="ingresarListaProductosResponse">
 <part name="parameters" element="tns:ingresarListaProductosResponse"/>
 </message>
+<message name="getErrorConexion">
+<part name="parameters" element="tns:getErrorConexion"/>
+</message>
+<message name="getErrorConexionResponse">
+<part name="parameters" element="tns:getErrorConexionResponse"/>
+</message>
 <portType name="wsAccesoDatosListaProductos">
-<operation name="getErrorConexion">
-<input wsam:Action="http://listaproductos.accesodatos.jhano.lewissa.com/wsAccesoDatosListaProductos/getErrorConexionRequest" message="tns:getErrorConexion"/>
-<output wsam:Action="http://listaproductos.accesodatos.jhano.lewissa.com/wsAccesoDatosListaProductos/getErrorConexionResponse" message="tns:getErrorConexionResponse"/>
-</operation>
 <operation name="ingresarListaProductos">
 <input wsam:Action="http://listaproductos.accesodatos.jhano.lewissa.com/wsAccesoDatosListaProductos/ingresarListaProductosRequest" message="tns:ingresarListaProductos"/>
 <output wsam:Action="http://listaproductos.accesodatos.jhano.lewissa.com/wsAccesoDatosListaProductos/ingresarListaProductosResponse" message="tns:ingresarListaProductosResponse"/>
 </operation>
+<operation name="getErrorConexion">
+<input wsam:Action="http://listaproductos.accesodatos.jhano.lewissa.com/wsAccesoDatosListaProductos/getErrorConexionRequest" message="tns:getErrorConexion"/>
+<output wsam:Action="http://listaproductos.accesodatos.jhano.lewissa.com/wsAccesoDatosListaProductos/getErrorConexionResponse" message="tns:getErrorConexionResponse"/>
+</operation>
 </portType>
 <binding name="wsAccesoDatosListaProductosPortBinding" type="tns:wsAccesoDatosListaProductos">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="getErrorConexion">
+<operation name="ingresarListaProductos">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -37,7 +37,7 @@
 <soap:body use="literal"/>
 </output>
 </operation>
-<operation name="ingresarListaProductos">
+<operation name="getErrorConexion">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
