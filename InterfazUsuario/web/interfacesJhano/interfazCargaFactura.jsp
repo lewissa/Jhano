@@ -155,6 +155,15 @@
                                     </a>
                             </td>
                         </tr>
+                        <tr>
+                            <td>
+                                <a href="../interfacesJhano/interfazReportePagosPendientes.jsp">
+                                        <font face="Arial">
+                                            Pagos Pendientes
+                                        </font>
+                                    </a>
+                            </td>
+                        </tr>
                     </table>
                     
                     <td width="88%">

@@ -117,10 +117,10 @@
 
         <table bgcolor="#C0C0C0" width="100%" border="1">
                 <tr>
-                    <td width="12%" >
+                    <td  width="12%" >
                         <a href="../index.jsp">Atras</a>
-                    </td>
-                    <td width="88%" >
+                    </td> 
+                    <td width="88%"  >
                         <font face="Arial">
                         <h1><center>Pagos Pendientes</center></h1>
                         <center>
@@ -129,7 +129,7 @@
                             try {
                                 com.lewissa.jhano.logicanegocio.pago.WsLogicaNegocioPago_Service service = new com.lewissa.jhano.logicanegocio.pago.WsLogicaNegocioPago_Service();
                                 com.lewissa.jhano.logicanegocio.pago.WsLogicaNegocioPago port = service.getWsLogicaNegocioPagoPort();
-                                // TODO process result here
+                                java.lang.String TotalPagosPendintes = port.getTotalPagosPendientes();
                                 java.lang.String result = port.getPagosPendientes();
                                 if(result != null)
                                 {
@@ -138,25 +138,39 @@
                                         WebRowSetImpl wrs = new WebRowSetImpl();
                                         wrs.readXml(sr);
                                         out.print("<tr>");
+                                                out.print("<td>CI/RUC</td>");
                                                 out.print("<td>Nombre Fiscal</td>");
                                                 out.print("<td>Telefono Convencional</td>");
                                                 out.print("<td>Telefono Celular</td>");
                                                 out.print("<td>Correo Electronico</td>");
                                                 out.print("<td>Direccion</td>");
-                                                out.print("<td>Monto</td>");
                                                 out.print("<td>Fecha de Pago</td>");
+                                                out.print("<td>Monto</td>");
                                         out.print("</tr>");
                                         while (wrs.next()) {
                                             out.print("<tr>");
+                                                    out.print("<td>"+wrs.getString("Id_cliente")+"</td>");
                                                     out.print("<td>"+wrs.getString("Nombre_fiscal")+"</td>");
                                                     out.print("<td>"+wrs.getString("Convencional")+"</td>");
                                                     out.print("<td>"+wrs.getString("Celular")+"</td>");
                                                     out.print("<td>"+wrs.getString("Correo")+"</td>");
                                                     out.print("<td>"+wrs.getString("Direccion")+"</td>");
-                                                    out.print("<td>"+wrs.getString("monto")+"</td>");
                                                     out.print("<td>"+wrs.getString("fecha_pago")+"</td>");
+                                                    out.print("<td>"+wrs.getString("monto")+"</td>");
                                                     out.print("</tr>");
                                         }
+                                        
+                                        StringReader strReader = new StringReader(TotalPagosPendintes);
+                                        WebRowSetImpl wrsImplement = new WebRowSetImpl();
+                                        wrsImplement.readXml(strReader);
+                                        while(wrsImplement.next())
+                                        {
+                                            out.print("<tr>");
+                                            out.print("<td colspan=\"7\" >Total</td>");
+                                            out.print("<td>"+wrsImplement.getString("total")+"</td>");
+                                            out.print("</tr>");
+                                        }                                      
+                                        
                                     out.print("</table>");
                                 }
                             } catch (Exception ex) {

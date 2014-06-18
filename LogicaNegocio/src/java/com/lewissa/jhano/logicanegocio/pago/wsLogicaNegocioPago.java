@@ -128,4 +128,21 @@ public class wsLogicaNegocioPago {
         return port.mostrarDatosPagos(strIdPago);
 
     }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "getTotalPagosPendientes")
+    public String getTotalPagosPendientes() {
+        String strResultado=null;
+        strResultado = getTotalPagosPendientes_1();
+        return strResultado;
+    }
+
+    private String getTotalPagosPendientes_1() {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        com.lewissa.jhano.accesodatos.pago.WsAccesoDatosPago port = service.getWsAccesoDatosPagoPort();
+        return port.getTotalPagosPendientes();
+    }
 }

@@ -51,4 +51,15 @@ public class cTransaccionPago {
         strPago = cAccesoDatos.getInstanciaAccesoDatos().consultarDataBase(strSqlConsulta);
         return strPago;
     }
+    
+    public String getTotalPagosPendientes()
+    {
+        String strResultado=null;
+        String strQuery="select sum(monto) as total from pago WHERE fecha_pago < current_date + 1 AND estado = FALSE";
+        if(cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase())
+        {
+            strResultado = cAccesoDatos.getInstanciaAccesoDatos().consultarDataBase(strQuery);
+        }
+        return strResultado;
+    }
 }

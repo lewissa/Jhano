@@ -10,6 +10,18 @@
 <message name="cargaPagoResponse">
 <part name="parameters" element="tns:cargaPagoResponse"/>
 </message>
+<message name="getTotalPagosPendientes">
+<part name="parameters" element="tns:getTotalPagosPendientes"/>
+</message>
+<message name="getTotalPagosPendientesResponse">
+<part name="parameters" element="tns:getTotalPagosPendientesResponse"/>
+</message>
+<message name="getErrorConexion">
+<part name="parameters" element="tns:getErrorConexion"/>
+</message>
+<message name="getErrorConexionResponse">
+<part name="parameters" element="tns:getErrorConexionResponse"/>
+</message>
 <message name="getPagosPendientes">
 <part name="parameters" element="tns:getPagosPendientes"/>
 </message>
@@ -28,16 +40,18 @@
 <message name="mostrarDatosPagosResponse">
 <part name="parameters" element="tns:mostrarDatosPagosResponse"/>
 </message>
-<message name="getErrorConexion">
-<part name="parameters" element="tns:getErrorConexion"/>
-</message>
-<message name="getErrorConexionResponse">
-<part name="parameters" element="tns:getErrorConexionResponse"/>
-</message>
 <portType name="wsLogicaNegocioPago">
 <operation name="cargaPago">
 <input wsam:Action="http://pago.logicanegocio.jhano.lewissa.com/wsLogicaNegocioPago/cargaPagoRequest" message="tns:cargaPago"/>
 <output wsam:Action="http://pago.logicanegocio.jhano.lewissa.com/wsLogicaNegocioPago/cargaPagoResponse" message="tns:cargaPagoResponse"/>
+</operation>
+<operation name="getTotalPagosPendientes">
+<input wsam:Action="http://pago.logicanegocio.jhano.lewissa.com/wsLogicaNegocioPago/getTotalPagosPendientesRequest" message="tns:getTotalPagosPendientes"/>
+<output wsam:Action="http://pago.logicanegocio.jhano.lewissa.com/wsLogicaNegocioPago/getTotalPagosPendientesResponse" message="tns:getTotalPagosPendientesResponse"/>
+</operation>
+<operation name="getErrorConexion">
+<input wsam:Action="http://pago.logicanegocio.jhano.lewissa.com/wsLogicaNegocioPago/getErrorConexionRequest" message="tns:getErrorConexion"/>
+<output wsam:Action="http://pago.logicanegocio.jhano.lewissa.com/wsLogicaNegocioPago/getErrorConexionResponse" message="tns:getErrorConexionResponse"/>
 </operation>
 <operation name="getPagosPendientes">
 <input wsam:Action="http://pago.logicanegocio.jhano.lewissa.com/wsLogicaNegocioPago/getPagosPendientesRequest" message="tns:getPagosPendientes"/>
@@ -51,14 +65,28 @@
 <input wsam:Action="http://pago.logicanegocio.jhano.lewissa.com/wsLogicaNegocioPago/mostrarDatosPagosRequest" message="tns:mostrarDatosPagos"/>
 <output wsam:Action="http://pago.logicanegocio.jhano.lewissa.com/wsLogicaNegocioPago/mostrarDatosPagosResponse" message="tns:mostrarDatosPagosResponse"/>
 </operation>
-<operation name="getErrorConexion">
-<input wsam:Action="http://pago.logicanegocio.jhano.lewissa.com/wsLogicaNegocioPago/getErrorConexionRequest" message="tns:getErrorConexion"/>
-<output wsam:Action="http://pago.logicanegocio.jhano.lewissa.com/wsLogicaNegocioPago/getErrorConexionResponse" message="tns:getErrorConexionResponse"/>
-</operation>
 </portType>
 <binding name="wsLogicaNegocioPagoPortBinding" type="tns:wsLogicaNegocioPago">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
 <operation name="cargaPago">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getTotalPagosPendientes">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getErrorConexion">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -86,15 +114,6 @@
 </output>
 </operation>
 <operation name="mostrarDatosPagos">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getErrorConexion">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

@@ -194,38 +194,6 @@
         </wsimport-option>
       </wsimport-options>
     </client>
-    <client name="wsLogicaNegocioFamiliaProducto">
-      <wsdl-url>http://localhost:8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto?WSDL</wsdl-url>
-      <local-wsdl-file>localhost_8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto.wsdl</local-wsdl-file>
-      <package-name>com.lewissa.jhano.logicanegocio.familiaproducto</package-name>
-      <catalog-file>catalog.xml</catalog-file>
-      <wsimport-options>
-        <wsimport-option>
-          <wsimport-option-name>extension</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>verbose</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>fork</wsimport-option-name>
-          <wsimport-option-value>false</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto?WSDL</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>xnocompile</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>xendorsed</wsimport-option-name>
-          <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-      </wsimport-options>
-    </client>
     <client name="wsLogicaNegocioProducto">
       <wsdl-url>http://localhost:8080/LogicaNegocio/wsLogicaNegocioProducto?WSDL</wsdl-url>
       <local-wsdl-file>localhost_8080/LogicaNegocio/wsLogicaNegocioProducto.wsdl</local-wsdl-file>
@@ -247,6 +215,38 @@
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
           <wsimport-option-value>http://localhost:8080/LogicaNegocio/wsLogicaNegocioProducto?WSDL</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>xnocompile</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>xendorsed</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+      </wsimport-options>
+    </client>
+    <client name="wsLogicaNegocioFamiliaProducto">
+      <wsdl-url>http://localhost:8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto?wsdl</wsdl-url>
+      <local-wsdl-file>localhost_8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto.wsdl</local-wsdl-file>
+      <package-name>com.lewissa.jhano.logicanegocio.familiaproducto</package-name>
+      <catalog-file>catalog.xml</catalog-file>
+      <wsimport-options>
+        <wsimport-option>
+          <wsimport-option-name>extension</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>verbose</wsimport-option-name>
+          <wsimport-option-value>true</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>fork</wsimport-option-name>
+          <wsimport-option-value>false</wsimport-option-value>
+        </wsimport-option>
+        <wsimport-option>
+          <wsimport-option-name>wsdlLocation</wsimport-option-name>
+          <wsimport-option-value>http://localhost:8080/LogicaNegocio/wsLogicaNegocioFamiliaProducto?wsdl</wsimport-option-value>
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>

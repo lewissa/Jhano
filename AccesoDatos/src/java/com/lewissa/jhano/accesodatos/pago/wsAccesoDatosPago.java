@@ -89,4 +89,16 @@ public class wsAccesoDatosPago {
         }
         return pago;
     }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "getTotalPagosPendientes")
+    public String getTotalPagosPendientes() {
+        //TODO write your implementation code here:
+        String strResultado=null;
+        cTransaccionPago oTransaccionPago = new cTransaccionPago();
+        strResultado = oTransaccionPago.getTotalPagosPendientes();
+        return strResultado;
+    }
 }

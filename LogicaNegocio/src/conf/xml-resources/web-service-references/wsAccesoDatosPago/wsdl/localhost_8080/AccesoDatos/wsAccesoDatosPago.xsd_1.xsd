@@ -12,6 +12,10 @@
 
 <xs:element name="getPagosPendientesResponse" type="tns:getPagosPendientesResponse"/>
 
+<xs:element name="getTotalPagosPendientes" type="tns:getTotalPagosPendientes"/>
+
+<xs:element name="getTotalPagosPendientesResponse" type="tns:getTotalPagosPendientesResponse"/>
+
 <xs:element name="modificarDataBasePago" type="tns:modificarDataBasePago"/>
 
 <xs:element name="modificarDataBasePagoResponse" type="tns:modificarDataBasePagoResponse"/>
@@ -35,6 +39,16 @@
 </xs:complexType>
 
 <xs:complexType name="cargarPagoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getTotalPagosPendientes">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getTotalPagosPendientesResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>

@@ -212,6 +212,13 @@
                                     </a>
                                 </td>
                             </tr>
+                            <tr>
+                              <td>
+                                  <div id="columnaFamiliaProductos">
+
+                                </div>
+                              </td>
+                          </tr>   
                         </table>
                 </td>
                 <%
