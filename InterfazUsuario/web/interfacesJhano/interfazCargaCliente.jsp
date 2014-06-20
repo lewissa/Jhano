@@ -6,16 +6,21 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Jhano | Cliente </title>
-        <script src="SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
-        <link href="SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
+        <link href="SpryAssets/estilo.css" rel="stylesheet" type="text/css">
+            <script type="text/javascript" src="functions.js"></script>
+            <script src="../SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
+            <link href="../SpryAssets/SpryMenuBarHorizontalw.css" rel="stylesheet" type="text/css" />
+            <link href="../SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
+           
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
     </head>
 
     <body>
-        <table bgcolor="#192B75" width="100%" height="50%" border="1">
+        <table style="background-color: #002a80; border: #f9f9f9" bgcolor="#192B75" width="100%" height="50%" border="1">
             <tr>
                 <td>
                     <a href="../index.jsp">
-                    <img src="Image/computech.jpg" alt="espoch" />
+                        <img src="Image/computech.jpg" alt="espoch" />
                     </a>
                 </td>
                 <td width="780">
@@ -30,7 +35,7 @@
                         </h3>
                     </center></td>
                 <td align="center" rowspan="2">
-                    <table border="1" width="90%" height="90%">
+                    <table style="border: #f9f9f9" border="1" width="90%" height="90%">
                         <tr>
                             <td width="50%" height="10%">
                                 <center>
@@ -118,40 +123,37 @@
                 </td>
             </tr>
         </table>
-
-        <table bgcolor="#C0C0C0" width="100%" height="100%" border="1">
+        <table style="background-color: #999999; border-color: #f9f9f9" gcolor="#C0C0C0" width="100%" height="10%" border="1">
             <tr>
-                <td width="12%">
-                    <table border="0,1" align="left">
+                <td border="1" width="10%">
+                    <table style="background-color: #999999; border-color: #f9f9f9">                             
                         <tr>
-                            <td>
-                                <a href="../interfacesJhano/interfazIngresoCliente.jsp">
-                                    <font face="Arial">
-                                        Ingreso
-                                    </font>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a href="">
-                                    <font face="Arial">
-                                        Consulta
-                                    </font>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>                                
-
-                                    <a href="../index.jsp">
-                                        <font face="Arial">
-                                            Regresar
-                                        </font>
-                                    </a>
-                            </td>
-                        </tr>
+                            <th><div>
+                                    <ul id="MenuBar2" class="MenuBarHorizontalw">
+                                        <li> 
+                                            <font face="Arial">
+                                                <a href="../interfacesJhano/interfazIngresoCliente.jsp"><center>Ingreso</center></a>
+                                            </font>
+                                        </li>
+                                    </ul>
+                                    <ul id="MenuBar2" class="MenuBarHorizontalw">
+                                        <li>
+                                            <font face="Arial">
+                                                <a href="#"><center>Consulta</center></a>
+                                            </font>
+                                        </li>
+                                    </ul>
+                                    <ul id="MenuBar2" class="MenuBarHorizontalw">
+                                        <li>
+                                            <font face="Arial">
+                                                <a href="../index.jsp"><center>Regresar</center></a>
+                                            </font>
+                                        </li>
+                                    </ul>
+                            </th>
+                        </tr>                           
                     </table>
+
                     <%
                         String strCancelar;
                         try {
@@ -191,12 +193,12 @@
                         <form name="frmCargarClientes" action="../controladoresJhano/controladorInterfazCargarCliente.jsp" method="post" >
                             <table width="1000" align="center" border="1" bgcolor="white">
                                 <tr>
-                                    <td width="100" align="center">Cédula / RUC</td>
-                                    <td width="250" align="center">Nombre y Apellido</td>
-                                    <td width="400" align="center">Dirección</td>
-                                    <td width="100" align="center">Teléfono</td>
-                                    <td width="150" align="center" colspan="2">Acciones</td>
-                                    
+                                    <td width="100" align="center" bgcolor="#C0C0C0">Cédula / RUC</td>
+                                    <td width="250" align="center" bgcolor="#C0C0C0">Nombre y Apellido</td>
+                                    <td width="400" align="center" bgcolor="#C0C0C0">Dirección</td>
+                                    <td width="100" align="center" bgcolor="#C0C0C0">Teléfono</td>
+                                    <td width="150" align="center" colspan="2" bgcolor="#C0C0C0">Acciones</td>
+
                                 </tr>
                                 <%
                                     String strCarga = (request.getParameter("car") != null) ? "true" : "false";
@@ -207,13 +209,13 @@
                                     if (clientes != null) {
                                         for (com.lewissa.jhano.logicanegocio.cliente.CCliente cliente : clientes) {
                                             out.print("<tr>");
-                                            out.print("  <td>" + cliente.getStrIdCliente() + "</td>");
-                                            out.print("  <td>" + cliente.getStrNombreFiscal() + "</td>");
-                                            out.print("  <td>" + cliente.getStrDireccion()+ "</td>");
-                                            out.print("  <td>" + cliente.getStrConvencional()+ "</td>");
-                                            out.print("  <td>Modificar</td>");
+                                            out.print("  <td bgcolor=\"#FFF\">" + cliente.getStrIdCliente() + "</td>");
+                                            out.print("  <td bgcolor=\"#FFF\">" + cliente.getStrNombreFiscal() + "</td>");
+                                            out.print("  <td bgcolor=\"#FFF\">" + cliente.getStrDireccion() + "</td>");
+                                            out.print("  <td bgcolor=\"#FFF\">" + cliente.getStrConvencional() + "</td>");
+                                            out.print("  <td bgcolor=\"#FFF\">Modificar</td>");
                                             //out.print("  <td>Eliminar</td>");
-                                            out.print("  <td><a href='../controladoresJhano/controladorEliminarCliente.jsp?accion=delete&id=" + cliente.getStrIdCliente() + "'>Eliminar</a></td>");
+                                            out.print("  <td bgcolor=\"#FFF\"><a href='../controladoresJhano/controladorEliminarCliente.jsp?accion=delete&id=" + cliente.getStrIdCliente() + "'>Eliminar</a></td>");
                                             out.print("</tr>");
                                         }
                                     } else {
@@ -227,9 +229,9 @@
                                         out.print("</tr>");
                                     }
                                 %>
-                                
+
                             </table>
-                            
+
                     </td>
                     <%
                         }

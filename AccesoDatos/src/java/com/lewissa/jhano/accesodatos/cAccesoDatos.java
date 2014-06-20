@@ -155,5 +155,4 @@ public class cAccesoDatos implements Serializable {
         }
         return strError;
     }
-
 }

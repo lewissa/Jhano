@@ -12,16 +12,19 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Jhano | Factura </title>
-        <script src="SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
-        <link href="SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
+        <link href="SpryAssets/estilo.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript" src="functions.js"></script>
+        <script src="../SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
+        <link href="../SpryAssets/SpryMenuBarHorizontalw.css" rel="stylesheet" type="text/css" />
+        <link href="../SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
     </head>
 
     <body>
-        <table bgcolor="#192B75" width="100%" height="50%" border="1">
+        <table style="background-color: #002a80; border: #f9f9f9" bgcolor="#192B75" width="100%" height="50%" border="1">
             <tr>
                 <td>
                     <a href="../index.jsp">
-                    <img src="Image/computech.jpg" alt="espoch" />
+                        <img src="Image/computech.jpg" alt="espoch" />
                     </a>
                 </td>
                 <td width="780">
@@ -36,7 +39,7 @@
                         </h3>
                     </center></td>
                 <td align="center" rowspan="2">
-                    <table border="1" width="90%" height="90%">
+                    <table style="border: #f9f9f9"  border="1" width="90%" height="90%">
                         <tr>
                             <td width="50%" height="10%">
                                 <center>
@@ -123,60 +126,55 @@
             </tr>
         </table>
 
-        <table bgcolor="#C0C0C0" width="100%" height="100%" border="1">
+        <table style="background-color: #999999; border-color: #f9f9f9" bgcolor="#C0C0C0" width="100%" height="100%" border="1">
             <tr>
                 <td width="12%">
-                    <table border="0,1" align="left">
+
+                    <table style="background-color: #999999; border-color: #f9f9f9">                             
                         <tr>
-                            <td>
-                                <a href="../interfacesJhano/interfazIngresoFactura.jsp">
-                                    <font face="Arial">
-                                        Ingreso
-                                    </font>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a href="#">
-                                    <font face="Arial">
-                                        Consulta
-                                    </font>
-                                </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a href="../index.jsp">
-                                    <a href="../index.jsp">
-                                        <font face="Arial">
-                                            Regresar
-                                        </font>
-                                    </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a href="../interfacesJhano/interfazReportePagosPendientes.jsp">
-                                        <font face="Arial">
-                                            Pagos Pendientes
-                                        </font>
-                                    </a>
-                            </td>
-                        </tr>
+                            <th><div>                         
+                                    <ul id="MenuBar2" class="MenuBarHorizontalw">
+                                        <li>
+                                            <font face="Arial">
+                                                <a href="../interfacesJhano/interfazIngresoFactura.jsp">Ingreso</center></a>
+                                            </font>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <font face="Arial">
+                                                    Consulta
+                                                </font>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="../index.jsp">
+                                                <font face="Arial">
+                                                    Regresar
+                                                </font>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="../interfacesJhano/interfazReportePagosPendientes.jsp">
+                                                <font face="Arial">
+                                                    Pagos Pendientes
+                                                </font>
+                                            </a>
+                                        </li>
+                                    </ul>                               
+                            </th>
+                        </tr>                     
                     </table>
-                    
                     <td width="88%">
                         <h3><center> <font size="5" face="Arial, Helvetica, sans-serif">Matriz Factura</font></center></h3>
                         <form name="frmCargarFacturas" action="../controladoresJhano/controladorInterfazCargarFactura.jsp" method="post" >
                             <table width="1000" align="center" border="1" bgcolor="white">
                                 <tr>
-                                    <td width="150" align="center">Número de Factura</td>
-                                    <td width="100" align="center">Fecha</td>
-                                    <td width="400" align="center">Cliente</td>
-                                    <td width="100" align="center">Valor Total</td>
-                                    <td width="150" align="center" colspan="2">Acciones</td>
-                                    
+                                    <td width="150" align="center" bgcolor="#C0C0C0">Número de Factura</td>
+                                    <td width="100" align="center" bgcolor="#C0C0C0">Fecha</td>
+                                    <td width="400" align="center" bgcolor="#C0C0C0">Cliente</td>
+                                    <td width="100" align="center" bgcolor="#C0C0C0">Valor Total</td>
+                                    <td width="150" align="center" colspan="2" bgcolor="#C0C0C0">Acciones</td>
+
                                 </tr>
                                 <%
                                     String strCarga = (request.getParameter("car") != null) ? "true" : "false";
@@ -187,12 +185,12 @@
                                     if (factura != null) {
                                         for (com.lewissa.jhano.logicanegocio.factura.CFactura oFact : factura) {
                                             out.print("<tr>");
-                                            out.print("  <td>" + oFact.getStrIdFactura() + "</td>");
-                                            out.print("  <td>" + oFact.getStrFechaFactura() + "</td>");
-                                            out.print("  <td>" + oFact.getStrClienteFactura() + "</td>");
-                                            out.print("  <td align=\"right\" >" + oFact.getDouTotalFactura() + "</td>");
+                                            out.print("  <td bgcolor=\"#FFF\">" + oFact.getStrIdFactura() + "</td>");
+                                            out.print("  <td bgcolor=\"#FFF\">" + oFact.getStrFechaFactura() + "</td>");
+                                            out.print("  <td bgcolor=\"#FFF\">" + oFact.getStrClienteFactura() + "</td>");
+                                            out.print("  <td bgcolor=\"#FFF\" align=\"right\" >" + oFact.getDouTotalFactura() + "</td>");
                                             out.print("  <td width=\"75\" >Modificar</td>");
-                                            out.print("  <td><a href=\".../interfacesJhano/interfazCargaPagos.jsp\">Pago<a></th>");
+                                            out.print("  <td bgcolor=\"#FFF\"><a href=\".../interfacesJhano/interfazCargaPagos.jsp\">Pago<a></th>");
                                             //out.print("  <td><a href='../controladoresJhano/controladorEliminarCliente.jsp?accion=delete&id=" + cliente.getStrIdCliente() + "'>Eliminar</a></td>");
                                             out.print("</tr>");
                                         }
@@ -207,12 +205,12 @@
                                         out.print("</tr>");
                                     }
                                 %>
-                                
+
                             </table>
-                            
+
                     </td>
                     <%
-                        
+
                     %>
 
                 </td>

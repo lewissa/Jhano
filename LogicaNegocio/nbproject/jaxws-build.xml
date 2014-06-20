@@ -87,6 +87,7 @@
                 ===================
                 JAX-WS WSIMPORT SECTION
                 ===================
+
             -->
     <target name="wsimport-init" depends="init">
         <fail if="${wsimport.bad.version}" message="WsImport ant task defined in the classpath ${j2ee.platform.wsimport.classpath} has a serious bug. See http://wiki.netbeans.org/MetroIssue for details."/>
@@ -163,22 +164,6 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/com/lewissa/jhano/accesodatos/familiaproducto"/>
         <delete dir="${build.generated.dir}/jax-wsCache/wsAccesoDatosFamiliaProducto"/>
     </target>
-    <target name="wsimport-client-wsAccesoDatosPago" depends="wsimport-init">
-        <mkdir dir="${build.generated.dir}/jax-wsCache/wsAccesoDatosPago"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/wsAccesoDatosPago" destdir="${build.generated.dir}/jax-wsCache/wsAccesoDatosPago" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/wsAccesoDatosPago/wsdl/localhost_8080/AccesoDatos/wsAccesoDatosPago.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/AccesoDatos/wsAccesoDatosPago?wsdl" xnocompile="true" xendorsed="true">
-            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/wsAccesoDatosPago/wsdl/localhost_8080/AccesoDatos/wsAccesoDatosPago.wsdl"/>
-            <produces dir="${build.generated.dir}/jax-wsCache/wsAccesoDatosPago"/>
-        </wsimport>
-        <copy todir="${build.generated.sources.dir}/jax-ws">
-            <fileset dir="${build.generated.dir}/jax-wsCache/wsAccesoDatosPago">
-                <include name="**/*.java"/>
-            </fileset>
-        </copy>
-    </target>
-    <target name="wsimport-client-clean-wsAccesoDatosPago" depends="-init-project">
-        <delete dir="${build.generated.sources.dir}/jax-ws/com/lewissa/jhano/accesodatos/pago"/>
-        <delete dir="${build.generated.dir}/jax-wsCache/wsAccesoDatosPago"/>
-    </target>
     <target name="wsimport-client-wsAccesoDatosProveedor" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/wsAccesoDatosProveedor"/>
         <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/wsAccesoDatosProveedor" destdir="${build.generated.dir}/jax-wsCache/wsAccesoDatosProveedor" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/wsAccesoDatosProveedor/wsdl/localhost_8080/AccesoDatos/wsAccesoDatosProveedor.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/AccesoDatos/wsAccesoDatosProveedor?wsdl" xnocompile="true" xendorsed="true">
@@ -227,5 +212,21 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/com/lewissa/jhano/accesodatos/factura"/>
         <delete dir="${build.generated.dir}/jax-wsCache/wsAccesoDatosFactura"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-wsAccesoDatosEmpresa, wsimport-client-wsAccesoDatosListaProductos, wsimport-client-wsAccesoDatosProducto, wsimport-client-wsAccesoDatosFamiliaProducto, wsimport-client-wsAccesoDatosPago, wsimport-client-wsAccesoDatosProveedor, wsimport-client-wsAccesoDatosCliente, wsimport-client-wsAccesoDatosFactura"/>
+    <target name="wsimport-client-wsAccesoDatosPago" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/wsAccesoDatosPago"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/wsAccesoDatosPago" destdir="${build.generated.dir}/jax-wsCache/wsAccesoDatosPago" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/wsAccesoDatosPago/wsdl/localhost_8080/AccesoDatos/wsAccesoDatosPago.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/AccesoDatos/wsAccesoDatosPago?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/wsAccesoDatosPago/wsdl/localhost_8080/AccesoDatos/wsAccesoDatosPago.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/wsAccesoDatosPago"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/wsAccesoDatosPago">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-wsAccesoDatosPago" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/lewissa/jhano/accesodatos/pago"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/wsAccesoDatosPago"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-wsAccesoDatosEmpresa, wsimport-client-wsAccesoDatosListaProductos, wsimport-client-wsAccesoDatosProducto, wsimport-client-wsAccesoDatosFamiliaProducto, wsimport-client-wsAccesoDatosProveedor, wsimport-client-wsAccesoDatosCliente, wsimport-client-wsAccesoDatosFactura, wsimport-client-wsAccesoDatosPago"/>
 </project>

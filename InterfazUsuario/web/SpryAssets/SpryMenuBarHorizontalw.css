@@ -35,7 +35,7 @@ ul.MenuBarHorizontalw li
 	position: relative;
 	text-align: left;
 	cursor: pointer;
-	width: 8em;
+	width: 10em;
 	float: left;
 }
 /* Submenus should appear below their parent (top: 0) with a higher z-index, but they are initially off the left side of the screen (-1000em) */
@@ -47,7 +47,7 @@ ul.MenuBarHorizontalw ul
 	font-size: 100%;
 	z-index: 1020;
 	cursor: default;
-	width: 8.2em;
+	width: 10em;
 	position: absolute;
 	left: -1000em;
 }
@@ -59,7 +59,7 @@ ul.MenuBarHorizontalw ul.MenuBarSubmenuVisible
 /* Menu item containers are same fixed width as parent */
 ul.MenuBarHorizontalw ul li
 {
-	width: 8.2em;
+	width: 10em;
 }
 /* Submenus should appear slightly overlapping to the right (95%) and up (-5%) */
 ul.MenuBarHorizontalw ul ul
@@ -162,7 +162,7 @@ ul.MenuBarHorizontalw iframe
 	ul.MenuBarHorizontalw li.MenuBarItemIE
 	{
 		display: inline;
-		f\loat: left;
+		float: left;
 		background: #999999
 	}
 }

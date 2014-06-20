@@ -91,5 +91,33 @@ public class cTransaccionPago {
         com.lewissa.jhano.accesodatos.pago.WsAccesoDatosPago port = service.getWsAccesoDatosPagoPort();
         return port.mostrarDatosPagos(strIdPago);
     }
+    
+    public Boolean eliminarPago(String strCodigoPago, Integer intTipoEliminacion) {
+        Boolean booResulado = false;
+        if (strCodigoPago != null) {
+            if (intTipoEliminacion == 1) //Realiza eliminacion FISICA
+            {
+                booResulado = eliminarFisicoPago(strCodigoPago);
+            } else {
+                if (intTipoEliminacion == 0) //Realiza eliminacion LOGICA 
+                {
+                    booResulado = eliminarLogicoPago(strCodigoPago);
+                }
+            }
+        }
+        return booResulado;
+    }
+
+    private static Boolean eliminarFisicoPago(java.lang.String strCodigoPago) {
+        com.lewissa.jhano.accesodatos.pago.WsAccesoDatosPago_Service service = new com.lewissa.jhano.accesodatos.pago.WsAccesoDatosPago_Service();
+        com.lewissa.jhano.accesodatos.pago.WsAccesoDatosPago port = service.getWsAccesoDatosPagoPort();
+        return port.eliminarFisicoPago(strCodigoPago);
+    }
+
+    private static Boolean eliminarLogicoPago(java.lang.String strCodigoPago) {
+        com.lewissa.jhano.accesodatos.pago.WsAccesoDatosPago_Service service = new com.lewissa.jhano.accesodatos.pago.WsAccesoDatosPago_Service();
+        com.lewissa.jhano.accesodatos.pago.WsAccesoDatosPago port = service.getWsAccesoDatosPagoPort();
+        return port.eliminarLogicoPago(strCodigoPago);
+    }
 
 }

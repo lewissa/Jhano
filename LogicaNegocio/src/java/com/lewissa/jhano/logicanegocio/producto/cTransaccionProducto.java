@@ -74,9 +74,13 @@ public class cTransaccionProducto {
     }
 
     public Double calculoSumaPrecioDos(cProducto datDatos) {
-        Double douPrecioDos = null;
-        if (datDatos.getDouPrecioCosto() != null && datDatos.getDouMargenVenta() != null) {
-            douPrecioDos = datDatos.getDouPrecioCosto() + datDatos.getDouMargenVenta();
+       Double douPrecioDos = null;
+        if (datDatos.getDouMargenGanancia() != null) {
+            if (datDatos.getDouPrecioCosto() != null && datDatos.getDouMargenVenta() != null) {
+                douPrecioDos = datDatos.getDouPrecioCosto() + datDatos.getDouMargenGanancia();
+            }
+        } else if (datDatos.getDouPrecioCosto() != null && datDatos.getDouMargenVenta() != null) {
+            douPrecioDos = datDatos.getDouPrecioCosto();
         }
         return douPrecioDos;
     }

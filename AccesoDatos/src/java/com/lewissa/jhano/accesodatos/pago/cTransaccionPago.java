@@ -62,4 +62,30 @@ public class cTransaccionPago {
         }
         return strResultado;
     }
+    public Boolean eliminarFisicoPago(String strCodigoPago) {
+        Boolean booResultado = false;
+        String strQuery;
+        strQuery = "DELETE FROM pago WHERE Id_pago = '"+ strCodigoPago+"'";
+        if (cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()) {
+            booResultado = cAccesoDatos.getInstanciaAccesoDatos().actualizarDataBase(strQuery);
+        }
+
+        return booResultado;
+    }
+    /**
+     
+     * metodo que oelrmite eliminar los datos de un proveedor LPGICAMENTE
+     * @author Fredy Janeta
+     * @param strCodigoProveedor
+     * @return Boolean, booResultdo contiene la confirmacion de la aplicacion del metodo
+     */
+    public Boolean eliminarLogicoPago(String strCodigoPago){
+        Boolean booResultado=false;
+        String strQuery;
+        strQuery="UPDATE pago SET estado=true WHERE Id_pago='"+strCodigoPago+"'";
+        if(cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()){
+            booResultado=cAccesoDatos.getInstanciaAccesoDatos().actualizarDataBase(strQuery);
+        }
+        return booResultado;
+    }
 }

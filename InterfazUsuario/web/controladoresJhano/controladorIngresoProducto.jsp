@@ -39,7 +39,7 @@
                 if (strFabricacion.equals("0")) {
                     proProducto.setStrFabricante("");
                 } else {
-                    proProducto.setStrFabricante(strEan);
+                    proProducto.setStrFabricante(strFabricacion);
                 }
                 if (strDescripcionGeneral.equals("0")) {
                     proProducto.setStrDescripcionGeneral("");

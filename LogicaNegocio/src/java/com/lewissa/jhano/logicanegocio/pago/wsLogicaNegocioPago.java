@@ -7,6 +7,7 @@
 package com.lewissa.jhano.logicanegocio.pago;
 
 import com.lewissa.jhano.accesodatos.pago.WsAccesoDatosPago_Service;
+import com.lewissa.jhano.logicanegocio.pago.cTransaccionPago;
 import com.sun.rowset.WebRowSetImpl;
 import java.io.StringReader;
 import java.util.ArrayList;
@@ -144,5 +145,16 @@ public class wsLogicaNegocioPago {
         // If the calling of port operations may lead to race condition some synchronization is required.
         com.lewissa.jhano.accesodatos.pago.WsAccesoDatosPago port = service.getWsAccesoDatosPagoPort();
         return port.getTotalPagosPendientes();
+    }
+    
+    @WebMethod(operationName = "eliminarPago")
+    public Boolean eliminarPago(@WebParam(name = "strId") String strId, Integer intTipoEliminacion) {
+        //TODO write your implementation code here:
+        Boolean booResultado = false;
+        cTransaccionPago oTransaccionPago = new cTransaccionPago();
+        if (strId != null) {
+            booResultado = oTransaccionPago.eliminarPago(strId, intTipoEliminacion);
+        }
+        return booResultado;
     }
 }

@@ -6,6 +6,7 @@
 package com.lewissa.jhano.accesodatos.pago;
 
 import com.lewissa.jhano.accesodatos.cAccesoDatos;
+import com.lewissa.jhano.accesodatos.pago.cTransaccionPago;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
@@ -101,4 +102,27 @@ public class wsAccesoDatosPago {
         strResultado = oTransaccionPago.getTotalPagosPendientes();
         return strResultado;
     }
+    
+    @WebMethod(operationName = "eliminarFisicoPago")
+    public Boolean eliminarFisicoPago(@WebParam(name = "strCodigoPago") String strCodigoPago) {
+        //TODO write your implementation code here:
+        Boolean booResultado = false;
+        cTransaccionPago oTransaccionPago = new cTransaccionPago();
+        if (cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()) {
+            booResultado = oTransaccionPago.eliminarFisicoPago(strCodigoPago);
+        }
+        return booResultado;
+    }
+
+    @WebMethod(operationName = "eliminarLogicoPago")
+    public Boolean eliminarLogicoPago(@WebParam(name = "strCodigoPago") String strCodigoPago) {
+        //TODO write your implementation code here:
+        Boolean booResultado = false;
+        cTransaccionPago oTransaccionPago = new cTransaccionPago();
+        if (cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()) {
+            booResultado = oTransaccionPago.eliminarLogicoPago(strCodigoPago);
+        }
+        return booResultado;
+    }
+
 }
