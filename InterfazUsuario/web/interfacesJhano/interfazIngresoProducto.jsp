@@ -9,12 +9,11 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Jhano | Ingresar Producto </title>
         <script src="SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
-         <script src="../SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
-            <link href="../SpryAssets/SpryMenuBarHorizontalw.css" rel="stylesheet" type="text/css" />
-               <link href="../SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
-            <link href="../SpryAssets/css/bootstrap.min.css" rel="stylesheet" media="screen">
-                <link href="../SpryAssets/css/bootstrap-responsive.min.css" rel="stylesheet">
-        <link href="SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
+        <script src="../SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
+        <link href="../SpryAssets/SpryMenuBarHorizontalw.css" rel="stylesheet" type="text/css" />
+        <link href="../SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
+        <link href="../SpryAssets/css/bootstrap-responsive.min.css" rel="stylesheet">
+            <link href="SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
     </head>
 
     <body>
@@ -22,7 +21,7 @@
             <tr>
                 <td>
                     <a href="../index.jsp">
-                    <img src="Image/computech.jpg" alt="espoch" />
+                        <img src="Image/computech.jpg" alt="espoch" />
                     </a>
                 </td>
                 <td width="780">
@@ -126,40 +125,40 @@
 
         <table style="background-color: #999999; border-color: #f9f9f9" bgcolor="#C0C0C0" width="100%" height="100%" border="1">
             <tr>
-                <td width="12%">
+                <td width="">
                     <table style="background-color: #999999; border-color: #f9f9f9" align="left">                             
-                                        <tr>
-                                            <th><div>
-                                                    <ul id="MenuBar2" class="MenuBarHorizontalw">
-                                                        <li> 
-                                                            <font face="Arial">
-                                                                <a href="../index.jsp"><center>Inicio</center></a>
-                                                            </font>
-                                                        </li>
-                                                    </ul>
-                                                     <ul id="MenuBar2" class="MenuBarHorizontalw">
-                                                        <li>
-                                                            <font face="Arial">
-                                                                <a href="#"><center>Consulta</center></a>
-                                                            </font>
-                                                        </li>
-                                                    </ul>
-                                                     <ul id="MenuBar2" class="MenuBarHorizontalw">
-                                                        <li>
-                                                            <font face="Arial">
-                                                                <a href="../interfacesJhano/interfazCargaProducto.jsp"><center>Regresar</center></a>
-                                                            </font>
-                                                        </li>
-                                                    </ul>
-                                            </th>
-                                        </tr>                           
-                                    </table>
+                        <tr>
+                            <th><div>
+                                    <ul id="MenuBar2" class="MenuBarHorizontalw">
+                                        <li> 
+                                            <font face="Arial">
+                                                <a href="../index.jsp"><center>Inicio</center></a>
+                                            </font>
+                                        </li>
+                                    </ul>
+                                    <ul id="MenuBar2" class="MenuBarHorizontalw">
+                                        <li>
+                                            <font face="Arial">
+                                                <a href="#"><center>Consulta</center></a>
+                                            </font>
+                                        </li>
+                                    </ul>
+                                    <ul id="MenuBar2" class="MenuBarHorizontalw">
+                                        <li>
+                                            <font face="Arial">
+                                                <a href="../interfacesJhano/interfazCargaProducto.jsp"><center>Regresar</center></a>
+                                            </font>
+                                        </li>
+                                    </ul>
+                            </th>
+                        </tr>                           
+                    </table>
                 </td>
-                <td width="88%">
+                <td width="91%">
                     <font face="Arial">
                         <h3><center>Ingreso de Producto</center></h3>
                         <form name="form1" action="../controladoresJhano/controladorIngresoProducto.jsp" method="post">
-                            <table border="0" align="center" STYLE=" font-size: 10px">
+                            <table border="0" align="center">
                                 <%
                                     Boolean booResultado = (Boolean) request.getSession().getAttribute("producto");
                                     String strEan = (String) request.getSession().getAttribute("eanProductoVacio");
@@ -229,7 +228,8 @@
                                 %>
                                 <tr>
                                     <td><label>EAN:</label></td>
-                                    <%                                                if (strEan != null) {
+                                    <%
+                                        if (strEan != null) {
                                             if (strEan.equals("0")) {
                                                 out.print("<td><input name=\"ean\" type=\"text\" size=\"50\" maxlength=\"50\"/></td>");
                                             } else {

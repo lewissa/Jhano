@@ -165,9 +165,9 @@
                                     <form name="frmCargarPagos" action="../controladoresJhano/controladorInterfazCargaPago.jsp" method="post" >
                                         <table width="700" border="1" bgcolor="white">                                       
                                             <div class="container-fluid" >
-                                                <div class="row-fluid" align="center">                                     
+                                                <div class="row-fluid" align="center">                                                    
                                                     <div class="btn-toolbar span8 ">                       
-                                                        <div class="btn-group span4" >
+                                                        <div style="left: 640px" class="btn-group span4" >
                                                             <a class="btn btn-primary span6" role="button" data-target="#addModal" data-toggle="modal">Nuevo</a>
                                                             <a class="btn btn-primary span6 dropdown-toggle" data-toggle="dropdown" href="#">
                                                                 Eliminar
@@ -178,12 +178,12 @@
                                                                 <!-- <li><a id="delete-all">Eliminar todos</a></li> -->
                                                             </ul>
                                                         </div>  
-                                                        <div class="btn-group span4">
+                                                        <!-- <div class="btn-group span4">
                                                             <a id="pagado" class="btn span6"><i class="icon-ok"></i> Pagado</a>
                                                             <a id="pendiente" class="btn span6"><i class="icon-remove"></i>Pendiente</a>
-                                                        </div>
-                                                    </div>  
-                                                </div>      
+                                                        </div> -->
+                                                    </div>                                         
+                                                </div>
                                                 <div class="row-fluid" span="span8" >
                                                     <div span="span8">
                                                         <center>
@@ -202,7 +202,6 @@
                                                         </center>
                                                     </div>
                                                 </div>
-                                                </center>
 
                                                 <!-- MODAL -->
                                                 <div id="addModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

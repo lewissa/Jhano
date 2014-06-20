@@ -14,7 +14,9 @@
         <table bgcolor="#192B75" width="100%" height="50%" border="1">
             <tr>
                 <td>
+                    <a href="../index.jsp">
                     <img src="Image/computech.jpg" alt="espoch" />
+                    </a>
                 </td>
                 <td width="780">
                     <center>
@@ -76,27 +78,27 @@
                         <ul id="MenuBar2" class="MenuBarHorizontal">
                             <li>
                                 <font face="Arial">
-                                    <a href="interfacesJhano/interfazCargaCliente.jsp"><center>Clientes</center></a>
+                                    <a href="../interfacesJhano/interfazCargaCliente.jsp"><center>Clientes</center></a>
                                 </font>
                             </li>
                             <li>
                                 <font face="Arial">
-                                    <a href="interfacesJhano/interfazCargaProveedor.jsp"><center>Proveedores</center></a>
+                                    <a href="../interfacesJhano/interfazCargaProveedor.jsp"><center>Proveedores</center></a>
                                 </font>
                             </li>
                             <li>
                                 <font face="Arial">
-                                    <a href="interfacesJhano/interfazCargaProducto.jsp"><center>Productos</center></a>
+                                    <a href="../interfacesJhano/interfazCargaProducto.jsp"><center>Productos</center></a>
                                 </font>
                                 <ul>
                                 <font face="Arial">
-                                        <a href="interfacesJhano/interfazCargaFamiliaProducto.jsp"><center>Familias</center></a>
+                                        <a href="../interfacesJhano/interfazCargaFamiliaProducto.jsp"><center>Familias</center></a>
                                 </font>
                                 </ul>
                             </li>
                             <li>
                                 <font face="Arial">
-                                    <a href="interfacesJhano/interfazIngresoFactura.jsp"><center>Facturas</center></a>
+                                    <a href="../interfacesJhano/interfazIngresoFactura.jsp"><center>Facturas</center></a>
                                 </font>
                             </li>
                             <li>
