@@ -4,6 +4,10 @@
 
 <xs:element name="cargaPagoResponse" type="tns:cargaPagoResponse"/>
 
+<xs:element name="eliminarPago" type="tns:eliminarPago"/>
+
+<xs:element name="eliminarPagoResponse" type="tns:eliminarPagoResponse"/>
+
 <xs:element name="getErrorConexion" type="tns:getErrorConexion"/>
 
 <xs:element name="getErrorConexionResponse" type="tns:getErrorConexionResponse"/>
@@ -24,15 +28,9 @@
 
 <xs:element name="mostrarDatosPagosResponse" type="tns:mostrarDatosPagosResponse"/>
 
-<xs:complexType name="mostrarDatosPagos">
+<xs:complexType name="modificarDataBasePago">
 <xs:sequence>
-<xs:element name="strId" type="xs:string" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="mostrarDatosPagosResponse">
-<xs:sequence>
-<xs:element name="return" type="tns:cPago" minOccurs="0"/>
+<xs:element name="strPago" type="tns:cPago" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -47,15 +45,21 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="modificarDataBasePago">
-<xs:sequence>
-<xs:element name="strPago" type="tns:cPago" minOccurs="0"/>
-</xs:sequence>
-</xs:complexType>
-
 <xs:complexType name="modificarDataBasePagoResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="mostrarDatosPagos">
+<xs:sequence>
+<xs:element name="strId" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="mostrarDatosPagosResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:cPago" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -76,6 +80,19 @@
 <xs:complexType name="getTotalPagosPendientesResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarPago">
+<xs:sequence>
+<xs:element name="strId" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="eliminarPagoResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 

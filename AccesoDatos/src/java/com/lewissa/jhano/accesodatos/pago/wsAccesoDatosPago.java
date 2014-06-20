@@ -13,7 +13,6 @@ import javax.jws.WebParam;
 
 /**
  *
- * <<<<<<< HEAD
  * @a
  *
  * uthor Fredy Janeta =======

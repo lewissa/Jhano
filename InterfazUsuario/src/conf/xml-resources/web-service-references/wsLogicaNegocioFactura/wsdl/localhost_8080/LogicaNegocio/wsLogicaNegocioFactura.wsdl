@@ -4,6 +4,12 @@
 <xsd:import namespace="http://factura.logicanegocio.jhano.lewissa.com/" schemaLocation="http://localhost:8080/LogicaNegocio/wsLogicaNegocioFactura?xsd=1"/>
 </xsd:schema>
 </types>
+<message name="obtenerFacturas">
+<part name="parameters" element="tns:obtenerFacturas"/>
+</message>
+<message name="obtenerFacturasResponse">
+<part name="parameters" element="tns:obtenerFacturasResponse"/>
+</message>
 <message name="getErrorConexionFactura">
 <part name="parameters" element="tns:getErrorConexionFactura"/>
 </message>
@@ -16,13 +22,11 @@
 <message name="ingresarFacturaResponse">
 <part name="parameters" element="tns:ingresarFacturaResponse"/>
 </message>
-<message name="obtenerFacturas">
-<part name="parameters" element="tns:obtenerFacturas"/>
-</message>
-<message name="obtenerFacturasResponse">
-<part name="parameters" element="tns:obtenerFacturasResponse"/>
-</message>
 <portType name="wsLogicaNegocioFactura">
+<operation name="obtenerFacturas">
+<input wsam:Action="http://factura.logicanegocio.jhano.lewissa.com/wsLogicaNegocioFactura/obtenerFacturasRequest" message="tns:obtenerFacturas"/>
+<output wsam:Action="http://factura.logicanegocio.jhano.lewissa.com/wsLogicaNegocioFactura/obtenerFacturasResponse" message="tns:obtenerFacturasResponse"/>
+</operation>
 <operation name="getErrorConexionFactura">
 <input wsam:Action="http://factura.logicanegocio.jhano.lewissa.com/wsLogicaNegocioFactura/getErrorConexionFacturaRequest" message="tns:getErrorConexionFactura"/>
 <output wsam:Action="http://factura.logicanegocio.jhano.lewissa.com/wsLogicaNegocioFactura/getErrorConexionFacturaResponse" message="tns:getErrorConexionFacturaResponse"/>
@@ -31,13 +35,18 @@
 <input wsam:Action="http://factura.logicanegocio.jhano.lewissa.com/wsLogicaNegocioFactura/ingresarFacturaRequest" message="tns:ingresarFactura"/>
 <output wsam:Action="http://factura.logicanegocio.jhano.lewissa.com/wsLogicaNegocioFactura/ingresarFacturaResponse" message="tns:ingresarFacturaResponse"/>
 </operation>
-<operation name="obtenerFacturas">
-<input wsam:Action="http://factura.logicanegocio.jhano.lewissa.com/wsLogicaNegocioFactura/obtenerFacturasRequest" message="tns:obtenerFacturas"/>
-<output wsam:Action="http://factura.logicanegocio.jhano.lewissa.com/wsLogicaNegocioFactura/obtenerFacturasResponse" message="tns:obtenerFacturasResponse"/>
-</operation>
 </portType>
 <binding name="wsLogicaNegocioFacturaPortBinding" type="tns:wsLogicaNegocioFactura">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+<operation name="obtenerFacturas">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
 <operation name="getErrorConexionFactura">
 <soap:operation soapAction=""/>
 <input>
@@ -48,15 +57,6 @@
 </output>
 </operation>
 <operation name="ingresarFactura">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="obtenerFacturas">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

@@ -64,7 +64,7 @@ public class cTransaccionCliente {
                 cCliente oCliente = new cCliente();
                 oCliente.setStrIdCliente(wrsImplement.getString("Id_cliente"));
                 oCliente.setStrNombreFiscal(wrsImplement.getString("Nombre_fiscal"));
-                oCliente.setStrNombreComercial(wrsImplement.getString("Nombre_comercial"));
+                oCliente.setStrNombreComercial(wrsImplement.getString("Nombre_ccomercial"));
                 oCliente.setStrDireccion(wrsImplement.getString("Direccion"));
                 oCliente.setStrConvencional(wrsImplement.getString("Convencional"));
                 oCliente.setStrCelular(wrsImplement.getString("Celular"));

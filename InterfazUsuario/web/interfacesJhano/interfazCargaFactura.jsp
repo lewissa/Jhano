@@ -154,7 +154,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="../interfacesJhano/interfazReportePagosPendientes.jsp">
+                                            <a href="../controladoresJhano/controladorReportePago.jsp">
                                                 <font face="Arial">
                                                     Pagos Pendientes
                                                 </font>

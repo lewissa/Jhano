@@ -171,7 +171,7 @@
 
         <table bgcolor="#C0C0C0" width="100%" border="1">
             <tr>
-                <td width="30%" valign="top" >
+                <td width="20%" valign="top" >
                     <fieldset> <legend><FONT FACE="roman" SIZE="5">Familias de Productos</FONT></legend>
                         <table border="0.1" align="left">
                             <tr>
@@ -179,7 +179,7 @@
                                     <%
                                         if (request.getSession().getAttribute("parametroProducto") != null) {
                                             String strParametroBusquedaP = (String) request.getSession().getAttribute("parametroProducto");
-                                            out.print("<input name=\"txtBusquedaProducto\" autofocus onfocus=\"finalFoco(this)\" onkeyup=\"redirectControladorProductoProducto()\" placeholder=\"Ingrese parametro de busqueda de Producto\" value='" + strParametroBusquedaP + "' size=\"50\" />");
+                                            out.print("<input name=\"txtBusquedaProducto\" autofocus onfocus=\"finalFoco(this)\" onkeyup=\"redirectControladorProductoProducto()\" placeholder=\"Ingrese parametro de busqueda de Producto\" value='" + strParametroBusquedaP + "' size=\"35\" />");
                                             if (request.getSession().getAttribute("lisProductos") != null) {
                                                 List<CProducto> lisProductos = (List<CProducto>) request.getSession().getAttribute("lisProductos");
                                                 if (lisProductos.size() > 0) {
@@ -196,7 +196,7 @@
 
                                             }
                                         } else {
-                                            out.print("<input name=\"txtBusquedaProducto\" autofocus onfocus=\"finalFoco(this)\" onkeyup=\"redirectControladorProductoProducto()\" placeholder=\"Ingrese parametro de busqueda de Producto\"  size=\"50\" />");
+                                            out.print("<input name=\"txtBusquedaProducto\" autofocus onfocus=\"finalFoco(this)\" onkeyup=\"redirectControladorProductoProducto()\" placeholder=\"Ingrese parametro de busqueda de Producto\"  size=\"35\" />");
                                         }
                                     %>
 
@@ -232,7 +232,7 @@
 
                 %>
 
-                <td width="70%">
+                <td width="80%">
                     <font face="Arial">
 
                         <%                            List<CProducto> listProductosSeleccionados = new ArrayList<CProducto>();
@@ -427,22 +427,34 @@
                                         <%
                                          if(request.getSession().getAttribute("listaProductos") != null)
                                          {  
+                                             
                                            listProductosSeleccionados= (List<CProducto>)request.getSession().getAttribute("listaProductos");
                                            if(listProductosSeleccionados.size()>0)
                                            {
+                                               Double douTotalP = 0.00;
+                                               Double douSubTotal = 0.00;
+                                               Double douIva = 0.00;
+                                               Double douTotal = 0.00;
                                                request.getSession().setAttribute("listaProductos",listProductosSeleccionados);
                                                for(CProducto oProducto : listProductosSeleccionados)
                                                {
+                                                 douTotalP   = oProducto.getIntCantidad() * oProducto.getDouPrecioCosto();
+                                                 douSubTotal = douSubTotal + douTotalP;
+                                                   
                                         %>
                                         <tr>
                                             <td><input type="text"  id="descripcionPL" readonly value="<%=oProducto.getStrDescripcionGeneral()%>" required /></td>
                                             <td><input type="text"  id="codigoEanPL"  readonly value="<%=oProducto.getStrEan()%>" /></td>
                                             <td><input type="text" id="cantidadPL" readonly value="<%=oProducto.getIntCantidad()%>" /></td>
                                             <td><input type="text" id="vUnitarioPL" readonly  value="<%=oProducto.getDouPrecioCosto()%>" /></td>
-                                            <td><input type="text"id="vTotalL"  readonly /></td>
+                                            <td><input type="text"id="vTotalL"  readonly value="<%=douTotalP%>" /></td>
                                         </tr>  
                                         <%
                                       }
+                                               
+                                                   
+                                                   douIva = douSubTotal * 0.12;
+                                                   douTotal = douSubTotal + douIva;
                                            
                                   }
                                 }
@@ -453,18 +465,18 @@
                                                 <input type="button" name="boton" onclick="agregarProducto()" value="Agregar"/>  
                                             </td>
                                             <td>Subtotal $</td>
-                                            <td><input name="subtotal" readonly type="text" maxlength="10" />          </td>
+                                            <td><input name="subtotal" id="subtotal" readonly type="text" maxlength="10" value="0.00"/>          </td>
                                         </tr>    
                                         <tr>
 
                                             <td>12% I.V.A $</td>
-                                            <td><input name="iva" type="text" readonly maxlength="10" />          </td>
+                                            <td><input name="iva" id="iva" type="text" readonly maxlength="10" value="0.00"/>          </td>
                                         </tr>
 
                                         <tr>
 
                                             <td>Total $</td>
-                                            <td> <input name="total" readonly type="text" maxlength="10" />         </td>
+                                            <td> <input name="totalF" id="totalF" readonly type="text" maxlength="10" value="0.00" />         </td>
                                         </tr>                      
 
                                     </table>

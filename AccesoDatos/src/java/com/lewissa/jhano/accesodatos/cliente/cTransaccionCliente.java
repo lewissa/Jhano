@@ -98,7 +98,7 @@ public class cTransaccionCliente {
     public String buscarCliente(String strParametro) {
         String strSqlConsulta, strCliente=null;
         strSqlConsulta = "SELECT * FROM cliente WHERE \"Id_cliente\" like '"+strParametro+"%' OR \"Nombre_fiscal\"='"
-                +strParametro+"%' OR \"Nombre_comercial\" like '"+strParametro+"%' OR \"Correo\" like '"+strParametro+"%';";
+                +strParametro+"%' OR \"Nombre_ccomercial\" like '"+strParametro+"%';";// OR \"Correo\" like '"+strParametro+"%';";
         if(cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase())
         {
             strCliente = cAccesoDatos.getInstanciaAccesoDatos().consultarDataBase(strSqlConsulta);

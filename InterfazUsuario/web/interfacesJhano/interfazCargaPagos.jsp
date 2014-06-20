@@ -178,8 +178,8 @@
                                         </div>
                                     </div>
                                     </center>
+                                    <%--
 
-<<<<<<< HEAD
                                 <td width="88%" align="center">
                                     <h3><center> <font size="5" face="Arial, Helvetica, sans-serif">Matriz Pago </font></center></h3>
                                     <form name="frmCargarPagos" action="../controladoresJhano/controladorInterfazCargaPago.jsp" method="post" >
@@ -223,12 +223,8 @@
                                                     </div>
                                                 </div>
 
-                                                <!-- MODAL -->
-                                                <div id="addModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                                    <div class="modal-header">
-                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                                        <h3 id="myModalLabel">Ingreso Pagos</h3>
-=======
+                                         --%>       
+
                                     <!-- MODAL -->
                                     <div id="addModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                         <div class="modal-header">
@@ -263,7 +259,7 @@
                                                                 <a class="memb-button btn btn-info span6">Pagado</a>
                                                             </div> 
                                                         </div>
->>>>>>> 8893b04d28046d7ce34dc6b6c562a6b0d386f2bc
+
                                                     </div>
 
                                                 </fieldset>

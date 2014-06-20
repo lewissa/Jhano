@@ -163,6 +163,16 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="cargaProducto">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="cargaProductoResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:cProducto" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="buscarProducto">
 <xs:sequence>
 <xs:element name="strParametro" type="xs:string" minOccurs="0"/>
@@ -170,16 +180,6 @@
 </xs:complexType>
 
 <xs:complexType name="buscarProductoResponse">
-<xs:sequence>
-<xs:element name="return" type="tns:cProducto" minOccurs="0" maxOccurs="unbounded"/>
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="cargaProducto">
-<xs:sequence/>
-</xs:complexType>
-
-<xs:complexType name="cargaProductoResponse">
 <xs:sequence>
 <xs:element name="return" type="tns:cProducto" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>

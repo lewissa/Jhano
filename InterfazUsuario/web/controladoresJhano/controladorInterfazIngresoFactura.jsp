@@ -39,14 +39,15 @@
                     if(request.getParameter("idFactura") != null)
                     request.getSession().setAttribute("idFactura", request.getParameter("idFactura"));
                 }
-       if(request.getParameter("boton") != null)
+       if(request.getParameter("accion") != null)
        {
-           if(request.getParameter("boton").equals("Agregar")){
+           if(request.getParameter("accion").equals("Agregar")){
            CProducto oProducto = new CProducto();
            oProducto.setStrDescripcionGeneral(request.getParameter("descripcion"));
            oProducto.setStrEan(request.getParameter("codigoean"));
            oProducto.setIntCantidad(Integer.parseInt(request.getParameter("cantidad")));
            oProducto.setDouPrecioCosto(Double.parseDouble(request.getParameter("vunitario")));
+
            
            if(request.getParameter("cirucC") != null)
                 {
@@ -76,7 +77,7 @@
                listProductosSeleccionados.add(oProducto);
            }
 
-           
+
            request.getSession().setAttribute("listaProductos", listProductosSeleccionados);
            
            

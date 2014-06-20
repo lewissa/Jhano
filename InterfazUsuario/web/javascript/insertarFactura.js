@@ -37,13 +37,13 @@ function finalFoco(campo){
    }
 
 
-function redirectControladorProductoProducto(form)
+function redirectControladorProductoProducto()
 {
+
     var strparametro = document.getElementsByName("txtBusquedaProducto")[0].value;
     var strIdCliente = document.getElementById('cirucC').value;
     var strNombre = document.getElementById('nombreC').value;
     var strTelefono = document.getElementById('telefonoC').value;
-    //var strTipo = document.getElementById('tipoC').value;
     var strFecha = document.getElementById('fechaC').value;
     var strDireccion = document.getElementById('direccionC').value;
     var strIdFactura = document.getElementById('idFactura').value;
@@ -56,7 +56,6 @@ function redirectControladorProductoProducto(form)
 
 function rellenarCiente(strid,strnombre,strdireccion,strtelefono)
 {
-
         document.getElementById('nombreC').value=strnombre;
         document.getElementById('cirucC').value=strid;
         document.getElementById('direccionC').value=strdireccion;
@@ -92,8 +91,19 @@ function agregarProducto()
     var des = document.getElementById('descripcionP').value
     var cod = document.getElementById('codigoEanP').value
     var vUn = document.getElementById('vUnitarioP').value
-    var vCa = document.getElementById('cantidadP').value
-    var vTo = document.getElementById('vTotal').value
+    var can = document.getElementById('cantidadP').value
+    var tot = document.getElementById('totalF').value
+    var strparametro = document.getElementsByName("txtBusquedaProducto")[0].value;
+    var strIdCliente = document.getElementById('cirucC').value;
+    var strNombre = document.getElementById('nombreC').value;
+    var strTelefono = document.getElementById('telefonoC').value;
+    var strFecha = document.getElementById('fechaC').value;
+    var strDireccion = document.getElementById('direccionC').value;
+    var strIdFactura = document.getElementById('idFactura').value; 
+    location.href='../controladoresJhano/controladorInterfazIngresoFactura.jsp?accion=Agregar&descripcion='
+            +des+'&codigoean='+cod+'&vunitario='+vUn+'&cantidad='+can+'&totalF='+tot+'&parametroProducto='
+            +strparametro+'&cirucC='+strIdCliente+'&nombreC='+strNombre+'&direccionC='+strDireccion
+            +'&telefonoC='+strTelefono+'&fechaC='+strFecha+'&idFactura='+strIdFactura;;
 }
 
 
@@ -101,7 +111,27 @@ function sumarUnitarioTotal()
 {
     vUnitario = document.getElementById('cantidadP').value;
     vUnitario= Number(vUnitario);
+    
     vTotal = document.getElementById('vUnitarioP').value;
     vTotal = Number(vTotal);
-    document.getElementById('vTotal').value=vUnitario+vTotal;
+    
+    subTotal = document.getElementById('subtotal').value;
+    subTotal = Number(subTotal);
+    
+    total = document.getElementById('totalF').value;
+    total=Number(total);
+    
+    document.getElementById('vTotal').value=vUnitario*vTotal;
+    document.getElementById('subtotal').value= subTotal+(vUnitario*vTotal);
+    document.getElementById('iva').value=((vUnitario*vTotal)*0.12);
+    document.getElementById('totalF').value=total + ((vUnitario*vTotal) + ((vUnitario*vTotal)*0.12));
+    
+    
+    
+}
+
+
+function validarFactura()
+{
+    
 }
