@@ -195,8 +195,8 @@
                                     %>
 
                         <form name="frmCargarProductos" action="../controladoresJhano/controladorInterfazCargaProducto.jsp" method="post" >
-                            <div STYLE=" height: 320px; width: 1165px; font-size: 15px; overflow: auto;"/>
-                                <table  align="center" border="1" style="font-size:15px; width: 1155x; height: 200px">
+                            <div STYLE=" height: 350px; width: auto; font-size: 15px; overflow: auto;"/>
+                                <table  align="center" border="1" style="font-size:15px; width: 1155x; height: 25px">
                                     <tr>
                                         <th width="8%" align="center" bgcolor="#C0C0C0">Ean</th>
                                         <th width="5%"align="center" bgcolor="#C0C0C0">Fabricante</th>

@@ -128,52 +128,62 @@
 
         <table style="background-color: #999999; border-color: #f9f9f9" bgcolor="#C0C0C0" width="100%" height="100%" border="1">
             <tr>
-                <td width="12%">
+                <td width="12%" align="center">
 
-                    <table style="background-color: #999999; border-color: #f9f9f9">                             
-                        <tr>
-                            <th><div>                         
+                    <table style="background-color: #999999; border-color: #f9f9f9">         
+                        <center>
+                            <tr>
+                                <th>                       
                                     <ul id="MenuBar2" class="MenuBarHorizontalw">
                                         <li>
                                             <font face="Arial">
-                                                <a href="../interfacesJhano/interfazIngresoFactura.jsp">Ingreso</center></a>
+                                                <a href="../interfacesJhano/interfazIngresoFactura.jsp">
+                                                    <center>Ingreso</center></a>
                                             </font>
                                         </li>
+                                    </ul>
+                                    <ul id="MenuBar2" class="MenuBarHorizontalw">
                                         <li>
                                             <a href="#">
                                                 <font face="Arial">
-                                                    Consulta
+                                                    <center>Consulta</center>
                                                 </font>
                                             </a>
                                         </li>
+                                    </ul>
+                                    <ul id="MenuBar2" class="MenuBarHorizontalw">
                                         <li>
                                             <a href="../index.jsp">
                                                 <font face="Arial">
-                                                    Regresar
+                                                    <center>Regresar</center>
                                                 </font>
                                             </a>
                                         </li>
+                                    </ul>
+                                    <ul id="MenuBar2" class="MenuBarHorizontalw">
                                         <li>
                                             <a href="../controladoresJhano/controladorReportePago.jsp">
                                                 <font face="Arial">
-                                                    Pagos Pendientes
+                                                    <center>Pagos Pendientes</center>
                                                 </font>
                                             </a>
                                         </li>
                                     </ul>                               
-                            </th>
-                        </tr>                     
+                                </th>
+                            </tr>   
+                        </center>
                     </table>
                     <td width="88%">
                         <h3><center> <font size="5" face="Arial, Helvetica, sans-serif">Matriz Factura</font></center></h3>
                         <form name="frmCargarFacturas" action="../controladoresJhano/controladorInterfazCargarFactura.jsp" method="post" >
-                            <table width="1000" align="center" border="1" bgcolor="white">
+                            <div STYLE=" height: 350px; width: auto; font-size: 15px; overflow: auto;"/>
+                            <table  align="center" border="1" style="font-size:15px; width: 1155x; height: 25px">
                                 <tr>
-                                    <td width="150" align="center" bgcolor="#C0C0C0">Número de Factura</td>
-                                    <td width="100" align="center" bgcolor="#C0C0C0">Fecha</td>
-                                    <td width="400" align="center" bgcolor="#C0C0C0">Cliente</td>
-                                    <td width="100" align="center" bgcolor="#C0C0C0">Valor Total</td>
-                                    <td width="150" align="center" colspan="2" bgcolor="#C0C0C0">Acciones</td>
+                                    <th width="10%" align="center" bgcolor="#C0C0C0">Número de Factura</th>
+                                    <th width="10%" align="center" bgcolor="#C0C0C0">Fecha</th>
+                                    <th width="10%" align="center" bgcolor="#C0C0C0">Cliente</th>
+                                    <th width="10%" align="center" bgcolor="#C0C0C0">Valor Total</th>
+                                    <th width="10%" align="center" colspan="2" bgcolor="#C0C0C0">Acciones</th>
 
                                 </tr>
                                 <%

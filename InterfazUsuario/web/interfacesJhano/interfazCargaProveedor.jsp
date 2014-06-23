@@ -193,8 +193,8 @@
                                             out.print("</form>");
                                         }
                                     %>
-                        <div STYLE=" height: 320px; width: 1165px; font-size: 15px; overflow: auto;"/>
-                        <table border="1" align="center" style="font-size:15px; width: 1155x; height: 200px">
+                        <div STYLE=" height: 350px; width: auto; font-size: 15px; overflow: auto;"/>
+                        <table border="1" align="center" style="font-size:15px; width: 1155x; height: 25px">
                             <tr>
                                 <th width="8%" align=\"center\" bgcolor=#C0C0C0>
                                     Identificacion

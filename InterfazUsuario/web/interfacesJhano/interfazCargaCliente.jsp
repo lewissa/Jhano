@@ -191,13 +191,14 @@
                     <td width="88%">
                         <h3><center> <font size="5" face="Arial, Helvetica, sans-serif">Matriz Cliente</font></center></h3>
                         <form name="frmCargarClientes" action="../controladoresJhano/controladorInterfazCargarCliente.jsp" method="post" >
-                            <table width="1000" align="center" border="1" bgcolor="white">
+                            <div STYLE=" height: 350px; width: auto; font-size: 15px; overflow: auto;"/>
+                                <table  align="center" border="1" style="font-size:15px; width: 1155x; height: 25px">
                                 <tr>
-                                    <td width="100" align="center" bgcolor="#C0C0C0">Cédula / RUC</td>
-                                    <td width="250" align="center" bgcolor="#C0C0C0">Nombre y Apellido</td>
-                                    <td width="400" align="center" bgcolor="#C0C0C0">Dirección</td>
-                                    <td width="100" align="center" bgcolor="#C0C0C0">Teléfono</td>
-                                    <td width="150" align="center" colspan="2" bgcolor="#C0C0C0">Acciones</td>
+                                    <th width="8%" align="center" bgcolor="#C0C0C0">Cédula / RUC</th>
+                                    <th width="8%" align="center" bgcolor="#C0C0C0">Nombre y Apellido</th>
+                                    <th width="8%" align="center" bgcolor="#C0C0C0">Dirección</th>
+                                    <th width="8%" align="center" bgcolor="#C0C0C0">Teléfono</th>
+                                    <th width="8%" align="center" colspan="2" bgcolor="#C0C0C0">Acciones</th>
 
                                 </tr>
                                 <%
