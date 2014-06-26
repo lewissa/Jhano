@@ -79,11 +79,11 @@ public class wsLogicaNegocioPago {
      * Web service operation
      */
     @WebMethod(operationName = "cargaPago")
-    public java.util.List<com.lewissa.jhano.logicanegocio.pago.cPago> cargaPago() {
+    public java.util.List<com.lewissa.jhano.logicanegocio.pago.cPago> cargaPago(@WebParam(name = "strId") String strId) {
         //TODO write your implementation code here:
         cTransaccionPago oTransaccionPago = new cTransaccionPago();
         List<cPago> lisPagos = new ArrayList<>();
-        lisPagos = oTransaccionPago.cargarPagos();
+        lisPagos = oTransaccionPago.cargarPagos(strId);
         return lisPagos;
     }
 
@@ -95,6 +95,13 @@ public class wsLogicaNegocioPago {
         //TODO write your implementation code here:
         cTransaccionPago traPago = new cTransaccionPago();
         return traPago.modificaPago(strPago);
+    }
+    
+    @WebMethod(operationName = "ingresaDataBasePago")
+    public Boolean ingresaDataBasePago(@WebParam(name = "strPago") cPago strPago) {
+        //TODO write your implementation code here:
+        cTransaccionPago traPago = new cTransaccionPago();
+        return traPago.ingresaPago(strPago);
     }
 
     /**
@@ -137,6 +144,14 @@ public class wsLogicaNegocioPago {
     public String getTotalPagosPendientes() {
         String strResultado=null;
         strResultado = getTotalPagosPendientes_1();
+        return strResultado;
+    }
+    
+    @WebMethod(operationName = "getTotalPagoFactura")
+    public String getTotalPagoFactura(@WebParam(name = "strId") String strId) {
+        String strResultado=null;
+        cTransaccionPago traPago=new cTransaccionPago();
+        strResultado = traPago.getPagoFactura(strId);
         return strResultado;
     }
 

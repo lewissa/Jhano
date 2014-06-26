@@ -4,23 +4,23 @@
 <xsd:import namespace="http://pago.logicanegocio.jhano.lewissa.com/" schemaLocation="http://localhost:8080/LogicaNegocio/wsLogicaNegocioPago?xsd=1"/>
 </xsd:schema>
 </types>
-<message name="mostrarDatosPagos">
-<part name="parameters" element="tns:mostrarDatosPagos"/>
+<message name="getTotalPagoFactura">
+<part name="parameters" element="tns:getTotalPagoFactura"/>
 </message>
-<message name="mostrarDatosPagosResponse">
-<part name="parameters" element="tns:mostrarDatosPagosResponse"/>
-</message>
-<message name="getTotalPagosPendientes">
-<part name="parameters" element="tns:getTotalPagosPendientes"/>
-</message>
-<message name="getTotalPagosPendientesResponse">
-<part name="parameters" element="tns:getTotalPagosPendientesResponse"/>
+<message name="getTotalPagoFacturaResponse">
+<part name="parameters" element="tns:getTotalPagoFacturaResponse"/>
 </message>
 <message name="getErrorConexion">
 <part name="parameters" element="tns:getErrorConexion"/>
 </message>
 <message name="getErrorConexionResponse">
 <part name="parameters" element="tns:getErrorConexionResponse"/>
+</message>
+<message name="ingresaDataBasePago">
+<part name="parameters" element="tns:ingresaDataBasePago"/>
+</message>
+<message name="ingresaDataBasePagoResponse">
+<part name="parameters" element="tns:ingresaDataBasePagoResponse"/>
 </message>
 <message name="getPagosPendientes">
 <part name="parameters" element="tns:getPagosPendientes"/>
@@ -33,6 +33,18 @@
 </message>
 <message name="modificarDataBasePagoResponse">
 <part name="parameters" element="tns:modificarDataBasePagoResponse"/>
+</message>
+<message name="mostrarDatosPagos">
+<part name="parameters" element="tns:mostrarDatosPagos"/>
+</message>
+<message name="mostrarDatosPagosResponse">
+<part name="parameters" element="tns:mostrarDatosPagosResponse"/>
+</message>
+<message name="getTotalPagosPendientes">
+<part name="parameters" element="tns:getTotalPagosPendientes"/>
+</message>
+<message name="getTotalPagosPendientesResponse">
+<part name="parameters" element="tns:getTotalPagosPendientesResponse"/>
 </message>
 <message name="cargaPago">
 <part name="parameters" element="tns:cargaPago"/>
@@ -47,17 +59,17 @@
 <part name="parameters" element="tns:eliminarPagoResponse"/>
 </message>
 <portType name="wsLogicaNegocioPago">
-<operation name="mostrarDatosPagos">
-<input wsam:Action="http://pago.logicanegocio.jhano.lewissa.com/wsLogicaNegocioPago/mostrarDatosPagosRequest" message="tns:mostrarDatosPagos"/>
-<output wsam:Action="http://pago.logicanegocio.jhano.lewissa.com/wsLogicaNegocioPago/mostrarDatosPagosResponse" message="tns:mostrarDatosPagosResponse"/>
-</operation>
-<operation name="getTotalPagosPendientes">
-<input wsam:Action="http://pago.logicanegocio.jhano.lewissa.com/wsLogicaNegocioPago/getTotalPagosPendientesRequest" message="tns:getTotalPagosPendientes"/>
-<output wsam:Action="http://pago.logicanegocio.jhano.lewissa.com/wsLogicaNegocioPago/getTotalPagosPendientesResponse" message="tns:getTotalPagosPendientesResponse"/>
+<operation name="getTotalPagoFactura">
+<input wsam:Action="http://pago.logicanegocio.jhano.lewissa.com/wsLogicaNegocioPago/getTotalPagoFacturaRequest" message="tns:getTotalPagoFactura"/>
+<output wsam:Action="http://pago.logicanegocio.jhano.lewissa.com/wsLogicaNegocioPago/getTotalPagoFacturaResponse" message="tns:getTotalPagoFacturaResponse"/>
 </operation>
 <operation name="getErrorConexion">
 <input wsam:Action="http://pago.logicanegocio.jhano.lewissa.com/wsLogicaNegocioPago/getErrorConexionRequest" message="tns:getErrorConexion"/>
 <output wsam:Action="http://pago.logicanegocio.jhano.lewissa.com/wsLogicaNegocioPago/getErrorConexionResponse" message="tns:getErrorConexionResponse"/>
+</operation>
+<operation name="ingresaDataBasePago">
+<input wsam:Action="http://pago.logicanegocio.jhano.lewissa.com/wsLogicaNegocioPago/ingresaDataBasePagoRequest" message="tns:ingresaDataBasePago"/>
+<output wsam:Action="http://pago.logicanegocio.jhano.lewissa.com/wsLogicaNegocioPago/ingresaDataBasePagoResponse" message="tns:ingresaDataBasePagoResponse"/>
 </operation>
 <operation name="getPagosPendientes">
 <input wsam:Action="http://pago.logicanegocio.jhano.lewissa.com/wsLogicaNegocioPago/getPagosPendientesRequest" message="tns:getPagosPendientes"/>
@@ -66,6 +78,14 @@
 <operation name="modificarDataBasePago">
 <input wsam:Action="http://pago.logicanegocio.jhano.lewissa.com/wsLogicaNegocioPago/modificarDataBasePagoRequest" message="tns:modificarDataBasePago"/>
 <output wsam:Action="http://pago.logicanegocio.jhano.lewissa.com/wsLogicaNegocioPago/modificarDataBasePagoResponse" message="tns:modificarDataBasePagoResponse"/>
+</operation>
+<operation name="mostrarDatosPagos">
+<input wsam:Action="http://pago.logicanegocio.jhano.lewissa.com/wsLogicaNegocioPago/mostrarDatosPagosRequest" message="tns:mostrarDatosPagos"/>
+<output wsam:Action="http://pago.logicanegocio.jhano.lewissa.com/wsLogicaNegocioPago/mostrarDatosPagosResponse" message="tns:mostrarDatosPagosResponse"/>
+</operation>
+<operation name="getTotalPagosPendientes">
+<input wsam:Action="http://pago.logicanegocio.jhano.lewissa.com/wsLogicaNegocioPago/getTotalPagosPendientesRequest" message="tns:getTotalPagosPendientes"/>
+<output wsam:Action="http://pago.logicanegocio.jhano.lewissa.com/wsLogicaNegocioPago/getTotalPagosPendientesResponse" message="tns:getTotalPagosPendientesResponse"/>
 </operation>
 <operation name="cargaPago">
 <input wsam:Action="http://pago.logicanegocio.jhano.lewissa.com/wsLogicaNegocioPago/cargaPagoRequest" message="tns:cargaPago"/>
@@ -78,16 +98,7 @@
 </portType>
 <binding name="wsLogicaNegocioPagoPortBinding" type="tns:wsLogicaNegocioPago">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
-<operation name="mostrarDatosPagos">
-<soap:operation soapAction=""/>
-<input>
-<soap:body use="literal"/>
-</input>
-<output>
-<soap:body use="literal"/>
-</output>
-</operation>
-<operation name="getTotalPagosPendientes">
+<operation name="getTotalPagoFactura">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -97,6 +108,15 @@
 </output>
 </operation>
 <operation name="getErrorConexion">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="ingresaDataBasePago">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
@@ -115,6 +135,24 @@
 </output>
 </operation>
 <operation name="modificarDataBasePago">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="mostrarDatosPagos">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="getTotalPagosPendientes">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>

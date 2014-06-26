@@ -142,7 +142,7 @@
                                             </font>
                                         </li>
                                     </ul>
-                                     <ul id="MenuBar2" class="MenuBarHorizontalw">
+                                    <ul id="MenuBar2" class="MenuBarHorizontalw">
                                         <li> 
                                             <font face="Arial">
                                                 <a href="../controladoresJhano/controladorReporteProducto.jsp"><center>Reporte</center></a>
@@ -178,15 +178,14 @@
                         <h3><center> <font size="5" face="Arial, Helvetica, sans-serif">Matriz Producto</font></center></h3>
                                     <%                            Boolean booErrorElimiancion = null;
                                         String strCodigoElimiando = null;
-
-                                        if (request.getSession().getAttribute("errorEliminacion") != null) {
-                                            booErrorElimiancion = (Boolean) request.getSession().getAttribute("errorEliminacion");
-                                            strCodigoElimiando = (String) request.getSession().getAttribute("codigoElimando");
+                                        if (request.getSession().getAttribute("errorEliminacionProducto") != null) {
+                                            booErrorElimiancion = (Boolean) request.getSession().getAttribute("errorEliminacionProducto");
+                                            strCodigoElimiando = (String) request.getSession().getAttribute("codigoElimandoProducto");
                                         }
-                                        if ((request.getSession().getAttribute("errorEliminacion") != null) && booErrorElimiancion == false) {
+                                        if ((request.getSession().getAttribute("errorEliminacionProducto") != null) && booErrorElimiancion == false) {
                                             request.getSession().setAttribute("id", strCodigoElimiando);
                                             out.print("<form name=\"frmEliminar\" method=\"post\" action=\"../controladoresJhano/controladorEliminarProducto.jsp\" >");
-                                            out.print("<fieldset><legend>Advertencia</legend>El producto de Id: " + strCodigoElimiando + ", posee documentos asociados. Decea realizar eliminacion logica?  ");
+                                            out.print("<fieldset><legend>Advertencia</legend>El proveedor de CI/RUC: " + strCodigoElimiando + ", posee documentos asociados. Decea realizar eliminacion logica?  ");
                                             out.print("<input type=\"submit\" name=\"accion\" value=\"Aceptar\" />");
                                             out.print("<input type=\"submit\" name=\"accion\" value=\"Cancelar\" /></fieldset> ");
                                             out.print("<br>");
@@ -196,66 +195,66 @@
 
                         <form name="frmCargarProductos" action="../controladoresJhano/controladorInterfazCargaProducto.jsp" method="post" >
                             <div STYLE=" height: 350px; width: auto; font-size: 15px; overflow: auto;"/>
-                                <table  align="center" border="1" style="font-size:15px; width: 1155x; height: 25px">
-                                    <tr>
-                                        <th width="8%" align="center" bgcolor="#C0C0C0">Ean</th>
-                                        <th width="5%"align="center" bgcolor="#C0C0C0">Fabricante</th>
-                                        <th width="8%"align="center" bgcolor="#C0C0C0">Descripcion general</th>
-                                        <th width="5%"align="center" bgcolor="#C0C0C0">Margen ganancia</th>
-                                        <th width="3%"align="center" bgcolor="#C0C0C0">Cantidad</th>
-                                        <th width="5%"align="center" bgcolor="#C0C0C0">Precio costo</th>
-                                        <th width="5%"align="center" bgcolor="#C0C0C0">Margen venta</th>
-                                        <th width="5%"align="center" bgcolor="#C0C0C0">Stock maximo</th>
-                                        <th width="5%"align="center" bgcolor="#C0C0C0">Stock minimo</th>
-                                        <th colspan="2" width="5%"align="center" bgcolor="#C0C0C0">Accion</th>
-                                    </tr>
-                                    <tr>
-                                        <%
-                                                try {
-
-                                                    com.lewissa.jhano.logicanegocio.producto.WsLogicaNegocioProducto_Service service = new com.lewissa.jhano.logicanegocio.producto.WsLogicaNegocioProducto_Service();
-                                                    com.lewissa.jhano.logicanegocio.producto.WsLogicaNegocioProducto port = service.getWsLogicaNegocioProductoPort();
-                                                    // TODO process result here
-                                                    java.util.List<com.lewissa.jhano.logicanegocio.producto.CProducto> listProducto = port.cargaProducto();
-
-                                                    if (port.getErrorConexionProducto() != null) {
-                                                        String strError = (String) port.getErrorConexionProducto();
-                                                        request.getSession().setAttribute("errorProducto", strError);
-                                                        response.sendRedirect("../interfacesJhano/interfazCargaProducto.jsp");
-                                                    }
-
-                                                    for (CProducto oProducto : listProducto) {
-
-                                                        out.print("<tr>");
-                                                        out.print("<td width=\"8%\" align=\"center\" bgcolor=\"#FFF\" >" + oProducto.getStrEan() + "</td>");
-                                                        out.print("<td width=\"5%\" align=\"center\" bgcolor=\"#FFF\">" + oProducto.getStrFabricante() + "</td>");
-                                                        out.print("<td width=\"8%\" align=\"center\" bgcolor=\"#FFF\">" + oProducto.getStrDescripcionGeneral() + "</td>");
-                                                        out.print("<td width=\"5%\" align=\"center\" bgcolor=\"#FFF\">" + oProducto.getDouMargenGanancia() + "</td>");
-                                                        out.print("<td width=\"3%\" align=\"center\" bgcolor=\"#FFF\">" + oProducto.getIntCantidad() + "</td>");
-                                                        out.print("<td width=\"5%\" align=\"center\" bgcolor=\"#FFF\">" + oProducto.getDouPrecioCosto() + "</td>");
-                                                        out.print("<td width=\"5%\" align=\"center\" bgcolor=\"#FFF\">" + oProducto.getDouMargenVenta() + "</td>");
-                                                        out.print("<td width=\"5%\" align=\"center\" bgcolor=\"#FFF\">" + oProducto.getIntStockMaximo() + "</td>");
-                                                        out.print("<td width=\"5%\" align=\"center\" bgcolor=\"#FFF\">" + oProducto.getIntStockMinimo() + "</td>");
-                                                        out.print("<td width=\"5%\" align=\"center\" bgcolor=\"#C0C0C0\"><a href=\"../controladoresJhano/controladorInterfazModificarProducto.jsp?id=" + oProducto.getStrIdProdu() + "\">Modificar</a></td>");
-                                                        out.print("<td width=\"5%\" align=\"center\" bgcolor=\"#C0C0C0\"><a href=\"../controladoresJhano/controladorEliminarProducto.jsp?id=" + oProducto.getStrIdProdu() + "\">Eliminar</a></td>");
-
-                                                        out.print("</tr>");
-                                                    }
-                                                } catch (Exception ex) {
-                                                    out.print(ex.getMessage());
-                                                }
-                                            }
-                                        %>
-                                </table>
-                                </td>
-                                </td>
-                                </tr>                     
+                            <table  align="center" border="1" style="font-size:15px; width: 1155x; height: 25px">
+                                <tr>
+                                    <th width="8%" align="center" bgcolor="#C0C0C0">Ean</th>
+                                    <th width="5%"align="center" bgcolor="#C0C0C0">Fabricante</th>
+                                    <th width="8%"align="center" bgcolor="#C0C0C0">Descripcion general</th>
+                                    <th width="5%"align="center" bgcolor="#C0C0C0">Margen ganancia</th>
+                                    <th width="3%"align="center" bgcolor="#C0C0C0">Cantidad</th>
+                                    <th width="5%"align="center" bgcolor="#C0C0C0">Precio costo</th>
+                                    <th width="5%"align="center" bgcolor="#C0C0C0">Margen venta</th>
+                                    <th width="5%"align="center" bgcolor="#C0C0C0">Stock maximo</th>
+                                    <th width="5%"align="center" bgcolor="#C0C0C0">Stock minimo</th>
+                                    <th colspan="2" width="5%"align="center" bgcolor="#C0C0C0">Accion</th>
                                 </tr>
-                                </table>
+                                <tr>
+                                    <%
+                                            try {
 
-                                <script type="text/javascript">
-                                    var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown: "SpryAssets/SpryMenuBarDownHover.gif", imgRight: "SpryAssets/SpryMenuBarRightHover.gif"});
-                                    var MenuBar2 = new Spry.Widget.MenuBar("MenuBar2", {imgDown: "SpryAssets/SpryMenuBarDownHover.gif", imgRight: "SpryAssets/SpryMenuBarRightHover.gif"});
-                                </script>
-                                </body>
-                                </html>
+                                                com.lewissa.jhano.logicanegocio.producto.WsLogicaNegocioProducto_Service service = new com.lewissa.jhano.logicanegocio.producto.WsLogicaNegocioProducto_Service();
+                                                com.lewissa.jhano.logicanegocio.producto.WsLogicaNegocioProducto port = service.getWsLogicaNegocioProductoPort();
+                                                // TODO process result here
+                                                java.util.List<com.lewissa.jhano.logicanegocio.producto.CProducto> listProducto = port.cargaProducto();
+
+                                                if (port.getErrorConexionProducto() != null) {
+                                                    String strError = (String) port.getErrorConexionProducto();
+                                                    request.getSession().setAttribute("errorProducto", strError);
+                                                    response.sendRedirect("../interfacesJhano/interfazCargaProducto.jsp");
+                                                }
+
+                                                for (CProducto oProducto : listProducto) {
+
+                                                    out.print("<tr>");
+                                                    out.print("<td width=\"8%\" align=\"center\" bgcolor=\"#FFF\" >" + oProducto.getStrEan() + "</td>");
+                                                    out.print("<td width=\"5%\" align=\"center\" bgcolor=\"#FFF\">" + oProducto.getStrFabricante() + "</td>");
+                                                    out.print("<td width=\"8%\" align=\"center\" bgcolor=\"#FFF\">" + oProducto.getStrDescripcionGeneral() + "</td>");
+                                                    out.print("<td width=\"5%\" align=\"center\" bgcolor=\"#FFF\">" + oProducto.getDouMargenGanancia() + "</td>");
+                                                    out.print("<td width=\"3%\" align=\"center\" bgcolor=\"#FFF\">" + oProducto.getIntCantidad() + "</td>");
+                                                    out.print("<td width=\"5%\" align=\"center\" bgcolor=\"#FFF\">" + oProducto.getDouPrecioCosto() + "</td>");
+                                                    out.print("<td width=\"5%\" align=\"center\" bgcolor=\"#FFF\">" + oProducto.getDouMargenVenta() + "</td>");
+                                                    out.print("<td width=\"5%\" align=\"center\" bgcolor=\"#FFF\">" + oProducto.getIntStockMaximo() + "</td>");
+                                                    out.print("<td width=\"5%\" align=\"center\" bgcolor=\"#FFF\">" + oProducto.getIntStockMinimo() + "</td>");
+                                                    out.print("<td width=\"5%\" align=\"center\" bgcolor=\"#C0C0C0\"><a href=\"../controladoresJhano/controladorInterfazModificarProducto.jsp?id=" + oProducto.getStrIdProdu() + "\">Modificar</a></td>");
+                                                    out.print("<td width=\"5%\" align=\"center\" bgcolor=\"#C0C0C0\"><a href=\"../controladoresJhano/controladorEliminarProducto.jsp?id=" + oProducto.getStrIdProdu() + "\">Eliminar</a></td>");
+
+                                                    out.print("</tr>");
+                                                }
+                                            } catch (Exception ex) {
+                                                out.print(ex.getMessage());
+                                            }
+                                        }
+                                    %>
+                            </table>
+                    </td>
+                </td>
+            </tr>                     
+            </tr>
+        </table>
+
+        <script type="text/javascript">
+            var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown: "SpryAssets/SpryMenuBarDownHover.gif", imgRight: "SpryAssets/SpryMenuBarRightHover.gif"});
+            var MenuBar2 = new Spry.Widget.MenuBar("MenuBar2", {imgDown: "SpryAssets/SpryMenuBarDownHover.gif", imgRight: "SpryAssets/SpryMenuBarRightHover.gif"});
+        </script>
+    </body>
+</html>

@@ -4,11 +4,9 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/home/eborja/NetBeansProjects/Jhano/InterfazUsuario/web/interfacesJhano/interfazCargaPagos.jsp</file>
-            <file>file:/home/eborja/NetBeansProjects/Jhano/InterfazUsuario/web/interfacesJhano/interfazCargaCliente.jsp</file>
-            <file>file:/home/eborja/NetBeansProjects/Jhano/InterfazUsuario/web/interfacesJhano/interfazCargaFactura.jsp</file>
-            <file>file:/home/eborja/NetBeansProjects/Jhano/InterfazUsuario/web/interfacesJhano/interfazCargaProducto.jsp</file>
-            <file>file:/home/eborja/NetBeansProjects/Jhano/InterfazUsuario/web/interfacesJhano/interfazCargaProveedor.jsp</file>
-            <file>file:/home/eborja/NetBeansProjects/Jhano/InterfazUsuario/web/interfacesJhano/interfazCargaFamiliaProducto.jsp</file>
+            <file>file:/home/eborja/NetBeansProjects/Jhano/InterfazUsuario/web/interfacesJhano/interfazIngresoFamiliaProducto.jsp</file>
+            <file>file:/home/eborja/NetBeansProjects/Jhano/InterfazUsuario/web/interfacesJhano/interfazIngresoFactura.jsp</file>
+            <file>file:/home/eborja/NetBeansProjects/Jhano/InterfazUsuario/web/controladoresJhano/controladorInterfazCarga.jsp</file>
         </group>
     </open-files>
 </project-private>

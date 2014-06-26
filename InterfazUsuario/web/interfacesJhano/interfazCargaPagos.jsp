@@ -14,7 +14,7 @@
         <title>Jhano | Pagos </title>
         <script src="SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
         <link href="SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
-         <link href="../SpryAssets/SpryMenuBarHorizontalw.css" rel="stylesheet" type="text/css" />
+        <link href="../SpryAssets/SpryMenuBarHorizontalw.css" rel="stylesheet" type="text/css" />
         <link href="../SpryAssets/css/bootstrap.min.css" rel="stylesheet" media="screen">
             <link href="../SpryAssets/css/bootstrap-responsive.min.css" rel="stylesheet">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
@@ -84,7 +84,7 @@
                                 </td>
                         </tr>
                         <tr>
-                            <td height="41" colspan="2"><div align="center">
+                            <td height="41" colspan="2"><div align="center" style="font-size: 1.2em">
                                     <ul id="MenuBar2" class="MenuBarHorizontal">
                                         <li>
                                             <font face="Arial">
@@ -130,7 +130,7 @@
 
                     <table style="background-color: #999999; border-color: #C0C0C0" width="100%" height="100%" border="1">
                         <tr>
-                            <td width="8%">
+                            <td width="8%" style="font-size: 1.2em">
                                 <table style="background-color: #999999; border-color: #f9f9f9">                             
                                     <tr>
                                         <th><div>
@@ -159,23 +159,23 @@
                                     </tr>                           
                                 </table>
 
-                                <td width="88%" align="center">
+                                <td width="88%" align="center" style="font-size: 1.2em">
                                     <h3><center> <font size="5" face="Arial, Helvetica, sans-serif">Matriz Pago </font></center></h3>
                                     <form name="frmCargarPagos" action="../controladoresJhano/controladorInterfazCargaPago.jsp" method="post" >
                                         <table width="700" border="1" bgcolor="white">                                       
                                             <div class="container-fluid" >
                                                 <div class="row-fluid" align="center">                                                    
                                                     <div class="btn-toolbar span8 ">                       
-                                                        <div style="left: 640px" class="btn-group span4" >
+                                                        <div style="left: 130%" class="btn-group span4" >
                                                             <a class="btn btn-primary span6" role="button" data-target="#addModal" data-toggle="modal">Nuevo</a>
-                                                            <a class="btn btn-primary span6 dropdown-toggle" data-toggle="dropdown" href="#">
+                                                            <!--a class="btn btn-primary span6 dropdown-toggle" data-toggle="dropdown" href="#">
                                                                 Eliminar
                                                                 <span class="caret"></span>
                                                             </a>
                                                             <ul class="dropdown-menu">
                                                                 <li><a id="delete" >Eliminar Seleccionado</a></li>
-                                                                <!-- <li><a id="delete-all">Eliminar todos</a></li> -->
-                                                            </ul>
+                                                            <!-- <li><a id="delete-all">Eliminar todos</a></li> >
+                                                        </ul-->
                                                         </div>  
                                                         <!-- <div class="btn-group span4">
                                                             <a id="pagado" class="btn span6"><i class="icon-ok"></i> Pagado</a>
@@ -186,13 +186,58 @@
                                                 <div class="row-fluid" span="span8" >
                                                     <div span="span8">
                                                         <center>
-                                                            <table class="table table-hover table-bordered" style="width: 50%; ">
+                                                            <table class="table table-hover table-bordered" style="width: 90%; ">
                                                                 <thead>
+
                                                                     <tr>
                                                                         <th>Monto</th>
                                                                         <th>Fecha de pago</th>
                                                                         <th>Forma de pago</th>
                                                                         <th>Estado</th>
+                                                                        <th colspan="2"><center>Accion</center></th>
+                                                                                <%
+                                                                                    try {
+                                                                                        com.lewissa.jhano.logicanegocio.pago.WsLogicaNegocioPago_Service service = new com.lewissa.jhano.logicanegocio.pago.WsLogicaNegocioPago_Service();
+                                                                                        com.lewissa.jhano.logicanegocio.pago.WsLogicaNegocioPago port = service.getWsLogicaNegocioPagoPort();
+                                                                                        // TODO process result here
+                                                                                        java.util.List<com.lewissa.jhano.logicanegocio.pago.CPago> result = port.cargaPago(request.getParameter("idF"));
+                                                                                        String strCarga = (request.getParameter("car") != null) ? "true" : "false";
+                                                                                        if (strCarga.equals("false")) {
+                                                                                            response.sendRedirect("../controladoresJhano/controladorInterfazCargaPago.jsp?idF=" + request.getParameter("idF") + "");
+                                                                                        }
+                                                                                        List<com.lewissa.jhano.logicanegocio.pago.CPago> pagos = (List<com.lewissa.jhano.logicanegocio.pago.CPago>) request.getSession().getAttribute("pagos");
+                                                                                        if (pagos != null) {
+                                                                                            for (com.lewissa.jhano.logicanegocio.pago.CPago pago : pagos) {
+                                                                                                out.print("<tr>");
+                                                                                                out.print("  <td bgcolor=\"#FFF\">" + pago.getDouMonto() + "</td>");
+                                                                                                out.print("  <td bgcolor=\"#FFF\">" + pago.getStrFechaPago() + "</td>");
+                                                                                                if (pago.getIntFormaPago() == 1) {
+                                                                                                    out.print("  <td bgcolor=\"#FFF\">Cheque</td>");
+                                                                                                } else {
+                                                                                                    out.print("  <td bgcolor=\"#FFF\">Efectivo</td>");
+                                                                                                }
+                                                                                                if (pago.isBooEstado().equals(true)) {
+                                                                                                    out.print("  <td bgcolor=\"#FFF\">Pagado</td>");
+                                                                                                } else {
+                                                                                                    out.print("  <td bgcolor=\"#FFF\">Pendiente</td>");
+                                                                                                }
+                                                                                                out.print("<td width=\"5%\" align=\"center\" bgcolor=\"#C0C0C0\"><a href=\"../interfacesJhano/interfazModificarPago.jsp?id=\">Modificar</a></td>");
+                                                                                                out.print("<td width=\"5%\" align=\"center\" bgcolor=\"#C0C0C0\"><a href=\"../controladoresJhano/controladorEliminarPago.jsp?id=" + pago.getIntIdPago() + "&idF=" + request.getParameter("idF") + "\">Eliminar</a></td>");
+                                                                                                out.print("</tr>");
+                                                                                            }
+                                                                                        } else {
+                                                                                            out.print("<tr>");
+                                                                                            out.print("  <td></td>");
+                                                                                            out.print("  <td></td>");
+                                                                                            out.print("  <td></td>");
+                                                                                            out.print("  <td></td>");
+                                                                                            out.print("</tr>");
+                                                                                        }
+
+                                                                                    } catch (Exception ex) {
+                                                                                        // TODO handle custom exceptions here
+                                                                                    }
+                                                                                %>
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody id="prueba1">
@@ -214,7 +259,8 @@
                                                                 <div class="row-fluid">
                                                                     <div class="span6">
                                                                         <label>Monto:</label>
-                                                                        <input class="span12" id="monto" type="text" placeholder="Dolares">
+                                                                        <input class="span12" id="monto" type="text" placeholder="Dolares"/>
+                                                                        
                                                                     </div>
                                                                     <div class="span6">
                                                                         <label>Forma de pago:</label>
@@ -251,51 +297,52 @@
                                             <script src="../SpryAssets/js/jquery-latest.js"></script>
                                             <script src="../SpryAssets/js/bootstrap.min.js"></script>
                                             <script type="text/javascript">
-                                                    /* Algo de funcionalidad basica... */
-                                                $(document).ready(function() {
-                                                $("input").tooltip({"title": "Requerido"});
-                                                    });
+                                                                            /* Algo de funcionalidad basica... */
+                                                                            $(document).ready(function() {
+                                                                                $("input").tooltip({"title": "Requerido"});
+                                                                            });
 
-                                                $("#pagado").click(function() {
-                                                $(".info").removeClass("error").addClass("success");
-                                                $(".info > .status").html("Pagado");
-                                                    });
+                                                                            $("#pagado").click(function() {
+                                                                                $(".info").removeClass("error").addClass("success");
+                                                                                $(".info > .status").html("Pagado");
+                                                                            });
 
-                                                $("#pendiente").click(function() {
-                                                $(".info").removeClass("success").addClass("error");
-                                                $(".info > .status").html("Pendiente");
-                                                    });
-                                                $("#save").click(function() {
-                                                save();
-                                                    });
+                                                                            $("#pendiente").click(function() {
+                                                                                $(".info").removeClass("success").addClass("error");
+                                                                                $(".info > .status").html("Pendiente");
+                                                                            });
+                                                                            $("#save").click(function() {
+                                                                                save();
+                                                                            });
 
-                                                $("#delete").click(function() {
-                                                $(".info").remove();
-                                                    });
-                                                function toggleSelected(tr) {
-                                                $(tr).toggleClass("info");
-                                                    }
+                                                                            $("#delete").click(function() {
+                                                                                $(".info").remove();
+                                                                            });
+                                                                            function toggleSelected(tr) {
+                                                                                $(tr).toggleClass("info");
+                                                                            }
 
-                                                    function resetForm() {
-                                                    $("#monto").val("");
-                                                    $("#fechaPago").val("");
-                                                    $(".memb-button").removeClass("active");
-                                                $("#estado").addClass("active");
-                                                $("#formaPago").addClass("active");
-                                                    }
+                                                                            function resetForm() {
+                                                                                $("#monto").val("");
+                                                                                $("#fechaPago").val("");
+                                                                                $(".memb-button").removeClass("active");
+                                                                                $("#estado").addClass("active");
+                                                                                $("#formaPago").addClass("active");
+                                                                            }
 
-                                                function save() {
-                                                    var approved = $("#estado").hasClass("active");
-                                                    var approved1 = $("#formaPago").hasClass("active");
-                                                    var colourClass = approved ? "success" : "error"
-                                                    var colourClass1 = approved1 ? "success" : "error"
-                                                    var status = approved ? "Pagado" : "Pendiente"
-                                                    var status1 = approved1 ? "Efectivo" : "Cheque"
-                                                    var row = "<tr class='" + colourClass + "'' onclick='toggleSelected(this)'><td>" + $("#monto").val() + "</td><td>" + $("#fechaPago").val() + "</td><td class='status1'>" + status1 + "</td><td class='status'>" + status + "</td></tr>";
-                                                    $("#prueba1").append(row);
-                                                resetForm();
-                                                    $("#addModal").modal("hide");
-                                                }
+                                                                            function save() {
+                                                                                var approved = $("#estado").hasClass("active");
+                                                                                var approved1 = $("#formaPago").hasClass("active");
+                                                                                var colourClass = approved ? "success" : "error"
+                                                                                var colourClass1 = approved1 ? "success" : "error"
+                                                                                var status = approved ? "Pendiente" : "Pagado"
+                                                                                var status1 = approved1 ? "Efectivo" : "Cheque"
+                                                                                var row = "<tr class='" + colourClass + "'' onclick='toggleSelected(this)'><td>" + $("#monto").val() + "</td><td>" + $("#fechaPago").val() + "</td><td class='status1'>" + status1 + "</td><td class='status'>" + status + "</td></tr>";
+                                                                                // $("#prueba1").append(row); 
+                                                                                location.href = '../controladoresJhano/controladorInterfazCarga.jsp?valor=' + $("#monto").val() + '&fecha=' + $("#fechaPago").val() + '&tipo=' + status1 + '&pagado=' + status + '&idF=' +<% out.print(request.getParameter("idF"));%> + '';
+                                                                                resetForm();
+                                                                                //$("#addModal").modal("hide");
+                                                                            }
                                             </script>
                                         </table>
                                 </td>

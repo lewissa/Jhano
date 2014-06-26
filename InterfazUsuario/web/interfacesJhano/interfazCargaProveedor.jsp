@@ -136,7 +136,6 @@
                                                             request.getSession().setAttribute("errorCorreo", null);
                                                             request.getSession().setAttribute("errorConvencional", null);
                                                             request.getSession().setAttribute("errorCelular", null);
-
                                                         %>
                                             </font>
                                         </li>

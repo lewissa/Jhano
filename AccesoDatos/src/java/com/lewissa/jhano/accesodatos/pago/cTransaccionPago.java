@@ -26,9 +26,9 @@ public class cTransaccionPago {
         return strResultado;
     }
 
-    public String cargarPagos() {
+    public String cargarPagos(String strId) {
         String strPago = null;
-        String strQuery = "SELECT * FROM \"Pago\" WHERE \"estado\"=TRUE; ";
+        String strQuery = "SELECT * FROM \"Pago\" WHERE factura_pago='" + strId + "'";
         if (cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()) {
             strPago = cAccesoDatos.getInstanciaAccesoDatos().consultarDataBase(strQuery);
         }
@@ -45,47 +45,73 @@ public class cTransaccionPago {
         return booFlag;
     }
 
+    public Boolean ingresaPago(String strPago[]) {
+        String strSqlIngreso;
+        Boolean booFlag = false;
+        String strFecha = null;
+        if (strPago[1].equals("0")) {
+            strFecha = "null";
+        } else {
+            strFecha = "'" + strPago[1] + "'";
+        }
+        strSqlIngreso = "insert into \"Pago\" (monto,fecha_pago,forma_pago,factura_pago,estado)"
+                + " values (" + strPago[0] + "," + strFecha + ", " + strPago[2] + ", " + strPago[3] + "," + strPago[4] + ")";
+        booFlag = cAccesoDatos.getInstanciaAccesoDatos().actualizarDataBase(strSqlIngreso);
+        return booFlag;
+    }
+
     public String mostrarDatosPago(String idPago) {
         String strSqlConsulta, strPago;
         strSqlConsulta = "SELECT * FROM \"pago\" WHERE \"Id_pago\" = '" + idPago + "'";
         strPago = cAccesoDatos.getInstanciaAccesoDatos().consultarDataBase(strSqlConsulta);
         return strPago;
     }
-    
-    public String getTotalPagosPendientes()
-    {
-        String strResultado=null;
-        String strQuery="select sum(monto) as total from pago WHERE fecha_pago < current_date + 1 AND estado = FALSE";
-        if(cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase())
-        {
+
+    public String getTotalPagosPendientes() {
+        String strResultado = null;
+        String strQuery = "select sum(monto) as total from pago WHERE fecha_pago < current_date + 1 AND estado = FALSE";
+        if (cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()) {
             strResultado = cAccesoDatos.getInstanciaAccesoDatos().consultarDataBase(strQuery);
         }
         return strResultado;
     }
+
     public Boolean eliminarFisicoPago(String strCodigoPago) {
         Boolean booResultado = false;
         String strQuery;
-        strQuery = "DELETE FROM pago WHERE Id_pago = '"+ strCodigoPago+"'";
+        strQuery = "DELETE FROM \"Pago\" WHERE \"Id_pago\" = '" + strCodigoPago + "'";
         if (cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()) {
             booResultado = cAccesoDatos.getInstanciaAccesoDatos().actualizarDataBase(strQuery);
         }
 
         return booResultado;
     }
+
     /**
-     
+     *
      * metodo que oelrmite eliminar los datos de un proveedor LPGICAMENTE
+     *
      * @author Fredy Janeta
      * @param strCodigoProveedor
-     * @return Boolean, booResultdo contiene la confirmacion de la aplicacion del metodo
+     * @return Boolean, booResultdo contiene la confirmacion de la aplicacion
+     * del metodo
      */
-    public Boolean eliminarLogicoPago(String strCodigoPago){
-        Boolean booResultado=false;
+    public Boolean eliminarLogicoPago(String strCodigoPago) {
+        Boolean booResultado = false;
         String strQuery;
-        strQuery="UPDATE pago SET estado=true WHERE Id_pago='"+strCodigoPago+"'";
-        if(cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()){
-            booResultado=cAccesoDatos.getInstanciaAccesoDatos().actualizarDataBase(strQuery);
+        strQuery = "UPDATE pago SET estado=true WHERE Id_pago='" + strCodigoPago + "'";
+        if (cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()) {
+            booResultado = cAccesoDatos.getInstanciaAccesoDatos().actualizarDataBase(strQuery);
         }
         return booResultado;
+    }
+
+    String getPagoFactura(String strId) {
+        String strResultado = null;
+        String strQuery = "select \"Valor_total\" from factura where \"Id_factu\"='"+strId+"'";
+        if (cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()) {
+            strResultado = cAccesoDatos.getInstanciaAccesoDatos().consultarDataBase(strQuery);
+        }
+        return strResultado;
     }
 }

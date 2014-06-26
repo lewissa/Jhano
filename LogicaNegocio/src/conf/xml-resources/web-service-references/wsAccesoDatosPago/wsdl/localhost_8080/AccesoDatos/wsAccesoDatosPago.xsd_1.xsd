@@ -16,6 +16,10 @@
 
 <xs:element name="getErrorConexionResponse" type="tns:getErrorConexionResponse"/>
 
+<xs:element name="getPagoFactura" type="tns:getPagoFactura"/>
+
+<xs:element name="getPagoFacturaResponse" type="tns:getPagoFacturaResponse"/>
+
 <xs:element name="getPagosPendientes" type="tns:getPagosPendientes"/>
 
 <xs:element name="getPagosPendientesResponse" type="tns:getPagosPendientesResponse"/>
@@ -23,6 +27,10 @@
 <xs:element name="getTotalPagosPendientes" type="tns:getTotalPagosPendientes"/>
 
 <xs:element name="getTotalPagosPendientesResponse" type="tns:getTotalPagosPendientesResponse"/>
+
+<xs:element name="ingresaDataBasePago" type="tns:ingresaDataBasePago"/>
+
+<xs:element name="ingresaDataBasePagoResponse" type="tns:ingresaDataBasePagoResponse"/>
 
 <xs:element name="modificarDataBasePago" type="tns:modificarDataBasePago"/>
 
@@ -43,20 +51,12 @@
 </xs:complexType>
 
 <xs:complexType name="cargarPago">
-<xs:sequence/>
-</xs:complexType>
-
-<xs:complexType name="cargarPagoResponse">
 <xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0"/>
+<xs:element name="strId" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="getTotalPagosPendientes">
-<xs:sequence/>
-</xs:complexType>
-
-<xs:complexType name="getTotalPagosPendientesResponse">
+<xs:complexType name="cargarPagoResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
@@ -74,6 +74,28 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="getTotalPagosPendientes">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getTotalPagosPendientesResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPagoFactura">
+<xs:sequence>
+<xs:element name="strId" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPagoFacturaResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="eliminarLogicoPago">
 <xs:sequence>
 <xs:element name="strCodigoPago" type="xs:string" minOccurs="0"/>
@@ -83,6 +105,18 @@
 <xs:complexType name="eliminarLogicoPagoResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:boolean" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="mostrarDatosPagos">
+<xs:sequence>
+<xs:element name="strIdPago" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="mostrarDatosPagosResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 
@@ -98,15 +132,15 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="mostrarDatosPagos">
+<xs:complexType name="ingresaDataBasePago">
 <xs:sequence>
-<xs:element name="strIdPago" type="xs:string" minOccurs="0"/>
+<xs:element name="strPago" type="xs:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="mostrarDatosPagosResponse">
+<xs:complexType name="ingresaDataBasePagoResponse">
 <xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0"/>
+<xs:element name="return" type="xs:boolean" minOccurs="0"/>
 </xs:sequence>
 </xs:complexType>
 

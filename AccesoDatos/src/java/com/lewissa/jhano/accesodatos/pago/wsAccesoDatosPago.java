@@ -42,14 +42,23 @@ public class wsAccesoDatosPago {
         return strResultado;
 
     }
+    
+    @WebMethod(operationName = "getPagoFactura")
+    public String getPagoFactura(@WebParam(name = "strId") String strId) {
+        String strResultado = null;
+        cTransaccionPago oTransaccionPago = new cTransaccionPago();
+        strResultado = oTransaccionPago.getPagoFactura(strId);
+        return strResultado;
+
+    }
 
     @WebMethod(operationName = "cargarPago")
-    public String cargarPago() {
+    public String cargarPago(@WebParam(name = "strId") String strId) {
         //TODO write your implementation code here:
         String strResultado = null;
         cTransaccionPago oTransaccionPago = new cTransaccionPago();
         if (cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()) {
-            strResultado = oTransaccionPago.cargarPagos();
+            strResultado = oTransaccionPago.cargarPagos(strId);
         }
         return strResultado;
     }
@@ -68,6 +77,25 @@ public class wsAccesoDatosPago {
         } else {
             booFlag2 = true; // conexion correcta
             booFlag1 = traPago.modificarPago(strPago);
+            if (booFlag1 == null) {
+                booFlag1 = false;
+            }
+        }
+        booFlag1 = (booFlag1.equals(true)) && (booFlag2.equals(true));
+        return booFlag1;
+    }
+    
+    @WebMethod(operationName = "ingresaDataBasePago")
+    public Boolean ingresaDataBasePago(@WebParam(name = "strPago") java.lang.String[] strPago) {
+        //TODO write your implementation code here:
+        Boolean booFlag1 = false; // revisa la respuesta de la base
+        Boolean booFlag2 = false; // revisa la conexion
+        cTransaccionPago traPago = new cTransaccionPago();
+        if (!cAccesoDatos.getInstanciaAccesoDatos().conectarDataBase()) {
+            booFlag2 = false; //error en la conexion
+        } else {
+            booFlag2 = true; // conexion correcta
+            booFlag1 = traPago.ingresaPago(strPago);
             if (booFlag1 == null) {
                 booFlag1 = false;
             }

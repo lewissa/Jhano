@@ -18,10 +18,10 @@
                 com.lewissa.jhano.logicanegocio.pago.WsLogicaNegocioPago_Service service = new WsLogicaNegocioPago_Service();
                 com.lewissa.jhano.logicanegocio.pago.WsLogicaNegocioPago port = service.getWsLogicaNegocioPagoPort();
                 // TODO process result here
-                java.util.List<com.lewissa.jhano.logicanegocio.pago.CPago> result = port.cargaPago();
+                java.util.List<com.lewissa.jhano.logicanegocio.pago.CPago> result = port.cargaPago(request.getParameter("idF"));
 
                 request.getSession().setAttribute("pagos", result);
-                response.sendRedirect("../interfacesJhano/interfazCargaPagos.jsp?car=true");
+                response.sendRedirect("../interfacesJhano/interfazCargaPagos.jsp?car=true&idF="+request.getParameter("idF")+"");
                 //out.println("Result = " + result);
             } catch (Exception ex) {
                 // TODO handle custom exceptions here

@@ -128,7 +128,7 @@
 
         <table style="background-color: #999999; border-color: #f9f9f9" bgcolor="#C0C0C0" width="100%" height="100%" border="1">
             <tr>
-                <td width="12%" align="center">
+                <td width="8%" align="center">
 
                     <table style="background-color: #999999; border-color: #f9f9f9">         
                         <center>
@@ -200,7 +200,7 @@
                                             out.print("  <td bgcolor=\"#FFF\">" + oFact.getStrClienteFactura() + "</td>");
                                             out.print("  <td bgcolor=\"#FFF\" align=\"right\" >" + oFact.getDouTotalFactura() + "</td>");
                                             out.print("  <td width=\"75\" >Modificar</td>");
-                                            out.print("  <td bgcolor=\"#FFF\"><a href=\".../interfacesJhano/interfazCargaPagos.jsp\">Pago<a></th>");
+                                            out.print("  <td bgcolor=\"#FFF\"><a href=\".../interfacesJhano/interfazCargaPagos.jsp?idF="+oFact.getStrIdFactura()+"\">Pago<a></th>");
                                             //out.print("  <td><a href='../controladoresJhano/controladorEliminarCliente.jsp?accion=delete&id=" + cliente.getStrIdCliente() + "'>Eliminar</a></td>");
                                             out.print("</tr>");
                                         }
