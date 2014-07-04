@@ -21,7 +21,7 @@
                         <img src="Image/computech.jpg" alt="espoch" />
                     </a>
                 </td>
-                <td width="780">
+                <td width="880">
                     <center>
                         <font color="#FFFFFF" size="+6" face="Arial, Helvetica, sans-serif">
                             Computech

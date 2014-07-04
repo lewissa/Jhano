@@ -10,13 +10,12 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Jhano | Consulta de Familia de Proveedores </title>
-        <link href="SpryAssets/estilo.css" rel="stylesheet" type="text/css">
-            <script type="text/javascript" src="functions.js"></script>
-            <script src="../SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
-            <link href="../SpryAssets/SpryMenuBarHorizontalw.css" rel="stylesheet" type="text/css" />
-            <link href="../SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
-            
-            <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+         <script src="SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
+        <link href="SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
+        <link href="../SpryAssets/SpryMenuBarHorizontalw.css" rel="stylesheet" type="text/css" />
+        <link href="../SpryAssets/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
+        <link href="../SpryAssets/css/bootstrap-responsive.min.css" rel="stylesheet"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
     </head>
 
     <body>
@@ -27,7 +26,7 @@
                         <img src="Image/computech.jpg" alt="espoch" />
                     </a>
                 </td>
-                <td width="780">
+                <td width="880">
                     <center>
                         <font color="#FFFFFF" size="+6" face="Arial, Helvetica, sans-serif">
                             Computech
@@ -83,7 +82,7 @@
                 </td>
             </tr>
             <tr>
-                <td height="41" colspan="2"><div align="center">
+                <td height="41" colspan="2"><div align="center" style="font-size: 1.2em">
                         <ul id="MenuBar2" class="MenuBarHorizontal">
                             <li>
                                 <font face="Arial">

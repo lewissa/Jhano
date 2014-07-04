@@ -12,11 +12,12 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Jhano | Factura </title>
-        <link href="SpryAssets/estilo.css" rel="stylesheet" type="text/css"/>
-        <script type="text/javascript" src="functions.js"></script>
-        <script src="../SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
+        <script src="SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
+        <link href="SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
         <link href="../SpryAssets/SpryMenuBarHorizontalw.css" rel="stylesheet" type="text/css" />
-        <link href="../SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
+        <link href="../SpryAssets/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
+        <link href="../SpryAssets/css/bootstrap-responsive.min.css" rel="stylesheet"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
     </head>
 
     <body>
@@ -27,7 +28,7 @@
                         <img src="Image/computech.jpg" alt="espoch" />
                     </a>
                 </td>
-                <td width="780">
+                <td width="880">
                     <center>
                         <font color="#FFFFFF" size="+6" face="Arial, Helvetica, sans-serif">
                             Computech
@@ -83,7 +84,7 @@
                 </td>
             </tr>
             <tr>
-                <td height="41" colspan="2"><div align="center">
+                <td height="41" colspan="2"><div align="center" style="font-size: 1.2em">
                         <ul id="MenuBar2" class="MenuBarHorizontal">
                             <li>
                                 <font face="Arial">
@@ -128,7 +129,7 @@
 
         <table style="background-color: #999999; border-color: #f9f9f9" bgcolor="#C0C0C0" width="100%" height="100%" border="1">
             <tr>
-                <td width="8%" align="center">
+                <td width="8%" align="center" style="font-size: 1.2em">
 
                     <table style="background-color: #999999; border-color: #f9f9f9">         
                         <center>
@@ -176,60 +177,62 @@
                     <td width="88%">
                         <h3><center> <font size="5" face="Arial, Helvetica, sans-serif">Matriz Factura</font></center></h3>
                         <form name="frmCargarFacturas" action="../controladoresJhano/controladorInterfazCargarFactura.jsp" method="post" >
-                            <div STYLE=" height: 350px; width: auto; font-size: 15px; overflow: auto;"/>
-                            <table  align="center" border="1" style="font-size:15px; width: 1155x; height: 25px">
-                                <tr>
-                                    <th width="10%" align="center" bgcolor="#C0C0C0">Número de Factura</th>
-                                    <th width="10%" align="center" bgcolor="#C0C0C0">Fecha</th>
-                                    <th width="10%" align="center" bgcolor="#C0C0C0">Cliente</th>
-                                    <th width="10%" align="center" bgcolor="#C0C0C0">Valor Total</th>
-                                    <th width="10%" align="center" colspan="2" bgcolor="#C0C0C0">Acciones</th>
+                            <div class="row-fluid" span="span8" />
+                            <div span="span8">
+                                <center>
+                                    <table class="table table-hover table-condensed" align="center" style="font-size:15px; width: 1155x; height: 25px">
+                                        <tr>
+                                            <th width="10%" align="center" bgcolor="#C0C0C0">Número de Factura</th>
+                                            <th width="10%" align="center" bgcolor="#C0C0C0">Fecha</th>
+                                            <th width="10%" align="center" bgcolor="#C0C0C0">Cliente</th>
+                                            <th width="10%" align="center" bgcolor="#C0C0C0">Valor Total</th>
+                                            <th width="10%" align="center" colspan="2" bgcolor="#C0C0C0"><center>Acciones</center></th>
 
-                                </tr>
-                                <%
-                                    String strCarga = (request.getParameter("car") != null) ? "true" : "false";
-                                    if (strCarga.equals("false")) {
-                                        response.sendRedirect("../controladoresJhano/controladorInterfazCargarFactura.jsp");
-                                    }
-                                    List<com.lewissa.jhano.logicanegocio.factura.CFactura> factura = (List<com.lewissa.jhano.logicanegocio.factura.CFactura>) request.getSession().getAttribute("facturas");
-                                    if (factura != null) {
-                                        for (com.lewissa.jhano.logicanegocio.factura.CFactura oFact : factura) {
-                                            out.print("<tr>");
-                                            out.print("  <td bgcolor=\"#FFF\">" + oFact.getStrIdFactura() + "</td>");
-                                            out.print("  <td bgcolor=\"#FFF\">" + oFact.getStrFechaFactura() + "</td>");
-                                            out.print("  <td bgcolor=\"#FFF\">" + oFact.getStrClienteFactura() + "</td>");
-                                            out.print("  <td bgcolor=\"#FFF\" align=\"right\" >" + oFact.getDouTotalFactura() + "</td>");
-                                            out.print("  <td width=\"75\" >Modificar</td>");
-                                            out.print("  <td bgcolor=\"#FFF\"><a href=\".../interfacesJhano/interfazCargaPagos.jsp?idF="+oFact.getStrIdFactura()+"\">Pago<a></th>");
-                                            //out.print("  <td><a href='../controladoresJhano/controladorEliminarCliente.jsp?accion=delete&id=" + cliente.getStrIdCliente() + "'>Eliminar</a></td>");
-                                            out.print("</tr>");
-                                        }
-                                    } else {
-                                        out.print("<tr>");
-                                        out.print("  <td></td>");
-                                        out.print("  <td></td>");
-                                        out.print("  <td></td>");
-                                        out.print("  <td></td>");
-                                        out.print("  <td></td>");
-                                        out.print("  <td></td>");
-                                        out.print("</tr>");
-                                    }
-                                %>
+                                        </tr>
+                                        <%
+                                            String strCarga = (request.getParameter("car") != null) ? "true" : "false";
+                                            if (strCarga.equals("false")) {
+                                                response.sendRedirect("../controladoresJhano/controladorInterfazCargarFactura.jsp");
+                                            }
+                                            List<com.lewissa.jhano.logicanegocio.factura.CFactura> factura = (List<com.lewissa.jhano.logicanegocio.factura.CFactura>) request.getSession().getAttribute("facturas");
+                                            if (factura != null) {
+                                                for (com.lewissa.jhano.logicanegocio.factura.CFactura oFact : factura) {
+                                                    out.print("<tr>");
+                                                    out.print("  <td bgcolor=\"#FFF\">" + oFact.getStrIdFactura() + "</td>");
+                                                    out.print("  <td bgcolor=\"#FFF\">" + oFact.getStrFechaFactura() + "</td>");
+                                                    out.print("  <td bgcolor=\"#FFF\">" + oFact.getStrClienteFactura() + "</td>");
+                                                    out.print("  <td bgcolor=\"#FFF\" align=\"right\" >" + oFact.getDouTotalFactura() + "</td>");
+                                                    out.print("  <td width=\"75\" bgcolor=\"#C0C0C0\">Modificar</td>");
+                                                    out.print("  <td bgcolor=\"#C0C0C0\"><a href=\".../interfacesJhano/interfazCargaPagos.jsp?idF=" + oFact.getStrIdFactura() + "\">Pago<a></th>");
+                                                    //out.print("  <td><a href='../controladoresJhano/controladorEliminarCliente.jsp?accion=delete&id=" + cliente.getStrIdCliente() + "'>Eliminar</a></td>");
+                                                    out.print("</tr>");
+                                                }
+                                            } else {
+                                                out.print("<tr>");
+                                                out.print("  <td></td>");
+                                                out.print("  <td></td>");
+                                                out.print("  <td></td>");
+                                                out.print("  <td></td>");
+                                                out.print("  <td></td>");
+                                                out.print("  <td></td>");
+                                                out.print("</tr>");
+                                            }
+                                        %>
 
-                            </table>
+                                    </table>
 
-                    </td>
-                    <%
+                                    </td>
+                                    <%
 
-                    %>
+                                    %>
 
-                </td>
-            </tr>
-        </table>
+                                    </td>
+                                    </tr>
+                                    </table>
 
-        <script type="text/javascript">
-            var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown: "SpryAssets/SpryMenuBarDownHover.gif", imgRight: "SpryAssets/SpryMenuBarRightHover.gif"});
-            var MenuBar2 = new Spry.Widget.MenuBar("MenuBar2", {imgDown: "SpryAssets/SpryMenuBarDownHover.gif", imgRight: "SpryAssets/SpryMenuBarRightHover.gif"});
-        </script>
-    </body>
-</html>
+                                    <script type="text/javascript">
+                                        var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown: "SpryAssets/SpryMenuBarDownHover.gif", imgRight: "SpryAssets/SpryMenuBarRightHover.gif"});
+                                        var MenuBar2 = new Spry.Widget.MenuBar("MenuBar2", {imgDown: "SpryAssets/SpryMenuBarDownHover.gif", imgRight: "SpryAssets/SpryMenuBarRightHover.gif"});
+                                    </script>
+                                    </body>
+                                    </html>

@@ -27,7 +27,7 @@
                                     <img src="Image/computech.jpg" alt="espoch" />
                                 </a>
                             </th>
-                            <th width="780">
+                            <th width="880">
                                 <center>
                                     <font color="#FFFFFF" size="+6" face="Arial, Helvetica, sans-serif">
                                         Computech
@@ -186,15 +186,14 @@
                                                 <div class="row-fluid" span="span8" >
                                                     <div span="span8">
                                                         <center>
-                                                            <table class="table table-hover table-bordered" style="width: 90%; ">
-                                                                <thead>
-
+                                                            <table class="table table-hover table-condensed" style="width: 90%; ">
+                                  
                                                                     <tr>
-                                                                        <th>Monto</th>
-                                                                        <th>Fecha de pago</th>
-                                                                        <th>Forma de pago</th>
-                                                                        <th>Estado</th>
-                                                                        <th colspan="2"><center>Accion</center></th>
+                                                                        <th bgcolor="#C0C0C0">Monto</th>
+                                                                        <th bgcolor="#C0C0C0">Fecha de pago</th>
+                                                                        <th bgcolor="#C0C0C0">Forma de pago</th>
+                                                                        <th bgcolor="#C0C0C0">Estado</th>
+                                                                        <th bgcolor="#C0C0C0" colspan="2"><center>Accion</center></th>
                                                                                 <%
                                                                                     try {
                                                                                         com.lewissa.jhano.logicanegocio.pago.WsLogicaNegocioPago_Service service = new com.lewissa.jhano.logicanegocio.pago.WsLogicaNegocioPago_Service();
@@ -239,7 +238,7 @@
                                                                                     }
                                                                                 %>
                                                                     </tr>
-                                                                </thead>
+                                                            
                                                                 <tbody id="prueba1">
                                                                 </tbody>
                                                             </table>

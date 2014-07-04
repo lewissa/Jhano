@@ -4,24 +4,23 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Jhano | Inicio </title>
-        <script src="SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
-        <script src="../SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
-        <link href="../SpryAssets/SpryMenuBarHorizontalw.css" rel="stylesheet" type="text/css" />
-        <link href="../SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
-        <link href="../SpryAssets/css/bootstrap.min.css" rel="stylesheet" media="screen">
-        <link href="../SpryAssets/css/bootstrap-responsive.min.css" rel="stylesheet">
+       <script src="SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
         <link href="SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css" />
+        <link href="SpryAssets/SpryMenuBarHorizontalw.css" rel="stylesheet" type="text/css" />
+        <link href="SpryAssets/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
+        <link href="SpryAssets/css/bootstrap-responsive.min.css" rel="stylesheet"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
     </head>
 
     <body>
         <table style="background-color: #002a80; border: #f9f9f9" bgcolor="#192B75" width="100%" height="50%" border="1">
             <tr>
-                <td>
+                <td >
                     <a href="../index.jsp">
-                    <img src="Image/computech.jpg" alt="espoch" />
+                    <img src="Image/computech.jpg" alt="espoch"  />
                     </a>
                 </td>
-                <td width="780">
+                <td width="880">
                     <center>
                         <font color="#FFFFFF" size="+6" face="Arial, Helvetica, sans-serif">
                             Computech
@@ -77,7 +76,7 @@
                 </td>
             </tr>
             <tr>
-                <td height="41" colspan="2"><div align="center">
+                <td height="41" colspan="2"><div align="center" style="font-size: 1.2em">
                         <ul id="MenuBar2" class="MenuBarHorizontal">
                             <li>
                                 <font face="Arial">
