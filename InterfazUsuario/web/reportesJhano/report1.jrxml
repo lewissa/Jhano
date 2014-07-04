@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="43025490-67ec-4b5e-9855-f4e089699539">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[select "Id_produ", "Descripcion_general" as "Descripcion", SUM(lista_productos."Cantidad") as "Total vendidos", producto."Cantidad" - totalVendidos(lista_produ) as "Bodega",ganancia(lista_produ) as "Recaudado", porcentajeExito(lista_produ) as "Exito Ventas" from producto left join lista_productos on producto."Id_produ"=lista_productos.lista_produ where producto.estado=true group by "Id_produ","Descripcion_general",producto."Cantidad",lista_produ,"Precio_dos"]]>
+	</queryString>
+	<field name="Id_produ" class="java.lang.Integer"/>
+	<field name="Descripcion" class="java.lang.String"/>
+	<field name="Total vendidos" class="java.lang.Long"/>
+	<field name="Bodega" class="java.lang.Long"/>
+	<field name="Recaudado" class="java.lang.Integer"/>
+	<field name="Exito Ventas" class="java.lang.Double"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="156" splitType="Stretch">
+			<barChart>
+				<chart>
+					<reportElement x="213" y="26" width="200" height="100" uuid="165a6d1d-fa59-4cff-9e7a-7c1fd4799893"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<categorySeries>
+						<seriesExpression><![CDATA["Dummy Series"]]></seriesExpression>
+						<categoryExpression><![CDATA[$F{Descripcion}]]></categoryExpression>
+						<valueExpression><![CDATA[$F{Exito Ventas}]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<barPlot>
+					<plot/>
+					<itemLabel/>
+					<categoryAxisFormat>
+						<axisFormat/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat/>
+					</valueAxisFormat>
+				</barPlot>
+			</barChart>
+		</band>
+	</summary>
+</jasperReport>

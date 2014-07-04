@@ -143,6 +143,14 @@
                                             </font>
                                         </li>
                                     </ul>
+                                    
+                                    <ul id="MenuBar2" class="MenuBarHorizontalw">
+                                        <li>
+                                            <font face="Arial">
+                                                <a href="../controladoresJhano/controladorReporteCliente.jsp"><center>Reporte</center></a>
+                                            </font>
+                                        </li>
+                                    </ul>
                                     <ul id="MenuBar2" class="MenuBarHorizontalw">
                                         <li>
                                             <font face="Arial">
